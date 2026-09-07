@@ -1,8 +1,32 @@
 import pandas as pd
+import unicodedata
 
 
 # ============================================================
-# 1. LOAD RECIPES
+# 1. NORMALIZATION
+# ============================================================
+
+def normalize_text(value):
+    """
+    Lowercase, remove accents and extra spaces.
+    """
+    if pd.isna(value):
+        return ""
+
+    value = str(value).lower().strip()
+
+    value = unicodedata.normalize("NFKD", value)
+    value = "".join(
+        char
+        for char in value
+        if not unicodedata.combining(char)
+    )
+
+    return " ".join(value.split())
+
+
+# ============================================================
+# 2. LOAD RECIPES
 # ============================================================
 
 recipes = pd.read_csv(
@@ -17,14 +41,6 @@ recipes = pd.read_csv(
 
 
 def parse_ingredients(value):
-    """
-    Convert Food.com ingredient vectors like:
-
-    c("salt", "butter", "onion")
-
-    into a Python list.
-    """
-
     if pd.isna(value):
         return []
 
@@ -47,10 +63,6 @@ recipes["ingredients"] = recipes[
 ].apply(parse_ingredients)
 
 
-# ============================================================
-# 2. GET MOST COMMON INGREDIENTS
-# ============================================================
-
 ingredients = (
     recipes["ingredients"]
     .explode()
@@ -65,17 +77,8 @@ ingredients.columns = [
 ]
 
 
-print("\n=== MOST COMMON INGREDIENTS ===")
-
-print(
-    ingredients
-    .head(30)
-    .to_string(index=False)
-)
-
-
 # ============================================================
-# 3. LOAD PROFECO PRICES
+# 3. LOAD PROFECO
 # ============================================================
 
 prices = pd.read_csv(
@@ -93,348 +96,705 @@ prices = pd.read_csv(
 )
 
 
-# Normalize PROFECO product names
-prices["producto_normalized"] = (
-    prices["producto"]
-    .astype(str)
-    .str.lower()
-    .str.strip()
+# ============================================================
+# 4. BUILD SEARCHABLE PROFECO TEXT
+# ============================================================
+
+for column in [
+    "producto",
+    "presentacion",
+    "categoria",
+]:
+    prices[f"{column}_normalized"] = (
+        prices[column]
+        .apply(normalize_text)
+    )
+
+
+prices["search_text"] = (
+    prices["producto_normalized"]
+    + " "
+    + prices["presentacion_normalized"]
+    + " "
+    + prices["categoria_normalized"]
 )
 
 
 # ============================================================
-# 4. INGREDIENT TRANSLATION / NORMALIZATION MAP
+# 5. INGREDIENT RULES
 # ============================================================
 
-ingredient_map = {
+# search_terms:
+# Possible ways the ingredient may appear in PROFECO.
+#
+# match_type:
+# exact    = very reliable
+# synonym  = strong equivalent
+# broad    = approximate/fallback
 
-    # --------------------------------------------------------
-    # BASIC INGREDIENTS
-    # --------------------------------------------------------
+ingredient_rules = {
 
-    "salt": "sal",
+    # BASIC
+    "salt": {
+        "search_terms": ["sal"],
+        "match_type": "exact",
+    },
 
-    "sugar": "azúcar",
-    "brown sugar": "azúcar",
-    "granulated sugar": "azúcar",
-    "powdered sugar": "azúcar",
-    "confectioners' sugar": "azúcar",
-    "light brown sugar": "azúcar",
+    "sugar": {
+        "search_terms": ["azucar"],
+        "match_type": "exact",
+    },
 
-    "butter": "mantequilla",
-    "unsalted butter": "mantequilla",
+    "brown sugar": {
+        "search_terms": ["azucar"],
+        "match_type": "synonym",
+    },
 
-    "margarine": "margarina",
+    "granulated sugar": {
+        "search_terms": ["azucar"],
+        "match_type": "synonym",
+    },
 
-    "eggs": "huevo",
-    "egg": "huevo",
+    "powdered sugar": {
+        "search_terms": [
+            "azucar glass",
+            "azucar",
+        ],
+        "match_type": "synonym",
+    },
 
-    "flour": "harina",
-    "all-purpose flour": "harina",
-    "unbleached flour": "harina",
+    "confectioners' sugar": {
+        "search_terms": [
+            "azucar glass",
+            "azucar",
+        ],
+        "match_type": "synonym",
+    },
 
-    "milk": "leche",
-    "evaporated milk": "leche evaporada",
-    "buttermilk": "leche",
+    "light brown sugar": {
+        "search_terms": ["azucar"],
+        "match_type": "synonym",
+    },
 
-    # --------------------------------------------------------
+    "butter": {
+        "search_terms": ["mantequilla"],
+        "match_type": "exact",
+    },
+
+    "unsalted butter": {
+        "search_terms": [
+            "mantequilla sin sal",
+            "mantequilla",
+        ],
+        "match_type": "synonym",
+    },
+
+    "margarine": {
+        "search_terms": ["margarina"],
+        "match_type": "exact",
+    },
+
+    "egg": {
+        "search_terms": ["huevo"],
+        "match_type": "exact",
+    },
+
+    "eggs": {
+        "search_terms": ["huevo"],
+        "match_type": "exact",
+    },
+
+    "flour": {
+        "search_terms": ["harina"],
+        "match_type": "exact",
+    },
+
+    "all-purpose flour": {
+        "search_terms": ["harina"],
+        "match_type": "synonym",
+    },
+
+    "unbleached flour": {
+        "search_terms": ["harina"],
+        "match_type": "synonym",
+    },
+
+    "milk": {
+        "search_terms": ["leche"],
+        "match_type": "exact",
+    },
+
+    "evaporated milk": {
+        "search_terms": ["leche evaporada"],
+        "match_type": "exact",
+    },
+
     # VEGETABLES
-    # --------------------------------------------------------
+    "onion": {
+        "search_terms": ["cebolla"],
+        "match_type": "exact",
+    },
 
-    "onion": "cebolla",
-    "onions": "cebolla",
+    "onions": {
+        "search_terms": ["cebolla"],
+        "match_type": "exact",
+    },
 
-    "green onion": "cebolla",
-    "green onions": "cebolla",
+    "green onion": {
+        "search_terms": [
+            "cebolla cambray",
+            "cebolla",
+        ],
+        "match_type": "broad",
+    },
 
-    "garlic": "ajo",
-    "garlic cloves": "ajo",
-    "garlic clove": "ajo",
-    "garlic powder": "ajo",
+    "green onions": {
+        "search_terms": [
+            "cebolla cambray",
+            "cebolla",
+        ],
+        "match_type": "broad",
+    },
 
-    "tomato": "jitomate",
-    "tomatoes": "jitomate",
-    "tomato sauce": "jitomate",
-    "tomato paste": "jitomate",
+    "garlic": {
+        "search_terms": ["ajo"],
+        "match_type": "exact",
+    },
 
-    "celery": "apio",
+    "garlic clove": {
+        "search_terms": ["ajo"],
+        "match_type": "synonym",
+    },
 
-    "carrot": "zanahoria",
-    "carrots": "zanahoria",
+    "garlic cloves": {
+        "search_terms": ["ajo"],
+        "match_type": "synonym",
+    },
 
-    "green pepper": "chile",
+    "garlic powder": {
+        "search_terms": [
+            "ajo en polvo",
+            "ajo",
+        ],
+        "match_type": "broad",
+    },
 
-    "zucchini": "calabaza",
+    "tomato": {
+        "search_terms": [
+            "jitomate",
+        ],
+        "match_type": "exact",
+    },
 
-    "mushrooms": "champiñones",
-    "mushroom": "champiñones",
+    "tomatoes": {
+        "search_terms": [
+            "jitomate",
+        ],
+        "match_type": "exact",
+    },
 
-    "potatoes": "papa",
+    "tomato paste": {
+        "search_terms": [
+            "pure de tomate",
+        ],
+        "match_type": "synonym",
+    },
 
-    "broccoli": "brócoli",
+    "tomato sauce": {
+        "search_terms": [
+            "pure de tomate",
+            "salsa de tomate",
+        ],
+        "match_type": "synonym",
+    },
 
-    "spinach": "espinacas",
+    "celery": {
+        "search_terms": ["apio"],
+        "match_type": "exact",
+    },
 
-    "cilantro": "cilantro",
+    "carrot": {
+        "search_terms": ["zanahoria"],
+        "match_type": "exact",
+    },
 
-    "parsley": "perejil",
-    "fresh parsley": "perejil",
+    "carrots": {
+        "search_terms": ["zanahoria"],
+        "match_type": "exact",
+    },
 
-    # --------------------------------------------------------
+    "potatoes": {
+        "search_terms": ["papa"],
+        "match_type": "exact",
+    },
+
+    "zucchini": {
+        "search_terms": ["calabaza"],
+        "match_type": "synonym",
+    },
+
+    "mushroom": {
+        "search_terms": ["champinones"],
+        "match_type": "exact",
+    },
+
+    "mushrooms": {
+        "search_terms": ["champinones"],
+        "match_type": "exact",
+    },
+
     # HERBS / SPICES
-    # --------------------------------------------------------
+    "pepper": {
+        "search_terms": ["pimienta"],
+        "match_type": "broad",
+    },
 
-    "pepper": "pimienta",
-    "black pepper": "pimienta",
-    "white pepper": "pimienta",
+    "black pepper": {
+        "search_terms": ["pimienta negra"],
+        "match_type": "exact",
+    },
 
-    "cinnamon": "canela",
+    "white pepper": {
+        "search_terms": ["pimienta blanca"],
+        "match_type": "exact",
+    },
 
-    "nutmeg": "nuez moscada",
+    "cinnamon": {
+        "search_terms": ["canela"],
+        "match_type": "exact",
+    },
 
-    "paprika": "paprika",
+    "oregano": {
+        "search_terms": ["oregano"],
+        "match_type": "exact",
+    },
 
-    "ginger": "jengibre",
+    "cumin": {
+        "search_terms": ["comino"],
+        "match_type": "exact",
+    },
 
-    "oregano": "orégano",
+    "thyme": {
+        "search_terms": ["tomillo"],
+        "match_type": "exact",
+    },
 
-    "cumin": "comino",
+    "bay leaf": {
+        "search_terms": ["laurel"],
+        "match_type": "synonym",
+    },
 
-    "cayenne pepper": "chile",
-    "chili powder": "chile",
+    "clove": {
+        "search_terms": ["clavo"],
+        "match_type": "exact",
+    },
 
-    "thyme": "tomillo",
+    "green pepper": {
+        "search_terms": [
+            "chile poblano",
+            "chile fresco",
+        ],
+        "match_type": "broad",
+    },
 
-    "basil": "albahaca",
+    "cayenne pepper": {
+        "search_terms": ["chile"],
+        "match_type": "broad",
+    },
 
-    "bay leaf": "laurel",
+    "chili powder": {
+        "search_terms": ["chile"],
+        "match_type": "broad",
+    },
 
-    "clove": "clavo",
-
-    "allspice": "pimienta",
-
-    # --------------------------------------------------------
     # OILS / SAUCES
-    # --------------------------------------------------------
+    "olive oil": {
+        "search_terms": ["aceite de oliva"],
+        "match_type": "exact",
+    },
 
-    "olive oil": "aceite de oliva",
+    "soy sauce": {
+        "search_terms": ["salsa de soya"],
+        "match_type": "exact",
+    },
 
-    "soy sauce": "salsa de soya",
+    "worcestershire sauce": {
+        "search_terms": ["salsa inglesa"],
+        "match_type": "synonym",
+    },
 
-    "worcestershire sauce": "salsa inglesa",
+    "mayonnaise": {
+        "search_terms": ["mayonesa"],
+        "match_type": "exact",
+    },
 
-    "mayonnaise": "mayonesa",
+    "vinegar": {
+        "search_terms": ["vinagre"],
+        "match_type": "exact",
+    },
 
-    "vinegar": "vinagre",
-    "cider vinegar": "vinagre",
+    "cider vinegar": {
+        "search_terms": [
+            "vinagre de manzana",
+            "vinagre",
+        ],
+        "match_type": "broad",
+    },
 
-    "tabasco sauce": "salsa",
-
-    # --------------------------------------------------------
     # DAIRY
-    # --------------------------------------------------------
+    "sour cream": {
+        "search_terms": ["crema"],
+        "match_type": "broad",
+    },
 
-    "sour cream": "crema",
+    "cream cheese": {
+        "search_terms": ["queso crema"],
+        "match_type": "exact",
+    },
 
-    "cream cheese": "queso crema",
+    "heavy cream": {
+        "search_terms": [
+            "crema batida",
+            "crema",
+        ],
+        "match_type": "broad",
+    },
 
-    "parmesan cheese": "queso parmesano",
+    # FRUIT
+    "lemon": {
+        "search_terms": ["limon"],
+        "match_type": "exact",
+    },
 
-    "cheddar cheese": "queso cheddar",
+    "lemons": {
+        "search_terms": ["limon"],
+        "match_type": "exact",
+    },
 
-    "mozzarella cheese": "queso mozzarella",
+    "lemon juice": {
+        "search_terms": ["limon"],
+        "match_type": "broad",
+    },
 
-    "heavy cream": "crema",
+    "fresh lemon juice": {
+        "search_terms": ["limon"],
+        "match_type": "broad",
+    },
 
-    # --------------------------------------------------------
-    # FRUITS
-    # --------------------------------------------------------
+    "lime juice": {
+        "search_terms": ["limon"],
+        "match_type": "synonym",
+    },
 
-    "lemon": "limón",
-    "lemons": "limón",
+    "orange": {
+        "search_terms": ["naranja"],
+        "match_type": "exact",
+    },
 
-    "lemon juice": "limón",
-    "fresh lemon juice": "limón",
+    "apples": {
+        "search_terms": ["manzana"],
+        "match_type": "exact",
+    },
 
-    "lime juice": "limón",
+    "raisins": {
+        "search_terms": ["pasas"],
+        "match_type": "exact",
+    },
 
-    "orange": "naranja",
-    "oranges": "naranja",
+    "coconut": {
+        "search_terms": ["coco"],
+        "match_type": "exact",
+    },
 
-    "apples": "manzana",
-
-    "strawberry": "fresa",
-    "strawberries": "fresa",
-
-    "raisins": "pasas",
-
-    "coconut": "coco",
-
-    "avocado": "aguacate",
-    "avocados": "aguacate",
-
-    # --------------------------------------------------------
     # NUTS
-    # --------------------------------------------------------
+    "pecans": {
+        "search_terms": ["nuez"],
+        "match_type": "broad",
+    },
 
-    "pecans": "nuez",
-    "walnuts": "nuez",
+    "walnuts": {
+        "search_terms": ["nuez"],
+        "match_type": "broad",
+    },
 
-    # --------------------------------------------------------
     # PROTEINS
-    # --------------------------------------------------------
+    "chicken": {
+        "search_terms": [
+            "carne pollo",
+        ],
+        "match_type": "exact",
+    },
 
-    "chicken": "pollo",
+    "beef": {
+        "search_terms": [
+            "carne res",
+        ],
+        "match_type": "exact",
+    },
 
-    "bacon": "tocino",
+    "bacon": {
+        "search_terms": ["tocino"],
+        "match_type": "exact",
+    },
 
-    "beef": "carne",
-
-    # --------------------------------------------------------
     # PANTRY
-    # --------------------------------------------------------
+    "rice": {
+        "search_terms": ["arroz"],
+        "match_type": "exact",
+    },
 
-    "rice": "arroz",
+    "baking powder": {
+        "search_terms": [
+            "polvo p/hornear",
+            "polvo para hornear",
+        ],
+        "match_type": "exact",
+    },
 
-    "cornstarch": "fécula",
+    "vanilla": {
+        "search_terms": ["vainilla"],
+        "match_type": "exact",
+    },
 
-    "baking powder": "polvo para hornear",
+    "vanilla extract": {
+        "search_terms": ["vainilla"],
+        "match_type": "synonym",
+    },
 
-    "baking soda": "bicarbonato",
+    "honey": {
+        "search_terms": ["miel"],
+        "match_type": "exact",
+    },
 
-    "vanilla": "vainilla",
-
-    "vanilla extract": "vainilla",
-
-    "honey": "miel",
-
-    "dry mustard": "mostaza",
-
-    "dijon mustard": "mostaza",
-
-    "chicken broth": "caldo de pollo",
+    "dijon mustard": {
+        "search_terms": ["mostaza"],
+        "match_type": "synonym",
+    },
 }
 
 
 # ============================================================
-# 5. MATCH INGREDIENTS WITH PROFECO PRODUCTS
+# 6. CONFIDENCE
+# ============================================================
+
+confidence_scores = {
+    "exact": 1.0,
+    "synonym": 0.9,
+    "broad": 0.5,
+}
+
+
+# ============================================================
+# 7. MATCH FUNCTION
+# ============================================================
+
+def find_profeco_match(rule):
+
+    search_terms = rule["search_terms"]
+
+    for term in search_terms:
+
+        normalized_term = normalize_text(term)
+
+        mask = prices[
+            "search_text"
+        ].str.contains(
+            normalized_term,
+            na=False,
+            regex=False,
+        )
+
+        matches = prices[mask]
+
+        if not matches.empty:
+            return matches, term
+
+    return pd.DataFrame(), None
+
+
+# ============================================================
+# 8. RUN MATCHING
 # ============================================================
 
 results = []
 
-for ingredient, spanish_product in ingredient_map.items():
 
-    matches = prices[
-        prices["producto_normalized"].str.contains(
-            spanish_product,
-            case=False,
-            na=False,
-            regex=False,
-        )
-    ]
+for ingredient, rule in ingredient_rules.items():
 
-    if len(matches) > 0:
+    matches, matched_term = (
+        find_profeco_match(rule)
+    )
 
-        results.append(
-            {
-                "ingredient": ingredient,
-                "profeco_product": spanish_product,
-                "matches": len(matches),
-                "min_price": matches["precio"].min(),
-                "median_price": matches["precio"].median(),
-                "max_price": matches["precio"].max(),
-            }
-        )
+    if matches.empty:
+        continue
+
+    match_type = rule["match_type"]
+
+    results.append(
+        {
+            "ingredient": ingredient,
+            "matched_term": matched_term,
+            "match_type": match_type,
+            "confidence":
+                confidence_scores[match_type],
+            "matches": len(matches),
+            "min_price":
+                matches["precio"].min(),
+            "median_price":
+                matches["precio"].median(),
+            "max_price":
+                matches["precio"].max(),
+        }
+    )
 
 
 results = pd.DataFrame(results)
 
 
 # ============================================================
-# 6. SHOW PRICE MATCHING RESULTS
+# 9. TOP 100
 # ============================================================
 
-print("\n=== MATCHING RESULTS ===")
-
-if len(results) > 0:
-
-    print(
-        results
-        .sort_values(
-            by="matches",
-            ascending=False,
-        )
-        .to_string(index=False)
-    )
-
-else:
-
-    print("No matches found.")
+top100 = ingredients.head(100).copy()
 
 
-# ============================================================
-# 7. TOP 100 INGREDIENT COVERAGE
-# ============================================================
-
-top_ingredients = ingredients.head(100).copy()
-
-top_ingredients["mapped"] = (
-    top_ingredients["ingredient"]
-    .isin(ingredient_map.keys())
+top100["in_dictionary"] = (
+    top100["ingredient"]
+    .isin(ingredient_rules.keys())
 )
 
 
-print("\n=== TOP 100 COVERAGE ===")
+matched_set = (
+    set(results["ingredient"])
+    if not results.empty
+    else set()
+)
 
-coverage_counts = (
-    top_ingredients["mapped"]
+
+top100["profeco_match"] = (
+    top100["ingredient"]
+    .isin(matched_set)
+)
+
+
+# ============================================================
+# 10. COVERAGE
+# ============================================================
+
+dictionary_count = (
+    top100["in_dictionary"].sum()
+)
+
+real_count = (
+    top100["profeco_match"].sum()
+)
+
+
+dictionary_coverage = (
+    dictionary_count / 100 * 100
+)
+
+real_coverage = (
+    real_count / 100 * 100
+)
+
+
+print("\n=== MATCHER V2 ===")
+
+print(
+    f"Dictionary coverage: "
+    f"{dictionary_count}/100 "
+    f"({dictionary_coverage:.1f}%)"
+)
+
+print(
+    f"Real PROFECO coverage: "
+    f"{real_count}/100 "
+    f"({real_coverage:.1f}%)"
+)
+
+
+# ============================================================
+# 11. CONFIDENCE
+# ============================================================
+
+top100 = top100.merge(
+    results[
+        [
+            "ingredient",
+            "match_type",
+            "confidence",
+            "median_price",
+            "matched_term",
+        ]
+    ],
+    on="ingredient",
+    how="left",
+)
+
+
+top100["confidence"] = (
+    top100["confidence"]
+    .fillna(0)
+)
+
+
+average_confidence = (
+    top100["confidence"].mean()
+)
+
+
+print(
+    f"\nAverage confidence: "
+    f"{average_confidence:.2f}"
+)
+
+
+# ============================================================
+# 12. MATCH TYPE DISTRIBUTION
+# ============================================================
+
+print(
+    "\n=== MATCH TYPE DISTRIBUTION ==="
+)
+
+print(
+    top100["match_type"]
+    .fillna("unmatched")
     .value_counts()
 )
 
-print(coverage_counts)
-
-
-mapped_count = top_ingredients["mapped"].sum()
-
-coverage_percent = (
-    mapped_count
-    / len(top_ingredients)
-    * 100
-)
-
-
-print(
-    f"\nMapped ingredients: "
-    f"{mapped_count}/100"
-)
-
-print(
-    f"Coverage: "
-    f"{coverage_percent:.1f}%"
-)
-
 
 # ============================================================
-# 8. SHOW MAPPED INGREDIENTS
+# 13. SUCCESSFUL MATCHES
 # ============================================================
 
-print("\n=== MAPPED COMMON INGREDIENTS ===")
+print(
+    "\n=== SUCCESSFUL MATCHES ==="
+)
 
-mapped = top_ingredients[
-    top_ingredients["mapped"]
-].copy()
-
-mapped["profeco_product"] = (
-    mapped["ingredient"]
-    .map(ingredient_map)
+successful = (
+    top100[
+        top100["profeco_match"]
+    ]
+    .sort_values(
+        [
+            "confidence",
+            "count",
+        ],
+        ascending=False,
+    )
 )
 
 print(
-    mapped[
+    successful[
         [
             "ingredient",
-            "profeco_product",
+            "matched_term",
             "count",
+            "match_type",
+            "confidence",
+            "median_price",
         ]
     ]
     .to_string(index=False)
@@ -442,17 +802,19 @@ print(
 
 
 # ============================================================
-# 9. SHOW INGREDIENTS THAT STILL NEED MATCHING
+# 14. FAILED MATCHES
 # ============================================================
 
-print("\n=== UNMAPPED COMMON INGREDIENTS ===")
+print(
+    "\n=== STILL UNMATCHED ==="
+)
 
-unmapped = top_ingredients[
-    ~top_ingredients["mapped"]
+failed = top100[
+    ~top100["profeco_match"]
 ]
 
 print(
-    unmapped[
+    failed[
         [
             "ingredient",
             "count",
@@ -463,28 +825,32 @@ print(
 
 
 # ============================================================
-# 10. SAVE RESULTS
+# 15. SAVE
 # ============================================================
 
 results.to_csv(
-    "notebooks/jose_price_matching_results.csv",
+    "notebooks/"
+    "jose_price_matching_v2_results.csv",
     index=False,
 )
 
-top_ingredients.to_csv(
-    "notebooks/jose_top100_ingredient_coverage.csv",
+top100.to_csv(
+    "notebooks/"
+    "jose_top100_matching_v2.csv",
     index=False,
 )
 
 
-print("\n=== FILES CREATED ===")
-
 print(
-    "notebooks/"
-    "jose_price_matching_results.csv"
+    "\n=== FILES SAVED ==="
 )
 
 print(
     "notebooks/"
-    "jose_top100_ingredient_coverage.csv"
+    "jose_price_matching_v2_results.csv"
+)
+
+print(
+    "notebooks/"
+    "jose_top100_matching_v2.csv"
 )
