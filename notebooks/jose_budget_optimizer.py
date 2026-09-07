@@ -49,7 +49,7 @@ def parse_foodcom_vector(value):
 
 
 # ============================================================
-# 3. INGREDIENT ALIASES
+# 3. INGREDIENT NORMALIZATION
 # ============================================================
 
 ingredient_aliases = {
@@ -81,7 +81,7 @@ def normalize_ingredient(value):
 
 
 # ============================================================
-# 4. INGREDIENT -> PROFECO
+# 4. INGREDIENT -> PROFECO RULES
 # ============================================================
 
 ingredient_rules = {
@@ -126,14 +126,51 @@ ingredient_rules = {
 }
 
 
+# ============================================================
+# 5. IGNORED / FORBIDDEN INGREDIENTS
+# ============================================================
+
 ignored_ingredients = {
     "water",
     "boiling water",
 }
 
 
+forbidden_ingredients = {
+    "beer",
+    "wine",
+    "white wine",
+    "red wine",
+    "dry white wine",
+    "brandy",
+    "rum",
+    "vodka",
+    "whiskey",
+    "whisky",
+    "bourbon",
+    "sherry",
+    "marsala",
+    "liqueur",
+    "tequila",
+    "cognac",
+    "vermouth",
+}
+
+
+def has_forbidden_ingredient(ingredient_list):
+    normalized = {
+        normalize_ingredient(x)
+        for x in ingredient_list
+    }
+
+    return any(
+        ingredient in forbidden_ingredients
+        for ingredient in normalized
+    )
+
+
 # ============================================================
-# 5. LOAD RECIPES
+# 6. LOAD RECIPES
 # ============================================================
 
 print("Loading recipes...")
@@ -162,7 +199,7 @@ recipes["ingredients"] = (
 
 
 # ============================================================
-# 6. LOAD PROFECO
+# 7. LOAD PROFECO
 # ============================================================
 
 print("Loading PROFECO prices...")
@@ -200,7 +237,7 @@ prices["search_text"] = (
 
 
 # ============================================================
-# 7. PRECOMPUTE INGREDIENT PRICES
+# 8. PRECOMPUTE INGREDIENT PRICES
 # ============================================================
 
 print("Calculating ingredient prices...")
@@ -241,6 +278,7 @@ for ingredient, search_terms in ingredient_rules.items():
 
         break
 
+
     if found_price is not None:
 
         ingredient_prices[
@@ -258,7 +296,7 @@ print(
 
 
 # ============================================================
-# 8. NORMALIZE RECIPE INGREDIENTS
+# 9. NORMALIZE RECIPE INGREDIENTS
 # ============================================================
 
 def normalize_recipe_ingredients(
@@ -291,8 +329,14 @@ recipes["normalized_ingredients"] = (
 )
 
 
+recipes["has_forbidden_ingredient"] = (
+    recipes["ingredients"]
+    .apply(has_forbidden_ingredient)
+)
+
+
 # ============================================================
-# 9. COVERAGE
+# 10. COVERAGE
 # ============================================================
 
 def calculate_coverage(
@@ -303,11 +347,8 @@ def calculate_coverage(
         return 0.0
 
     matched = sum(
-        ingredient
-        in ingredient_prices
-
-        for ingredient
-        in ingredient_list
+        ingredient in ingredient_prices
+        for ingredient in ingredient_list
     )
 
     return (
@@ -333,7 +374,7 @@ recipes["ingredient_count"] = (
 
 
 # ============================================================
-# 10. FILTER RECIPES
+# 11. EXCLUDED CATEGORIES
 # ============================================================
 
 excluded_categories = {
@@ -346,6 +387,10 @@ excluded_categories = {
     "Quick Breads",
 }
 
+
+# ============================================================
+# 12. FILTER RECIPES
+# ============================================================
 
 candidates = recipes[
     ~recipes["RecipeCategory"]
@@ -373,11 +418,53 @@ candidates = candidates[
             "ProteinContent"
         ] >= 10
     )
+    &
+    (
+        candidates[
+            "has_forbidden_ingredient"
+        ] == False
+    )
 ].copy()
 
 
+print(
+    f"Candidates after filtering: "
+    f"{len(candidates)}"
+)
+
+
 # ============================================================
-# 11. SCORE
+# 13. CATEGORY QUALITY SCORE
+# ============================================================
+
+preferred_categories = {
+    "Chicken": 1.0,
+    "Meat": 1.0,
+    "Pork": 1.0,
+    "Seafood": 1.0,
+    "Fish": 1.0,
+    "One Dish Meal": 1.0,
+
+    "Vegetable": 0.9,
+    "Stew": 0.9,
+    "Chowders": 0.85,
+
+    "Lunch/Snacks": 0.8,
+    "Breakfast": 0.75,
+
+    "Very Low Carbs": 0.8,
+}
+
+
+candidates["category_score"] = (
+    candidates["RecipeCategory"]
+    .map(preferred_categories)
+    .fillna(0.6)
+)
+
+
+# ============================================================
+# 14. NUTRITION / RATING SCORE
 # ============================================================
 
 candidates["rating_safe"] = (
@@ -392,7 +479,10 @@ candidates["protein_score"] = (
     candidates[
         "ProteinContent"
     ]
-    .clip(upper=50)
+    .clip(
+        lower=0,
+        upper=50,
+    )
     / 50
 )
 
@@ -401,35 +491,48 @@ candidates["rating_score"] = (
     candidates[
         "rating_safe"
     ]
+    .clip(
+        lower=0,
+        upper=5,
+    )
     / 5
 )
 
 
-candidates["score"] = (
-    candidates["coverage"] * 0.40
-    +
-    candidates["protein_score"] * 0.35
-    +
-    candidates["rating_score"] * 0.25
+candidates["coverage_score"] = (
+    candidates["coverage"]
 )
 
+
+# ============================================================
+# 15. BALANCED RECOMMENDATION SCORE
+# ============================================================
+
+candidates["score"] = (
+    candidates["coverage_score"] * 0.30
+    +
+    candidates["protein_score"] * 0.30
+    +
+    candidates["rating_score"] * 0.20
+    +
+    candidates["category_score"] * 0.20
+)
+
+
+# ============================================================
+# 16. LIMIT SEARCH SPACE
+# ============================================================
 
 candidates = (
     candidates
     .sort_values(
-        "score",
+        by="score",
         ascending=False,
     )
 )
 
 
-# ============================================================
-# 12. LIMIT CANDIDATES
-# ============================================================
-
-# Keep only the best 5 recipes per category.
-# This prevents huge searches.
-
+# Keep best 5 per category
 candidates = (
     candidates
     .groupby(
@@ -440,8 +543,7 @@ candidates = (
 )
 
 
-# Keep only strongest 15 categories
-
+# Keep strongest 15 categories
 best_categories = (
     candidates
     .groupby(
@@ -464,13 +566,13 @@ candidates = candidates[
 
 
 print(
-    f"Candidate recipes: "
+    f"Candidate recipes for optimizer: "
     f"{len(candidates)}"
 )
 
 
 # ============================================================
-# 13. INCREMENTAL COST
+# 17. COST FUNCTION
 # ============================================================
 
 def ingredient_set_cost(
@@ -494,7 +596,7 @@ def ingredient_set_cost(
 
 
 # ============================================================
-# 14. GREEDY BUDGET OPTIMIZER
+# 18. GREEDY BUDGET OPTIMIZER
 # ============================================================
 
 print(
@@ -511,9 +613,6 @@ current_ingredients = set()
 current_cost = 0.0
 
 
-# We make several passes.
-# First try best-scoring recipes.
-
 for _, recipe in candidates.iterrows():
 
     if (
@@ -522,9 +621,11 @@ for _, recipe in candidates.iterrows():
     ):
         break
 
+
     category = recipe[
         "RecipeCategory"
     ]
+
 
     if category in selected_categories:
         continue
@@ -558,13 +659,16 @@ for _, recipe in candidates.iterrows():
         recipe
     )
 
+
     selected_categories.add(
         category
     )
 
+
     current_ingredients = (
         proposed_ingredients
     )
+
 
     current_cost = (
         proposed_cost
@@ -572,7 +676,7 @@ for _, recipe in candidates.iterrows():
 
 
 # ============================================================
-# 15. FALLBACK SEARCH
+# 19. FALLBACK
 # ============================================================
 
 if len(selected_recipes) < RECIPES_NEEDED:
@@ -581,10 +685,12 @@ if len(selected_recipes) < RECIPES_NEEDED:
         "Running fallback search..."
     )
 
-    remaining_candidates = (
+
+    fallback_candidates = (
         candidates
         .sort_values(
-            [
+            by=[
+                "category_score",
                 "coverage",
                 "score",
             ],
@@ -594,7 +700,7 @@ if len(selected_recipes) < RECIPES_NEEDED:
 
 
     for _, recipe in (
-        remaining_candidates
+        fallback_candidates
         .iterrows()
     ):
 
@@ -642,13 +748,16 @@ if len(selected_recipes) < RECIPES_NEEDED:
             recipe
         )
 
+
         selected_categories.add(
             category
         )
 
+
         current_ingredients = (
             proposed_ingredients
         )
+
 
         current_cost = (
             proposed_cost
@@ -656,7 +765,7 @@ if len(selected_recipes) < RECIPES_NEEDED:
 
 
 # ============================================================
-# 16. CHECK
+# 20. VALIDATE
 # ============================================================
 
 if (
@@ -676,7 +785,7 @@ weekly_recipes = pd.DataFrame(
 
 
 # ============================================================
-# 17. BUILD FINAL CART
+# 21. BUILD FINAL CART
 # ============================================================
 
 cart_rows = []
@@ -689,6 +798,7 @@ for ingredient in sorted(
     info = ingredient_prices.get(
         ingredient
     )
+
 
     if info is None:
 
@@ -742,13 +852,13 @@ remaining_budget = (
 
 
 # ============================================================
-# 18. OUTPUT
+# 22. OUTPUT MENU
 # ============================================================
 
 print("\n" + "=" * 70)
 
 print(
-    "NUTRIPLAN — FAST BUDGET OPTIMIZER"
+    "NUTRIPLAN — CLEAN BUDGET OPTIMIZER"
 )
 
 print("=" * 70)
@@ -790,13 +900,18 @@ for index, (_, recipe) in enumerate(
     )
 
     print(
+        f"   Category quality: "
+        f"{recipe['category_score']:.2f}"
+    )
+
+    print(
         f"   Score: "
         f"{recipe['score']:.3f}"
     )
 
 
 # ============================================================
-# 19. CART
+# 23. OUTPUT CART
 # ============================================================
 
 print(
@@ -820,7 +935,7 @@ print(
 
 
 # ============================================================
-# 20. SUMMARY
+# 24. SUMMARY
 # ============================================================
 
 matched_count = (
@@ -885,13 +1000,21 @@ print(
 )
 
 
-print(
-    "\n✅ MENU SELECTED WITHIN BUDGET"
-)
+if current_cost <= WEEKLY_BUDGET:
+
+    print(
+        "\n✅ MENU SELECTED WITHIN BUDGET"
+    )
+
+else:
+
+    print(
+        "\n❌ MENU OVER BUDGET"
+    )
 
 
 # ============================================================
-# 21. NUTRITION
+# 25. NUTRITION SUMMARY
 # ============================================================
 
 print(
@@ -924,7 +1047,62 @@ print(
 
 
 # ============================================================
-# 22. SAVE
+# 26. QUALITY CHECK
+# ============================================================
+
+print(
+    "\n=== QUALITY CHECK ==="
+)
+
+
+forbidden_found = []
+
+
+for _, recipe in weekly_recipes.iterrows():
+
+    recipe_forbidden = [
+        ingredient
+        for ingredient
+        in recipe[
+            "normalized_ingredients"
+        ]
+        if ingredient
+        in forbidden_ingredients
+    ]
+
+
+    if recipe_forbidden:
+
+        forbidden_found.append(
+            {
+                "recipe":
+                    recipe["Name"],
+
+                "ingredients":
+                    recipe_forbidden,
+            }
+        )
+
+
+if not forbidden_found:
+
+    print(
+        "✅ No forbidden alcohol ingredients found."
+    )
+
+else:
+
+    print(
+        "❌ Forbidden ingredients detected:"
+    )
+
+    print(
+        forbidden_found
+    )
+
+
+# ============================================================
+# 27. SAVE
 # ============================================================
 
 weekly_recipes[
@@ -937,22 +1115,33 @@ weekly_recipes[
         "CarbohydrateContent",
         "FatContent",
         "coverage",
+        "category_score",
         "score",
     ]
 ].to_csv(
     "notebooks/"
-    "jose_budget_optimized_menu.csv",
+    "jose_clean_budget_menu.csv",
     index=False,
 )
 
 
 cart.to_csv(
     "notebooks/"
-    "jose_budget_optimized_cart.csv",
+    "jose_clean_budget_cart.csv",
     index=False,
 )
 
 
 print(
-    "\nFiles saved."
+    "\n=== FILES SAVED ==="
+)
+
+print(
+    "notebooks/"
+    "jose_clean_budget_menu.csv"
+)
+
+print(
+    "notebooks/"
+    "jose_clean_budget_cart.csv"
 )
