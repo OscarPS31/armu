@@ -1,2 +1,4 @@
 .python_version
 raw_data/
+*.ipynb
+.DS_Store
