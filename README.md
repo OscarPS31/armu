@@ -19,7 +19,7 @@ Armu genera un menú semanal personalizado según las preferencias del usuario (
 
 ## 📊 Datos
 
-- **Recetas**: dataset de [Food.com](https://www.kaggle.com/datasets/realalexanderwei/food-com-recipes-with-ingredients-and-tags) (~20,500 recetas con ingredientes, pasos, tags de dieta y tiempo de preparación).
+- **Recetas**: dataset de [Food.com](https://www.kaggle.com/datasets/realalexanderwei/food-com-recipes-with-ingredients-and-tags) (~500,436 recetas con ingredientes, pasos, tags de dieta y tiempo de preparación).
 - **Precios de supermercado**: [Quién es Quién en los Precios (PROFECO)](https://datos.profeco.gob.mx/datos_abiertos/qqp.php).
 
 ## 🛠️ Stack técnico
