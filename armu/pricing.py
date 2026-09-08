@@ -8,14 +8,24 @@ from armu.ingredient_matching import (
 
 
 # ============================================================
+# CONFIG
+# ============================================================
+
+DEFAULT_PROFECO_PATH = (
+    "data/profeco_mvp.csv.gz"
+)
+
+
+# ============================================================
 # LOAD PROFECO
 # ============================================================
 
 def load_profeco_prices(
-    path="raw_data/07-2026_Q2.csv",
+    path=DEFAULT_PROFECO_PATH,
 ):
     """
-    Load and prepare the PROFECO dataset.
+    Load and prepare the reduced PROFECO dataset
+    used by the NutriPlan MVP.
     """
 
     prices = pd.read_csv(
@@ -63,8 +73,8 @@ def find_profeco_price(
     prices,
 ):
     """
-    Find a PROFECO product and median price
-    for a given recipe ingredient.
+    Find a PROFECO match and price statistics
+    for one recipe ingredient.
     """
 
     original = ingredient
@@ -92,6 +102,7 @@ def find_profeco_price(
         }
 
     for term in search_terms:
+
         term_normalized = (
             normalize_text(term)
         )
