@@ -1,2 +1,6 @@
 .python_version
 raw_data/
+*.ipynb
+.DS_store
+__pycache__/
+*.pyc
