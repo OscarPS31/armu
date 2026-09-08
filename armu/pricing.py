@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 
 from armu.ingredient_matching import (
@@ -8,11 +10,15 @@ from armu.ingredient_matching import (
 
 
 # ============================================================
-# CONFIG
+# PATHS
 # ============================================================
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
 DEFAULT_PROFECO_PATH = (
-    "data/profeco_mvp.csv.gz"
+    PROJECT_ROOT
+    / "data"
+    / "profeco_mvp.csv.gz"
 )
 
 
@@ -21,12 +27,24 @@ DEFAULT_PROFECO_PATH = (
 # ============================================================
 
 def load_profeco_prices(
-    path=DEFAULT_PROFECO_PATH,
+    path=None,
 ):
     """
-    Load and prepare the reduced PROFECO dataset
-    used by the NutriPlan MVP.
+    Load and prepare the reduced PROFECO dataset.
+
+    Uses a path relative to the project root so it works
+    both locally and on Streamlit Community Cloud.
     """
+
+    if path is None:
+        path = DEFAULT_PROFECO_PATH
+
+    path = Path(path)
+
+    if not path.exists():
+        raise FileNotFoundError(
+            f"PROFECO dataset not found at: {path}"
+        )
 
     prices = pd.read_csv(
         path,
@@ -46,9 +64,7 @@ def load_profeco_prices(
         "presentacion",
         "categoria",
     ]:
-        prices[
-            f"{column}_normalized"
-        ] = (
+        prices[f"{column}_normalized"] = (
             prices[column]
             .apply(normalize_text)
         )
@@ -83,10 +99,8 @@ def find_profeco_price(
         ingredient
     )
 
-    search_terms = (
-        get_profeco_search_terms(
-            ingredient
-        )
+    search_terms = get_profeco_search_terms(
+        ingredient
     )
 
     if not search_terms:
@@ -103,8 +117,8 @@ def find_profeco_price(
 
     for term in search_terms:
 
-        term_normalized = (
-            normalize_text(term)
+        term_normalized = normalize_text(
+            term
         )
 
         matches = prices[

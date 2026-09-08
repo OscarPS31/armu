@@ -9,12 +9,12 @@ class NutriPlanMatcher:
     Public interface for ingredient -> PROFECO matching.
 
     The PROFECO dataset is loaded once when the matcher
-    is created, so multiple ingredient searches are faster.
+    is created, so multiple searches are faster.
     """
 
     def __init__(
         self,
-        profeco_path="raw_data/07-2026_Q2.csv",
+        profeco_path=None,
     ):
         print("Loading PROFECO dataset...")
 
@@ -71,7 +71,7 @@ class NutriPlanMatcher:
         an estimated shopping cart total.
 
         Current MVP assumption:
-        one median-priced package/product
+        one median-priced product/package
         per unique normalized ingredient.
         """
 
@@ -86,10 +86,8 @@ class NutriPlanMatcher:
 
         for result in results:
 
-            if (
-                result["status"]
-                != "MATCHED"
-            ):
+            if result["status"] != "MATCHED":
+
                 unmatched.append(
                     result
                 )
@@ -102,10 +100,8 @@ class NutriPlanMatcher:
             ]
 
 
-            if (
-                normalized
-                not in unique_products
-            ):
+            if normalized not in unique_products:
+
                 unique_products[
                     normalized
                 ] = result
@@ -124,15 +120,19 @@ class NutriPlanMatcher:
 
         return {
             "cart": cart,
+
             "total": round(
                 total,
                 2,
             ),
+
             "matched_products": len(
                 cart
             ),
+
             "unmatched_products": len(
                 unmatched
             ),
+
             "unmatched": unmatched,
         }
