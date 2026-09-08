@@ -3,12 +3,20 @@ import streamlit as st
 from armu.pipeline import NutriPlanMatcher
 
 
+# ============================================================
+# PAGE CONFIG
+# ============================================================
+
 st.set_page_config(
     page_title="NutriPlan",
     page_icon="🥗",
     layout="centered",
 )
 
+
+# ============================================================
+# LOAD MATCHER
+# ============================================================
 
 @st.cache_resource
 def load_matcher():
@@ -18,45 +26,70 @@ def load_matcher():
 matcher = load_matcher()
 
 
+# ============================================================
+# HEADER
+# ============================================================
+
 st.title("🥗 NutriPlan")
 
 st.write(
-    "Convierte ingredientes de recetas en productos "
-    "encontrados en PROFECO y estima su costo."
+    "Escribe ingredientes en español o inglés. "
+    "NutriPlan los normaliza, los conecta con productos "
+    "de PROFECO y estima el costo del carrito."
 )
-
 
 st.divider()
 
 
-st.subheader("Ingresa tus ingredientes")
+# ============================================================
+# INGREDIENT INPUT
+# ============================================================
+
+st.subheader(
+    "Ingresa tus ingredientes en español o inglés"
+)
 
 
 ingredients_text = st.text_area(
     "Escribe un ingrediente por línea",
     value=(
-        "roasting chickens\n"
-        "onions\n"
-        "garlic cloves\n"
-        "tomatoes\n"
-        "olive oil"
+        "pollo\n"
+        "cebolla\n"
+        "ajo\n"
+        "jitomate\n"
+        "aceite de oliva"
     ),
     height=180,
+    placeholder=(
+        "Ejemplo:\n"
+        "pollo\n"
+        "cebolla\n"
+        "ajo\n"
+        "jitomate"
+    ),
 )
 
 
+# ============================================================
+# CREATE CART
+# ============================================================
+
 if st.button(
-    "Crear carrito",
+    "🛒 Crear carrito",
     type="primary",
+    use_container_width=True,
 ):
 
     ingredients = [
         ingredient.strip()
-        for ingredient
-        in ingredients_text.splitlines()
+        for ingredient in ingredients_text.splitlines()
         if ingredient.strip()
     ]
 
+
+    # --------------------------------------------------------
+    # EMPTY INPUT
+    # --------------------------------------------------------
 
     if not ingredients:
 
@@ -64,10 +97,15 @@ if st.button(
             "Escribe al menos un ingrediente."
         )
 
+
     else:
 
+        # ----------------------------------------------------
+        # RUN MATCHING
+        # ----------------------------------------------------
+
         with st.spinner(
-            "Buscando precios en PROFECO..."
+            "Buscando productos y precios en PROFECO..."
         ):
 
             result = (
@@ -78,13 +116,18 @@ if st.button(
 
 
         st.success(
-            "Carrito generado"
+            "✅ Carrito generado correctamente"
         )
 
 
-        # ==============================================
+        # ====================================================
         # SUMMARY
-        # ==============================================
+        # ====================================================
+
+        st.subheader(
+            "Resumen"
+        )
+
 
         col1, col2, col3 = st.columns(3)
 
@@ -96,7 +139,7 @@ if st.button(
 
 
         col2.metric(
-            "Productos encontrados",
+            "Encontrados",
             result["matched_products"],
         )
 
@@ -107,12 +150,12 @@ if st.button(
         )
 
 
-        # ==============================================
-        # CART
-        # ==============================================
+        # ====================================================
+        # SHOPPING CART
+        # ====================================================
 
         st.subheader(
-            "🛒 Carrito"
+            "🛒 Carrito estimado"
         )
 
 
@@ -125,12 +168,12 @@ if st.button(
 
                 cart_table.append(
                     {
-                        "Ingrediente":
+                        "Ingrediente original":
                             item[
                                 "ingredient"
                             ],
 
-                        "Normalizado":
+                        "Ingrediente normalizado":
                             item[
                                 "normalized"
                             ],
@@ -140,19 +183,33 @@ if st.button(
                                 "matched_term"
                             ],
 
-                        "Precio mediano":
-                            item[
-                                "median_price"
-                            ],
+                        "Precio mediano (MXN)":
+                            round(
+                                item[
+                                    "median_price"
+                                ],
+                                2,
+                            ),
 
-                        "Precio mínimo":
-                            item[
-                                "min_price"
-                            ],
+                        "Precio mínimo (MXN)":
+                            round(
+                                item[
+                                    "min_price"
+                                ],
+                                2,
+                            ),
 
-                        "Precio máximo":
+                        "Precio máximo (MXN)":
+                            round(
+                                item[
+                                    "max_price"
+                                ],
+                                2,
+                            ),
+
+                        "Coincidencias PROFECO":
                             item[
-                                "max_price"
+                                "matches"
                             ],
                     }
                 )
@@ -165,9 +222,28 @@ if st.button(
             )
 
 
-        # ==============================================
-        # UNMATCHED
-        # ==============================================
+        # ====================================================
+        # MATCH DETAILS
+        # ====================================================
+
+        st.subheader(
+            "🔎 Matching"
+        )
+
+
+        for item in result["cart"]:
+
+            st.write(
+                f"**{item['ingredient']}**"
+                f" → `{item['normalized']}`"
+                f" → **{item['matched_term']}**"
+                f" → ${item['median_price']:.2f} MXN"
+            )
+
+
+        # ====================================================
+        # UNMATCHED INGREDIENTS
+        # ====================================================
 
         if result["unmatched"]:
 
@@ -176,24 +252,81 @@ if st.button(
             )
 
 
-            for item in result[
-                "unmatched"
-            ]:
+            st.write(
+                "Estos ingredientes todavía no tienen "
+                "una regla de matching disponible:"
+            )
+
+
+            for item in result["unmatched"]:
 
                 st.write(
-                    "-",
-                    item["ingredient"],
+                    f"- {item['ingredient']}"
                 )
 
 
-        # ==============================================
-        # DISCLAIMER
-        # ==============================================
+        # ====================================================
+        # COVERAGE
+        # ====================================================
+
+        total_input = (
+            result["matched_products"]
+            + result["unmatched_products"]
+        )
+
+
+        if total_input > 0:
+
+            coverage = (
+                result["matched_products"]
+                / total_input
+                * 100
+            )
+
+        else:
+
+            coverage = 0
+
+
+        st.subheader(
+            "📊 Cobertura"
+        )
+
+
+        st.progress(
+            min(
+                coverage / 100,
+                1.0,
+            )
+        )
+
+
+        st.write(
+            f"{coverage:.1f}% de los ingredientes "
+            "fueron encontrados."
+        )
+
+
+        # ====================================================
+        # MVP EXPLANATION
+        # ====================================================
 
         st.info(
-            "MVP: el costo representa el precio "
-            "mediano de un producto o presentación "
-            "PROFECO por ingrediente único. "
-            "Todavía no calcula cantidades "
-            "proporcionales por receta."
+            "MVP: el costo representa el precio mediano "
+            "de una presentación o producto de PROFECO "
+            "por ingrediente único. "
+            "Todavía no calcula cantidades exactas "
+            "consumidas por receta."
         )
+
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.divider()
+
+st.caption(
+    "NutriPlan MVP — Matching bilingüe de ingredientes "
+    "y estimación de precios con datos de PROFECO."
+)

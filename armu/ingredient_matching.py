@@ -35,6 +35,10 @@ def normalize_text(value):
 # ============================================================
 
 INGREDIENT_ALIASES = {
+    # --------------------------------------------------------
+    # ENGLISH VARIANTS -> CANONICAL INTERNAL NAME
+    # --------------------------------------------------------
+
     "real vanilla": "vanilla",
     "pure vanilla": "vanilla",
     "vanilla extract": "vanilla",
@@ -51,8 +55,94 @@ INGREDIENT_ALIASES = {
 
     "roast beef": "beef",
 
-    # Current known cleanup
+    "roasting chicken": "chicken",
     "roasting chickens": "chicken",
+    "chicken breast": "chicken",
+    "chicken breasts": "chicken",
+
+    # --------------------------------------------------------
+    # SPANISH -> CANONICAL INTERNAL NAME
+    # --------------------------------------------------------
+
+    "sal": "salt",
+
+    "azucar": "sugar",
+
+    "mantequilla": "butter",
+    "margarina": "margarine",
+
+    "huevo": "egg",
+    "huevos": "egg",
+
+    "harina": "flour",
+
+    "leche": "milk",
+
+    "cebolla": "onion",
+    "cebollas": "onion",
+
+    "ajo": "garlic",
+    "ajos": "garlic",
+
+    "jitomate": "tomato",
+    "jitomates": "tomato",
+    "tomate": "tomato",
+    "tomates": "tomato",
+
+    "zanahoria": "carrot",
+    "zanahorias": "carrot",
+
+    "apio": "celery",
+
+    "papa": "potatoes",
+    "papas": "potatoes",
+    "patata": "potatoes",
+    "patatas": "potatoes",
+
+    "calabaza": "zucchini",
+    "calabacita": "zucchini",
+    "calabacitas": "zucchini",
+
+    "champinon": "mushroom",
+    "champinones": "mushroom",
+    "hongo": "mushroom",
+    "hongos": "mushroom",
+
+    "aceite de oliva": "olive oil",
+
+    "vinagre": "vinegar",
+
+    "salsa de soya": "soy sauce",
+    "salsa de soja": "soy sauce",
+
+    "mayonesa": "mayonnaise",
+
+    "limon": "lemon",
+    "limones": "lemon",
+
+    "naranja": "orange",
+    "naranjas": "orange",
+
+    "manzana": "apples",
+    "manzanas": "apples",
+
+    "pollo": "chicken",
+    "carne de pollo": "chicken",
+    "carne pollo": "chicken",
+
+    "res": "beef",
+    "carne de res": "beef",
+    "carne res": "beef",
+
+    "tocino": "bacon",
+
+    "arroz": "rice",
+
+    "miel": "honey",
+
+    "vainilla": "vanilla",
+
+    "queso crema": "cream cheese",
 }
 
 
@@ -80,7 +170,6 @@ INGREDIENT_RULES = {
     "zucchini": ["calabaza"],
 
     "mushroom": ["champinones"],
-    "mushrooms": ["champinones"],
 
     "olive oil": ["aceite de oliva"],
     "vinegar": ["vinagre"],
@@ -98,6 +187,7 @@ INGREDIENT_RULES = {
     "rice": ["arroz"],
     "honey": ["miel"],
     "vanilla": ["vainilla"],
+
     "cream cheese": ["queso crema"],
 }
 
@@ -108,13 +198,21 @@ INGREDIENT_RULES = {
 
 def normalize_ingredient(value):
     """
-    Convert an ingredient to its canonical internal name.
+    Convert an ingredient in English or Spanish
+    to its canonical internal name.
 
-    Example:
+    Examples:
+
         roast beef -> beef
-        eggs -> egg
+        carne de res -> beef
+
         roasting chickens -> chicken
+        pollo -> chicken
+
+        onions -> onion
+        cebolla -> onion
     """
+
     value = normalize_text(value)
 
     return INGREDIENT_ALIASES.get(
@@ -125,12 +223,18 @@ def normalize_ingredient(value):
 
 def get_profeco_search_terms(ingredient):
     """
-    Return the PROFECO terms associated with an ingredient.
+    Return PROFECO search terms associated
+    with an ingredient.
 
-    Example:
+    Examples:
+
         chicken -> ["carne pollo"]
+        pollo -> ["carne pollo"]
+
         beef -> ["carne res"]
+        carne de res -> ["carne res"]
     """
+
     normalized = normalize_ingredient(
         ingredient
     )
@@ -143,9 +247,10 @@ def get_profeco_search_terms(ingredient):
 
 def ingredient_is_supported(ingredient):
     """
-    Return True when the ingredient currently has
-    a PROFECO matching rule.
+    Return True when the ingredient currently
+    has a PROFECO matching rule.
     """
+
     normalized = normalize_ingredient(
         ingredient
     )
@@ -155,8 +260,8 @@ def ingredient_is_supported(ingredient):
 
 def get_matching_info(ingredient):
     """
-    Return basic ingredient matching information
-    without loading PROFECO yet.
+    Return basic bilingual matching information
+    without querying PROFECO.
     """
 
     original = ingredient
@@ -165,10 +270,8 @@ def get_matching_info(ingredient):
         ingredient
     )
 
-    search_terms = (
-        get_profeco_search_terms(
-            ingredient
-        )
+    search_terms = get_profeco_search_terms(
+        ingredient
     )
 
     return {
