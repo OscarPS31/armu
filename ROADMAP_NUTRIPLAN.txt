@@ -1,0 +1,595 @@
+NUTRIPLAN - HOJA DE RUTA DEL PROYECTO
+=====================================
+
+VISION DEL PRODUCTO
+-------------------
+
+NutriPlan ayuda a una persona a decidir que comer durante la semana considerando:
+
+- Preferencias alimentarias
+- Restricciones y alergias
+- Objetivo nutricional
+- Tiempo disponible para cocinar
+- Presupuesto semanal
+
+Flujo general:
+
+Usuario
+  ↓
+Preferencias + restricciones + objetivo + presupuesto
+  ↓
+Filtrado de recetas
+  ↓
+Ranking / recomendacion
+  ↓
+Optimizacion del menu semanal
+  ↓
+Ingredientes necesarios
+  ↓
+Matching con productos PROFECO
+  ↓
+Estimacion del carrito
+  ↓
+Menu + recetas + carrito + costo
+
+
+============================================================
+FASE 1 - PREPARACION DE DATOS
+============================================================
+
+Objetivo:
+Tener datasets limpios y utilizables por todos los modulos.
+
+Tareas:
+
+[OK] Cargar dataset Food.com
+[OK] Explorar recetas y nutricion
+[OK] Explorar reviews y ratings
+[OK] Cargar dataset PROFECO
+[OK] Seleccionar columnas necesarias
+[OK] Detectar valores faltantes
+[EN CURSO] Detectar y limpiar outliers nutricionales
+[EN CURSO] Normalizar categorias
+[PENDIENTE] Crear dataset limpio final
+
+Entregables:
+
+- Dataset limpio de recetas
+- Dataset limpio de precios PROFECO
+
+
+============================================================
+FASE 2 - PERFIL DEL USUARIO
+============================================================
+
+Objetivo:
+Convertir las preferencias del usuario en variables que el sistema pueda usar.
+
+Inputs propuestos:
+
+- Tipo de comida
+- Ingredientes que le gustan
+- Ingredientes que no le gustan
+- Alergias
+- Restricciones alimentarias
+- Objetivo nutricional
+- Tiempo maximo disponible
+- Presupuesto semanal
+
+Ejemplo:
+
+Preferencia: mexicana / picante
+Restriccion: sin lacteos
+Objetivo: alimentacion equilibrada
+Tiempo maximo: 30 minutos
+Presupuesto: $800 MXN
+
+Entregable:
+
+- Perfil estructurado del usuario
+
+
+============================================================
+FASE 3 - FILTRO DE RESTRICCIONES
+============================================================
+
+Objetivo:
+Eliminar recetas que el usuario no puede o no quiere consumir.
+
+Filtros:
+
+- Alergias
+- Ingredientes prohibidos
+- Preferencias personales
+- Alcohol
+- Tiempo maximo
+- Calorias minimas y maximas
+
+Ejemplo:
+
+Usuario dairy-free
+  ↓
+Eliminar recetas con:
+milk
+cream
+cheese
+butter
+etc.
+
+Entregable:
+
+- candidate_recipes
+
+
+============================================================
+FASE 4 - MOTOR DE RECOMENDACION
+============================================================
+
+Objetivo:
+Ordenar las recetas candidatas segun que tan adecuadas son para el usuario.
+
+Variables iniciales:
+
+- Preferencias
+- Rating
+- Numero de reviews
+- Proteina
+- Calorias
+- Categoria
+- Tiempo
+- Cobertura de precios PROFECO
+
+Score inicial:
+
+recommendation_score =
+    preference_score
+    + nutrition_score
+    + rating_score
+    + category_score
+
+Entregable:
+
+- Top N recetas recomendadas
+
+
+============================================================
+FASE 5 - MATCHING INGREDIENTES <-> PROFECO
+============================================================
+
+Objetivo:
+Conectar ingredientes de recetas en ingles con productos reales del dataset PROFECO.
+
+Ejemplo:
+
+"roast beef"
+  ↓
+normalizacion
+  ↓
+"beef"
+  ↓
+alias / traduccion
+  ↓
+"carne res"
+  ↓
+PROFECO
+  ↓
+precio
+
+Ya implementado:
+
+[OK] Normalizacion de texto
+[OK] Eliminacion de acentos
+[OK] Aliases
+[OK] Traducciones
+[OK] Matching
+[OK] Precio mediano
+[OK] Busqueda sobre producto + presentacion + categoria
+
+Estado:
+MVP funcional.
+
+
+============================================================
+FASE 6 - CARRITO DE COMPRA
+============================================================
+
+Objetivo:
+Transformar varias recetas en una lista de compras.
+
+Flujo:
+
+Receta 1
+Receta 2
+Receta 3
+Receta 4
+Receta 5
+   ↓
+Ingredientes
+   ↓
+Normalizacion
+   ↓
+Eliminar duplicados
+   ↓
+PROFECO
+   ↓
+Carrito estimado
+
+Output actual:
+
+- ingredient
+- matched_term
+- median_price
+- status
+
+Estado:
+MVP funcional.
+
+
+============================================================
+FASE 7 - OPTIMIZACION DE PRESUPUESTO
+============================================================
+
+Objetivo:
+Que NutriPlan seleccione recetas considerando el presupuesto desde el principio.
+
+La logica actual considera:
+
+- Coverage
+- Proteina
+- Rating
+- Categoria
+- Precio
+- Variedad
+- Presupuesto
+
+Resultado actual de prueba:
+
+Presupuesto semanal: $800 MXN
+Recetas seleccionadas: 5
+Categorias distintas: 5
+Carrito estimado: $717.70 MXN
+Presupuesto restante: $82.30 MXN
+
+Resultado:
+Menu dentro del presupuesto.
+
+Estado:
+Primera version funcional.
+
+
+============================================================
+FASE 8 - MEJORAR MATCHING
+============================================================
+
+Objetivo:
+Aumentar la cobertura y confianza del matching de ingredientes.
+
+Ejemplos de aliases pendientes:
+
+roasting chickens -> chicken
+chicken breasts -> chicken
+green onions -> onion
+fresh tomatoes -> tomato
+etc.
+
+Separar tipos de match:
+
+- exact
+- synonym
+- broad
+- unmatched
+
+Objetivo aproximado:
+
+85% - 90% de ingredientes comunes con match confiable.
+
+
+============================================================
+FASE 9 - COSTOS MAS REALISTAS
+============================================================
+
+Limitacion actual:
+
+El MVP estima principalmente el costo de comprar un producto o paquete,
+no el costo exacto de la cantidad consumida en la receta.
+
+Ejemplo futuro:
+
+500 g chicken
+250 ml milk
+2 onions
+
+  ↓
+
+Conversion de unidades
+
+  ↓
+
+Comparacion con presentaciones PROFECO
+
+  ↓
+
+Costo proporcional real
+
+Objetivo:
+
+Mejorar la precision del costo por receta y del carrito semanal.
+
+
+============================================================
+FASE 10 - MENU SEMANAL INTELIGENTE
+============================================================
+
+Objetivo:
+Asignar las recetas a dias concretos.
+
+Ejemplo:
+
+Lunes:
+Chicken
+
+Martes:
+Fish
+
+Miercoles:
+Vegetable
+
+Jueves:
+Meat
+
+Viernes:
+Pork
+
+Version futura:
+
+- Desayuno
+- Comida
+- Cena
+
+Para el MVP:
+Una comida principal por dia es suficiente.
+
+
+============================================================
+FASE 11 - RECETAS PASO A PASO
+============================================================
+
+Objetivo:
+Mostrar al usuario toda la informacion necesaria para cocinar.
+
+Cada receta podria mostrar:
+
+- Nombre
+- Imagen
+- Calorias
+- Proteina
+- Tiempo
+- Ingredientes
+- Instrucciones
+- Costo estimado
+
+
+============================================================
+FASE 12 - MODULARIZACION DEL BACKEND
+============================================================
+
+Objetivo:
+Mover la logica estable fuera de notebooks y convertirla en modulos reutilizables.
+
+Estructura propuesta:
+
+armu/
+|
+|-- data.py
+|-- preprocessing.py
+|-- recommendation.py
+|-- ingredient_matching.py
+|-- pricing.py
+|-- optimizer.py
+|-- pipeline.py
+
+Funcion final propuesta:
+
+generate_weekly_plan(
+    preferences,
+    restrictions,
+    budget
+)
+
+Output esperado:
+
+{
+    "menu": ...,
+    "shopping_cart": ...,
+    "total_cost": ...,
+    "remaining_budget": ...
+}
+
+
+============================================================
+FASE 13 - API
+============================================================
+
+Objetivo:
+Exponer el pipeline para que pueda ser consumido por una interfaz.
+
+Tecnologia propuesta:
+
+FastAPI
+
+Endpoint:
+
+POST /recommend
+
+Ejemplo de input:
+
+{
+  "budget": 800,
+  "max_time": 30,
+  "goal": "balanced",
+  "allergies": ["dairy"],
+  "preferences": ["mexican"]
+}
+
+Output:
+
+- weekly_menu
+- shopping_cart
+- nutrition
+- estimated_cost
+
+
+============================================================
+FASE 14 - INTERFAZ
+============================================================
+
+Objetivo:
+Crear un demo simple y claro.
+
+Tecnologia sugerida:
+
+Streamlit
+
+Pantalla 1:
+Inputs del usuario
+
+- Que quieres comer?
+- Que ingredientes no consumes?
+- Cual es tu objetivo?
+- Cuanto tiempo tienes?
+- Cuanto quieres gastar?
+
+Pantalla 2:
+Tu menu de esta semana
+
+Pantalla 3:
+Tu carrito
+
+Ejemplo:
+
+Total: $717.70
+Presupuesto: $800.00
+Restante: $82.30
+
+
+============================================================
+FASE 15 - METRICAS
+============================================================
+
+Metricas del recomendador:
+
+- Recipe coverage
+- Rating promedio
+- Diversidad de categorias
+- Proteina promedio
+- Calorias promedio
+
+Metricas del matching:
+
+- Porcentaje de ingredientes encontrados en PROFECO
+- Confidence del matching
+- Ingredientes unmatched
+
+Metricas de optimizacion:
+
+- Porcentaje de menus dentro del presupuesto
+- Costo promedio
+- Presupuesto restante
+- Score promedio del menu
+
+
+============================================================
+FASE 16 - DEMO FINAL
+============================================================
+
+Ejemplo:
+
+Usuario:
+
+Quiero comida equilibrada
+Sin lacteos
+Maximo 30 minutos
+Presupuesto: $800 MXN
+
+NutriPlan:
+
+Usuario
+  ↓
+522k recetas
+  ↓
+Restricciones
+  ↓
+Ranking
+  ↓
+Optimizacion
+  ↓
+PROFECO
+  ↓
+Carrito
+
+Output:
+
+- 5 comidas
+- Informacion nutricional
+- Recetas
+- Lista de compras
+- Carrito estimado
+- Costo total <= presupuesto
+
+
+============================================================
+PRIORIDAD PROPUESTA PARA EL EQUIPO
+============================================================
+
+1. Consolidar limpieza de datos
+2. Perfil y restricciones del usuario
+3. Motor de recomendacion
+4. Mejorar matching PROFECO
+5. Consolidar optimizacion de presupuesto
+6. Modularizar codigo
+7. Crear API
+8. Crear interfaz Streamlit
+9. Evaluar metricas
+10. Preparar demo y pitch
+
+
+============================================================
+ESTADO ACTUAL APROXIMADO
+============================================================
+
+DATA                 70%
+RECOMMENDER          40%
+MATCHING PROFECO     80%
+SHOPPING CART        80%
+BUDGET OPTIMIZER     70%
+BACKEND               20%
+INTERFACE              0%
+API                    0%
+DEMO                  20%
+
+
+============================================================
+PROPUESTA CENTRAL
+============================================================
+
+La prioridad debe ser construir un pipeline completo y funcional de
+extremo a extremo, antes de agregar complejidad innecesaria.
+
+Usuario
+  ↓
+Recetas
+  ↓
+Recomendacion
+  ↓
+Optimizacion
+  ↓
+PROFECO
+  ↓
+Carrito
+  ↓
+Demo
+
+La meta es tener un producto demostrable donde un usuario pueda ingresar
+sus preferencias, restricciones y presupuesto, y NutriPlan devuelva un
+menu semanal personalizado con informacion nutricional y un carrito
+estimado que respete su presupuesto.
