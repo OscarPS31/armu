@@ -11,7 +11,7 @@ class IngredientLine(BaseModel):
     canonical_id: str
     name_es: str
     grams: float | None = None
-    cost: float = 0.0
+    cost: float
     in_pantry: bool = False
     is_free: bool = False
     priced: bool = True
@@ -21,8 +21,8 @@ class RecipeResult(BaseModel):
     name: str
     calories: float | None = None
     servings: int | None = None
-    total_cost: float
-    missing_cost: float
+    total_cost: float #precio que cuesta la receta completa
+    missing_cost: float #precio que se va a gastar el cliente (descontar cuando in_pantry/is_free = True)
     coverage: float
     ingredients: list[IngredientLine]
 
