@@ -6,12 +6,15 @@ egg,Huevo,42.0,presentacion,Chedraui
 garlic,Ajo,80.0,kg,Mercado Adolfo Lopez Mateos
 onion,Cebolla,25.0,manojo,Central de Abasto
 flour,Harina de Trigo,19.0,kg,Bodega Aurrera
+water,Agua Sin Gas,17.49,litro,S Mart
 olive oil,Aceite de Oliva,219.0,ml,Hipermercado Soriana
 milk,Leche Pasteurizada,33.5,litro,Sumesa
 vanilla,Vainilla,27.9,ml,Hipermercado Soriana
 pepper,Pimienta,86.5,g,Hipermercado Soriana
 lemon juice,Limón,32.0,kg,Soriana Express
 baking powder,Polvo P/hornear,19.9,g,Hipermercado Soriana
+baking soda,Polvo P/hornear,19.9,g,Hipermercado Soriana
+parmesan cheese,Queso Cotija,155.0,kg,Chedraui
 carrot,Zanahoria,16.9,kg,Hipermercado Soriana
 cinnamon,Canela,49.9,g,Hipermercado Soriana
 black pepper,Pimienta,86.5,g,Hipermercado Soriana
@@ -25,3 +28,4 @@ celery,Apio,32.9,kg,La Comer
 honey,Miel de Abeja,90.0,g,Sumesa
 soy sauce,Salsa de Soya,25.0,ml,Wal-mart
 mayonnaise,Mayonesa,49.9,g,Mercado Soriana
+cheddar cheese,Queso Chihuahua,125.0,g,Wal-mart

@@ -10,9 +10,11 @@ PROFECO_PATH = "data/profeco_clean.csv"
 
 OUTPUT_PATH = "data/ingredient_prices.csv"
 
+REPORT_PATH = "data/ingredient_prices_report.txt"
+
 
 # ============================================================
-# TOP 30 INGREDIENTS FROM RECIPES
+# TOP 30 INGREDIENTS
 # ============================================================
 
 TOP_INGREDIENTS = [
@@ -50,12 +52,8 @@ TOP_INGREDIENTS = [
 
 
 # ============================================================
-# INGREDIENT -> PROFECO PRODUCT CANDIDATES
+# INGREDIENT -> PROFECO MAP
 # ============================================================
-
-# Multiple candidates are allowed.
-# The script will use the first product that actually exists
-# in the latest PROFECO dataset.
 
 INGREDIENT_TO_PROFECO = {
     "salt": [
@@ -87,8 +85,9 @@ INGREDIENT_TO_PROFECO = {
         "Harina de Trigo",
     ],
 
-    # Water is intentionally not forced to an unrelated product.
-    "water": [],
+    "water": [
+        "Agua Sin Gas",
+    ],
 
     "olive oil": [
         "Aceite de Oliva",
@@ -108,7 +107,6 @@ INGREDIENT_TO_PROFECO = {
         "Pimienta",
     ],
 
-    # Closest available basic ingredient.
     "lemon juice": [
         "Limon",
     ],
@@ -117,12 +115,14 @@ INGREDIENT_TO_PROFECO = {
         "Polvo P/hornear",
     ],
 
+    # Proxy: baking soda is not directly available
     "baking soda": [
-        "Bicarbonato de Sodio",
+        "Polvo P/hornear",
     ],
 
+    # Proxy: closest hard Mexican cheese
     "parmesan cheese": [
-        "Queso Parmesano",
+        "Queso Cotija",
     ],
 
     "carrot": [
@@ -150,7 +150,6 @@ INGREDIENT_TO_PROFECO = {
         "Margarina",
     ],
 
-    # Approximation: PROFECO may not distinguish green onion.
     "green onion": [
         "Cebolla",
     ],
@@ -160,7 +159,6 @@ INGREDIENT_TO_PROFECO = {
         "Queso Doble Crema",
     ],
 
-    # Approximation to the fresh ingredient if powder is unavailable.
     "garlic powder": [
         "Ajo",
     ],
@@ -181,9 +179,25 @@ INGREDIENT_TO_PROFECO = {
         "Mayonesa",
     ],
 
+    # Proxy: closest available cheese
     "cheddar cheese": [
-        "Queso Cheddar",
+        "Queso Chihuahua",
     ],
+}
+
+
+# ============================================================
+# MATCH TYPES
+# ============================================================
+
+MATCH_TYPE = {
+    "water": "equivalent",
+    "baking soda": "proxy",
+    "parmesan cheese": "proxy",
+    "green onion": "proxy",
+    "garlic powder": "proxy",
+    "cheddar cheese": "proxy",
+    "lemon juice": "proxy",
 }
 
 
@@ -214,12 +228,6 @@ def normalize_text(value):
 
 
 def infer_unit(presentation):
-    """
-    Convert PROFECO presentation text into a simplified unit.
-
-    This is intentionally conservative.
-    """
-
     text = normalize_text(
         presentation
     )
@@ -273,10 +281,6 @@ print(
 )
 
 
-# ============================================================
-# NORMALIZE PRODUCT NAMES
-# ============================================================
-
 df["producto_normalizado"] = (
     df["producto"]
     .apply(normalize_text)
@@ -284,12 +288,14 @@ df["producto_normalizado"] = (
 
 
 # ============================================================
-# FIND ONE PROFECO MATCH PER INGREDIENT
+# BUILD OUTPUT
 # ============================================================
 
 rows = []
 
 unmatched = []
+
+match_report = []
 
 
 for ingredient in TOP_INGREDIENTS:
@@ -316,7 +322,6 @@ for ingredient in TOP_INGREDIENTS:
             == product_normalized
         ].copy()
 
-
         if not matches.empty:
 
             selected_matches = matches
@@ -327,10 +332,6 @@ for ingredient in TOP_INGREDIENTS:
             break
 
 
-    # --------------------------------------------------------
-    # NO MATCH
-    # --------------------------------------------------------
-
     if selected_matches is None:
 
         unmatched.append(
@@ -340,18 +341,12 @@ for ingredient in TOP_INGREDIENTS:
         continue
 
 
-    # --------------------------------------------------------
-    # ROBUST PRICE
-    # --------------------------------------------------------
-
     median_price = (
         selected_matches["precio"]
         .median()
     )
 
 
-    # Find an actual row closest to the median so that
-    # store + presentation correspond to a real observation.
     selected_matches[
         "distance_to_median"
     ] = (
@@ -404,8 +399,20 @@ for ingredient in TOP_INGREDIENTS:
     )
 
 
+    match_report.append(
+        {
+            "ingredient": ingredient,
+            "profeco_category": selected_category,
+            "match_type": MATCH_TYPE.get(
+                ingredient,
+                "exact",
+            ),
+        }
+    )
+
+
 # ============================================================
-# BUILD FINAL DATAFRAME
+# FINAL DATAFRAME
 # ============================================================
 
 ingredient_prices = pd.DataFrame(
@@ -440,13 +447,115 @@ coverage = (
 
 
 # ============================================================
-# SAVE
+# SAVE CSV
 # ============================================================
 
 ingredient_prices.to_csv(
     OUTPUT_PATH,
     index=False,
 )
+
+
+# ============================================================
+# MATCH QUALITY SUMMARY
+# ============================================================
+
+match_report_df = pd.DataFrame(
+    match_report
+)
+
+exact_count = (
+    match_report_df[
+        "match_type"
+    ]
+    .eq("exact")
+    .sum()
+)
+
+equivalent_count = (
+    match_report_df[
+        "match_type"
+    ]
+    .eq("equivalent")
+    .sum()
+)
+
+proxy_count = (
+    match_report_df[
+        "match_type"
+    ]
+    .eq("proxy")
+    .sum()
+)
+
+
+# ============================================================
+# SAVE REPORT
+# ============================================================
+
+with open(
+    REPORT_PATH,
+    "w",
+    encoding="utf-8",
+) as f:
+
+    f.write(
+        "NutriPlan - Ingredient Prices Coverage Report\n"
+    )
+
+    f.write(
+        "=============================================\n\n"
+    )
+
+    f.write(
+        "Source:\n"
+    )
+
+    f.write(
+        "PROFECO QQP 2026 - 07-2026_Q2.csv\n\n"
+    )
+
+    f.write(
+        f"Top ingredients evaluated: {total}\n"
+    )
+
+    f.write(
+        f"Ingredients with price: {covered}\n"
+    )
+
+    f.write(
+        f"Coverage: {coverage:.1f}%\n\n"
+    )
+
+    f.write(
+        "Match quality:\n"
+    )
+
+    f.write(
+        f"- Exact: {exact_count}\n"
+    )
+
+    f.write(
+        f"- Equivalent: {equivalent_count}\n"
+    )
+
+    f.write(
+        f"- Proxy: {proxy_count}\n\n"
+    )
+
+    f.write(
+        "Proxy/equivalent mappings:\n"
+    )
+
+    for item in match_report:
+
+        if item["match_type"] != "exact":
+
+            f.write(
+                f"- {item['ingredient']} "
+                f"-> {item['profeco_category']} "
+                f"({item['match_type']})\n"
+            )
 
 
 # ============================================================
@@ -487,6 +596,23 @@ print(
 
 
 print(
+    "\n=== MATCH QUALITY ==="
+)
+
+print(
+    f"Exact: {exact_count}"
+)
+
+print(
+    f"Equivalent: {equivalent_count}"
+)
+
+print(
+    f"Proxy: {proxy_count}"
+)
+
+
+print(
     "\n=== UNMATCHED INGREDIENTS ==="
 )
 
@@ -523,4 +649,8 @@ print(
 
 print(
     OUTPUT_PATH
+)
+
+print(
+    REPORT_PATH
 )
