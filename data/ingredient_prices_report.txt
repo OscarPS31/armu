@@ -1,0 +1,45 @@
+NutriPlan - Ingredient Prices Coverage Report
+=============================================
+
+Source:
+PROFECO QQP 2026
+Latest file used:
+data/QQP_2026/07-2026_Q2.csv
+
+PROFECO cleaning:
+- Original rows: 744,623
+- Final rows after duplicate removal: 418,150
+- Unique products: 766
+- Null/zero prices removed: 0
+- Latest registration date: 2026-07-31
+
+Recipe ingredient analysis:
+- Recipes analyzed: 522,517
+- Unique ingredients detected: 7,282
+- Top ingredients evaluated: 30
+
+Price coverage:
+- Ingredients with PROFECO price: 26
+- Official coverage: 86.7%
+- Missing ingredients: 4
+
+Unmatched ingredients:
+- water
+- baking soda
+- parmesan cheese
+- cheddar cheese
+
+Note:
+Water was not forced to an unrelated grocery product.
+Baking soda, parmesan cheese, and cheddar cheese were not found
+in the latest PROFECO file under a defensible matching category.
+
+Delivery file:
+data/ingredient_prices.csv
+
+Columns:
+- ingredient
+- profeco_category
+- price
+- unit
+- store
