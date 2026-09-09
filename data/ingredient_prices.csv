@@ -1,31 +1,3506 @@
 ingredient,profeco_category,price,unit,store
-salt,Sal Molida de Mesa,28.0,kg,Hipermercado Soriana
-sugar,Azúcar,28.0,kg,Mercado Publico
-butter,Mantequilla,29.99,g,S Mart
-egg,Huevo,42.0,presentacion,Chedraui
+almonds,Almendras,398.67,kg,Alsuper
+almonds,Almendras,500.0,kg,Bodega Aurrera
+almonds,Almendras,200.0,kg,Central de Abasto
+almonds,Almendras,440.0,kg,Chedraui
+almonds,Almendras,440.0,kg,Chedraui Selecto
+almonds,Almendras,473.33,kg,City Market
+almonds,Almendras,440.0,kg,Farmacia Guadalajara
+almonds,Almendras,482.0,kg,Fresko la Comer
+almonds,Almendras,473.33,kg,H.e.b.
+almonds,Almendras,500.0,kg,Hipermercado Soriana
+almonds,Almendras,456.67,kg,La Comer
+almonds,Almendras,357.9,kg,Ley
+almonds,Almendras,486.67,kg,Mega Soriana
+almonds,Almendras,200.0,kg,Mercado Adolfo Lopez Mateos
+almonds,Almendras,220.0,kg,Mercado Central de Acapulco
+almonds,Almendras,220.0,kg,Mercado Emilio Sanchez Piedras
+almonds,Almendras,250.0,kg,Mercado Malibran
+almonds,Almendras,232.0,kg,Mercado Miguel Hidalgo
+almonds,Almendras,250.0,kg,Mercado Publico
+almonds,Almendras,230.0,kg,Mercado Publico 5 de Mayo
+almonds,Almendras,250.0,kg,Mercado el Meson Estrella
+almonds,Almendras,465.33,kg,Minisuper
+almonds,Almendras,419.99,kg,S Mart
+almonds,Almendras,486.67,kg,Soriana Super
+almonds,Almendras,440.0,kg,Sumesa
+almonds,Almendras,358.0,kg,Super Aki
+almonds,Almendras,486.67,kg,Super Chedraui
+almonds,Almendras,366.67,kg,Superissste
+almonds,Almendras,500.0,kg,Wal-mart
+almonds,Almendras,520.0,kg,Wal-mart Express
+apple,Manzana,49.9,kg,Alsuper
+apple,Manzana,49.9,kg,Alsuper Fresh Market
+apple,Manzana,42.9,kg,Aprecio
+apple,Manzana,40.0,kg,Bodega Aurrera
+apple,Manzana,38.0,kg,Bodega Aurrera Express
+apple,Manzana,50.0,kg,Central de Abasto
+apple,Manzana,48.0,kg,Chedraui
+apple,Manzana,46.25,kg,Chedraui Selecto
+apple,Manzana,89.9,kg,City Market
+apple,Manzana,80.0,kg,El Pitico
+apple,Manzana,49.9,kg,Fresko la Comer
+apple,Manzana,41.95,kg,H.e.b.
+apple,Manzana,53.1,kg,Hipermercado Soriana
+apple,Manzana,49.9,kg,La Comer
+apple,Manzana,49.9,kg,Ley
+apple,Manzana,52.9,kg,Ley Express
+apple,Manzana,49.5,kg,Mega Soriana
+apple,Manzana,80.0,kg,Mercado Adolfo Lopez Mateos
+apple,Manzana,70.0,kg,Mercado Emilio Sanchez Piedras
+apple,Manzana,63.5,kg,Mercado Malibran
+apple,Manzana,53.0,kg,Mercado Miguel Hidalgo
+apple,Manzana,60.0,kg,Mercado Publico
+apple,Manzana,75.0,kg,Mercado Publico 5 de Mayo
+apple,Manzana,54.8,kg,Mercado Soriana
+apple,Manzana,60.0,kg,Mercado el Meson Estrella
+apple,Manzana,49.9,kg,Mi Tienda del Ahorro
+apple,Manzana,59.99,kg,Minisuper
+apple,Manzana,64.99,kg,Operadora Merco
+apple,Manzana,67.25,kg,Oxxo
+apple,Manzana,59.99,kg,S Mart
+apple,Manzana,56.9,kg,Soriana Express
+apple,Manzana,46.8,kg,Soriana Super
+apple,Manzana,59.9,kg,Sumesa
+apple,Manzana,68.47,kg,Super Aki
+apple,Manzana,65.0,kg,Super Aki Xtra
+apple,Manzana,44.5,kg,Super Chedraui
+apple,Manzana,51.4,kg,Super Kompras
+apple,Manzana,41.0,kg,Superissste
+apple,Manzana,49.9,kg,Supermercado Gonzalez
+apple,Manzana,40.0,kg,Tortillerias Tradicionales
+apple,Manzana,66.33,kg,U.n.a.m.
+apple,Manzana,40.0,kg,Wal-mart
+apple,Manzana,40.0,kg,Wal-mart Express
+artichoke,Alcachofa,89.9,pieza,Alsuper
+artichoke,Alcachofa,89.9,pieza,Alsuper Fresh Market
+artichoke,Alcachofa,60.0,pieza,Central de Abasto
+artichoke,Alcachofa,179.0,kg,Chedraui
+artichoke,Alcachofa,179.0,kg,Chedraui Selecto
+artichoke,Alcachofa,185.0,kg,City Market
+artichoke,Alcachofa,185.0,kg,Fresko la Comer
+artichoke,Alcachofa,59.95,pieza,H.e.b.
+artichoke,Alcachofa,124.45,kg,Hipermercado Soriana
+artichoke,Alcachofa,185.0,kg,La Comer
+artichoke,Alcachofa,117.4,kg,Mega Soriana
+artichoke,Alcachofa,50.0,pieza,Mercado Publico
+artichoke,Alcachofa,185.0,kg,Sumesa
+artichoke,Alcachofa,99.0,kg,Wal-mart
+artichoke,Alcachofa,99.0,pieza,Wal-mart
+artichoke,Alcachofa,65.0,pieza,Wal-mart Express
+avocado,Aguacate,84.9,kg,Alsuper
+avocado,Aguacate,89.9,kg,Alsuper Fresh Market
+avocado,Aguacate,49.9,kg,Aprecio
+avocado,Aguacate,59.0,kg,Bodega Aurrera
+avocado,Aguacate,59.0,kg,Bodega Aurrera Express
+avocado,Aguacate,70.0,kg,Central de Abasto
+avocado,Aguacate,59.0,kg,Chedraui
+avocado,Aguacate,60.95,kg,Chedraui Selecto
+avocado,Aguacate,98.5,kg,City Market
+avocado,Aguacate,58.0,kg,El Pitico
+avocado,Aguacate,98.42,kg,Fresko la Comer
+avocado,Aguacate,84.95,kg,H.e.b.
+avocado,Aguacate,59.9,kg,Hipermercado Soriana
+avocado,Aguacate,98.5,kg,La Comer
+avocado,Aguacate,65.4,kg,Ley
+avocado,Aguacate,59.9,kg,Ley Express
+avocado,Aguacate,59.9,kg,Mega Soriana
+avocado,Aguacate,55.0,kg,Mercado Adolfo Lopez Mateos
+avocado,Aguacate,65.0,kg,Mercado Emilio Sanchez Piedras
+avocado,Aguacate,75.0,kg,Mercado Malibran
+avocado,Aguacate,70.0,kg,Mercado Publico
+avocado,Aguacate,85.0,kg,Mercado Publico 5 de Mayo
+avocado,Aguacate,59.0,kg,Mercado Soriana
+avocado,Aguacate,52.5,kg,Mercado el Meson Estrella
+avocado,Aguacate,74.9,kg,Mi Tienda del Ahorro
+avocado,Aguacate,79.99,kg,Minisuper
+avocado,Aguacate,53.49,kg,Operadora Merco
+avocado,Aguacate,91.0,kg,Oxxo
+avocado,Aguacate,69.99,kg,S Mart
+avocado,Aguacate,59.5,kg,Soriana Express
+avocado,Aguacate,58.95,kg,Soriana Super
+avocado,Aguacate,98.5,kg,Sumesa
+avocado,Aguacate,84.48,kg,Super Aki
+avocado,Aguacate,79.47,kg,Super Aki Xtra
+avocado,Aguacate,50.75,kg,Super Chedraui
+avocado,Aguacate,77.8,kg,Superissste
+avocado,Aguacate,69.9,kg,Supermercado Gonzalez
+avocado,Aguacate,77.63,kg,U.n.a.m.
+avocado,Aguacate,62.0,kg,Wal-mart
+avocado,Aguacate,64.0,kg,Wal-mart Express
+bacon,Tocino Ahumado,480.0,kg,7 Eleven
+bacon,Tocino Ahumado,394.55,kg,Alsuper
+bacon,Tocino Ahumado,359.6,kg,Alsuper Fresh Market
+bacon,Tocino Ahumado,351.6,kg,Aprecio
+bacon,Tocino Ahumado,436.0,kg,Bodega Aurrera
+bacon,Tocino Ahumado,328.0,kg,Bodega Aurrera Express
+bacon,Tocino Ahumado,141.9,kg,Central de Abasto
+bacon,Tocino Ahumado,344.0,kg,Chedraui
+bacon,Tocino Ahumado,375.0,kg,Chedraui Selecto
+bacon,Tocino Ahumado,410.0,kg,City Market
+bacon,Tocino Ahumado,376.0,kg,Farmacia Guadalajara
+bacon,Tocino Ahumado,500.0,kg,Fresko la Comer
+bacon,Tocino Ahumado,399.55,kg,H.e.b.
+bacon,Tocino Ahumado,444.5,kg,Hipermercado Soriana
+bacon,Tocino Ahumado,450.0,kg,La Comer
+bacon,Tocino Ahumado,351.6,kg,Ley
+bacon,Tocino Ahumado,335.6,kg,Ley Express
+bacon,Tocino Ahumado,444.5,kg,Mega Soriana
+bacon,Tocino Ahumado,400.0,kg,Mercado Central de Acapulco
+bacon,Tocino Ahumado,180.0,kg,Mercado Emilio Sanchez Piedras
+bacon,Tocino Ahumado,172.0,kg,Mercado Publico
+bacon,Tocino Ahumado,442.5,kg,Mercado Soriana
+bacon,Tocino Ahumado,343.6,kg,Mi Tienda del Ahorro
+bacon,Tocino Ahumado,384.0,kg,Minisuper
+bacon,Tocino Ahumado,379.96,kg,Operadora Merco
+bacon,Tocino Ahumado,412.0,kg,Oxxo
+bacon,Tocino Ahumado,359.96,kg,S Mart
+bacon,Tocino Ahumado,314.0,kg,Soriana Express
+bacon,Tocino Ahumado,464.0,kg,Soriana Super
+bacon,Tocino Ahumado,500.74,kg,Sumesa
+bacon,Tocino Ahumado,436.0,kg,Super Aki
+bacon,Tocino Ahumado,436.0,kg,Super Aki Xtra
+bacon,Tocino Ahumado,375.0,kg,Super Chedraui
+bacon,Tocino Ahumado,358.8,kg,Super Kompras
+bacon,Tocino Ahumado,370.0,kg,Superissste
+bacon,Tocino Ahumado,430.8,kg,Supermercado Gonzalez
+bacon,Tocino Ahumado,572.68,kg,U.n.a.m.
+bacon,Tocino Ahumado,452.0,kg,Wal-mart
+bacon,Tocino Ahumado,508.82,kg,Wal-mart Express
+baking powder,Polvo P/hornear,179.0,kg,Alsuper
+baking powder,Polvo P/hornear,179.0,kg,Alsuper Fresh Market
+baking powder,Polvo P/hornear,138.0,kg,Aprecio
+baking powder,Polvo P/hornear,170.0,kg,Bodega Aurrera
+baking powder,Polvo P/hornear,190.0,kg,Bodega Aurrera Express
+baking powder,Polvo P/hornear,180.0,kg,Chedraui
+baking powder,Polvo P/hornear,124.0,kg,Chedraui Selecto
+baking powder,Polvo P/hornear,170.83,kg,City Market
+baking powder,Polvo P/hornear,150.0,kg,Farmacia Guadalajara
+baking powder,Polvo P/hornear,132.0,kg,Fresko la Comer
+baking powder,Polvo P/hornear,122.0,kg,H.e.b.
+baking powder,Polvo P/hornear,180.0,kg,Hipermercado Soriana
+baking powder,Polvo P/hornear,133.33,kg,La Comer
+baking powder,Polvo P/hornear,134.0,kg,Ley
+baking powder,Polvo P/hornear,156.5,kg,Mega Soriana
+baking powder,Polvo P/hornear,189.5,kg,Mercado Soriana
+baking powder,Polvo P/hornear,123.6,kg,Mi Tienda del Ahorro
+baking powder,Polvo P/hornear,142.2,kg,Minisuper
+baking powder,Polvo P/hornear,177.0,kg,Soriana Super
+baking powder,Polvo P/hornear,134.33,kg,Sumesa
+baking powder,Polvo P/hornear,124.0,kg,Super Chedraui
+baking powder,Polvo P/hornear,136.0,kg,Super Kompras
+baking powder,Polvo P/hornear,139.5,kg,Superissste
+baking powder,Polvo P/hornear,136.22,kg,U.n.a.m.
+baking powder,Polvo P/hornear,180.0,kg,Wal-mart
+baking powder,Polvo P/hornear,190.0,kg,Wal-mart Express
+banana,Plátano,32.4,kg,Alsuper
+banana,Plátano,32.4,kg,Alsuper Fresh Market
+banana,Plátano,28.9,kg,Aprecio
+banana,Plátano,34.5,kg,Bodega Aurrera
+banana,Plátano,23.0,kg,Bodega Aurrera Express
+banana,Plátano,19.5,kg,Central de Abasto
+banana,Plátano,29.5,kg,Chedraui
+banana,Plátano,19.0,kg,Chedraui Selecto
+banana,Plátano,40.9,kg,City Market
+banana,Plátano,21.0,kg,El Pitico
+banana,Plátano,11.5,kg,Farmacia Guadalajara
+banana,Plátano,33.4,kg,Fresko la Comer
+banana,Plátano,21.95,kg,H.e.b.
+banana,Plátano,31.5,kg,Hipermercado Soriana
+banana,Plátano,43.9,kg,La Comer
+banana,Plátano,24.9,kg,Ley
+banana,Plátano,23.9,kg,Ley Express
+banana,Plátano,29.7,kg,Mega Soriana
+banana,Plátano,25.0,kg,Mercado Adolfo Lopez Mateos
+banana,Plátano,20.0,kg,Mercado Emilio Sanchez Piedras
+banana,Plátano,23.5,kg,Mercado Malibran
+banana,Plátano,33.0,kg,Mercado Miguel Hidalgo
+banana,Plátano,25.0,kg,Mercado Publico
+banana,Plátano,19.5,kg,Mercado Publico 5 de Mayo
+banana,Plátano,19.8,kg,Mercado Soriana
+banana,Plátano,22.0,kg,Mercado el Meson Estrella
+banana,Plátano,19.9,kg,Mi Tienda del Ahorro
+banana,Plátano,25.9,kg,Minisuper
+banana,Plátano,18.99,kg,Operadora Merco
+banana,Plátano,31.0,kg,Oxxo
+banana,Plátano,22.49,kg,S Mart
+banana,Plátano,26.4,kg,Soriana Express
+banana,Plátano,31.5,kg,Soriana Super
+banana,Plátano,35.4,kg,Sumesa
+banana,Plátano,36.22,kg,Super Aki
+banana,Plátano,34.95,kg,Super Aki Xtra
+banana,Plátano,26.95,kg,Super Chedraui
+banana,Plátano,28.5,kg,Super Kompras
+banana,Plátano,20.0,kg,Superissste
+banana,Plátano,25.9,kg,Supermercado Gonzalez
+banana,Plátano,25.35,kg,U.n.a.m.
+banana,Plátano,35.0,kg,Wal-mart
+banana,Plátano,26.0,kg,Wal-mart Express
+beef,Carne Res,239.9,kg,Alsuper
+beef,Carne Res,239.9,kg,Alsuper Fresh Market
+beef,Carne Res,124.0,kg,Aprecio
+beef,Carne Res,219.0,kg,Bodega Aurrera
+beef,Carne Res,200.0,kg,Central de Abasto
+beef,Carne Res,209.0,kg,Chedraui
+beef,Carne Res,138.0,kg,Chedraui Selecto
+beef,Carne Res,266.0,kg,City Market
+beef,Carne Res,241.0,kg,Fresko la Comer
+beef,Carne Res,209.0,kg,H.e.b.
+beef,Carne Res,208.5,kg,Hipermercado Soriana
+beef,Carne Res,240.0,kg,La Comer
+beef,Carne Res,189.9,kg,Ley
+beef,Carne Res,229.9,kg,Ley Express
+beef,Carne Res,204.0,kg,Mega Soriana
+beef,Carne Res,200.0,kg,Mercado Adolfo Lopez Mateos
+beef,Carne Res,250.0,kg,Mercado Central de Acapulco
+beef,Carne Res,220.0,kg,Mercado Emilio Sanchez Piedras
+beef,Carne Res,229.0,kg,Mercado Malibran
+beef,Carne Res,179.0,kg,Mercado Miguel Hidalgo
+beef,Carne Res,220.0,kg,Mercado Publico
+beef,Carne Res,230.0,kg,Mercado Publico 5 de Mayo
+beef,Carne Res,199.0,kg,Mercado Soriana
+beef,Carne Res,145.0,kg,Mi Tienda del Ahorro
+beef,Carne Res,199.99,kg,Minisuper
+beef,Carne Res,199.0,kg,Operadora Merco
+beef,Carne Res,169.99,kg,S Mart
+beef,Carne Res,133.95,kg,Soriana Express
+beef,Carne Res,204.0,kg,Soriana Super
+beef,Carne Res,240.0,kg,Sumesa
+beef,Carne Res,246.0,kg,Super Aki
+beef,Carne Res,175.5,kg,Super Aki Xtra
+beef,Carne Res,144.0,kg,Super Chedraui
+beef,Carne Res,147.5,kg,Super Kompras
+beef,Carne Res,154.0,kg,Superissste
+beef,Carne Res,180.0,kg,Supermercado Gonzalez
+beef,Carne Res,210.79,kg,U.n.a.m.
+beef,Carne Res,225.0,kg,Wal-mart
+beef,Carne Res,232.0,kg,Wal-mart Express
+black beans,Frijol,28.33,kg,Abarrotera Sanchez
+black beans,Frijol,30.5,kg,Abarrotes Super Cabrera Class
+black beans,Frijol,54.9,kg,Alsuper
+black beans,Frijol,54.9,kg,Alsuper Fresh Market
+black beans,Frijol,56.9,kg,Aprecio
+black beans,Frijol,42.0,kg,Bodega Aurrera
+black beans,Frijol,27.0,kg,Central de Abasto
+black beans,Frijol,39.72,kg,Chedraui
+black beans,Frijol,33.33,kg,Chedraui Selecto
+black beans,Frijol,49.22,kg,City Market
+black beans,Frijol,29.44,kg,El Pitico
+black beans,Frijol,50.56,kg,Farmacia Guadalajara
+black beans,Frijol,50.33,kg,Fresko la Comer
+black beans,Frijol,38.52,kg,H.e.b.
+black beans,Frijol,43.89,kg,Hipermercado Soriana
+black beans,Frijol,54.44,kg,La Comer
+black beans,Frijol,51.95,kg,Ley
+black beans,Frijol,23.22,kg,Ley Express
+black beans,Frijol,43.89,kg,Mega Soriana
+black beans,Frijol,32.0,kg,Mercado Adolfo Lopez Mateos
+black beans,Frijol,35.0,kg,Mercado Central de Acapulco
+black beans,Frijol,39.0,kg,Mercado Emilio Sanchez Piedras
+black beans,Frijol,30.0,kg,Mercado Malibran
+black beans,Frijol,45.0,kg,Mercado Miguel Hidalgo
+black beans,Frijol,40.0,kg,Mercado Publico
+black beans,Frijol,30.0,kg,Mercado Publico 5 de Mayo
+black beans,Frijol,29.44,kg,Mercado Soriana
+black beans,Frijol,24.0,kg,Mercado el Meson Estrella
+black beans,Frijol,22.11,kg,Mi Tienda del Ahorro
+black beans,Frijol,63.32,kg,Operadora Merco
+black beans,Frijol,60.56,kg,Oxxo
+black beans,Frijol,25.35,kg,S Mart
+black beans,Frijol,25.68,kg,Soriana Express
+black beans,Frijol,42.11,kg,Soriana Super
+black beans,Frijol,50.33,kg,Sumesa
+black beans,Frijol,71.67,kg,Super Aki
+black beans,Frijol,62.17,kg,Super Aki Xtra
+black beans,Frijol,33.33,kg,Super Chedraui
+black beans,Frijol,27.5,kg,Super Kompras
+black beans,Frijol,47.78,kg,Superissste
+black beans,Frijol,48.67,kg,Supermercado Gonzalez
+black beans,Frijol,39.44,kg,U.n.a.m.
+black beans,Frijol,46.67,kg,Wal-mart
+black beans,Frijol,48.0,kg,Wal-mart Express
+brandy,Brandy,362.14,litro,Abarrotera Sanchez
+brandy,Brandy,342.71,litro,Alsuper
+brandy,Brandy,432.0,litro,Alsuper Fresh Market
+brandy,Brandy,337.14,litro,Bodega Aurrera
+brandy,Brandy,455.71,litro,Bodega Aurrera Express
+brandy,Brandy,452.86,litro,Chedraui
+brandy,Brandy,332.86,litro,Chedraui Selecto
+brandy,Brandy,398.57,litro,City Market
+brandy,Brandy,617.14,litro,Fresko la Comer
+brandy,Brandy,641.43,litro,H.e.b.
+brandy,Brandy,455.71,litro,Hipermercado Soriana
+brandy,Brandy,617.14,litro,La Comer
+brandy,Brandy,314.29,litro,Ley
+brandy,Brandy,455.71,litro,Mega Soriana
+brandy,Brandy,350.0,litro,Mercado Soriana
+brandy,Brandy,641.43,litro,Mi Tienda del Ahorro
+brandy,Brandy,413.09,litro,Minisuper
+brandy,Brandy,604.29,litro,Oxxo
+brandy,Brandy,691.41,litro,S Mart
+brandy,Brandy,484.29,litro,Soriana Express
+brandy,Brandy,441.43,litro,Soriana Super
+brandy,Brandy,464.29,litro,Sumesa
+brandy,Brandy,506.43,litro,Super Aki
+brandy,Brandy,394.29,litro,Super Chedraui
+brandy,Brandy,484.29,litro,Superissste
+brandy,Brandy,337.14,litro,Wal-mart
+brandy,Brandy,337.14,litro,Wal-mart Express
+breadcrumbs,Empanizadores,167.62,kg,7 Eleven
+breadcrumbs,Empanizadores,154.52,kg,Abarrotera Monterrey
+breadcrumbs,Empanizadores,154.52,kg,Abarrotera Sanchez
+breadcrumbs,Empanizadores,156.67,kg,Alsuper
+breadcrumbs,Empanizadores,163.76,kg,Alsuper Fresh Market
+breadcrumbs,Empanizadores,182.29,kg,Aprecio
+breadcrumbs,Empanizadores,177.14,kg,Bodega Aurrera
+breadcrumbs,Empanizadores,147.62,kg,Bodega Aurrera Express
+breadcrumbs,Empanizadores,174.29,kg,Chedraui
+breadcrumbs,Empanizadores,174.29,kg,Chedraui Selecto
+breadcrumbs,Empanizadores,178.86,kg,City Market
+breadcrumbs,Empanizadores,178.1,kg,El Pitico
+breadcrumbs,Empanizadores,150.48,kg,Farmacia Guadalajara
+breadcrumbs,Empanizadores,185.71,kg,Fresko la Comer
+breadcrumbs,Empanizadores,177.14,kg,H.e.b.
+breadcrumbs,Empanizadores,188.0,kg,Hipermercado Soriana
+breadcrumbs,Empanizadores,181.43,kg,La Comer
+breadcrumbs,Empanizadores,148.29,kg,Ley
+breadcrumbs,Empanizadores,162.38,kg,Ley Express
+breadcrumbs,Empanizadores,188.29,kg,Mega Soriana
+breadcrumbs,Empanizadores,184.29,kg,Mercado Soriana
+breadcrumbs,Empanizadores,182.29,kg,Mi Tienda del Ahorro
+breadcrumbs,Empanizadores,171.43,kg,Minisuper
+breadcrumbs,Empanizadores,142.86,kg,Neto (Super Precio)
+breadcrumbs,Empanizadores,142.81,kg,Operadora Merco
+breadcrumbs,Empanizadores,142.38,kg,Oxxo
+breadcrumbs,Empanizadores,191.4,kg,S Mart
+breadcrumbs,Empanizadores,188.0,kg,Soriana Express
+breadcrumbs,Empanizadores,191.29,kg,Soriana Super
+breadcrumbs,Empanizadores,188.57,kg,Sumesa
+breadcrumbs,Empanizadores,191.43,kg,Super Aki
+breadcrumbs,Empanizadores,191.43,kg,Super Aki Xtra
+breadcrumbs,Empanizadores,167.62,kg,Super Chedraui
+breadcrumbs,Empanizadores,150.0,kg,Superissste
+breadcrumbs,Empanizadores,155.71,kg,Supermercado Gonzalez
+breadcrumbs,Empanizadores,152.69,kg,U.n.a.m.
+breadcrumbs,Empanizadores,177.14,kg,Wal-mart
+breadcrumbs,Empanizadores,182.86,kg,Wal-mart Express
+broccoli,Brócoli,49.9,kg,Alsuper
+broccoli,Brócoli,49.9,kg,Alsuper Fresh Market
+broccoli,Brócoli,39.9,kg,Aprecio
+broccoli,Brócoli,62.0,kg,Bodega Aurrera
+broccoli,Brócoli,29.0,kg,Central de Abasto
+broccoli,Brócoli,39.9,kg,Chedraui
+broccoli,Brócoli,39.9,kg,Chedraui Selecto
+broccoli,Brócoli,44.4,kg,City Market
+broccoli,Brócoli,22.0,kg,El Pitico
+broccoli,Brócoli,39.9,kg,Fresko la Comer
+broccoli,Brócoli,64.95,kg,H.e.b.
+broccoli,Brócoli,52.0,kg,Hipermercado Soriana
+broccoli,Brócoli,42.9,kg,La Comer
+broccoli,Brócoli,49.9,kg,Ley
+broccoli,Brócoli,49.9,kg,Ley Express
+broccoli,Brócoli,64.0,kg,Mega Soriana
+broccoli,Brócoli,32.5,kg,Mercado Adolfo Lopez Mateos
+broccoli,Brócoli,27.5,kg,Mercado Emilio Sanchez Piedras
+broccoli,Brócoli,18.0,kg,Mercado Malibran
+broccoli,Brócoli,30.0,kg,Mercado Miguel Hidalgo
+broccoli,Brócoli,32.0,kg,Mercado Publico
+broccoli,Brócoli,52.0,kg,Mercado Soriana
+broccoli,Brócoli,37.5,kg,Mercado el Meson Estrella
+broccoli,Brócoli,59.4,kg,Mi Tienda del Ahorro
+broccoli,Brócoli,69.99,kg,Minisuper
+broccoli,Brócoli,49.99,kg,Operadora Merco
+broccoli,Brócoli,48.49,kg,S Mart
+broccoli,Brócoli,48.4,kg,Soriana Express
+broccoli,Brócoli,52.0,kg,Soriana Super
+broccoli,Brócoli,42.9,kg,Sumesa
+broccoli,Brócoli,42.95,kg,Super Aki
+broccoli,Brócoli,50.98,kg,Super Aki Xtra
+broccoli,Brócoli,49.9,kg,Super Chedraui
+broccoli,Brócoli,48.9,kg,Supermercado Gonzalez
+broccoli,Brócoli,32.17,kg,U.n.a.m.
+broccoli,Brócoli,48.5,kg,Wal-mart
+broccoli,Brócoli,64.0,kg,Wal-mart Express
+butter,Mantequilla,327.78,kg,7 Eleven
+butter,Mantequilla,316.67,kg,Abarrotera Monterrey
+butter,Mantequilla,283.33,kg,Abarrotera Sanchez
+butter,Mantequilla,303.33,kg,Abarrotes Super Cabrera Class
+butter,Mantequilla,298.89,kg,Alsuper
+butter,Mantequilla,315.56,kg,Alsuper Fresh Market
+butter,Mantequilla,276.67,kg,Aprecio
+butter,Mantequilla,300.0,kg,Bodega Aurrera
+butter,Mantequilla,244.44,kg,Bodega Aurrera Express
+butter,Mantequilla,242.78,kg,Central de Abasto
+butter,Mantequilla,271.11,kg,Chedraui
+butter,Mantequilla,272.22,kg,Chedraui Selecto
+butter,Mantequilla,299.33,kg,City Market
+butter,Mantequilla,311.11,kg,El Pitico
+butter,Mantequilla,300.0,kg,Farmacia Guadalajara
+butter,Mantequilla,293.33,kg,Fresko la Comer
+butter,Mantequilla,283.89,kg,H.e.b.
+butter,Mantequilla,298.89,kg,Hipermercado Soriana
+butter,Mantequilla,291.11,kg,La Comer
+butter,Mantequilla,301.78,kg,Ley
+butter,Mantequilla,289.67,kg,Mega Soriana
+butter,Mantequilla,333.33,kg,Mercado Central de Acapulco
+butter,Mantequilla,322.22,kg,Mercado Emilio Sanchez Piedras
+butter,Mantequilla,277.78,kg,Mercado Publico
+butter,Mantequilla,300.0,kg,Mercado Soriana
+butter,Mantequilla,306.22,kg,Mi Tienda del Ahorro
+butter,Mantequilla,260.0,kg,Minisuper
+butter,Mantequilla,298.89,kg,Oxxo
+butter,Mantequilla,301.0,kg,S Mart
+butter,Mantequilla,287.78,kg,Soriana Express
+butter,Mantequilla,277.78,kg,Soriana Super
+butter,Mantequilla,296.67,kg,Sumesa
+butter,Mantequilla,280.0,kg,Super Aki
+butter,Mantequilla,319.44,kg,Super Aki Xtra
+butter,Mantequilla,277.78,kg,Super Chedraui
+butter,Mantequilla,287.78,kg,Superissste
+butter,Mantequilla,303.33,kg,Supermercado Gonzalez
+butter,Mantequilla,251.61,kg,U.n.a.m.
+butter,Mantequilla,266.67,kg,Wal-mart
+butter,Mantequilla,311.11,kg,Wal-mart Express
+cabbage,Col,23.9,kg,Alsuper
+cabbage,Col,24.9,kg,Alsuper Fresh Market
+cabbage,Col,25.4,kg,Aprecio
+cabbage,Col,32.9,kg,Bodega Aurrera
+cabbage,Col,20.0,kg,Central de Abasto
+cabbage,Col,19.9,kg,Chedraui
+cabbage,Col,36.9,kg,Chedraui Selecto
+cabbage,Col,35.6,kg,City Market
+cabbage,Col,32.9,kg,Fresko la Comer
+cabbage,Col,37.45,kg,H.e.b.
+cabbage,Col,28.8,kg,Hipermercado Soriana
+cabbage,Col,36.0,kg,La Comer
+cabbage,Col,27.9,kg,Ley
+cabbage,Col,34.9,kg,Ley Express
+cabbage,Col,25.9,kg,Mega Soriana
+cabbage,Col,32.5,kg,Mercado Emilio Sanchez Piedras
+cabbage,Col,8.0,kg,Mercado Malibran
+cabbage,Col,22.5,kg,Mercado Miguel Hidalgo
+cabbage,Col,24.0,kg,Mercado Publico
+cabbage,Col,25.9,kg,Mercado Soriana
+cabbage,Col,40.0,kg,Mercado el Meson Estrella
+cabbage,Col,27.4,kg,Mi Tienda del Ahorro
+cabbage,Col,29.9,kg,Minisuper
+cabbage,Col,32.99,kg,Operadora Merco
+cabbage,Col,26.99,kg,S Mart
+cabbage,Col,38.9,kg,Soriana Express
+cabbage,Col,28.9,kg,Soriana Super
+cabbage,Col,35.0,kg,Sumesa
+cabbage,Col,13.48,kg,Super Aki
+cabbage,Col,24.95,kg,Super Aki Xtra
+cabbage,Col,19.9,kg,Super Chedraui
+cabbage,Col,19.9,kg,Supermercado Gonzalez
+cabbage,Col,22.14,kg,U.n.a.m.
+cabbage,Col,29.93,kg,Wal-mart
+cabbage,Col,29.9,kg,Wal-mart Express
+carrot,Zanahoria,17.9,kg,Alsuper
+carrot,Zanahoria,18.9,kg,Alsuper Fresh Market
+carrot,Zanahoria,15.9,kg,Aprecio
+carrot,Zanahoria,15.5,kg,Bodega Aurrera
+carrot,Zanahoria,16.0,kg,Central de Abasto
+carrot,Zanahoria,15.5,kg,Chedraui
+carrot,Zanahoria,16.0,kg,Chedraui Selecto
+carrot,Zanahoria,18.9,kg,City Market
+carrot,Zanahoria,20.0,kg,El Pitico
+carrot,Zanahoria,18.9,kg,Fresko la Comer
+carrot,Zanahoria,13.95,kg,H.e.b.
+carrot,Zanahoria,16.6,kg,Hipermercado Soriana
+carrot,Zanahoria,18.9,kg,La Comer
+carrot,Zanahoria,16.9,kg,Ley
+carrot,Zanahoria,15.4,kg,Ley Express
+carrot,Zanahoria,16.9,kg,Mega Soriana
+carrot,Zanahoria,16.5,kg,Mercado Adolfo Lopez Mateos
+carrot,Zanahoria,17.5,kg,Mercado Emilio Sanchez Piedras
+carrot,Zanahoria,16.0,kg,Mercado Malibran
+carrot,Zanahoria,23.0,kg,Mercado Miguel Hidalgo
+carrot,Zanahoria,20.0,kg,Mercado Publico
+carrot,Zanahoria,17.0,kg,Mercado Publico 5 de Mayo
+carrot,Zanahoria,15.8,kg,Mercado Soriana
+carrot,Zanahoria,15.5,kg,Mercado el Meson Estrella
+carrot,Zanahoria,15.9,kg,Mi Tienda del Ahorro
+carrot,Zanahoria,21.99,kg,Minisuper
+carrot,Zanahoria,9.99,kg,Operadora Merco
+carrot,Zanahoria,20.99,kg,S Mart
+carrot,Zanahoria,15.9,kg,Soriana Express
+carrot,Zanahoria,16.0,kg,Soriana Super
+carrot,Zanahoria,18.9,kg,Sumesa
+carrot,Zanahoria,19.5,kg,Super Aki
+carrot,Zanahoria,19.5,kg,Super Aki Xtra
+carrot,Zanahoria,16.0,kg,Super Chedraui
+carrot,Zanahoria,24.8,kg,Super Kompras
+carrot,Zanahoria,16.0,kg,Superissste
+carrot,Zanahoria,22.9,kg,Supermercado Gonzalez
+carrot,Zanahoria,16.37,kg,U.n.a.m.
+carrot,Zanahoria,18.0,kg,Wal-mart
+carrot,Zanahoria,18.0,kg,Wal-mart Express
+cauliflower,Coliflor,49.9,pieza,Alsuper
+cauliflower,Coliflor,49.9,pieza,Alsuper Fresh Market
+cauliflower,Coliflor,69.9,pieza,Aprecio
+cauliflower,Coliflor,62.0,pieza,Bodega Aurrera
+cauliflower,Coliflor,39.0,pieza,Central de Abasto
+cauliflower,Coliflor,56.95,pieza,Chedraui
+cauliflower,Coliflor,39.5,pieza,Chedraui Selecto
+cauliflower,Coliflor,39.9,pieza,City Market
+cauliflower,Coliflor,39.9,pieza,Fresko la Comer
+cauliflower,Coliflor,39.95,pieza,H.e.b.
+cauliflower,Coliflor,62.0,pieza,Hipermercado Soriana
+cauliflower,Coliflor,39.9,pieza,La Comer
+cauliflower,Coliflor,79.9,pieza,Ley
+cauliflower,Coliflor,84.9,pieza,Ley Express
+cauliflower,Coliflor,62.0,pieza,Mega Soriana
+cauliflower,Coliflor,60.0,pieza,Mercado Adolfo Lopez Mateos
+cauliflower,Coliflor,37.5,pieza,Mercado Emilio Sanchez Piedras
+cauliflower,Coliflor,35.0,pieza,Mercado Malibran
+cauliflower,Coliflor,38.0,pieza,Mercado Miguel Hidalgo
+cauliflower,Coliflor,40.0,pieza,Mercado Publico
+cauliflower,Coliflor,62.0,pieza,Mercado Soriana
+cauliflower,Coliflor,45.0,pieza,Mercado el Meson Estrella
+cauliflower,Coliflor,42.9,pieza,Mi Tienda del Ahorro
+cauliflower,Coliflor,69.99,pieza,Minisuper
+cauliflower,Coliflor,61.99,pieza,Operadora Merco
+cauliflower,Coliflor,43.99,pieza,S Mart
+cauliflower,Coliflor,40.0,pieza,Soriana Express
+cauliflower,Coliflor,62.0,pieza,Soriana Super
+cauliflower,Coliflor,39.9,pieza,Sumesa
+cauliflower,Coliflor,49.0,pieza,Super Aki
+cauliflower,Coliflor,47.5,pieza,Super Aki Xtra
+cauliflower,Coliflor,52.4,pieza,Super Chedraui
+cauliflower,Coliflor,39.9,pieza,Supermercado Gonzalez
+cauliflower,Coliflor,38.87,pieza,U.n.a.m.
+cauliflower,Coliflor,65.0,pieza,Wal-mart
+cauliflower,Coliflor,65.0,pieza,Wal-mart Express
+cayenne,Chile Seco,195.0,kg,Abarrotes Super Cabrera Class
+cayenne,Chile Seco,465.33,kg,Alsuper Fresh Market
+cayenne,Chile Seco,207.5,kg,Central de Abasto
+cayenne,Chile Seco,500.0,kg,Chedraui
+cayenne,Chile Seco,481.67,kg,Chedraui Selecto
+cayenne,Chile Seco,477.67,kg,City Market
+cayenne,Chile Seco,477.67,kg,Fresko la Comer
+cayenne,Chile Seco,505.33,kg,H.e.b.
+cayenne,Chile Seco,545.33,kg,Hipermercado Soriana
+cayenne,Chile Seco,477.67,kg,La Comer
+cayenne,Chile Seco,412.0,kg,Ley
+cayenne,Chile Seco,513.33,kg,Mega Soriana
+cayenne,Chile Seco,200.0,kg,Mercado Adolfo Lopez Mateos
+cayenne,Chile Seco,230.0,kg,Mercado Central de Acapulco
+cayenne,Chile Seco,210.0,kg,Mercado Emilio Sanchez Piedras
+cayenne,Chile Seco,180.0,kg,Mercado Malibran
+cayenne,Chile Seco,222.5,kg,Mercado Miguel Hidalgo
+cayenne,Chile Seco,230.0,kg,Mercado Publico
+cayenne,Chile Seco,162.5,kg,Mercado Publico 5 de Mayo
+cayenne,Chile Seco,513.33,kg,Mercado Soriana
+cayenne,Chile Seco,160.0,kg,Mercado el Meson Estrella
+cayenne,Chile Seco,513.33,kg,Soriana Super
+cayenne,Chile Seco,505.33,kg,Sumesa
+cayenne,Chile Seco,481.17,kg,Super Aki
+cayenne,Chile Seco,481.67,kg,Super Chedraui
+celery,Apio,25.9,kg,Alsuper
+celery,Apio,26.9,kg,Alsuper Fresh Market
+celery,Apio,20.9,kg,Aprecio
+celery,Apio,38.9,kg,Bodega Aurrera
+celery,Apio,35.0,kg,Central de Abasto
+celery,Apio,29.2,kg,Chedraui
+celery,Apio,34.9,kg,Chedraui Selecto
+celery,Apio,32.4,kg,City Market
+celery,Apio,30.9,kg,Fresko la Comer
+celery,Apio,39.95,kg,H.e.b.
+celery,Apio,38.0,kg,Hipermercado Soriana
+celery,Apio,28.9,kg,La Comer
+celery,Apio,29.75,kg,Ley
+celery,Apio,29.9,kg,Ley Express
+celery,Apio,38.0,kg,Mega Soriana
+celery,Apio,27.5,kg,Mercado Emilio Sanchez Piedras
+celery,Apio,22.5,kg,Mercado Malibran
+celery,Apio,30.0,kg,Mercado Miguel Hidalgo
+celery,Apio,30.0,kg,Mercado Publico
+celery,Apio,36.0,kg,Mercado Soriana
+celery,Apio,37.9,kg,Mi Tienda del Ahorro
+celery,Apio,35.99,kg,Minisuper
+celery,Apio,29.99,kg,Operadora Merco
+celery,Apio,29.99,kg,S Mart
+celery,Apio,33.9,kg,Soriana Express
+celery,Apio,32.95,kg,Soriana Super
+celery,Apio,28.9,kg,Sumesa
+celery,Apio,27.5,kg,Super Aki Xtra
+celery,Apio,34.45,kg,Super Chedraui
+celery,Apio,21.9,kg,Supermercado Gonzalez
+celery,Apio,21.11,kg,U.n.a.m.
+celery,Apio,32.9,kg,Wal-mart
+celery,Apio,39.9,kg,Wal-mart Express
+chicken,Carne Pollo,60.9,kg,Alsuper
+chicken,Carne Pollo,123.9,kg,Alsuper Fresh Market
+chicken,Carne Pollo,36.9,kg,Aprecio
+chicken,Carne Pollo,102.0,kg,Bodega Aurrera
+chicken,Carne Pollo,62.0,kg,Bodega Aurrera Express
+chicken,Carne Pollo,70.0,kg,Central de Abasto
+chicken,Carne Pollo,89.0,kg,Chedraui
+chicken,Carne Pollo,104.0,kg,Chedraui Selecto
+chicken,Carne Pollo,109.0,kg,City Market
+chicken,Carne Pollo,99.0,kg,Fresko la Comer
+chicken,Carne Pollo,79.9,kg,H.e.b.
+chicken,Carne Pollo,89.9,kg,Hipermercado Soriana
+chicken,Carne Pollo,99.0,kg,La Comer
+chicken,Carne Pollo,82.9,kg,Ley
+chicken,Carne Pollo,33.9,kg,Ley Express
+chicken,Carne Pollo,89.0,kg,Mega Soriana
+chicken,Carne Pollo,60.0,kg,Mercado Adolfo Lopez Mateos
+chicken,Carne Pollo,102.5,kg,Mercado Central de Acapulco
+chicken,Carne Pollo,70.0,kg,Mercado Emilio Sanchez Piedras
+chicken,Carne Pollo,45.0,kg,Mercado Malibran
+chicken,Carne Pollo,83.0,kg,Mercado Publico
+chicken,Carne Pollo,120.0,kg,Mercado Publico 5 de Mayo
+chicken,Carne Pollo,35.9,kg,Mercado Soriana
+chicken,Carne Pollo,29.9,kg,Mi Tienda del Ahorro
+chicken,Carne Pollo,56.9,kg,Minisuper
+chicken,Carne Pollo,59.99,kg,Operadora Merco
+chicken,Carne Pollo,49.49,kg,S Mart
+chicken,Carne Pollo,35.9,kg,Soriana Express
+chicken,Carne Pollo,79.9,kg,Soriana Super
+chicken,Carne Pollo,98.5,kg,Sumesa
+chicken,Carne Pollo,93.25,kg,Super Aki
+chicken,Carne Pollo,119.0,kg,Super Aki Xtra
+chicken,Carne Pollo,89.0,kg,Super Chedraui
+chicken,Carne Pollo,54.0,kg,Super Kompras
+chicken,Carne Pollo,39.0,kg,Superissste
+chicken,Carne Pollo,36.9,kg,Supermercado Gonzalez
+chicken,Carne Pollo,96.32,kg,U.n.a.m.
+chicken,Carne Pollo,104.0,kg,Wal-mart
+chicken,Carne Pollo,104.0,kg,Wal-mart Express
+chickpeas,Garbanzo,91.8,kg,Alsuper
+chickpeas,Garbanzo,91.8,kg,Alsuper Fresh Market
+chickpeas,Garbanzo,78.0,kg,Bodega Aurrera
+chickpeas,Garbanzo,34.0,kg,Central de Abasto
+chickpeas,Garbanzo,78.0,kg,Chedraui
+chickpeas,Garbanzo,78.0,kg,Chedraui Selecto
+chickpeas,Garbanzo,87.8,kg,City Market
+chickpeas,Garbanzo,85.0,kg,H.e.b.
+chickpeas,Garbanzo,87.0,kg,Hipermercado Soriana
+chickpeas,Garbanzo,85.2,kg,La Comer
+chickpeas,Garbanzo,89.8,kg,Ley
+chickpeas,Garbanzo,89.8,kg,Ley Express
+chickpeas,Garbanzo,88.4,kg,Mega Soriana
+chickpeas,Garbanzo,50.0,kg,Mercado Adolfo Lopez Mateos
+chickpeas,Garbanzo,50.0,kg,Mercado Central de Acapulco
+chickpeas,Garbanzo,32.5,kg,Mercado Emilio Sanchez Piedras
+chickpeas,Garbanzo,40.0,kg,Mercado Malibran
+chickpeas,Garbanzo,47.0,kg,Mercado Miguel Hidalgo
+chickpeas,Garbanzo,48.0,kg,Mercado Publico
+chickpeas,Garbanzo,48.0,kg,Mercado Publico 5 de Mayo
+chickpeas,Garbanzo,36.0,kg,Mercado el Meson Estrella
+chickpeas,Garbanzo,69.9,kg,Mi Tienda del Ahorro
+chickpeas,Garbanzo,95.8,kg,Minisuper
+chickpeas,Garbanzo,83.98,kg,S Mart
+chickpeas,Garbanzo,91.8,kg,Soriana Super
+chickpeas,Garbanzo,86.1,kg,Sumesa
+chickpeas,Garbanzo,101.0,kg,Super Aki Xtra
+chickpeas,Garbanzo,82.0,kg,Super Chedraui
+chickpeas,Garbanzo,79.0,kg,Superissste
+chickpeas,Garbanzo,77.54,kg,U.n.a.m.
+chickpeas,Garbanzo,78.0,kg,Wal-mart
+chili powder,Chile Seco,195.0,kg,Abarrotes Super Cabrera Class
+chili powder,Chile Seco,465.33,kg,Alsuper Fresh Market
+chili powder,Chile Seco,207.5,kg,Central de Abasto
+chili powder,Chile Seco,500.0,kg,Chedraui
+chili powder,Chile Seco,481.67,kg,Chedraui Selecto
+chili powder,Chile Seco,477.67,kg,City Market
+chili powder,Chile Seco,477.67,kg,Fresko la Comer
+chili powder,Chile Seco,505.33,kg,H.e.b.
+chili powder,Chile Seco,545.33,kg,Hipermercado Soriana
+chili powder,Chile Seco,477.67,kg,La Comer
+chili powder,Chile Seco,412.0,kg,Ley
+chili powder,Chile Seco,513.33,kg,Mega Soriana
+chili powder,Chile Seco,200.0,kg,Mercado Adolfo Lopez Mateos
+chili powder,Chile Seco,230.0,kg,Mercado Central de Acapulco
+chili powder,Chile Seco,210.0,kg,Mercado Emilio Sanchez Piedras
+chili powder,Chile Seco,180.0,kg,Mercado Malibran
+chili powder,Chile Seco,222.5,kg,Mercado Miguel Hidalgo
+chili powder,Chile Seco,230.0,kg,Mercado Publico
+chili powder,Chile Seco,162.5,kg,Mercado Publico 5 de Mayo
+chili powder,Chile Seco,513.33,kg,Mercado Soriana
+chili powder,Chile Seco,160.0,kg,Mercado el Meson Estrella
+chili powder,Chile Seco,513.33,kg,Soriana Super
+chili powder,Chile Seco,505.33,kg,Sumesa
+chili powder,Chile Seco,481.17,kg,Super Aki
+chili powder,Chile Seco,481.67,kg,Super Chedraui
+chili sauce,Salsa Picante y Similares,150.0,kg,7 Eleven
+chili sauce,Salsa Picante y Similares,68.92,litro,7 Eleven
+chili sauce,Salsa Picante y Similares,60.81,litro,Abarrotera Monterrey
+chili sauce,Salsa Picante y Similares,320.42,kg,Abarrotera Sanchez
+chili sauce,Salsa Picante y Similares,60.81,litro,Abarrotera Sanchez
+chili sauce,Salsa Picante y Similares,52.7,litro,Abarrotes Super Cabrera Class
+chili sauce,Salsa Picante y Similares,135.91,kg,Alsuper
+chili sauce,Salsa Picante y Similares,442.73,litro,Alsuper
+chili sauce,Salsa Picante y Similares,135.91,kg,Alsuper Fresh Market
+chili sauce,Salsa Picante y Similares,442.73,litro,Alsuper Fresh Market
+chili sauce,Salsa Picante y Similares,192.55,kg,Aprecio
+chili sauce,Salsa Picante y Similares,1048.33,litro,Aprecio
+chili sauce,Salsa Picante y Similares,131.82,kg,Bodega Aurrera
+chili sauce,Salsa Picante y Similares,46.86,litro,Bodega Aurrera
+chili sauce,Salsa Picante y Similares,80.0,kg,Bodega Aurrera Express
+chili sauce,Salsa Picante y Similares,45.71,litro,Bodega Aurrera Express
+chili sauce,Salsa Picante y Similares,104.73,kg,Central de Abasto
+chili sauce,Salsa Picante y Similares,51.35,litro,Central de Abasto
+chili sauce,Salsa Picante y Similares,131.82,kg,Chedraui
+chili sauce,Salsa Picante y Similares,60.81,litro,Chedraui
+chili sauce,Salsa Picante y Similares,152.27,kg,Chedraui Selecto
+chili sauce,Salsa Picante y Similares,779.17,litro,Chedraui Selecto
+chili sauce,Salsa Picante y Similares,145.45,kg,City Market
+chili sauce,Salsa Picante y Similares,916.67,litro,City Market
+chili sauce,Salsa Picante y Similares,86.67,kg,El Pitico
+chili sauce,Salsa Picante y Similares,323.94,kg,Farmacia Guadalajara
+chili sauce,Salsa Picante y Similares,708.33,litro,Farmacia Guadalajara
+chili sauce,Salsa Picante y Similares,156.82,kg,Fresko la Comer
+chili sauce,Salsa Picante y Similares,138.78,litro,Fresko la Comer
+chili sauce,Salsa Picante y Similares,138.64,kg,H.e.b.
+chili sauce,Salsa Picante y Similares,765.0,litro,H.e.b.
+chili sauce,Salsa Picante y Similares,152.27,kg,Hipermercado Soriana
+chili sauce,Salsa Picante y Similares,840.0,litro,Hipermercado Soriana
+chili sauce,Salsa Picante y Similares,156.82,kg,La Comer
+chili sauce,Salsa Picante y Similares,67.57,litro,La Comer
+chili sauce,Salsa Picante y Similares,133.33,kg,Ley
+chili sauce,Salsa Picante y Similares,509.53,litro,Ley
+chili sauce,Salsa Picante y Similares,304.23,kg,Ley Express
+chili sauce,Salsa Picante y Similares,46.49,litro,Ley Express
+chili sauce,Salsa Picante y Similares,144.17,kg,Mega Soriana
+chili sauce,Salsa Picante y Similares,831.67,litro,Mega Soriana
+chili sauce,Salsa Picante y Similares,100.0,kg,Mercado Adolfo Lopez Mateos
+chili sauce,Salsa Picante y Similares,399.32,litro,Mercado Adolfo Lopez Mateos
+chili sauce,Salsa Picante y Similares,120.0,kg,Mercado Central de Acapulco
+chili sauce,Salsa Picante y Similares,48.65,litro,Mercado Central de Acapulco
+chili sauce,Salsa Picante y Similares,110.0,kg,Mercado Emilio Sanchez Piedras
+chili sauce,Salsa Picante y Similares,488.06,litro,Mercado Emilio Sanchez Piedras
+chili sauce,Salsa Picante y Similares,116.67,kg,Mercado Miguel Hidalgo
+chili sauce,Salsa Picante y Similares,59.46,litro,Mercado Miguel Hidalgo
+chili sauce,Salsa Picante y Similares,113.33,kg,Mercado Publico
+chili sauce,Salsa Picante y Similares,64.86,litro,Mercado Publico
+chili sauce,Salsa Picante y Similares,120.0,kg,Mercado Publico 5 de Mayo
+chili sauce,Salsa Picante y Similares,48.65,litro,Mercado Publico 5 de Mayo
+chili sauce,Salsa Picante y Similares,146.29,kg,Mercado Soriana
+chili sauce,Salsa Picante y Similares,965.0,litro,Mercado Soriana
+chili sauce,Salsa Picante y Similares,92.67,kg,Mi Tienda del Ahorro
+chili sauce,Salsa Picante y Similares,948.33,litro,Mi Tienda del Ahorro
+chili sauce,Salsa Picante y Similares,132.67,kg,Minisuper
+chili sauce,Salsa Picante y Similares,64.59,litro,Minisuper
+chili sauce,Salsa Picante y Similares,43.24,litro,Neto (Super Precio)
+chili sauce,Salsa Picante y Similares,316.9,kg,Oxxo
+chili sauce,Salsa Picante y Similares,64.86,litro,Oxxo
+chili sauce,Salsa Picante y Similares,150.86,kg,S Mart
+chili sauce,Salsa Picante y Similares,56.73,litro,S Mart
+chili sauce,Salsa Picante y Similares,106.67,kg,Soriana Express
+chili sauce,Salsa Picante y Similares,48.86,litro,Soriana Express
+chili sauce,Salsa Picante y Similares,169.09,kg,Soriana Super
+chili sauce,Salsa Picante y Similares,53.78,litro,Soriana Super
+chili sauce,Salsa Picante y Similares,156.82,kg,Sumesa
+chili sauce,Salsa Picante y Similares,67.57,litro,Sumesa
+chili sauce,Salsa Picante y Similares,117.7,kg,Super Aki
+chili sauce,Salsa Picante y Similares,187.5,litro,Super Aki
+chili sauce,Salsa Picante y Similares,112.67,kg,Super Aki Xtra
+chili sauce,Salsa Picante y Similares,74.32,litro,Super Aki Xtra
+chili sauce,Salsa Picante y Similares,136.36,kg,Super Chedraui
+chili sauce,Salsa Picante y Similares,51.35,litro,Super Chedraui
+chili sauce,Salsa Picante y Similares,195.88,kg,Super Kompras
+chili sauce,Salsa Picante y Similares,49.46,litro,Super Kompras
+chili sauce,Salsa Picante y Similares,149.55,kg,Superissste
+chili sauce,Salsa Picante y Similares,44.59,litro,Superissste
+chili sauce,Salsa Picante y Similares,118.8,kg,Supermercado Gonzalez
+chili sauce,Salsa Picante y Similares,56.49,litro,Supermercado Gonzalez
+chili sauce,Salsa Picante y Similares,111.86,kg,U.n.a.m.
+chili sauce,Salsa Picante y Similares,393.11,litro,U.n.a.m.
+chili sauce,Salsa Picante y Similares,136.36,kg,Wal-mart
+chili sauce,Salsa Picante y Similares,783.33,litro,Wal-mart
+chili sauce,Salsa Picante y Similares,136.36,kg,Wal-mart Express
+chili sauce,Salsa Picante y Similares,950.0,litro,Wal-mart Express
+cider vinegar,Vinagre,26.0,litro,Abarrotera Sanchez
+cider vinegar,Vinagre,31.0,litro,Abarrotes Super Cabrera Class
+cider vinegar,Vinagre,31.8,litro,Alsuper
+cider vinegar,Vinagre,31.8,litro,Alsuper Fresh Market
+cider vinegar,Vinagre,35.0,litro,Aprecio
+cider vinegar,Vinagre,23.0,litro,Bodega Aurrera
+cider vinegar,Vinagre,26.5,litro,Chedraui
+cider vinegar,Vinagre,26.25,litro,Chedraui Selecto
+cider vinegar,Vinagre,30.0,litro,Farmacia Guadalajara
+cider vinegar,Vinagre,25.0,litro,Fresko la Comer
+cider vinegar,Vinagre,24.9,litro,H.e.b.
+cider vinegar,Vinagre,30.2,litro,Hipermercado Soriana
+cider vinegar,Vinagre,27.0,litro,La Comer
+cider vinegar,Vinagre,34.4,litro,Ley
+cider vinegar,Vinagre,29.9,litro,Mega Soriana
+cider vinegar,Vinagre,29.08,litro,S Mart
+cider vinegar,Vinagre,25.0,litro,Sumesa
+cider vinegar,Vinagre,31.9,litro,Super Aki
+cider vinegar,Vinagre,26.5,litro,Super Chedraui
+cider vinegar,Vinagre,25.0,litro,Superissste
+cider vinegar,Vinagre,29.2,litro,Supermercado Gonzalez
+cider vinegar,Vinagre,24.52,litro,U.n.a.m.
+cilantro,Cilantro,11.9,manojo,Alsuper
+cilantro,Cilantro,11.9,manojo,Alsuper Fresh Market
+cilantro,Cilantro,7.9,manojo,Aprecio
+cilantro,Cilantro,10.0,manojo,Bodega Aurrera
+cilantro,Cilantro,10.0,manojo,Bodega Aurrera Express
+cilantro,Cilantro,10.0,manojo,Central de Abasto
+cilantro,Cilantro,9.9,manojo,Chedraui
+cilantro,Cilantro,8.9,manojo,Chedraui Selecto
+cilantro,Cilantro,11.9,manojo,City Market
+cilantro,Cilantro,10.9,manojo,Fresko la Comer
+cilantro,Cilantro,13.95,manojo,H.e.b.
+cilantro,Cilantro,10.9,manojo,Hipermercado Soriana
+cilantro,Cilantro,10.9,manojo,La Comer
+cilantro,Cilantro,9.9,manojo,Ley
+cilantro,Cilantro,7.9,manojo,Ley Express
+cilantro,Cilantro,9.9,manojo,Mega Soriana
+cilantro,Cilantro,5.0,manojo,Mercado Adolfo Lopez Mateos
+cilantro,Cilantro,5.0,manojo,Mercado Emilio Sanchez Piedras
+cilantro,Cilantro,5.0,manojo,Mercado Malibran
+cilantro,Cilantro,8.0,manojo,Mercado Miguel Hidalgo
+cilantro,Cilantro,10.0,manojo,Mercado Publico
+cilantro,Cilantro,10.0,manojo,Mercado Publico 5 de Mayo
+cilantro,Cilantro,9.9,manojo,Mercado Soriana
+cilantro,Cilantro,10.0,manojo,Mercado el Meson Estrella
+cilantro,Cilantro,12.9,manojo,Mi Tienda del Ahorro
+cilantro,Cilantro,11.44,manojo,Minisuper
+cilantro,Cilantro,7.49,manojo,Operadora Merco
+cilantro,Cilantro,11.99,manojo,S Mart
+cilantro,Cilantro,10.5,manojo,Soriana Express
+cilantro,Cilantro,9.9,manojo,Soriana Super
+cilantro,Cilantro,10.9,manojo,Sumesa
+cilantro,Cilantro,10.95,manojo,Super Aki
+cilantro,Cilantro,10.95,manojo,Super Aki Xtra
+cilantro,Cilantro,9.9,manojo,Super Chedraui
+cilantro,Cilantro,7.4,manojo,Supermercado Gonzalez
+cilantro,Cilantro,8.69,manojo,U.n.a.m.
+cilantro,Cilantro,10.0,manojo,Wal-mart
+cilantro,Cilantro,10.0,manojo,Wal-mart Express
+cinnamon,Canela,760.32,kg,Alsuper
+cinnamon,Canela,1063.33,kg,Alsuper Fresh Market
+cinnamon,Canela,940.0,kg,Bodega Aurrera
+cinnamon,Canela,460.0,kg,Central de Abasto
+cinnamon,Canela,966.67,kg,Chedraui
+cinnamon,Canela,966.67,kg,Chedraui Selecto
+cinnamon,Canela,966.67,kg,City Market
+cinnamon,Canela,966.67,kg,Fresko la Comer
+cinnamon,Canela,953.89,kg,H.e.b.
+cinnamon,Canela,807.94,kg,Hipermercado Soriana
+cinnamon,Canela,966.67,kg,La Comer
+cinnamon,Canela,839.68,kg,Ley
+cinnamon,Canela,807.94,kg,Mega Soriana
+cinnamon,Canela,450.0,kg,Mercado Adolfo Lopez Mateos
+cinnamon,Canela,480.0,kg,Mercado Central de Acapulco
+cinnamon,Canela,550.0,kg,Mercado Emilio Sanchez Piedras
+cinnamon,Canela,450.0,kg,Mercado Malibran
+cinnamon,Canela,470.0,kg,Mercado Miguel Hidalgo
+cinnamon,Canela,550.0,kg,Mercado Publico
+cinnamon,Canela,776.19,kg,Mercado Soriana
+cinnamon,Canela,540.0,kg,Mercado el Meson Estrella
+cinnamon,Canela,1075.32,kg,Minisuper
+cinnamon,Canela,1248.97,kg,S Mart
+cinnamon,Canela,865.08,kg,Soriana Super
+cinnamon,Canela,966.67,kg,Sumesa
+cinnamon,Canela,792.06,kg,Super Aki
+cinnamon,Canela,792.06,kg,Super Aki Xtra
+cinnamon,Canela,966.67,kg,Super Chedraui
+cinnamon,Canela,866.67,kg,Superissste
+cinnamon,Canela,625.24,kg,U.n.a.m.
+cinnamon,Canela,940.0,kg,Wal-mart
+cinnamon,Canela,777.78,kg,Wal-mart Express
+cloves,Clavo,270.0,kg,Central de Abasto
+cloves,Clavo,320.0,kg,Mercado Adolfo Lopez Mateos
+cloves,Clavo,300.0,kg,Mercado Malibran
+cloves,Clavo,320.0,kg,Mercado Miguel Hidalgo
+cloves,Clavo,315.0,kg,Mercado Publico
+cloves,Clavo,290.0,kg,Mercado el Meson Estrella
+coriander,Cilantro,11.9,manojo,Alsuper
+coriander,Cilantro,11.9,manojo,Alsuper Fresh Market
+coriander,Cilantro,7.9,manojo,Aprecio
+coriander,Cilantro,10.0,manojo,Bodega Aurrera
+coriander,Cilantro,10.0,manojo,Bodega Aurrera Express
+coriander,Cilantro,10.0,manojo,Central de Abasto
+coriander,Cilantro,9.9,manojo,Chedraui
+coriander,Cilantro,8.9,manojo,Chedraui Selecto
+coriander,Cilantro,11.9,manojo,City Market
+coriander,Cilantro,10.9,manojo,Fresko la Comer
+coriander,Cilantro,13.95,manojo,H.e.b.
+coriander,Cilantro,10.9,manojo,Hipermercado Soriana
+coriander,Cilantro,10.9,manojo,La Comer
+coriander,Cilantro,9.9,manojo,Ley
+coriander,Cilantro,7.9,manojo,Ley Express
+coriander,Cilantro,9.9,manojo,Mega Soriana
+coriander,Cilantro,5.0,manojo,Mercado Adolfo Lopez Mateos
+coriander,Cilantro,5.0,manojo,Mercado Emilio Sanchez Piedras
+coriander,Cilantro,5.0,manojo,Mercado Malibran
+coriander,Cilantro,8.0,manojo,Mercado Miguel Hidalgo
+coriander,Cilantro,10.0,manojo,Mercado Publico
+coriander,Cilantro,10.0,manojo,Mercado Publico 5 de Mayo
+coriander,Cilantro,9.9,manojo,Mercado Soriana
+coriander,Cilantro,10.0,manojo,Mercado el Meson Estrella
+coriander,Cilantro,12.9,manojo,Mi Tienda del Ahorro
+coriander,Cilantro,11.44,manojo,Minisuper
+coriander,Cilantro,7.49,manojo,Operadora Merco
+coriander,Cilantro,11.99,manojo,S Mart
+coriander,Cilantro,10.5,manojo,Soriana Express
+coriander,Cilantro,9.9,manojo,Soriana Super
+coriander,Cilantro,10.9,manojo,Sumesa
+coriander,Cilantro,10.95,manojo,Super Aki
+coriander,Cilantro,10.95,manojo,Super Aki Xtra
+coriander,Cilantro,9.9,manojo,Super Chedraui
+coriander,Cilantro,7.4,manojo,Supermercado Gonzalez
+coriander,Cilantro,8.69,manojo,U.n.a.m.
+coriander,Cilantro,10.0,manojo,Wal-mart
+coriander,Cilantro,10.0,manojo,Wal-mart Express
+corn,Granos de Elote,129.8,kg,Alsuper
+corn,Granos de Elote,129.8,kg,Alsuper Fresh Market
+corn,Granos de Elote,147.8,kg,Aprecio
+corn,Granos de Elote,111.0,kg,Bodega Aurrera
+corn,Granos de Elote,116.0,kg,Chedraui
+corn,Granos de Elote,116.0,kg,Chedraui Selecto
+corn,Granos de Elote,116.0,kg,City Market
+corn,Granos de Elote,117.0,kg,Fresko la Comer
+corn,Granos de Elote,115.0,kg,H.e.b.
+corn,Granos de Elote,114.9,kg,Hipermercado Soriana
+corn,Granos de Elote,118.0,kg,La Comer
+corn,Granos de Elote,113.0,kg,Ley
+corn,Granos de Elote,117.8,kg,Mega Soriana
+corn,Granos de Elote,121.0,kg,Mi Tienda del Ahorro
+corn,Granos de Elote,125.98,kg,Minisuper
+corn,Granos de Elote,111.98,kg,S Mart
+corn,Granos de Elote,127.0,kg,Soriana Super
+corn,Granos de Elote,119.0,kg,Sumesa
+corn,Granos de Elote,116.0,kg,Super Chedraui
+corn,Granos de Elote,112.0,kg,Superissste
+corn,Granos de Elote,99.26,kg,U.n.a.m.
+corn,Granos de Elote,88.0,kg,Wal-mart
+corn,Granos de Elote,86.0,kg,Wal-mart Express
+corn tortillas,Tortilla de Maíz,20.0,kg,Abarrotera Monterrey
+corn tortillas,Tortilla de Maíz,23.0,kg,Abarrotera Sanchez
+corn tortillas,Tortilla de Maíz,19.9,kg,Alsuper Fresh Market
+corn tortillas,Tortilla de Maíz,14.9,kg,Aprecio
+corn tortillas,Tortilla de Maíz,13.5,kg,Bodega Aurrera
+corn tortillas,Tortilla de Maíz,15.0,kg,Bodega Aurrera Express
+corn tortillas,Tortilla de Maíz,25.0,kg,Central de Abasto
+corn tortillas,Tortilla de Maíz,13.0,kg,Chedraui
+corn tortillas,Tortilla de Maíz,13.0,kg,Chedraui Selecto
+corn tortillas,Tortilla de Maíz,14.5,kg,City Market
+corn tortillas,Tortilla de Maíz,25.0,kg,El Pitico
+corn tortillas,Tortilla de Maíz,14.5,kg,Fresko la Comer
+corn tortillas,Tortilla de Maíz,19.9,kg,H.e.b.
+corn tortillas,Tortilla de Maíz,14.1,kg,Hipermercado Soriana
+corn tortillas,Tortilla de Maíz,14.5,kg,La Comer
+corn tortillas,Tortilla de Maíz,13.5,kg,Ley
+corn tortillas,Tortilla de Maíz,15.1,kg,Ley Express
+corn tortillas,Tortilla de Maíz,14.1,kg,Mega Soriana
+corn tortillas,Tortilla de Maíz,30.0,kg,Mercado Central de Acapulco
+corn tortillas,Tortilla de Maíz,20.0,kg,Mercado Emilio Sanchez Piedras
+corn tortillas,Tortilla de Maíz,30.0,kg,Mercado Miguel Hidalgo
+corn tortillas,Tortilla de Maíz,26.0,kg,Mercado Publico
+corn tortillas,Tortilla de Maíz,23.0,kg,Mercado Publico 5 de Mayo
+corn tortillas,Tortilla de Maíz,14.1,kg,Mercado Soriana
+corn tortillas,Tortilla de Maíz,15.9,kg,Mi Tienda del Ahorro
+corn tortillas,Tortilla de Maíz,17.0,kg,Minisuper
+corn tortillas,Tortilla de Maíz,19.99,kg,Operadora Merco
+corn tortillas,Tortilla de Maíz,24.0,kg,Oxxo
+corn tortillas,Tortilla de Maíz,14.99,kg,S Mart
+corn tortillas,Tortilla de Maíz,13.9,kg,Soriana Express
+corn tortillas,Tortilla de Maíz,14.1,kg,Soriana Super
+corn tortillas,Tortilla de Maíz,14.5,kg,Sumesa
+corn tortillas,Tortilla de Maíz,11.0,kg,Super Aki
+corn tortillas,Tortilla de Maíz,11.0,kg,Super Aki Xtra
+corn tortillas,Tortilla de Maíz,13.0,kg,Super Chedraui
+corn tortillas,Tortilla de Maíz,15.5,kg,Super Kompras
+corn tortillas,Tortilla de Maíz,19.5,kg,Superissste
+corn tortillas,Tortilla de Maíz,17.5,kg,Supermercado Gonzalez
+corn tortillas,Tortilla de Maíz,25.0,kg,Tortillerias Tradicionales
+corn tortillas,Tortilla de Maíz,13.4,kg,Wal-mart
+corn tortillas,Tortilla de Maíz,14.5,kg,Wal-mart Express
+cornmeal,Harina de Maíz,23.25,kg,7 Eleven
+cornmeal,Harina de Maíz,20.5,kg,Abarrotera Monterrey
+cornmeal,Harina de Maíz,21.5,kg,Abarrotera Sanchez
+cornmeal,Harina de Maíz,28.0,kg,Abarrotes Super Cabrera Class
+cornmeal,Harina de Maíz,22.9,kg,Alsuper
+cornmeal,Harina de Maíz,22.9,kg,Alsuper Fresh Market
+cornmeal,Harina de Maíz,17.9,kg,Aprecio
+cornmeal,Harina de Maíz,20.5,kg,Bodega Aurrera
+cornmeal,Harina de Maíz,19.0,kg,Bodega Aurrera Express
+cornmeal,Harina de Maíz,20.5,kg,Central de Abasto
+cornmeal,Harina de Maíz,22.0,kg,Chedraui
+cornmeal,Harina de Maíz,22.0,kg,Chedraui Selecto
+cornmeal,Harina de Maíz,25.0,kg,City Market
+cornmeal,Harina de Maíz,24.5,kg,El Pitico
+cornmeal,Harina de Maíz,20.0,kg,Farmacia Guadalajara
+cornmeal,Harina de Maíz,25.5,kg,Fresko la Comer
+cornmeal,Harina de Maíz,21.5,kg,H.e.b.
+cornmeal,Harina de Maíz,21.9,kg,Hipermercado Soriana
+cornmeal,Harina de Maíz,24.75,kg,La Comer
+cornmeal,Harina de Maíz,19.2,kg,Ley
+cornmeal,Harina de Maíz,18.7,kg,Ley Express
+cornmeal,Harina de Maíz,21.5,kg,Mega Soriana
+cornmeal,Harina de Maíz,20.0,kg,Mercado Adolfo Lopez Mateos
+cornmeal,Harina de Maíz,24.5,kg,Mercado Emilio Sanchez Piedras
+cornmeal,Harina de Maíz,22.0,kg,Mercado Publico
+cornmeal,Harina de Maíz,21.0,kg,Mercado Publico 5 de Mayo
+cornmeal,Harina de Maíz,21.9,kg,Mercado Soriana
+cornmeal,Harina de Maíz,24.5,kg,Mi Tienda del Ahorro
+cornmeal,Harina de Maíz,21.22,kg,Minisuper
+cornmeal,Harina de Maíz,19.0,kg,Neto (Super Precio)
+cornmeal,Harina de Maíz,21.0,kg,Oxxo
+cornmeal,Harina de Maíz,21.99,kg,S Mart
+cornmeal,Harina de Maíz,20.5,kg,Soriana Express
+cornmeal,Harina de Maíz,23.0,kg,Soriana Super
+cornmeal,Harina de Maíz,25.5,kg,Sumesa
+cornmeal,Harina de Maíz,32.95,kg,Super Aki
+cornmeal,Harina de Maíz,32.95,kg,Super Aki Xtra
+cornmeal,Harina de Maíz,20.75,kg,Super Chedraui
+cornmeal,Harina de Maíz,20.0,kg,Superissste
+cornmeal,Harina de Maíz,21.5,kg,Supermercado Gonzalez
+cornmeal,Harina de Maíz,24.0,kg,Wal-mart
+cornmeal,Harina de Maíz,25.0,kg,Wal-mart Express
+cornstarch,Harina de Maíz,140.94,kg,Alsuper
+cornstarch,Harina de Maíz,140.94,kg,Alsuper Fresh Market
+cornstarch,Harina de Maíz,127.06,kg,Bodega Aurrera
+cornstarch,Harina de Maíz,142.35,kg,Chedraui
+cornstarch,Harina de Maíz,141.18,kg,Chedraui Selecto
+cornstarch,Harina de Maíz,149.41,kg,City Market
+cornstarch,Harina de Maíz,145.88,kg,El Pitico
+cornstarch,Harina de Maíz,150.35,kg,Fresko la Comer
+cornstarch,Harina de Maíz,148.24,kg,H.e.b.
+cornstarch,Harina de Maíz,149.41,kg,Hipermercado Soriana
+cornstarch,Harina de Maíz,145.41,kg,La Comer
+cornstarch,Harina de Maíz,152.71,kg,Ley
+cornstarch,Harina de Maíz,154.12,kg,Mega Soriana
+cornstarch,Harina de Maíz,148.24,kg,Mercado Soriana
+cornstarch,Harina de Maíz,148.24,kg,Minisuper
+cornstarch,Harina de Maíz,149.39,kg,S Mart
+cornstarch,Harina de Maíz,135.29,kg,Soriana Express
+cornstarch,Harina de Maíz,138.59,kg,Soriana Super
+cornstarch,Harina de Maíz,150.35,kg,Sumesa
+cornstarch,Harina de Maíz,150.47,kg,Super Aki Xtra
+cornstarch,Harina de Maíz,148.24,kg,Super Chedraui
+cornstarch,Harina de Maíz,143.53,kg,Wal-mart
+cornstarch,Harina de Maíz,143.53,kg,Wal-mart Express
+crabmeat,Jaiba,154.9,kg,Alsuper Fresh Market
+crabmeat,Jaiba,140.0,kg,Central de Abasto
+crabmeat,Jaiba,239.0,kg,Chedraui
+crabmeat,Jaiba,239.0,kg,Chedraui Selecto
+crabmeat,Jaiba,147.0,kg,City Market
+crabmeat,Jaiba,139.0,kg,H.e.b.
+crabmeat,Jaiba,199.0,kg,Hipermercado Soriana
+crabmeat,Jaiba,150.0,kg,La Costa Marisquera
+crabmeat,Jaiba,179.9,kg,Ley
+crabmeat,Jaiba,199.0,kg,Mega Soriana
+crabmeat,Jaiba,180.0,kg,Mercado Emilio Sanchez Piedras
+crabmeat,Jaiba,140.0,kg,Mercado Publico
+crabmeat,Jaiba,199.0,kg,Mercado Soriana
+crabmeat,Jaiba,160.0,kg,Mercado del Mar Felipe Angeles Higueril
+crabmeat,Jaiba,145.0,kg,Mercado del Mar San Felipe
+crabmeat,Jaiba,135.0,kg,Mercado del Mar Zapopan
+crabmeat,Jaiba,155.0,kg,Pescaderia Guasaveña
+crabmeat,Jaiba,160.0,kg,Pescaderia Hermanos Luna
+crabmeat,Jaiba,140.0,kg,Pescaderia Hermanos Villegas
+crabmeat,Jaiba,140.0,kg,Pescaderia Lindo Sinaloa
+crabmeat,Jaiba,140.0,kg,Pescaderia Puerto Aventura
+crabmeat,Jaiba,160.0,kg,Pescaderia Sevilla Carro Verde
+crabmeat,Jaiba,140.0,kg,Pescaderia Yuridia
+crabmeat,Jaiba,160.0,kg,Pescaderia el Mangle
+crabmeat,Jaiba,120.0,kg,Pescaderia el Tejano de Queretaro
+crabmeat,Jaiba,140.0,kg,Pescaderia la Jaiba
+crabmeat,Jaiba,100.0,kg,Pescaderias
+crabmeat,Jaiba,134.5,kg,Pescaderias Tradicionales
+crabmeat,Jaiba,199.0,kg,Soriana Super
+crabmeat,Jaiba,147.0,kg,Sumesa
+cream,Crema,125.0,kg,7 Eleven
+cream,Crema,113.85,litro,7 Eleven
+cream,Crema,122.45,kg,Abarrotera Sanchez
+cream,Crema,131.65,kg,Alsuper
+cream,Crema,111.27,litro,Alsuper
+cream,Crema,139.55,kg,Alsuper Fresh Market
+cream,Crema,111.27,litro,Alsuper Fresh Market
+cream,Crema,114.87,kg,Aprecio
+cream,Crema,107.91,kg,Bodega Aurrera
+cream,Crema,100.0,litro,Bodega Aurrera
+cream,Crema,112.78,kg,Bodega Aurrera Express
+cream,Crema,98.59,litro,Bodega Aurrera Express
+cream,Crema,103.02,kg,Central de Abasto
+cream,Crema,104.0,litro,Central de Abasto
+cream,Crema,110.31,kg,Chedraui
+cream,Crema,115.02,litro,Chedraui
+cream,Crema,110.31,kg,Chedraui Selecto
+cream,Crema,115.02,litro,Chedraui Selecto
+cream,Crema,101.68,kg,City Market
+cream,Crema,115.0,litro,City Market
+cream,Crema,134.98,kg,El Pitico
+cream,Crema,110.33,litro,El Pitico
+cream,Crema,122.3,kg,Farmacia Guadalajara
+cream,Crema,105.63,litro,Farmacia Guadalajara
+cream,Crema,119.9,kg,Fresko la Comer
+cream,Crema,112.51,litro,Fresko la Comer
+cream,Crema,114.8,kg,H.e.b.
+cream,Crema,102.98,litro,H.e.b.
+cream,Crema,116.31,kg,Hipermercado Soriana
+cream,Crema,121.83,litro,Hipermercado Soriana
+cream,Crema,121.1,kg,La Comer
+cream,Crema,111.5,litro,La Comer
+cream,Crema,112.47,kg,Ley
+cream,Crema,87.6,litro,Ley
+cream,Crema,107.67,kg,Ley Express
+cream,Crema,117.27,kg,Mega Soriana
+cream,Crema,119.48,litro,Mega Soriana
+cream,Crema,60.0,kg,Mercado Central de Acapulco
+cream,Crema,105.0,litro,Mercado Central de Acapulco
+cream,Crema,122.45,kg,Mercado Emilio Sanchez Piedras
+cream,Crema,90.0,kg,Mercado Publico
+cream,Crema,110.0,litro,Mercado Publico
+cream,Crema,60.0,kg,Mercado Publico 5 de Mayo
+cream,Crema,117.27,kg,Mercado Soriana
+cream,Crema,124.18,litro,Mercado Soriana
+cream,Crema,107.67,kg,Mi Tienda del Ahorro
+cream,Crema,105.79,litro,Mi Tienda del Ahorro
+cream,Crema,123.5,kg,Minisuper
+cream,Crema,96.24,litro,Minisuper
+cream,Crema,100.72,kg,Neto (Super Precio)
+cream,Crema,91.55,litro,Neto (Super Precio)
+cream,Crema,119.9,kg,Oxxo
+cream,Crema,113.85,litro,Oxxo
+cream,Crema,124.68,kg,S Mart
+cream,Crema,105.61,litro,S Mart
+cream,Crema,117.27,kg,Soriana Express
+cream,Crema,108.92,litro,Soriana Express
+cream,Crema,119.18,kg,Soriana Super
+cream,Crema,102.11,litro,Soriana Super
+cream,Crema,121.1,kg,Sumesa
+cream,Crema,115.02,litro,Sumesa
+cream,Crema,122.19,kg,Super Aki
+cream,Crema,105.63,litro,Super Aki
+cream,Crema,124.04,kg,Super Aki Xtra
+cream,Crema,110.31,kg,Super Chedraui
+cream,Crema,106.81,litro,Super Chedraui
+cream,Crema,112.47,kg,Superissste
+cream,Crema,99.77,litro,Superissste
+cream,Crema,110.31,kg,Supermercado Gonzalez
+cream,Crema,88.35,kg,U.n.a.m.
+cream,Crema,98.33,litro,U.n.a.m.
+cream,Crema,110.31,kg,Wal-mart
+cream,Crema,99.3,litro,Wal-mart
+cream,Crema,110.31,kg,Wal-mart Express
+cream,Crema,98.59,litro,Wal-mart Express
+cucumber,Pepino,26.9,kg,Alsuper
+cucumber,Pepino,26.9,kg,Alsuper Fresh Market
+cucumber,Pepino,19.9,kg,Aprecio
+cucumber,Pepino,22.0,kg,Bodega Aurrera
+cucumber,Pepino,22.0,kg,Bodega Aurrera Express
+cucumber,Pepino,25.0,kg,Central de Abasto
+cucumber,Pepino,21.9,kg,Chedraui
+cucumber,Pepino,26.0,kg,Chedraui Selecto
+cucumber,Pepino,28.9,kg,City Market
+cucumber,Pepino,25.0,kg,El Pitico
+cucumber,Pepino,36.9,kg,Fresko la Comer
+cucumber,Pepino,28.95,kg,H.e.b.
+cucumber,Pepino,22.2,kg,Hipermercado Soriana
+cucumber,Pepino,36.9,kg,La Comer
+cucumber,Pepino,19.9,kg,Ley
+cucumber,Pepino,19.7,kg,Ley Express
+cucumber,Pepino,23.9,kg,Mega Soriana
+cucumber,Pepino,22.0,kg,Mercado Malibran
+cucumber,Pepino,27.0,kg,Mercado Miguel Hidalgo
+cucumber,Pepino,26.0,kg,Mercado Publico
+cucumber,Pepino,20.0,kg,Mercado Publico 5 de Mayo
+cucumber,Pepino,20.8,kg,Mercado Soriana
+cucumber,Pepino,21.5,kg,Mercado el Meson Estrella
+cucumber,Pepino,24.9,kg,Mi Tienda del Ahorro
+cucumber,Pepino,28.99,kg,Minisuper
+cucumber,Pepino,23.49,kg,Operadora Merco
+cucumber,Pepino,28.99,kg,S Mart
+cucumber,Pepino,20.3,kg,Soriana Express
+cucumber,Pepino,21.8,kg,Soriana Super
+cucumber,Pepino,34.9,kg,Sumesa
+cucumber,Pepino,23.95,kg,Super Aki
+cucumber,Pepino,23.95,kg,Super Aki Xtra
+cucumber,Pepino,24.95,kg,Super Chedraui
+cucumber,Pepino,27.9,kg,Superissste
+cucumber,Pepino,26.9,kg,Supermercado Gonzalez
+cucumber,Pepino,21.66,kg,U.n.a.m.
+cucumber,Pepino,24.0,kg,Wal-mart
+cucumber,Pepino,24.0,kg,Wal-mart Express
+cumin,Comino,740.0,kg,Hipermercado Soriana
+cumin,Comino,720.0,kg,Mega Soriana
+egg,Huevo,3.75,pieza,7 Eleven
+egg,Huevo,2.0,pieza,Abarrotera Sanchez
+egg,Huevo,32.0,kg,Abarrotes Super Cabrera Class
+egg,Huevo,2.47,pieza,Alsuper
+egg,Huevo,2.47,pieza,Alsuper Fresh Market
+egg,Huevo,3.33,pieza,Aprecio
+egg,Huevo,2.33,pieza,Bodega Aurrera
+egg,Huevo,2.25,pieza,Bodega Aurrera Express
+egg,Huevo,29.5,kg,Central de Abasto
+egg,Huevo,1.65,pieza,Central de Abasto
+egg,Huevo,2.33,pieza,Chedraui
+egg,Huevo,2.33,pieza,Chedraui Selecto
+egg,Huevo,2.4,pieza,City Market
+egg,Huevo,2.17,pieza,El Pitico
+egg,Huevo,3.46,pieza,Farmacia Guadalajara
+egg,Huevo,2.48,pieza,Fresko la Comer
+egg,Huevo,2.64,pieza,H.e.b.
+egg,Huevo,2.38,pieza,Hipermercado Soriana
+egg,Huevo,2.89,pieza,La Comer
+egg,Huevo,20.9,kg,Ley
+egg,Huevo,2.49,pieza,Ley
+egg,Huevo,2.61,pieza,Ley Express
+egg,Huevo,2.33,pieza,Mega Soriana
+egg,Huevo,28.5,kg,Mercado Emilio Sanchez Piedras
+egg,Huevo,32.0,kg,Mercado Publico
+egg,Huevo,2.25,pieza,Mercado Soriana
+egg,Huevo,2.08,pieza,Mi Tienda del Ahorro
+egg,Huevo,36.0,kg,Minisuper
+egg,Huevo,2.78,pieza,Minisuper
+egg,Huevo,2.39,pieza,Operadora Merco
+egg,Huevo,45.0,kg,Oxxo
+egg,Huevo,3.04,pieza,Oxxo
+egg,Huevo,2.17,pieza,S Mart
+egg,Huevo,2.25,pieza,Soriana Express
+egg,Huevo,2.43,pieza,Soriana Super
+egg,Huevo,3.18,pieza,Sumesa
+egg,Huevo,3.25,pieza,Super Aki
+egg,Huevo,2.78,pieza,Super Aki Xtra
+egg,Huevo,2.28,pieza,Super Chedraui
+egg,Huevo,2.42,pieza,Super Kompras
+egg,Huevo,2.43,pieza,Superissste
+egg,Huevo,2.28,pieza,U.n.a.m.
+egg,Huevo,43.0,kg,Wal-mart
+egg,Huevo,2.42,pieza,Wal-mart
+egg,Huevo,2.33,pieza,Wal-mart Express
+flour,Harina de Trigo,22.5,kg,7 Eleven
+flour,Harina de Trigo,15.34,kg,Abarrotera Sanchez
+flour,Harina de Trigo,15.9,kg,Alsuper
+flour,Harina de Trigo,19.74,kg,Alsuper Fresh Market
+flour,Harina de Trigo,17.9,kg,Aprecio
+flour,Harina de Trigo,16.0,kg,Bodega Aurrera
+flour,Harina de Trigo,16.0,kg,Bodega Aurrera Express
+flour,Harina de Trigo,20.0,kg,Central de Abasto
+flour,Harina de Trigo,19.5,kg,Chedraui
+flour,Harina de Trigo,19.5,kg,Chedraui Selecto
+flour,Harina de Trigo,21.5,kg,City Market
+flour,Harina de Trigo,22.0,kg,El Pitico
+flour,Harina de Trigo,19.5,kg,Farmacia Guadalajara
+flour,Harina de Trigo,22.5,kg,Fresko la Comer
+flour,Harina de Trigo,19.9,kg,H.e.b.
+flour,Harina de Trigo,19.9,kg,Hipermercado Soriana
+flour,Harina de Trigo,21.45,kg,La Comer
+flour,Harina de Trigo,22.9,kg,Ley
+flour,Harina de Trigo,19.74,kg,Mega Soriana
+flour,Harina de Trigo,22.0,kg,Mercado Adolfo Lopez Mateos
+flour,Harina de Trigo,23.0,kg,Mercado Publico
+flour,Harina de Trigo,19.74,kg,Mercado Soriana
+flour,Harina de Trigo,14.2,kg,Mi Tienda del Ahorro
+flour,Harina de Trigo,22.33,kg,Minisuper
+flour,Harina de Trigo,20.0,kg,Neto (Super Precio)
+flour,Harina de Trigo,18.0,kg,Oxxo
+flour,Harina de Trigo,19.49,kg,S Mart
+flour,Harina de Trigo,19.4,kg,Soriana Express
+flour,Harina de Trigo,19.74,kg,Soriana Super
+flour,Harina de Trigo,22.95,kg,Sumesa
+flour,Harina de Trigo,19.98,kg,Super Aki
+flour,Harina de Trigo,20.23,kg,Super Aki Xtra
+flour,Harina de Trigo,19.5,kg,Super Chedraui
+flour,Harina de Trigo,21.25,kg,Superissste
+flour,Harina de Trigo,25.97,kg,U.n.a.m.
+flour,Harina de Trigo,17.0,kg,Wal-mart
+flour,Harina de Trigo,20.0,kg,Wal-mart Express
+french bread,Pan Blanco Bolillo,3.5,pieza,Alsuper
+french bread,Pan Blanco Bolillo,3.9,pieza,Alsuper Fresh Market
+french bread,Pan Blanco Bolillo,1.9,pieza,Bodega Aurrera
+french bread,Pan Blanco Bolillo,2.4,pieza,Bodega Aurrera Express
+french bread,Pan Blanco Bolillo,1.9,pieza,Chedraui
+french bread,Pan Blanco Bolillo,2.25,pieza,Chedraui Selecto
+french bread,Pan Blanco Bolillo,3.2,pieza,City Market
+french bread,Pan Blanco Bolillo,4.0,pieza,El Pitico
+french bread,Pan Blanco Bolillo,10.0,pieza,Farmacia Guadalajara
+french bread,Pan Blanco Bolillo,2.7,pieza,Fresko la Comer
+french bread,Pan Blanco Bolillo,2.99,pieza,H.e.b.
+french bread,Pan Blanco Bolillo,2.1,pieza,Hipermercado Soriana
+french bread,Pan Blanco Bolillo,2.5,pieza,La Comer
+french bread,Pan Blanco Bolillo,2.5,pieza,Ley
+french bread,Pan Blanco Bolillo,2.0,pieza,Mega Soriana
+french bread,Pan Blanco Bolillo,8.0,pieza,Mercado Central de Acapulco
+french bread,Pan Blanco Bolillo,6.5,pieza,Mercado Publico
+french bread,Pan Blanco Bolillo,1.9,pieza,Mercado Soriana
+french bread,Pan Blanco Bolillo,3.0,pieza,Minisuper
+french bread,Pan Blanco Bolillo,10.0,pieza,Oxxo
+french bread,Pan Blanco Bolillo,5.0,pieza,Panaderias Tradicionales
+french bread,Pan Blanco Bolillo,2.99,pieza,S Mart
+french bread,Pan Blanco Bolillo,1.7,pieza,Soriana Express
+french bread,Pan Blanco Bolillo,2.0,pieza,Soriana Super
+french bread,Pan Blanco Bolillo,2.5,pieza,Sumesa
+french bread,Pan Blanco Bolillo,1.9,pieza,Super Aki
+french bread,Pan Blanco Bolillo,1.9,pieza,Super Aki Xtra
+french bread,Pan Blanco Bolillo,1.9,pieza,Super Chedraui
+french bread,Pan Blanco Bolillo,2.9,pieza,Super Kompras
+french bread,Pan Blanco Bolillo,5.9,pieza,Supermercado Gonzalez
+french bread,Pan Blanco Bolillo,2.0,pieza,Wal-mart
+french bread,Pan Blanco Bolillo,2.1,pieza,Wal-mart Express
+garlic,Ajo,398.98,kg,Alsuper
+garlic,Ajo,124.9,kg,Alsuper Fresh Market
+garlic,Ajo,388.2,kg,Aprecio
+garlic,Ajo,584.42,kg,Bodega Aurrera
+garlic,Ajo,87.5,kg,Central de Abasto
+garlic,Ajo,551.95,kg,Chedraui
+garlic,Ajo,97.0,kg,Chedraui Selecto
+garlic,Ajo,597.4,kg,City Market
+garlic,Ajo,109.0,kg,El Pitico
+garlic,Ajo,655.84,kg,Fresko la Comer
+garlic,Ajo,199.0,kg,H.e.b.
+garlic,Ajo,603.9,kg,Hipermercado Soriana
+garlic,Ajo,655.84,kg,La Comer
+garlic,Ajo,179.9,kg,Ley
+garlic,Ajo,194.9,kg,Ley Express
+garlic,Ajo,603.9,kg,Mega Soriana
 garlic,Ajo,80.0,kg,Mercado Adolfo Lopez Mateos
-onion,Cebolla,25.0,manojo,Central de Abasto
-flour,Harina de Trigo,19.0,kg,Bodega Aurrera
-water,Agua Sin Gas,17.49,litro,S Mart
-olive oil,Aceite de Oliva,219.0,ml,Hipermercado Soriana
+garlic,Ajo,90.0,kg,Mercado Emilio Sanchez Piedras
+garlic,Ajo,85.0,kg,Mercado Malibran
+garlic,Ajo,85.0,kg,Mercado Miguel Hidalgo
+garlic,Ajo,130.0,kg,Mercado Publico
+garlic,Ajo,199.0,kg,Mercado Soriana
+garlic,Ajo,96.0,kg,Mercado el Meson Estrella
+garlic,Ajo,149.0,kg,Mi Tienda del Ahorro
+garlic,Ajo,149.99,kg,Minisuper
+garlic,Ajo,120.0,kg,Operadora Merco
+garlic,Ajo,282.99,kg,S Mart
+garlic,Ajo,551.95,kg,Soriana Express
+garlic,Ajo,199.9,kg,Soriana Super
+garlic,Ajo,776.62,kg,Sumesa
+garlic,Ajo,72.95,kg,Super Aki
+garlic,Ajo,72.96,kg,Super Aki Xtra
+garlic,Ajo,584.42,kg,Super Chedraui
+garlic,Ajo,353.96,kg,Supermercado Gonzalez
+garlic,Ajo,105.14,kg,U.n.a.m.
+garlic,Ajo,597.4,kg,Wal-mart
+garlic,Ajo,610.39,kg,Wal-mart Express
+green beans,Ejote,82.9,kg,Aprecio
+green beans,Ejote,64.0,kg,Bodega Aurrera
+green beans,Ejote,40.0,kg,Central de Abasto
+green beans,Ejote,44.9,kg,Chedraui
+green beans,Ejote,49.9,kg,Chedraui Selecto
+green beans,Ejote,52.4,kg,City Market
+green beans,Ejote,42.0,kg,El Pitico
+green beans,Ejote,49.9,kg,Fresko la Comer
+green beans,Ejote,79.95,kg,H.e.b.
+green beans,Ejote,64.4,kg,Hipermercado Soriana
+green beans,Ejote,49.9,kg,La Comer
+green beans,Ejote,69.9,kg,Ley
+green beans,Ejote,69.9,kg,Ley Express
+green beans,Ejote,59.9,kg,Mega Soriana
+green beans,Ejote,35.0,kg,Mercado Adolfo Lopez Mateos
+green beans,Ejote,40.0,kg,Mercado Emilio Sanchez Piedras
+green beans,Ejote,35.0,kg,Mercado Malibran
+green beans,Ejote,50.0,kg,Mercado Publico
+green beans,Ejote,40.0,kg,Mercado Publico 5 de Mayo
+green beans,Ejote,63.35,kg,Mercado Soriana
+green beans,Ejote,50.0,kg,Mercado el Meson Estrella
+green beans,Ejote,62.9,kg,Mi Tienda del Ahorro
+green beans,Ejote,68.44,kg,Minisuper
+green beans,Ejote,59.99,kg,Operadora Merco
+green beans,Ejote,59.99,kg,S Mart
+green beans,Ejote,66.9,kg,Soriana Super
+green beans,Ejote,52.4,kg,Sumesa
+green beans,Ejote,52.95,kg,Super Aki Xtra
+green beans,Ejote,47.45,kg,Super Chedraui
+green beans,Ejote,68.9,kg,Supermercado Gonzalez
+green beans,Ejote,36.7,kg,U.n.a.m.
+green beans,Ejote,66.5,kg,Wal-mart
+green beans,Ejote,69.0,kg,Wal-mart Express
+green chilies,Chile Fresco,34.9,kg,Alsuper
+green chilies,Chile Fresco,32.9,kg,Alsuper Fresh Market
+green chilies,Chile Fresco,43.4,kg,Aprecio
+green chilies,Chile Fresco,89.0,kg,Bodega Aurrera
+green chilies,Chile Fresco,54.0,kg,Bodega Aurrera Express
+green chilies,Chile Fresco,34.95,kg,Central de Abasto
+green chilies,Chile Fresco,54.9,kg,Chedraui
+green chilies,Chile Fresco,54.9,kg,Chedraui Selecto
+green chilies,Chile Fresco,59.9,kg,City Market
+green chilies,Chile Fresco,28.0,kg,El Pitico
+green chilies,Chile Fresco,49.9,kg,Fresko la Comer
+green chilies,Chile Fresco,49.95,kg,H.e.b.
+green chilies,Chile Fresco,55.9,kg,Hipermercado Soriana
+green chilies,Chile Fresco,59.9,kg,La Comer
+green chilies,Chile Fresco,49.9,kg,Ley
+green chilies,Chile Fresco,49.9,kg,Ley Express
+green chilies,Chile Fresco,61.5,kg,Mega Soriana
+green chilies,Chile Fresco,28.0,kg,Mercado Adolfo Lopez Mateos
+green chilies,Chile Fresco,52.0,kg,Mercado Emilio Sanchez Piedras
+green chilies,Chile Fresco,34.0,kg,Mercado Malibran
+green chilies,Chile Fresco,45.0,kg,Mercado Miguel Hidalgo
+green chilies,Chile Fresco,50.0,kg,Mercado Publico
+green chilies,Chile Fresco,70.0,kg,Mercado Publico 5 de Mayo
+green chilies,Chile Fresco,38.8,kg,Mercado Soriana
+green chilies,Chile Fresco,17.0,kg,Mercado el Meson Estrella
+green chilies,Chile Fresco,35.4,kg,Mi Tienda del Ahorro
+green chilies,Chile Fresco,45.99,kg,Minisuper
+green chilies,Chile Fresco,32.99,kg,Operadora Merco
+green chilies,Chile Fresco,13.0,kg,Oxxo
+green chilies,Chile Fresco,45.99,kg,S Mart
+green chilies,Chile Fresco,54.0,kg,Soriana Express
+green chilies,Chile Fresco,61.5,kg,Soriana Super
+green chilies,Chile Fresco,59.9,kg,Sumesa
+green chilies,Chile Fresco,46.0,kg,Super Aki
+green chilies,Chile Fresco,52.75,kg,Super Aki Xtra
+green chilies,Chile Fresco,52.4,kg,Super Chedraui
+green chilies,Chile Fresco,28.6,kg,Super Kompras
+green chilies,Chile Fresco,36.0,kg,Superissste
+green chilies,Chile Fresco,34.9,kg,Supermercado Gonzalez
+green chilies,Chile Fresco,35.45,kg,U.n.a.m.
+green chilies,Chile Fresco,92.0,kg,Wal-mart
+green chilies,Chile Fresco,133.0,kg,Wal-mart Express
+green onion,Cebolla,17.4,manojo,Alsuper
+green onion,Cebolla,16.9,manojo,Alsuper Fresh Market
+green onion,Cebolla,9.9,manojo,Aprecio
+green onion,Cebolla,16.9,manojo,Bodega Aurrera
+green onion,Cebolla,22.0,manojo,Central de Abasto
+green onion,Cebolla,14.5,manojo,Chedraui
+green onion,Cebolla,14.5,manojo,Chedraui Selecto
+green onion,Cebolla,11.4,manojo,Fresko la Comer
+green onion,Cebolla,17.95,manojo,H.e.b.
+green onion,Cebolla,13.9,manojo,Hipermercado Soriana
+green onion,Cebolla,10.9,manojo,La Comer
+green onion,Cebolla,14.75,manojo,Ley
+green onion,Cebolla,14.75,manojo,Ley Express
+green onion,Cebolla,14.9,manojo,Mega Soriana
+green onion,Cebolla,20.0,manojo,Mercado Adolfo Lopez Mateos
+green onion,Cebolla,12.0,manojo,Mercado Emilio Sanchez Piedras
+green onion,Cebolla,12.0,manojo,Mercado Malibran
+green onion,Cebolla,20.0,manojo,Mercado Publico
+green onion,Cebolla,14.9,manojo,Mercado Soriana
+green onion,Cebolla,10.99,manojo,Minisuper
+green onion,Cebolla,14.99,manojo,Operadora Merco
+green onion,Cebolla,12.49,manojo,S Mart
+green onion,Cebolla,13.9,manojo,Soriana Express
+green onion,Cebolla,14.9,manojo,Soriana Super
+green onion,Cebolla,10.9,manojo,Sumesa
+green onion,Cebolla,13.5,manojo,Super Aki
+green onion,Cebolla,13.5,manojo,Super Aki Xtra
+green onion,Cebolla,15.0,manojo,Super Chedraui
+green onion,Cebolla,13.4,manojo,Supermercado Gonzalez
+green onion,Cebolla,10.0,manojo,U.n.a.m.
+green onion,Cebolla,14.9,manojo,Wal-mart
+green onion,Cebolla,16.9,manojo,Wal-mart Express
+ground pork,Carne Cerdo,114.9,kg,Alsuper
+ground pork,Carne Cerdo,114.9,kg,Alsuper Fresh Market
+ground pork,Carne Cerdo,126.0,kg,Aprecio
+ground pork,Carne Cerdo,108.0,kg,Bodega Aurrera
+ground pork,Carne Cerdo,107.5,kg,Central de Abasto
+ground pork,Carne Cerdo,99.9,kg,Chedraui
+ground pork,Carne Cerdo,104.45,kg,Chedraui Selecto
+ground pork,Carne Cerdo,154.0,kg,City Market
+ground pork,Carne Cerdo,145.0,kg,Fresko la Comer
+ground pork,Carne Cerdo,99.9,kg,H.e.b.
+ground pork,Carne Cerdo,118.0,kg,Hipermercado Soriana
+ground pork,Carne Cerdo,145.0,kg,La Comer
+ground pork,Carne Cerdo,107.9,kg,Ley
+ground pork,Carne Cerdo,107.9,kg,Ley Express
+ground pork,Carne Cerdo,118.0,kg,Mega Soriana
+ground pork,Carne Cerdo,120.0,kg,Mercado Adolfo Lopez Mateos
+ground pork,Carne Cerdo,125.0,kg,Mercado Emilio Sanchez Piedras
+ground pork,Carne Cerdo,120.0,kg,Mercado Malibran
+ground pork,Carne Cerdo,138.0,kg,Mercado Publico
+ground pork,Carne Cerdo,118.0,kg,Mercado Soriana
+ground pork,Carne Cerdo,114.0,kg,Mi Tienda del Ahorro
+ground pork,Carne Cerdo,114.99,kg,S Mart
+ground pork,Carne Cerdo,114.0,kg,Soriana Super
+ground pork,Carne Cerdo,145.0,kg,Sumesa
+ground pork,Carne Cerdo,99.9,kg,Super Chedraui
+ground pork,Carne Cerdo,133.0,kg,Super Kompras
+ground pork,Carne Cerdo,139.8,kg,Superissste
+ground pork,Carne Cerdo,138.2,kg,U.n.a.m.
+ground pork,Carne Cerdo,109.0,kg,Wal-mart
+ground pork,Carne Cerdo,109.0,kg,Wal-mart Express
+ham,Jamón,239.83,kg,7 Eleven
+ham,Jamón,231.03,kg,Abarrotera Monterrey
+ham,Jamón,221.94,kg,Abarrotera Sanchez
+ham,Jamón,189.61,kg,Alsuper
+ham,Jamón,189.31,kg,Alsuper Fresh Market
+ham,Jamón,180.0,kg,Aprecio
+ham,Jamón,196.0,kg,Bodega Aurrera
+ham,Jamón,186.21,kg,Bodega Aurrera Express
+ham,Jamón,140.09,kg,Central de Abasto
+ham,Jamón,193.5,kg,Chedraui
+ham,Jamón,202.5,kg,Chedraui Selecto
+ham,Jamón,307.0,kg,City Market
+ham,Jamón,227.59,kg,El Pitico
+ham,Jamón,196.55,kg,Farmacia Guadalajara
+ham,Jamón,232.76,kg,Fresko la Comer
+ham,Jamón,210.0,kg,H.e.b.
+ham,Jamón,232.9,kg,Hipermercado Soriana
+ham,Jamón,219.9,kg,La Comer
+ham,Jamón,196.21,kg,Ley
+ham,Jamón,196.18,kg,Ley Express
+ham,Jamón,223.5,kg,Mega Soriana
+ham,Jamón,120.0,kg,Mercado Emilio Sanchez Piedras
+ham,Jamón,162.0,kg,Mercado Publico
+ham,Jamón,223.5,kg,Mercado Soriana
+ham,Jamón,180.0,kg,Mi Tienda del Ahorro
+ham,Jamón,200.0,kg,Minisuper
+ham,Jamón,194.79,kg,Operadora Merco
+ham,Jamón,215.52,kg,Oxxo
+ham,Jamón,199.96,kg,S Mart
+ham,Jamón,221.75,kg,Soriana Express
+ham,Jamón,220.0,kg,Soriana Super
+ham,Jamón,224.14,kg,Sumesa
+ham,Jamón,227.6,kg,Super Aki
+ham,Jamón,207.66,kg,Super Aki Xtra
+ham,Jamón,200.0,kg,Super Chedraui
+ham,Jamón,278.0,kg,Super Kompras
+ham,Jamón,201.72,kg,Superissste
+ham,Jamón,206.55,kg,Supermercado Gonzalez
+ham,Jamón,293.56,kg,U.n.a.m.
+ham,Jamón,196.79,kg,Wal-mart
+ham,Jamón,248.0,kg,Wal-mart Express
+honey,Miel de Abeja,197.73,kg,Alsuper
+honey,Miel de Abeja,199.67,kg,Alsuper Fresh Market
+honey,Miel de Abeja,266.33,kg,Aprecio
+honey,Miel de Abeja,195.0,kg,Bodega Aurrera
+honey,Miel de Abeja,176.7,kg,Central de Abasto
+honey,Miel de Abeja,192.54,kg,Chedraui
+honey,Miel de Abeja,190.0,kg,Chedraui Selecto
+honey,Miel de Abeja,190.0,kg,City Market
+honey,Miel de Abeja,213.33,kg,Farmacia Guadalajara
+honey,Miel de Abeja,226.67,kg,Farmacia San Pablo
+honey,Miel de Abeja,190.0,kg,Fresko la Comer
+honey,Miel de Abeja,189.8,kg,H.e.b.
+honey,Miel de Abeja,208.0,kg,Hipermercado Soriana
+honey,Miel de Abeja,203.73,kg,La Comer
+honey,Miel de Abeja,209.8,kg,Ley
+honey,Miel de Abeja,229.67,kg,Ley Express
+honey,Miel de Abeja,206.0,kg,Mega Soriana
+honey,Miel de Abeja,233.33,kg,Mercado Adolfo Lopez Mateos
+honey,Miel de Abeja,213.33,kg,Mercado Publico
+honey,Miel de Abeja,207.5,kg,Mercado Soriana
+honey,Miel de Abeja,196.8,kg,Minisuper
+honey,Miel de Abeja,208.17,kg,Oxxo
+honey,Miel de Abeja,199.97,kg,S Mart
+honey,Miel de Abeja,220.0,kg,Soriana Super
+honey,Miel de Abeja,213.17,kg,Sumesa
+honey,Miel de Abeja,201.49,kg,Super Aki
+honey,Miel de Abeja,230.53,kg,Super Aki Xtra
+honey,Miel de Abeja,206.67,kg,Super Chedraui
+honey,Miel de Abeja,199.67,kg,Super Kompras
+honey,Miel de Abeja,188.0,kg,Superissste
+honey,Miel de Abeja,170.0,kg,U.n.a.m.
+honey,Miel de Abeja,207.0,kg,Wal-mart
+honey,Miel de Abeja,192.0,kg,Wal-mart Express
+hot sauce,Salsa Picante y Similares,150.0,kg,7 Eleven
+hot sauce,Salsa Picante y Similares,68.92,litro,7 Eleven
+hot sauce,Salsa Picante y Similares,60.81,litro,Abarrotera Monterrey
+hot sauce,Salsa Picante y Similares,320.42,kg,Abarrotera Sanchez
+hot sauce,Salsa Picante y Similares,60.81,litro,Abarrotera Sanchez
+hot sauce,Salsa Picante y Similares,52.7,litro,Abarrotes Super Cabrera Class
+hot sauce,Salsa Picante y Similares,135.91,kg,Alsuper
+hot sauce,Salsa Picante y Similares,442.73,litro,Alsuper
+hot sauce,Salsa Picante y Similares,135.91,kg,Alsuper Fresh Market
+hot sauce,Salsa Picante y Similares,442.73,litro,Alsuper Fresh Market
+hot sauce,Salsa Picante y Similares,192.55,kg,Aprecio
+hot sauce,Salsa Picante y Similares,1048.33,litro,Aprecio
+hot sauce,Salsa Picante y Similares,131.82,kg,Bodega Aurrera
+hot sauce,Salsa Picante y Similares,46.86,litro,Bodega Aurrera
+hot sauce,Salsa Picante y Similares,80.0,kg,Bodega Aurrera Express
+hot sauce,Salsa Picante y Similares,45.71,litro,Bodega Aurrera Express
+hot sauce,Salsa Picante y Similares,104.73,kg,Central de Abasto
+hot sauce,Salsa Picante y Similares,51.35,litro,Central de Abasto
+hot sauce,Salsa Picante y Similares,131.82,kg,Chedraui
+hot sauce,Salsa Picante y Similares,60.81,litro,Chedraui
+hot sauce,Salsa Picante y Similares,152.27,kg,Chedraui Selecto
+hot sauce,Salsa Picante y Similares,779.17,litro,Chedraui Selecto
+hot sauce,Salsa Picante y Similares,145.45,kg,City Market
+hot sauce,Salsa Picante y Similares,916.67,litro,City Market
+hot sauce,Salsa Picante y Similares,86.67,kg,El Pitico
+hot sauce,Salsa Picante y Similares,323.94,kg,Farmacia Guadalajara
+hot sauce,Salsa Picante y Similares,708.33,litro,Farmacia Guadalajara
+hot sauce,Salsa Picante y Similares,156.82,kg,Fresko la Comer
+hot sauce,Salsa Picante y Similares,138.78,litro,Fresko la Comer
+hot sauce,Salsa Picante y Similares,138.64,kg,H.e.b.
+hot sauce,Salsa Picante y Similares,765.0,litro,H.e.b.
+hot sauce,Salsa Picante y Similares,152.27,kg,Hipermercado Soriana
+hot sauce,Salsa Picante y Similares,840.0,litro,Hipermercado Soriana
+hot sauce,Salsa Picante y Similares,156.82,kg,La Comer
+hot sauce,Salsa Picante y Similares,67.57,litro,La Comer
+hot sauce,Salsa Picante y Similares,133.33,kg,Ley
+hot sauce,Salsa Picante y Similares,509.53,litro,Ley
+hot sauce,Salsa Picante y Similares,304.23,kg,Ley Express
+hot sauce,Salsa Picante y Similares,46.49,litro,Ley Express
+hot sauce,Salsa Picante y Similares,144.17,kg,Mega Soriana
+hot sauce,Salsa Picante y Similares,831.67,litro,Mega Soriana
+hot sauce,Salsa Picante y Similares,100.0,kg,Mercado Adolfo Lopez Mateos
+hot sauce,Salsa Picante y Similares,399.32,litro,Mercado Adolfo Lopez Mateos
+hot sauce,Salsa Picante y Similares,120.0,kg,Mercado Central de Acapulco
+hot sauce,Salsa Picante y Similares,48.65,litro,Mercado Central de Acapulco
+hot sauce,Salsa Picante y Similares,110.0,kg,Mercado Emilio Sanchez Piedras
+hot sauce,Salsa Picante y Similares,488.06,litro,Mercado Emilio Sanchez Piedras
+hot sauce,Salsa Picante y Similares,116.67,kg,Mercado Miguel Hidalgo
+hot sauce,Salsa Picante y Similares,59.46,litro,Mercado Miguel Hidalgo
+hot sauce,Salsa Picante y Similares,113.33,kg,Mercado Publico
+hot sauce,Salsa Picante y Similares,64.86,litro,Mercado Publico
+hot sauce,Salsa Picante y Similares,120.0,kg,Mercado Publico 5 de Mayo
+hot sauce,Salsa Picante y Similares,48.65,litro,Mercado Publico 5 de Mayo
+hot sauce,Salsa Picante y Similares,146.29,kg,Mercado Soriana
+hot sauce,Salsa Picante y Similares,965.0,litro,Mercado Soriana
+hot sauce,Salsa Picante y Similares,92.67,kg,Mi Tienda del Ahorro
+hot sauce,Salsa Picante y Similares,948.33,litro,Mi Tienda del Ahorro
+hot sauce,Salsa Picante y Similares,132.67,kg,Minisuper
+hot sauce,Salsa Picante y Similares,64.59,litro,Minisuper
+hot sauce,Salsa Picante y Similares,43.24,litro,Neto (Super Precio)
+hot sauce,Salsa Picante y Similares,316.9,kg,Oxxo
+hot sauce,Salsa Picante y Similares,64.86,litro,Oxxo
+hot sauce,Salsa Picante y Similares,150.86,kg,S Mart
+hot sauce,Salsa Picante y Similares,56.73,litro,S Mart
+hot sauce,Salsa Picante y Similares,106.67,kg,Soriana Express
+hot sauce,Salsa Picante y Similares,48.86,litro,Soriana Express
+hot sauce,Salsa Picante y Similares,169.09,kg,Soriana Super
+hot sauce,Salsa Picante y Similares,53.78,litro,Soriana Super
+hot sauce,Salsa Picante y Similares,156.82,kg,Sumesa
+hot sauce,Salsa Picante y Similares,67.57,litro,Sumesa
+hot sauce,Salsa Picante y Similares,117.7,kg,Super Aki
+hot sauce,Salsa Picante y Similares,187.5,litro,Super Aki
+hot sauce,Salsa Picante y Similares,112.67,kg,Super Aki Xtra
+hot sauce,Salsa Picante y Similares,74.32,litro,Super Aki Xtra
+hot sauce,Salsa Picante y Similares,136.36,kg,Super Chedraui
+hot sauce,Salsa Picante y Similares,51.35,litro,Super Chedraui
+hot sauce,Salsa Picante y Similares,195.88,kg,Super Kompras
+hot sauce,Salsa Picante y Similares,49.46,litro,Super Kompras
+hot sauce,Salsa Picante y Similares,149.55,kg,Superissste
+hot sauce,Salsa Picante y Similares,44.59,litro,Superissste
+hot sauce,Salsa Picante y Similares,118.8,kg,Supermercado Gonzalez
+hot sauce,Salsa Picante y Similares,56.49,litro,Supermercado Gonzalez
+hot sauce,Salsa Picante y Similares,111.86,kg,U.n.a.m.
+hot sauce,Salsa Picante y Similares,393.11,litro,U.n.a.m.
+hot sauce,Salsa Picante y Similares,136.36,kg,Wal-mart
+hot sauce,Salsa Picante y Similares,783.33,litro,Wal-mart
+hot sauce,Salsa Picante y Similares,136.36,kg,Wal-mart Express
+hot sauce,Salsa Picante y Similares,950.0,litro,Wal-mart Express
+italian sausage,Carne Cerdo,92.0,kg,Abarrotera Sanchez
+italian sausage,Carne Cerdo,117.0,kg,Bodega Aurrera
+italian sausage,Carne Cerdo,112.0,kg,Central de Abasto
+italian sausage,Carne Cerdo,104.0,kg,Chedraui
+italian sausage,Carne Cerdo,104.5,kg,Chedraui Selecto
+italian sausage,Carne Cerdo,97.0,kg,City Market
+italian sausage,Carne Cerdo,97.0,kg,Fresko la Comer
+italian sausage,Carne Cerdo,119.0,kg,H.e.b.
+italian sausage,Carne Cerdo,108.0,kg,Hipermercado Soriana
+italian sausage,Carne Cerdo,97.0,kg,La Comer
+italian sausage,Carne Cerdo,108.0,kg,Mega Soriana
+italian sausage,Carne Cerdo,120.0,kg,Mercado Adolfo Lopez Mateos
+italian sausage,Carne Cerdo,190.0,kg,Mercado Central de Acapulco
+italian sausage,Carne Cerdo,127.5,kg,Mercado Emilio Sanchez Piedras
+italian sausage,Carne Cerdo,120.0,kg,Mercado Malibran
+italian sausage,Carne Cerdo,132.0,kg,Mercado Publico
+italian sausage,Carne Cerdo,130.0,kg,Mercado Publico 5 de Mayo
+italian sausage,Carne Cerdo,108.0,kg,Mercado Soriana
+italian sausage,Carne Cerdo,107.9,kg,Minisuper
+italian sausage,Carne Cerdo,90.0,kg,Soriana Express
+italian sausage,Carne Cerdo,108.0,kg,Soriana Super
+italian sausage,Carne Cerdo,97.0,kg,Sumesa
+italian sausage,Carne Cerdo,104.0,kg,Super Chedraui
+italian sausage,Carne Cerdo,143.0,kg,Super Kompras
+italian sausage,Carne Cerdo,99.9,kg,Superissste
+italian sausage,Carne Cerdo,91.66,kg,U.n.a.m.
+italian sausage,Carne Cerdo,114.0,kg,Wal-mart
+italian sausage,Carne Cerdo,114.0,kg,Wal-mart Express
+jalapeno,Chile Fresco,19.9,kg,Alsuper
+jalapeno,Chile Fresco,19.9,kg,Alsuper Fresh Market
+jalapeno,Chile Fresco,22.9,kg,Aprecio
+jalapeno,Chile Fresco,20.0,kg,Bodega Aurrera
+jalapeno,Chile Fresco,20.0,kg,Central de Abasto
+jalapeno,Chile Fresco,19.0,kg,Chedraui
+jalapeno,Chile Fresco,19.0,kg,Chedraui Selecto
+jalapeno,Chile Fresco,5.7,kg,City Market
+jalapeno,Chile Fresco,24.0,kg,El Pitico
+jalapeno,Chile Fresco,5.7,kg,Fresko la Comer
+jalapeno,Chile Fresco,19.95,kg,H.e.b.
+jalapeno,Chile Fresco,25.65,kg,Hipermercado Soriana
+jalapeno,Chile Fresco,5.7,kg,La Comer
+jalapeno,Chile Fresco,24.82,kg,Ley
+jalapeno,Chile Fresco,27.32,kg,Ley Express
+jalapeno,Chile Fresco,25.9,kg,Mega Soriana
+jalapeno,Chile Fresco,30.0,kg,Mercado Adolfo Lopez Mateos
+jalapeno,Chile Fresco,23.0,kg,Mercado Emilio Sanchez Piedras
+jalapeno,Chile Fresco,22.0,kg,Mercado Malibran
+jalapeno,Chile Fresco,35.0,kg,Mercado Miguel Hidalgo
+jalapeno,Chile Fresco,30.0,kg,Mercado Publico
+jalapeno,Chile Fresco,30.0,kg,Mercado Publico 5 de Mayo
+jalapeno,Chile Fresco,28.9,kg,Mercado Soriana
+jalapeno,Chile Fresco,15.0,kg,Mercado el Meson Estrella
+jalapeno,Chile Fresco,22.9,kg,Mi Tienda del Ahorro
+jalapeno,Chile Fresco,29.9,kg,Minisuper
+jalapeno,Chile Fresco,17.99,kg,Operadora Merco
+jalapeno,Chile Fresco,13.0,kg,Oxxo
+jalapeno,Chile Fresco,23.99,kg,S Mart
+jalapeno,Chile Fresco,29.9,kg,Soriana Express
+jalapeno,Chile Fresco,25.9,kg,Soriana Super
+jalapeno,Chile Fresco,5.7,kg,Sumesa
+jalapeno,Chile Fresco,13.95,kg,Super Aki
+jalapeno,Chile Fresco,34.0,kg,Super Aki Xtra
+jalapeno,Chile Fresco,19.0,kg,Super Chedraui
+jalapeno,Chile Fresco,28.6,kg,Super Kompras
+jalapeno,Chile Fresco,46.0,kg,Superissste
+jalapeno,Chile Fresco,19.4,kg,Supermercado Gonzalez
+jalapeno,Chile Fresco,26.88,kg,U.n.a.m.
+jalapeno,Chile Fresco,25.0,kg,Wal-mart
+jalapeno,Chile Fresco,25.0,kg,Wal-mart Express
+ketchup,Salsa Catsup,84.38,kg,7 Eleven
+ketchup,Salsa Catsup,64.78,kg,Abarrotera Sanchez
+ketchup,Salsa Catsup,49.71,kg,Alsuper
+ketchup,Salsa Catsup,49.71,kg,Alsuper Fresh Market
+ketchup,Salsa Catsup,52.65,kg,Aprecio
+ketchup,Salsa Catsup,60.45,kg,Bodega Aurrera
+ketchup,Salsa Catsup,47.06,kg,Bodega Aurrera Express
+ketchup,Salsa Catsup,61.71,kg,Chedraui
+ketchup,Salsa Catsup,62.97,kg,Chedraui Selecto
+ketchup,Salsa Catsup,59.38,kg,City Market
+ketchup,Salsa Catsup,55.88,kg,Farmacia Guadalajara
+ketchup,Salsa Catsup,72.3,kg,Fresko la Comer
+ketchup,Salsa Catsup,51.56,kg,H.e.b.
+ketchup,Salsa Catsup,61.73,kg,Hipermercado Soriana
+ketchup,Salsa Catsup,72.73,kg,La Comer
+ketchup,Salsa Catsup,60.48,kg,Ley
+ketchup,Salsa Catsup,61.76,kg,Ley Express
+ketchup,Salsa Catsup,62.97,kg,Mega Soriana
+ketchup,Salsa Catsup,48.65,kg,Mercado Adolfo Lopez Mateos
+ketchup,Salsa Catsup,54.05,kg,Mercado Publico
+ketchup,Salsa Catsup,58.11,kg,Mercado Soriana
+ketchup,Salsa Catsup,75.0,kg,Mi Tienda del Ahorro
+ketchup,Salsa Catsup,56.36,kg,Minisuper
+ketchup,Salsa Catsup,65.49,kg,Neto (Super Precio)
+ketchup,Salsa Catsup,67.38,kg,Oxxo
+ketchup,Salsa Catsup,63.71,kg,S Mart
+ketchup,Salsa Catsup,58.11,kg,Soriana Express
+ketchup,Salsa Catsup,58.11,kg,Soriana Super
+ketchup,Salsa Catsup,59.38,kg,Sumesa
+ketchup,Salsa Catsup,71.79,kg,Super Aki
+ketchup,Salsa Catsup,63.24,kg,Super Aki Xtra
+ketchup,Salsa Catsup,62.97,kg,Super Chedraui
+ketchup,Salsa Catsup,62.22,kg,Super Kompras
+ketchup,Salsa Catsup,52.94,kg,Superissste
+ketchup,Salsa Catsup,56.22,kg,Supermercado Gonzalez
+ketchup,Salsa Catsup,62.34,kg,U.n.a.m.
+ketchup,Salsa Catsup,58.82,kg,Wal-mart
+ketchup,Salsa Catsup,57.96,kg,Wal-mart Express
+lemon,Limón,32.4,kg,Alsuper
+lemon,Limón,32.4,kg,Alsuper Fresh Market
+lemon,Limón,25.9,kg,Aprecio
+lemon,Limón,35.0,kg,Bodega Aurrera
+lemon,Limón,40.0,kg,Bodega Aurrera Express
+lemon,Limón,20.5,kg,Central de Abasto
+lemon,Limón,28.7,kg,Chedraui
+lemon,Limón,16.0,kg,Chedraui Selecto
+lemon,Limón,35.9,kg,City Market
+lemon,Limón,32.5,kg,El Pitico
+lemon,Limón,26.9,kg,Fresko la Comer
+lemon,Limón,39.95,kg,H.e.b.
+lemon,Limón,31.8,kg,Hipermercado Soriana
+lemon,Limón,21.9,kg,La Comer
+lemon,Limón,29.9,kg,Ley
+lemon,Limón,29.9,kg,Ley Express
+lemon,Limón,30.0,kg,Mega Soriana
+lemon,Limón,26.5,kg,Mercado Adolfo Lopez Mateos
+lemon,Limón,20.0,kg,Mercado Emilio Sanchez Piedras
+lemon,Limón,12.5,kg,Mercado Malibran
+lemon,Limón,39.0,kg,Mercado Miguel Hidalgo
+lemon,Limón,25.0,kg,Mercado Publico
+lemon,Limón,10.0,kg,Mercado Publico 5 de Mayo
+lemon,Limón,32.0,kg,Mercado Soriana
+lemon,Limón,23.0,kg,Mercado el Meson Estrella
+lemon,Limón,29.9,kg,Mi Tienda del Ahorro
+lemon,Limón,38.44,kg,Minisuper
+lemon,Limón,22.49,kg,Operadora Merco
+lemon,Limón,44.0,kg,Oxxo
+lemon,Limón,39.99,kg,S Mart
+lemon,Limón,28.9,kg,Soriana Express
+lemon,Limón,29.2,kg,Soriana Super
+lemon,Limón,35.9,kg,Sumesa
+lemon,Limón,21.95,kg,Super Aki
+lemon,Limón,23.95,kg,Super Aki Xtra
+lemon,Limón,20.25,kg,Super Chedraui
+lemon,Limón,18.6,kg,Super Kompras
+lemon,Limón,26.0,kg,Superissste
+lemon,Limón,34.4,kg,Supermercado Gonzalez
+lemon,Limón,22.45,kg,U.n.a.m.
+lemon,Limón,40.0,kg,Wal-mart
+lemon,Limón,40.0,kg,Wal-mart Express
+lettuce,Lechuga,21.4,pieza,Alsuper
+lettuce,Lechuga,22.9,pieza,Alsuper Fresh Market
+lettuce,Lechuga,25.9,pieza,Aprecio
+lettuce,Lechuga,22.0,pieza,Bodega Aurrera
+lettuce,Lechuga,24.9,pieza,Bodega Aurrera Express
+lettuce,Lechuga,20.0,pieza,Central de Abasto
+lettuce,Lechuga,24.0,pieza,Chedraui
+lettuce,Lechuga,24.8,pieza,Chedraui Selecto
+lettuce,Lechuga,24.9,pieza,City Market
+lettuce,Lechuga,17.0,pieza,El Pitico
+lettuce,Lechuga,24.9,pieza,Fresko la Comer
+lettuce,Lechuga,24.95,pieza,H.e.b.
+lettuce,Lechuga,22.9,pieza,Hipermercado Soriana
+lettuce,Lechuga,25.9,pieza,La Comer
+lettuce,Lechuga,19.9,pieza,Ley
+lettuce,Lechuga,22.4,pieza,Ley Express
+lettuce,Lechuga,24.0,pieza,Mega Soriana
+lettuce,Lechuga,27.5,pieza,Mercado Adolfo Lopez Mateos
+lettuce,Lechuga,20.0,pieza,Mercado Emilio Sanchez Piedras
+lettuce,Lechuga,19.0,pieza,Mercado Malibran
+lettuce,Lechuga,19.0,pieza,Mercado Miguel Hidalgo
+lettuce,Lechuga,24.0,pieza,Mercado Publico
+lettuce,Lechuga,22.0,pieza,Mercado Publico 5 de Mayo
+lettuce,Lechuga,22.0,pieza,Mercado Soriana
+lettuce,Lechuga,15.0,pieza,Mercado el Meson Estrella
+lettuce,Lechuga,24.9,pieza,Mi Tienda del Ahorro
+lettuce,Lechuga,24.99,pieza,Minisuper
+lettuce,Lechuga,22.99,pieza,Operadora Merco
+lettuce,Lechuga,23.99,pieza,S Mart
+lettuce,Lechuga,17.9,pieza,Soriana Express
+lettuce,Lechuga,26.35,pieza,Soriana Super
+lettuce,Lechuga,25.4,pieza,Sumesa
+lettuce,Lechuga,27.95,pieza,Super Aki
+lettuce,Lechuga,27.95,pieza,Super Aki Xtra
+lettuce,Lechuga,23.2,pieza,Super Chedraui
+lettuce,Lechuga,20.9,pieza,Supermercado Gonzalez
+lettuce,Lechuga,22.22,pieza,U.n.a.m.
+lettuce,Lechuga,24.9,pieza,Wal-mart
+lettuce,Lechuga,24.9,pieza,Wal-mart Express
+lime,Limón,32.4,kg,Alsuper
+lime,Limón,32.4,kg,Alsuper Fresh Market
+lime,Limón,25.9,kg,Aprecio
+lime,Limón,35.0,kg,Bodega Aurrera
+lime,Limón,40.0,kg,Bodega Aurrera Express
+lime,Limón,20.5,kg,Central de Abasto
+lime,Limón,28.7,kg,Chedraui
+lime,Limón,16.0,kg,Chedraui Selecto
+lime,Limón,35.9,kg,City Market
+lime,Limón,32.5,kg,El Pitico
+lime,Limón,26.9,kg,Fresko la Comer
+lime,Limón,39.95,kg,H.e.b.
+lime,Limón,31.8,kg,Hipermercado Soriana
+lime,Limón,21.9,kg,La Comer
+lime,Limón,29.9,kg,Ley
+lime,Limón,29.9,kg,Ley Express
+lime,Limón,30.0,kg,Mega Soriana
+lime,Limón,26.5,kg,Mercado Adolfo Lopez Mateos
+lime,Limón,20.0,kg,Mercado Emilio Sanchez Piedras
+lime,Limón,12.5,kg,Mercado Malibran
+lime,Limón,39.0,kg,Mercado Miguel Hidalgo
+lime,Limón,25.0,kg,Mercado Publico
+lime,Limón,10.0,kg,Mercado Publico 5 de Mayo
+lime,Limón,32.0,kg,Mercado Soriana
+lime,Limón,23.0,kg,Mercado el Meson Estrella
+lime,Limón,29.9,kg,Mi Tienda del Ahorro
+lime,Limón,38.44,kg,Minisuper
+lime,Limón,22.49,kg,Operadora Merco
+lime,Limón,44.0,kg,Oxxo
+lime,Limón,39.99,kg,S Mart
+lime,Limón,28.9,kg,Soriana Express
+lime,Limón,29.2,kg,Soriana Super
+lime,Limón,35.9,kg,Sumesa
+lime,Limón,21.95,kg,Super Aki
+lime,Limón,23.95,kg,Super Aki Xtra
+lime,Limón,20.25,kg,Super Chedraui
+lime,Limón,18.6,kg,Super Kompras
+lime,Limón,26.0,kg,Superissste
+lime,Limón,34.4,kg,Supermercado Gonzalez
+lime,Limón,22.45,kg,U.n.a.m.
+lime,Limón,40.0,kg,Wal-mart
+lime,Limón,40.0,kg,Wal-mart Express
+macaroni,Pasta para Sopa,44.5,kg,Aprecio
+macaroni,Pasta para Sopa,30.0,kg,Chedraui
+macaroni,Pasta para Sopa,30.0,kg,Chedraui Selecto
+macaroni,Pasta para Sopa,22.5,kg,Hipermercado Soriana
+macaroni,Pasta para Sopa,20.0,kg,Ley
+macaroni,Pasta para Sopa,20.0,kg,Ley Express
+macaroni,Pasta para Sopa,22.5,kg,Mega Soriana
+macaroni,Pasta para Sopa,25.0,kg,Mercado Soriana
+macaroni,Pasta para Sopa,20.0,kg,Soriana Express
+macaroni,Pasta para Sopa,22.5,kg,Soriana Super
+macaroni,Pasta para Sopa,30.0,kg,Super Chedraui
+margarine,Margarina,200.0,kg,7 Eleven
+margarine,Margarina,211.11,kg,Abarrotera Monterrey
+margarine,Margarina,200.0,kg,Abarrotera Sanchez
+margarine,Margarina,188.89,kg,Abarrotes Super Cabrera Class
+margarine,Margarina,249.75,kg,Alsuper
+margarine,Margarina,217.38,kg,Alsuper Fresh Market
+margarine,Margarina,235.42,kg,Aprecio
+margarine,Margarina,177.78,kg,Bodega Aurrera
+margarine,Margarina,142.86,kg,Bodega Aurrera Express
+margarine,Margarina,199.74,kg,Central de Abasto
+margarine,Margarina,200.0,kg,Chedraui
+margarine,Margarina,212.5,kg,Chedraui Selecto
+margarine,Margarina,225.97,kg,City Market
+margarine,Margarina,235.56,kg,El Pitico
+margarine,Margarina,166.67,kg,Farmacia Guadalajara
+margarine,Margarina,206.25,kg,Fresko la Comer
+margarine,Margarina,199.47,kg,H.e.b.
+margarine,Margarina,211.25,kg,Hipermercado Soriana
+margarine,Margarina,222.22,kg,La Comer
+margarine,Margarina,205.56,kg,Ley
+margarine,Margarina,205.56,kg,Ley Express
+margarine,Margarina,213.33,kg,Mega Soriana
+margarine,Margarina,167.78,kg,Mercado Emilio Sanchez Piedras
+margarine,Margarina,177.78,kg,Mercado Publico
+margarine,Margarina,202.22,kg,Mercado Soriana
+margarine,Margarina,194.21,kg,Mi Tienda del Ahorro
+margarine,Margarina,278.95,kg,Minisuper
+margarine,Margarina,166.67,kg,Neto (Super Precio)
+margarine,Margarina,188.89,kg,Oxxo
+margarine,Margarina,208.98,kg,S Mart
+margarine,Margarina,207.78,kg,Soriana Express
+margarine,Margarina,203.33,kg,Soriana Super
+margarine,Margarina,227.5,kg,Sumesa
+margarine,Margarina,210.57,kg,Super Aki
+margarine,Margarina,221.67,kg,Super Aki Xtra
+margarine,Margarina,200.0,kg,Super Chedraui
+margarine,Margarina,171.11,kg,Superissste
+margarine,Margarina,196.49,kg,Supermercado Gonzalez
+margarine,Margarina,144.33,kg,U.n.a.m.
+margarine,Margarina,200.0,kg,Wal-mart
+margarine,Margarina,217.5,kg,Wal-mart Express
+mayonnaise,Mayonesa,165.79,kg,7 Eleven
+mayonnaise,Mayonesa,131.58,kg,Abarrotera Monterrey
+mayonnaise,Mayonesa,126.9,kg,Abarrotera Sanchez
+mayonnaise,Mayonesa,151.28,kg,Abarrotes Super Cabrera Class
+mayonnaise,Mayonesa,106.17,kg,Alsuper
+mayonnaise,Mayonesa,102.14,kg,Alsuper Fresh Market
+mayonnaise,Mayonesa,123.07,kg,Aprecio
+mayonnaise,Mayonesa,125.64,kg,Bodega Aurrera
+mayonnaise,Mayonesa,141.03,kg,Bodega Aurrera Express
+mayonnaise,Mayonesa,141.28,kg,Central de Abasto
+mayonnaise,Mayonesa,114.29,kg,Chedraui
+mayonnaise,Mayonesa,116.88,kg,Chedraui Selecto
+mayonnaise,Mayonesa,126.21,kg,City Market
+mayonnaise,Mayonesa,105.26,kg,El Pitico
+mayonnaise,Mayonesa,136.36,kg,Farmacia Guadalajara
+mayonnaise,Mayonesa,126.21,kg,Fresko la Comer
+mayonnaise,Mayonesa,129.18,kg,H.e.b.
+mayonnaise,Mayonesa,128.86,kg,Hipermercado Soriana
+mayonnaise,Mayonesa,133.77,kg,La Comer
+mayonnaise,Mayonesa,131.79,kg,Ley
+mayonnaise,Mayonesa,122.95,kg,Ley Express
+mayonnaise,Mayonesa,131.76,kg,Mega Soriana
+mayonnaise,Mayonesa,206.96,kg,Mercado Adolfo Lopez Mateos
+mayonnaise,Mayonesa,173.68,kg,Mercado Central de Acapulco
+mayonnaise,Mayonesa,190.84,kg,Mercado Emilio Sanchez Piedras
+mayonnaise,Mayonesa,153.85,kg,Mercado Publico
+mayonnaise,Mayonesa,209.52,kg,Mercado Publico 5 de Mayo
+mayonnaise,Mayonesa,133.77,kg,Mercado Soriana
+mayonnaise,Mayonesa,180.95,kg,Mercado el Meson Estrella
+mayonnaise,Mayonesa,135.06,kg,Mi Tienda del Ahorro
+mayonnaise,Mayonesa,146.84,kg,Minisuper
+mayonnaise,Mayonesa,140.35,kg,Neto (Super Precio)
+mayonnaise,Mayonesa,115.38,kg,Oxxo
+mayonnaise,Mayonesa,139.42,kg,S Mart
+mayonnaise,Mayonesa,115.06,kg,Soriana Express
+mayonnaise,Mayonesa,123.38,kg,Soriana Super
+mayonnaise,Mayonesa,133.97,kg,Sumesa
+mayonnaise,Mayonesa,120.52,kg,Super Aki
+mayonnaise,Mayonesa,119.76,kg,Super Aki Xtra
+mayonnaise,Mayonesa,106.21,kg,Super Chedraui
+mayonnaise,Mayonesa,125.41,kg,Super Kompras
+mayonnaise,Mayonesa,121.18,kg,Superissste
+mayonnaise,Mayonesa,119.62,kg,Supermercado Gonzalez
+mayonnaise,Mayonesa,134.48,kg,U.n.a.m.
+mayonnaise,Mayonesa,128.21,kg,Wal-mart
+mayonnaise,Mayonesa,134.12,kg,Wal-mart Express
+milk,Leche Pasteurizada,33.0,litro,7 Eleven
+milk,Leche Pasteurizada,29.9,litro,Alsuper
+milk,Leche Pasteurizada,29.9,litro,Alsuper Fresh Market
+milk,Leche Pasteurizada,31.5,litro,Aprecio
+milk,Leche Pasteurizada,33.0,litro,Bodega Aurrera
+milk,Leche Pasteurizada,30.0,litro,Bodega Aurrera Express
+milk,Leche Pasteurizada,24.51,litro,Central de Abasto
+milk,Leche Pasteurizada,33.0,litro,Chedraui
+milk,Leche Pasteurizada,33.0,litro,Chedraui Selecto
+milk,Leche Pasteurizada,34.35,litro,City Market
+milk,Leche Pasteurizada,29.0,litro,Farmacia Guadalajara
+milk,Leche Pasteurizada,32.0,litro,Fresko la Comer
+milk,Leche Pasteurizada,31.9,litro,H.e.b.
+milk,Leche Pasteurizada,35.5,litro,Hipermercado Soriana
+milk,Leche Pasteurizada,33.0,litro,La Comer
+milk,Leche Pasteurizada,31.0,litro,Ley
+milk,Leche Pasteurizada,35.9,litro,Mega Soriana
+milk,Leche Pasteurizada,33.0,litro,Mercado Publico
+milk,Leche Pasteurizada,34.5,litro,Mercado Soriana
+milk,Leche Pasteurizada,31.4,litro,Mi Tienda del Ahorro
+milk,Leche Pasteurizada,32.0,litro,Neto (Super Precio)
+milk,Leche Pasteurizada,29.99,litro,Operadora Merco
+milk,Leche Pasteurizada,32.0,litro,Oxxo
+milk,Leche Pasteurizada,24.99,litro,S Mart
+milk,Leche Pasteurizada,33.5,litro,Soriana Express
+milk,Leche Pasteurizada,33.5,litro,Soriana Super
 milk,Leche Pasteurizada,33.5,litro,Sumesa
-vanilla,Vainilla,27.9,ml,Hipermercado Soriana
-pepper,Pimienta,86.5,g,Hipermercado Soriana
-lemon juice,Limón,32.0,kg,Soriana Express
-baking powder,Polvo P/hornear,19.9,g,Hipermercado Soriana
-baking soda,Polvo P/hornear,19.9,g,Hipermercado Soriana
-parmesan cheese,Queso Cotija,155.0,kg,Chedraui
-carrot,Zanahoria,16.9,kg,Hipermercado Soriana
-cinnamon,Canela,49.9,g,Hipermercado Soriana
-black pepper,Pimienta,86.5,g,Hipermercado Soriana
-sour cream,Crema,42.9,g,Hipermercado Soriana
-tomato,Jitomate,20.0,kg,Hipermercado Soriana
-margarine,Margarina,37.5,g,Chedraui
-green onion,Cebolla,25.0,manojo,Central de Abasto
-cream cheese,Queso Crema,40.0,g,Soriana Super
-garlic powder,Ajo,80.0,kg,Mercado Adolfo Lopez Mateos
-celery,Apio,32.9,kg,La Comer
-honey,Miel de Abeja,90.0,g,Sumesa
-soy sauce,Salsa de Soya,25.0,ml,Wal-mart
-mayonnaise,Mayonesa,49.9,g,Mercado Soriana
-cheddar cheese,Queso Chihuahua,125.0,g,Wal-mart
+milk,Leche Pasteurizada,32.5,litro,Super Aki
+milk,Leche Pasteurizada,30.75,litro,Super Chedraui
+milk,Leche Pasteurizada,31.75,litro,Superissste
+milk,Leche Pasteurizada,34.0,litro,Wal-mart
+milk,Leche Pasteurizada,34.0,litro,Wal-mart Express
+mushrooms,Champiñones,99.0,kg,Bodega Aurrera
+mushrooms,Champiñones,96.0,kg,Central de Abasto
+mushrooms,Champiñones,108.0,kg,Chedraui
+mushrooms,Champiñones,107.9,kg,Chedraui Selecto
+mushrooms,Champiñones,125.0,kg,City Market
+mushrooms,Champiñones,125.0,kg,Fresko la Comer
+mushrooms,Champiñones,111.0,kg,Hipermercado Soriana
+mushrooms,Champiñones,125.0,kg,La Comer
+mushrooms,Champiñones,114.9,kg,Ley
+mushrooms,Champiñones,86.18,kg,Ley Express
+mushrooms,Champiñones,111.0,kg,Mega Soriana
+mushrooms,Champiñones,100.0,kg,Mercado Adolfo Lopez Mateos
+mushrooms,Champiñones,90.0,kg,Mercado Emilio Sanchez Piedras
+mushrooms,Champiñones,100.0,kg,Mercado Malibran
+mushrooms,Champiñones,100.0,kg,Mercado Publico
+mushrooms,Champiñones,98.9,kg,Mi Tienda del Ahorro
+mushrooms,Champiñones,99.99,kg,Operadora Merco
+mushrooms,Champiñones,99.99,kg,S Mart
+mushrooms,Champiñones,111.9,kg,Soriana Super
+mushrooms,Champiñones,125.0,kg,Sumesa
+mushrooms,Champiñones,129.0,kg,Super Aki Xtra
+mushrooms,Champiñones,108.5,kg,Super Chedraui
+mushrooms,Champiñones,99.0,kg,Supermercado Gonzalez
+mushrooms,Champiñones,108.0,kg,Wal-mart
+mushrooms,Champiñones,109.5,kg,Wal-mart Express
+mustard,Mostaza,73.26,kg,Abarrotera Sanchez
+mustard,Mostaza,118.92,kg,Alsuper
+mustard,Mostaza,117.78,kg,Alsuper Fresh Market
+mustard,Mostaza,86.0,kg,Bodega Aurrera
+mustard,Mostaza,86.0,kg,Bodega Aurrera Express
+mustard,Mostaza,71.14,kg,Central de Abasto
+mustard,Mostaza,95.45,kg,Chedraui
+mustard,Mostaza,95.45,kg,Chedraui Selecto
+mustard,Mostaza,109.97,kg,City Market
+mustard,Mostaza,116.82,kg,Fresko la Comer
+mustard,Mostaza,100.18,kg,H.e.b.
+mustard,Mostaza,104.09,kg,Hipermercado Soriana
+mustard,Mostaza,116.82,kg,La Comer
+mustard,Mostaza,78.84,kg,Ley
+mustard,Mostaza,81.16,kg,Ley Express
+mustard,Mostaza,102.27,kg,Mega Soriana
+mustard,Mostaza,69.77,kg,Mercado Adolfo Lopez Mateos
+mustard,Mostaza,77.91,kg,Mercado Publico
+mustard,Mostaza,80.23,kg,Mi Tienda del Ahorro
+mustard,Mostaza,122.27,kg,Minisuper
+mustard,Mostaza,86.32,kg,S Mart
+mustard,Mostaza,84.88,kg,Soriana Super
+mustard,Mostaza,143.58,kg,Sumesa
+mustard,Mostaza,96.19,kg,Super Aki
+mustard,Mostaza,115.62,kg,Super Aki Xtra
+mustard,Mostaza,95.45,kg,Super Chedraui
+mustard,Mostaza,73.02,kg,Super Kompras
+mustard,Mostaza,76.74,kg,Superissste
+mustard,Mostaza,97.09,kg,Supermercado Gonzalez
+mustard,Mostaza,69.77,kg,U.n.a.m.
+mustard,Mostaza,95.45,kg,Wal-mart
+mustard,Mostaza,90.0,kg,Wal-mart Express
+oats,Avena,31.25,kg,Abarrotera Monterrey
+oats,Avena,31.25,kg,Abarrotera Sanchez
+oats,Avena,97.5,kg,Abarrotes Super Cabrera Class
+oats,Avena,153.47,kg,Alsuper
+oats,Avena,142.95,kg,Alsuper Fresh Market
+oats,Avena,104.75,kg,Aprecio
+oats,Avena,110.0,kg,Bodega Aurrera
+oats,Avena,149.47,kg,Bodega Aurrera Express
+oats,Avena,135.79,kg,Chedraui
+oats,Avena,107.5,kg,Chedraui Selecto
+oats,Avena,149.47,kg,City Market
+oats,Avena,40.0,kg,El Pitico
+oats,Avena,112.5,kg,Farmacia Guadalajara
+oats,Avena,130.59,kg,Fresko la Comer
+oats,Avena,143.16,kg,H.e.b.
+oats,Avena,116.75,kg,Hipermercado Soriana
+oats,Avena,107.5,kg,La Comer
+oats,Avena,110.0,kg,Ley
+oats,Avena,127.2,kg,Ley Express
+oats,Avena,114.75,kg,Mega Soriana
+oats,Avena,116.25,kg,Mercado Soriana
+oats,Avena,120.3,kg,Mi Tienda del Ahorro
+oats,Avena,118.22,kg,Minisuper
+oats,Avena,107.48,kg,S Mart
+oats,Avena,146.32,kg,Soriana Express
+oats,Avena,126.25,kg,Soriana Super
+oats,Avena,108.0,kg,Sumesa
+oats,Avena,155.79,kg,Super Aki
+oats,Avena,161.07,kg,Super Aki Xtra
+oats,Avena,105.0,kg,Super Chedraui
+oats,Avena,32.5,kg,Superissste
+oats,Avena,42.25,kg,Supermercado Gonzalez
+oats,Avena,82.62,kg,U.n.a.m.
+oats,Avena,149.47,kg,Wal-mart
+oats,Avena,155.79,kg,Wal-mart Express
+olive oil,Aceite de Oliva,359.87,litro,Alsuper
+olive oil,Aceite de Oliva,275.8,litro,Alsuper Fresh Market
+olive oil,Aceite de Oliva,280.33,litro,Chedraui
+olive oil,Aceite de Oliva,253.33,litro,Chedraui Selecto
+olive oil,Aceite de Oliva,292.0,litro,City Market
+olive oil,Aceite de Oliva,316.0,litro,Fresko la Comer
+olive oil,Aceite de Oliva,281.67,litro,H.e.b.
+olive oil,Aceite de Oliva,313.33,litro,Hipermercado Soriana
+olive oil,Aceite de Oliva,323.0,litro,La Comer
+olive oil,Aceite de Oliva,292.6,litro,Ley
+olive oil,Aceite de Oliva,275.68,litro,Ley Express
+olive oil,Aceite de Oliva,305.33,litro,Mega Soriana
+olive oil,Aceite de Oliva,340.0,litro,Mercado Soriana
+olive oil,Aceite de Oliva,265.32,litro,S Mart
+olive oil,Aceite de Oliva,318.67,litro,Soriana Super
+olive oil,Aceite de Oliva,318.0,litro,Sumesa
+olive oil,Aceite de Oliva,321.33,litro,Super Aki
+olive oil,Aceite de Oliva,354.56,litro,Super Aki Xtra
+olive oil,Aceite de Oliva,280.0,litro,Super Chedraui
+olive oil,Aceite de Oliva,267.68,litro,Super Kompras
+olive oil,Aceite de Oliva,326.32,litro,U.n.a.m.
+olive oil,Aceite de Oliva,262.11,litro,Wal-mart
+olive oil,Aceite de Oliva,262.11,litro,Wal-mart Express
+olives,Aceituna,138.5,kg,Central de Abasto
+olives,Aceituna,313.64,kg,City Market
+olives,Aceituna,334.09,kg,Fresko la Comer
+olives,Aceituna,334.09,kg,H.e.b.
+olives,Aceituna,329.55,kg,Hipermercado Soriana
+olives,Aceituna,320.45,kg,La Comer
+olives,Aceituna,281.82,kg,Ley
+olives,Aceituna,329.55,kg,Mega Soriana
+olives,Aceituna,160.0,kg,Mercado Publico
+olives,Aceituna,329.55,kg,Mercado Soriana
+olives,Aceituna,250.0,kg,Minisuper
+olives,Aceituna,245.41,kg,S Mart
+olives,Aceituna,329.55,kg,Soriana Express
+olives,Aceituna,340.91,kg,Soriana Super
+olives,Aceituna,321.59,kg,Sumesa
+olives,Aceituna,333.98,kg,Super Aki
+olives,Aceituna,313.41,kg,Super Aki Xtra
+olives,Aceituna,245.45,kg,Wal-mart
+onion,Cebolla,37.4,kg,Alsuper
+onion,Cebolla,17.4,manojo,Alsuper
+onion,Cebolla,28.9,kg,Alsuper Fresh Market
+onion,Cebolla,16.9,manojo,Alsuper Fresh Market
+onion,Cebolla,21.4,kg,Aprecio
+onion,Cebolla,9.9,manojo,Aprecio
+onion,Cebolla,37.0,kg,Bodega Aurrera
+onion,Cebolla,16.9,manojo,Bodega Aurrera
+onion,Cebolla,40.0,kg,Bodega Aurrera Express
+onion,Cebolla,23.5,kg,Central de Abasto
+onion,Cebolla,22.0,manojo,Central de Abasto
+onion,Cebolla,28.0,kg,Chedraui
+onion,Cebolla,14.5,manojo,Chedraui
+onion,Cebolla,26.5,kg,Chedraui Selecto
+onion,Cebolla,14.5,manojo,Chedraui Selecto
+onion,Cebolla,34.9,kg,City Market
+onion,Cebolla,30.0,kg,El Pitico
+onion,Cebolla,34.9,kg,Fresko la Comer
+onion,Cebolla,11.4,manojo,Fresko la Comer
+onion,Cebolla,34.95,kg,H.e.b.
+onion,Cebolla,17.95,manojo,H.e.b.
+onion,Cebolla,24.85,kg,Hipermercado Soriana
+onion,Cebolla,13.9,manojo,Hipermercado Soriana
+onion,Cebolla,34.9,kg,La Comer
+onion,Cebolla,10.9,manojo,La Comer
+onion,Cebolla,25.9,kg,Ley
+onion,Cebolla,14.75,manojo,Ley
+onion,Cebolla,28.9,kg,Ley Express
+onion,Cebolla,14.75,manojo,Ley Express
+onion,Cebolla,24.8,kg,Mega Soriana
+onion,Cebolla,14.9,manojo,Mega Soriana
+onion,Cebolla,20.0,kg,Mercado Adolfo Lopez Mateos
+onion,Cebolla,20.0,manojo,Mercado Adolfo Lopez Mateos
+onion,Cebolla,16.5,kg,Mercado Emilio Sanchez Piedras
+onion,Cebolla,12.0,manojo,Mercado Emilio Sanchez Piedras
+onion,Cebolla,22.5,kg,Mercado Malibran
+onion,Cebolla,12.0,manojo,Mercado Malibran
+onion,Cebolla,22.0,kg,Mercado Miguel Hidalgo
+onion,Cebolla,28.0,kg,Mercado Publico
+onion,Cebolla,20.0,manojo,Mercado Publico
+onion,Cebolla,25.0,kg,Mercado Publico 5 de Mayo
+onion,Cebolla,22.9,kg,Mercado Soriana
+onion,Cebolla,14.9,manojo,Mercado Soriana
+onion,Cebolla,25.0,kg,Mercado el Meson Estrella
+onion,Cebolla,26.9,kg,Mi Tienda del Ahorro
+onion,Cebolla,29.4,kg,Minisuper
+onion,Cebolla,10.99,manojo,Minisuper
+onion,Cebolla,19.99,kg,Operadora Merco
+onion,Cebolla,14.99,manojo,Operadora Merco
+onion,Cebolla,34.95,kg,Oxxo
+onion,Cebolla,26.99,kg,S Mart
+onion,Cebolla,12.49,manojo,S Mart
+onion,Cebolla,22.9,kg,Soriana Express
+onion,Cebolla,13.9,manojo,Soriana Express
+onion,Cebolla,22.9,kg,Soriana Super
+onion,Cebolla,14.9,manojo,Soriana Super
+onion,Cebolla,34.9,kg,Sumesa
+onion,Cebolla,10.9,manojo,Sumesa
+onion,Cebolla,26.95,kg,Super Aki
+onion,Cebolla,13.5,manojo,Super Aki
+onion,Cebolla,26.95,kg,Super Aki Xtra
+onion,Cebolla,13.5,manojo,Super Aki Xtra
+onion,Cebolla,28.0,kg,Super Chedraui
+onion,Cebolla,15.0,manojo,Super Chedraui
+onion,Cebolla,21.3,kg,Super Kompras
+onion,Cebolla,19.95,kg,Superissste
+onion,Cebolla,32.9,kg,Supermercado Gonzalez
+onion,Cebolla,13.4,manojo,Supermercado Gonzalez
+onion,Cebolla,19.38,kg,U.n.a.m.
+onion,Cebolla,10.0,manojo,U.n.a.m.
+onion,Cebolla,33.0,kg,Wal-mart
+onion,Cebolla,14.9,manojo,Wal-mart
+onion,Cebolla,42.0,kg,Wal-mart Express
+onion,Cebolla,16.9,manojo,Wal-mart Express
+orange juice,Jugo de Fruta,38.54,litro,7 Eleven
+orange juice,Jugo de Fruta,33.85,litro,Abarrotera Monterrey
+orange juice,Jugo de Fruta,30.21,litro,Abarrotera Sanchez
+orange juice,Jugo de Fruta,37.17,litro,Alsuper
+orange juice,Jugo de Fruta,28.02,litro,Alsuper Fresh Market
+orange juice,Jugo de Fruta,37.17,litro,Aprecio
+orange juice,Jugo de Fruta,25.37,litro,Bodega Aurrera
+orange juice,Jugo de Fruta,26.04,litro,Bodega Aurrera Express
+orange juice,Jugo de Fruta,32.29,litro,Chedraui
+orange juice,Jugo de Fruta,34.39,litro,Chedraui Selecto
+orange juice,Jugo de Fruta,32.29,litro,City Market
+orange juice,Jugo de Fruta,34.88,litro,Farmacia Guadalajara
+orange juice,Jugo de Fruta,31.15,litro,Fresko la Comer
+orange juice,Jugo de Fruta,31.25,litro,H.e.b.
+orange juice,Jugo de Fruta,31.25,litro,Hipermercado Soriana
+orange juice,Jugo de Fruta,30.94,litro,La Comer
+orange juice,Jugo de Fruta,32.19,litro,Ley
+orange juice,Jugo de Fruta,31.25,litro,Mega Soriana
+orange juice,Jugo de Fruta,31.25,litro,Mercado Soriana
+orange juice,Jugo de Fruta,24.51,litro,Mi Tienda del Ahorro
+orange juice,Jugo de Fruta,34.38,litro,Minisuper
+orange juice,Jugo de Fruta,32.29,litro,Oxxo
+orange juice,Jugo de Fruta,28.32,litro,S Mart
+orange juice,Jugo de Fruta,31.77,litro,Soriana Express
+orange juice,Jugo de Fruta,31.25,litro,Soriana Super
+orange juice,Jugo de Fruta,31.77,litro,Sumesa
+orange juice,Jugo de Fruta,35.66,litro,Super Aki
+orange juice,Jugo de Fruta,34.32,litro,Super Aki Xtra
+orange juice,Jugo de Fruta,36.47,litro,Super Chedraui
+orange juice,Jugo de Fruta,34.04,litro,Supermercado Gonzalez
+orange juice,Jugo de Fruta,28.89,litro,U.n.a.m.
+orange juice,Jugo de Fruta,32.29,litro,Wal-mart
+orange juice,Jugo de Fruta,32.29,litro,Wal-mart Express
+oregano,Orégano,865.22,kg,Alsuper
+oregano,Orégano,865.22,kg,Alsuper Fresh Market
+oregano,Orégano,1173.91,kg,Bodega Aurrera
+oregano,Orégano,978.26,kg,Chedraui
+oregano,Orégano,978.26,kg,Chedraui Selecto
+oregano,Orégano,978.26,kg,City Market
+oregano,Orégano,1008.7,kg,Fresko la Comer
+oregano,Orégano,1039.13,kg,Hipermercado Soriana
+oregano,Orégano,1008.7,kg,La Comer
+oregano,Orégano,1039.13,kg,Mega Soriana
+oregano,Orégano,1303.91,kg,S Mart
+oregano,Orégano,1039.13,kg,Soriana Super
+oregano,Orégano,1008.7,kg,Sumesa
+oregano,Orégano,978.26,kg,Super Chedraui
+oregano,Orégano,1021.74,kg,Wal-mart
+pasta,Pasta para Sopa,55.0,kg,7 Eleven
+pasta,Pasta para Sopa,42.5,kg,Abarrotera Monterrey
+pasta,Pasta para Sopa,45.0,kg,Abarrotera Sanchez
+pasta,Pasta para Sopa,50.0,kg,Abarrotes Super Cabrera Class
+pasta,Pasta para Sopa,64.5,kg,Alsuper
+pasta,Pasta para Sopa,64.5,kg,Alsuper Fresh Market
+pasta,Pasta para Sopa,49.5,kg,Aprecio
+pasta,Pasta para Sopa,52.5,kg,Bodega Aurrera
+pasta,Pasta para Sopa,38.2,kg,Central de Abasto
+pasta,Pasta para Sopa,52.5,kg,Chedraui
+pasta,Pasta para Sopa,59.09,kg,Chedraui Selecto
+pasta,Pasta para Sopa,54.0,kg,City Market
+pasta,Pasta para Sopa,45.0,kg,El Pitico
+pasta,Pasta para Sopa,57.5,kg,Farmacia Guadalajara
+pasta,Pasta para Sopa,57.27,kg,Fresko la Comer
+pasta,Pasta para Sopa,56.82,kg,H.e.b.
+pasta,Pasta para Sopa,54.55,kg,Hipermercado Soriana
+pasta,Pasta para Sopa,59.55,kg,La Comer
+pasta,Pasta para Sopa,54.5,kg,Ley
+pasta,Pasta para Sopa,20.0,kg,Ley Express
+pasta,Pasta para Sopa,35.0,kg,Mega Soriana
+pasta,Pasta para Sopa,50.0,kg,Mercado Adolfo Lopez Mateos
+pasta,Pasta para Sopa,50.0,kg,Mercado Central de Acapulco
+pasta,Pasta para Sopa,50.0,kg,Mercado Emilio Sanchez Piedras
+pasta,Pasta para Sopa,45.0,kg,Mercado Publico
+pasta,Pasta para Sopa,25.0,kg,Mercado Soriana
+pasta,Pasta para Sopa,52.5,kg,Mi Tienda del Ahorro
+pasta,Pasta para Sopa,55.0,kg,Minisuper
+pasta,Pasta para Sopa,50.0,kg,Neto (Super Precio)
+pasta,Pasta para Sopa,54.95,kg,Operadora Merco
+pasta,Pasta para Sopa,52.5,kg,Oxxo
+pasta,Pasta para Sopa,58.72,kg,S Mart
+pasta,Pasta para Sopa,32.5,kg,Soriana Express
+pasta,Pasta para Sopa,22.5,kg,Soriana Super
+pasta,Pasta para Sopa,60.91,kg,Sumesa
+pasta,Pasta para Sopa,67.5,kg,Super Aki
+pasta,Pasta para Sopa,67.5,kg,Super Aki Xtra
+pasta,Pasta para Sopa,56.82,kg,Super Chedraui
+pasta,Pasta para Sopa,45.0,kg,Super Kompras
+pasta,Pasta para Sopa,50.0,kg,Superissste
+pasta,Pasta para Sopa,39.8,kg,Supermercado Gonzalez
+pasta,Pasta para Sopa,53.22,kg,U.n.a.m.
+pasta,Pasta para Sopa,55.0,kg,Wal-mart
+pasta,Pasta para Sopa,55.0,kg,Wal-mart Express
+peas,Chícharos,78.0,kg,Central de Abasto
+peas,Chícharos,89.0,kg,Chedraui
+peas,Chícharos,89.0,kg,Chedraui Selecto
+peas,Chícharos,89.9,kg,City Market
+peas,Chícharos,84.9,kg,Fresko la Comer
+peas,Chícharos,199.0,kg,H.e.b.
+peas,Chícharos,88.9,kg,Hipermercado Soriana
+peas,Chícharos,89.9,kg,La Comer
+peas,Chícharos,199.0,kg,Ley
+peas,Chícharos,88.9,kg,Mega Soriana
+peas,Chícharos,50.0,kg,Mercado Adolfo Lopez Mateos
+peas,Chícharos,50.0,kg,Mercado Malibran
+peas,Chícharos,60.0,kg,Mercado Publico
+peas,Chícharos,80.0,kg,Mercado el Meson Estrella
+peas,Chícharos,89.99,kg,S Mart
+peas,Chícharos,81.35,kg,Soriana Super
+peas,Chícharos,89.9,kg,Sumesa
+peas,Chícharos,89.0,kg,Super Chedraui
+peas,Chícharos,82.9,kg,Supermercado Gonzalez
+peas,Chícharos,48.49,kg,U.n.a.m.
+peas,Chícharos,79.9,kg,Wal-mart
+peas,Chícharos,79.9,kg,Wal-mart Express
+pepper,Pimienta,1161.29,kg,Bodega Aurrera
+pepper,Pimienta,200.0,kg,Central de Abasto
+pepper,Pimienta,1177.42,kg,Chedraui
+pepper,Pimienta,1177.42,kg,Chedraui Selecto
+pepper,Pimienta,1379.03,kg,City Market
+pepper,Pimienta,1412.9,kg,Fresko la Comer
+pepper,Pimienta,1369.35,kg,H.e.b.
+pepper,Pimienta,1369.35,kg,Hipermercado Soriana
+pepper,Pimienta,1420.97,kg,La Comer
+pepper,Pimienta,1387.1,kg,Ley
+pepper,Pimienta,1417.74,kg,Mega Soriana
+pepper,Pimienta,280.0,kg,Mercado Adolfo Lopez Mateos
+pepper,Pimienta,210.0,kg,Mercado Central de Acapulco
+pepper,Pimienta,200.0,kg,Mercado Malibran
+pepper,Pimienta,240.0,kg,Mercado Miguel Hidalgo
+pepper,Pimienta,240.0,kg,Mercado Publico
+pepper,Pimienta,245.0,kg,Mercado el Meson Estrella
+pepper,Pimienta,1385.48,kg,Mi Tienda del Ahorro
+pepper,Pimienta,1209.52,kg,S Mart
+pepper,Pimienta,1362.9,kg,Soriana Super
+pepper,Pimienta,1306.32,kg,Sumesa
+pepper,Pimienta,1337.1,kg,Super Aki
+pepper,Pimienta,1370.97,kg,Super Chedraui
+pepper,Pimienta,1217.74,kg,Supermercado Gonzalez
+pepper,Pimienta,1370.97,kg,Wal-mart
+pepper,Pimienta,1193.55,kg,Wal-mart Express
+pineapple,Piña,25.9,kg,Alsuper
+pineapple,Piña,24.9,kg,Alsuper Fresh Market
+pineapple,Piña,25.9,kg,Aprecio
+pineapple,Piña,20.0,kg,Bodega Aurrera
+pineapple,Piña,23.0,kg,Bodega Aurrera Express
+pineapple,Piña,22.0,kg,Central de Abasto
+pineapple,Piña,24.0,kg,Chedraui
+pineapple,Piña,24.9,kg,Chedraui Selecto
+pineapple,Piña,29.9,kg,City Market
+pineapple,Piña,29.9,kg,Fresko la Comer
+pineapple,Piña,19.95,kg,H.e.b.
+pineapple,Piña,23.8,kg,Hipermercado Soriana
+pineapple,Piña,29.9,kg,La Comer
+pineapple,Piña,25.9,kg,Ley
+pineapple,Piña,17.7,kg,Ley Express
+pineapple,Piña,20.3,kg,Mega Soriana
+pineapple,Piña,25.0,kg,Mercado Emilio Sanchez Piedras
+pineapple,Piña,19.0,kg,Mercado Malibran
+pineapple,Piña,28.0,kg,Mercado Miguel Hidalgo
+pineapple,Piña,26.0,kg,Mercado Publico
+pineapple,Piña,18.8,kg,Mercado Soriana
+pineapple,Piña,35.0,kg,Mercado el Meson Estrella
+pineapple,Piña,25.9,kg,Mi Tienda del Ahorro
+pineapple,Piña,29.9,kg,Minisuper
+pineapple,Piña,23.49,kg,Operadora Merco
+pineapple,Piña,31.99,kg,S Mart
+pineapple,Piña,18.8,kg,Soriana Express
+pineapple,Piña,20.8,kg,Soriana Super
+pineapple,Piña,29.9,kg,Sumesa
+pineapple,Piña,29.95,kg,Super Aki
+pineapple,Piña,29.95,kg,Super Aki Xtra
+pineapple,Piña,24.9,kg,Super Chedraui
+pineapple,Piña,38.0,kg,Superissste
+pineapple,Piña,20.4,kg,Supermercado Gonzalez
+pineapple,Piña,24.58,kg,U.n.a.m.
+pineapple,Piña,25.0,kg,Wal-mart
+pineapple,Piña,25.0,kg,Wal-mart Express
+plain yogurt,Yoghurt,92.0,kg,7 Eleven
+plain yogurt,Yoghurt,107.95,kg,Alsuper
+plain yogurt,Yoghurt,115.83,kg,Alsuper Fresh Market
+plain yogurt,Yoghurt,124.44,kg,Aprecio
+plain yogurt,Yoghurt,62.5,kg,Bodega Aurrera
+plain yogurt,Yoghurt,52.0,kg,Bodega Aurrera Express
+plain yogurt,Yoghurt,95.0,kg,Chedraui
+plain yogurt,Yoghurt,97.78,kg,Chedraui Selecto
+plain yogurt,Yoghurt,106.11,kg,City Market
+plain yogurt,Yoghurt,58.89,kg,El Pitico
+plain yogurt,Yoghurt,66.67,kg,Farmacia Guadalajara
+plain yogurt,Yoghurt,99.5,kg,Fresko la Comer
+plain yogurt,Yoghurt,100.0,kg,H.e.b.
+plain yogurt,Yoghurt,106.06,kg,Hipermercado Soriana
+plain yogurt,Yoghurt,97.0,kg,La Comer
+plain yogurt,Yoghurt,97.9,kg,Ley
+plain yogurt,Yoghurt,98.23,kg,Mega Soriana
+plain yogurt,Yoghurt,93.0,kg,Mercado Soriana
+plain yogurt,Yoghurt,94.33,kg,Mi Tienda del Ahorro
+plain yogurt,Yoghurt,102.76,kg,Minisuper
+plain yogurt,Yoghurt,145.83,kg,Oxxo
+plain yogurt,Yoghurt,114.43,kg,S Mart
+plain yogurt,Yoghurt,94.5,kg,Soriana Express
+plain yogurt,Yoghurt,95.5,kg,Soriana Super
+plain yogurt,Yoghurt,110.0,kg,Sumesa
+plain yogurt,Yoghurt,97.5,kg,Super Aki
+plain yogurt,Yoghurt,95.0,kg,Super Aki Xtra
+plain yogurt,Yoghurt,94.5,kg,Super Chedraui
+plain yogurt,Yoghurt,94.9,kg,Superissste
+plain yogurt,Yoghurt,57.67,kg,Supermercado Gonzalez
+plain yogurt,Yoghurt,99.1,kg,U.n.a.m.
+plain yogurt,Yoghurt,100.0,kg,Wal-mart
+plain yogurt,Yoghurt,93.0,kg,Wal-mart Express
+pork chops,Carne Cerdo,143.0,kg,Abarrotera Sanchez
+pork chops,Carne Cerdo,107.4,kg,Alsuper
+pork chops,Carne Cerdo,119.9,kg,Alsuper Fresh Market
+pork chops,Carne Cerdo,89.9,kg,Aprecio
+pork chops,Carne Cerdo,103.0,kg,Bodega Aurrera
+pork chops,Carne Cerdo,105.5,kg,Central de Abasto
+pork chops,Carne Cerdo,106.0,kg,Chedraui
+pork chops,Carne Cerdo,97.0,kg,Chedraui Selecto
+pork chops,Carne Cerdo,112.0,kg,City Market
+pork chops,Carne Cerdo,110.85,kg,Fresko la Comer
+pork chops,Carne Cerdo,125.0,kg,H.e.b.
+pork chops,Carne Cerdo,112.0,kg,Hipermercado Soriana
+pork chops,Carne Cerdo,64.0,kg,La Comer
+pork chops,Carne Cerdo,89.9,kg,Ley
+pork chops,Carne Cerdo,97.4,kg,Ley Express
+pork chops,Carne Cerdo,109.9,kg,Mega Soriana
+pork chops,Carne Cerdo,115.0,kg,Mercado Adolfo Lopez Mateos
+pork chops,Carne Cerdo,132.5,kg,Mercado Emilio Sanchez Piedras
+pork chops,Carne Cerdo,102.0,kg,Mercado Malibran
+pork chops,Carne Cerdo,140.0,kg,Mercado Publico
+pork chops,Carne Cerdo,120.0,kg,Mercado Publico 5 de Mayo
+pork chops,Carne Cerdo,109.0,kg,Mercado Soriana
+pork chops,Carne Cerdo,89.9,kg,Mi Tienda del Ahorro
+pork chops,Carne Cerdo,119.99,kg,Minisuper
+pork chops,Carne Cerdo,78.49,kg,S Mart
+pork chops,Carne Cerdo,111.5,kg,Soriana Express
+pork chops,Carne Cerdo,109.9,kg,Soriana Super
+pork chops,Carne Cerdo,114.5,kg,Sumesa
+pork chops,Carne Cerdo,110.5,kg,Super Aki
+pork chops,Carne Cerdo,110.5,kg,Super Aki Xtra
+pork chops,Carne Cerdo,105.5,kg,Super Chedraui
+pork chops,Carne Cerdo,138.0,kg,Super Kompras
+pork chops,Carne Cerdo,129.8,kg,Superissste
+pork chops,Carne Cerdo,112.0,kg,Supermercado Gonzalez
+pork chops,Carne Cerdo,121.17,kg,U.n.a.m.
+pork chops,Carne Cerdo,104.0,kg,Wal-mart
+pork chops,Carne Cerdo,107.0,kg,Wal-mart Express
+pork tenderloin,Carne Cerdo,104.9,kg,Alsuper
+pork tenderloin,Carne Cerdo,112.4,kg,Alsuper Fresh Market
+pork tenderloin,Carne Cerdo,96.9,kg,Aprecio
+pork tenderloin,Carne Cerdo,106.0,kg,Bodega Aurrera
+pork tenderloin,Carne Cerdo,114.0,kg,Central de Abasto
+pork tenderloin,Carne Cerdo,129.0,kg,Chedraui
+pork tenderloin,Carne Cerdo,135.5,kg,Chedraui Selecto
+pork tenderloin,Carne Cerdo,112.0,kg,City Market
+pork tenderloin,Carne Cerdo,158.0,kg,Fresko la Comer
+pork tenderloin,Carne Cerdo,129.0,kg,H.e.b.
+pork tenderloin,Carne Cerdo,119.0,kg,Hipermercado Soriana
+pork tenderloin,Carne Cerdo,64.0,kg,La Comer
+pork tenderloin,Carne Cerdo,99.9,kg,Ley
+pork tenderloin,Carne Cerdo,98.9,kg,Ley Express
+pork tenderloin,Carne Cerdo,119.0,kg,Mega Soriana
+pork tenderloin,Carne Cerdo,125.0,kg,Mercado Adolfo Lopez Mateos
+pork tenderloin,Carne Cerdo,135.0,kg,Mercado Emilio Sanchez Piedras
+pork tenderloin,Carne Cerdo,115.0,kg,Mercado Malibran
+pork tenderloin,Carne Cerdo,145.0,kg,Mercado Publico
+pork tenderloin,Carne Cerdo,120.0,kg,Mercado Publico 5 de Mayo
+pork tenderloin,Carne Cerdo,115.5,kg,Mercado Soriana
+pork tenderloin,Carne Cerdo,129.0,kg,Mi Tienda del Ahorro
+pork tenderloin,Carne Cerdo,119.99,kg,Minisuper
+pork tenderloin,Carne Cerdo,119.99,kg,S Mart
+pork tenderloin,Carne Cerdo,111.5,kg,Soriana Express
+pork tenderloin,Carne Cerdo,124.0,kg,Soriana Super
+pork tenderloin,Carne Cerdo,112.0,kg,Sumesa
+pork tenderloin,Carne Cerdo,85.0,kg,Super Aki
+pork tenderloin,Carne Cerdo,85.0,kg,Super Aki Xtra
+pork tenderloin,Carne Cerdo,129.0,kg,Super Chedraui
+pork tenderloin,Carne Cerdo,134.0,kg,Super Kompras
+pork tenderloin,Carne Cerdo,129.8,kg,Superissste
+pork tenderloin,Carne Cerdo,105.0,kg,Supermercado Gonzalez
+pork tenderloin,Carne Cerdo,137.06,kg,U.n.a.m.
+pork tenderloin,Carne Cerdo,107.0,kg,Wal-mart
+pork tenderloin,Carne Cerdo,107.0,kg,Wal-mart Express
+potato,Papa,59.9,kg,Alsuper
+potato,Papa,59.9,kg,Alsuper Fresh Market
+potato,Papa,9.5,kg,Aprecio
+potato,Papa,45.0,kg,Bodega Aurrera
+potato,Papa,65.0,kg,Bodega Aurrera Express
+potato,Papa,38.0,kg,Central de Abasto
+potato,Papa,49.0,kg,Chedraui
+potato,Papa,50.0,kg,Chedraui Selecto
+potato,Papa,51.9,kg,City Market
+potato,Papa,55.0,kg,El Pitico
+potato,Papa,52.9,kg,Fresko la Comer
+potato,Papa,54.95,kg,H.e.b.
+potato,Papa,46.9,kg,Hipermercado Soriana
+potato,Papa,52.9,kg,La Comer
+potato,Papa,54.9,kg,Ley
+potato,Papa,54.9,kg,Ley Express
+potato,Papa,46.9,kg,Mega Soriana
+potato,Papa,40.0,kg,Mercado Adolfo Lopez Mateos
+potato,Papa,34.5,kg,Mercado Emilio Sanchez Piedras
+potato,Papa,42.0,kg,Mercado Malibran
+potato,Papa,34.0,kg,Mercado Miguel Hidalgo
+potato,Papa,45.0,kg,Mercado Publico
+potato,Papa,39.0,kg,Mercado Publico 5 de Mayo
+potato,Papa,46.9,kg,Mercado Soriana
+potato,Papa,22.5,kg,Mercado el Meson Estrella
+potato,Papa,39.9,kg,Mi Tienda del Ahorro
+potato,Papa,52.4,kg,Minisuper
+potato,Papa,38.49,kg,Operadora Merco
+potato,Papa,40.0,kg,Oxxo
+potato,Papa,42.99,kg,S Mart
+potato,Papa,46.9,kg,Soriana Express
+potato,Papa,46.9,kg,Soriana Super
+potato,Papa,52.9,kg,Sumesa
+potato,Papa,69.0,kg,Super Aki
+potato,Papa,60.0,kg,Super Aki Xtra
+potato,Papa,52.0,kg,Super Chedraui
+potato,Papa,53.0,kg,Super Kompras
+potato,Papa,22.0,kg,Superissste
+potato,Papa,49.48,kg,U.n.a.m.
+potato,Papa,53.5,kg,Wal-mart
+potato,Papa,66.0,kg,Wal-mart Express
+pumpkin,Calabaza,24.9,kg,Alsuper
+pumpkin,Calabaza,24.9,kg,Alsuper Fresh Market
+pumpkin,Calabaza,18.9,kg,Aprecio
+pumpkin,Calabaza,34.9,kg,Bodega Aurrera
+pumpkin,Calabaza,25.0,kg,Central de Abasto
+pumpkin,Calabaza,32.5,kg,Chedraui
+pumpkin,Calabaza,33.9,kg,Chedraui Selecto
+pumpkin,Calabaza,39.9,kg,City Market
+pumpkin,Calabaza,23.0,kg,El Pitico
+pumpkin,Calabaza,36.9,kg,Fresko la Comer
+pumpkin,Calabaza,34.95,kg,H.e.b.
+pumpkin,Calabaza,32.95,kg,Hipermercado Soriana
+pumpkin,Calabaza,34.9,kg,La Comer
+pumpkin,Calabaza,29.75,kg,Ley
+pumpkin,Calabaza,29.82,kg,Ley Express
+pumpkin,Calabaza,34.5,kg,Mega Soriana
+pumpkin,Calabaza,20.0,kg,Mercado Adolfo Lopez Mateos
+pumpkin,Calabaza,27.0,kg,Mercado Emilio Sanchez Piedras
+pumpkin,Calabaza,18.0,kg,Mercado Malibran
+pumpkin,Calabaza,34.0,kg,Mercado Miguel Hidalgo
+pumpkin,Calabaza,28.0,kg,Mercado Publico
+pumpkin,Calabaza,30.0,kg,Mercado Publico 5 de Mayo
+pumpkin,Calabaza,34.9,kg,Mercado Soriana
+pumpkin,Calabaza,12.0,kg,Mercado el Meson Estrella
+pumpkin,Calabaza,25.9,kg,Mi Tienda del Ahorro
+pumpkin,Calabaza,29.99,kg,Minisuper
+pumpkin,Calabaza,21.49,kg,Operadora Merco
+pumpkin,Calabaza,26.49,kg,S Mart
+pumpkin,Calabaza,36.5,kg,Soriana Express
+pumpkin,Calabaza,32.9,kg,Soriana Super
+pumpkin,Calabaza,34.9,kg,Sumesa
+pumpkin,Calabaza,28.0,kg,Super Aki
+pumpkin,Calabaza,28.0,kg,Super Aki Xtra
+pumpkin,Calabaza,30.4,kg,Super Chedraui
+pumpkin,Calabaza,34.0,kg,Superissste
+pumpkin,Calabaza,19.9,kg,Supermercado Gonzalez
+pumpkin,Calabaza,19.55,kg,U.n.a.m.
+pumpkin,Calabaza,36.9,kg,Wal-mart
+pumpkin,Calabaza,36.9,kg,Wal-mart Express
+raisins,Pasa (Uva Pasa),80.0,kg,Central de Abasto
+raisins,Pasa (Uva Pasa),125.0,kg,Chedraui
+raisins,Pasa (Uva Pasa),125.5,kg,Chedraui Selecto
+raisins,Pasa (Uva Pasa),169.0,kg,City Market
+raisins,Pasa (Uva Pasa),116.0,kg,H.e.b.
+raisins,Pasa (Uva Pasa),169.0,kg,La Comer
+raisins,Pasa (Uva Pasa),129.9,kg,Ley
+raisins,Pasa (Uva Pasa),80.0,kg,Mercado Adolfo Lopez Mateos
+raisins,Pasa (Uva Pasa),80.0,kg,Mercado Central de Acapulco
+raisins,Pasa (Uva Pasa),70.0,kg,Mercado Malibran
+raisins,Pasa (Uva Pasa),70.0,kg,Mercado Miguel Hidalgo
+raisins,Pasa (Uva Pasa),100.0,kg,Mercado Publico
+raisins,Pasa (Uva Pasa),110.0,kg,Mercado Publico 5 de Mayo
+raisins,Pasa (Uva Pasa),84.0,kg,Mercado el Meson Estrella
+raisins,Pasa (Uva Pasa),109.0,kg,Mi Tienda del Ahorro
+raisins,Pasa (Uva Pasa),169.99,kg,S Mart
+raisins,Pasa (Uva Pasa),169.0,kg,Sumesa
+raisins,Pasa (Uva Pasa),116.0,kg,Super Aki
+rice,Arroz,24.44,kg,Abarrotera Sanchez
+rice,Arroz,38.63,kg,Alsuper
+rice,Arroz,38.48,kg,Alsuper Fresh Market
+rice,Arroz,29.9,kg,Aprecio
+rice,Arroz,22.05,kg,Bodega Aurrera
+rice,Arroz,22.05,kg,Bodega Aurrera Express
+rice,Arroz,24.0,kg,Central de Abasto
+rice,Arroz,28.9,kg,Chedraui
+rice,Arroz,22.22,kg,Chedraui Selecto
+rice,Arroz,34.0,kg,City Market
+rice,Arroz,41.11,kg,El Pitico
+rice,Arroz,39.5,kg,Farmacia Guadalajara
+rice,Arroz,30.56,kg,Fresko la Comer
+rice,Arroz,27.22,kg,H.e.b.
+rice,Arroz,25.0,kg,Hipermercado Soriana
+rice,Arroz,35.0,kg,La Comer
+rice,Arroz,27.67,kg,Ley
+rice,Arroz,43.22,kg,Ley Express
+rice,Arroz,25.44,kg,Mega Soriana
+rice,Arroz,22.0,kg,Mercado Adolfo Lopez Mateos
+rice,Arroz,40.0,kg,Mercado Central de Acapulco
+rice,Arroz,27.0,kg,Mercado Emilio Sanchez Piedras
+rice,Arroz,20.0,kg,Mercado Malibran
+rice,Arroz,35.0,kg,Mercado Miguel Hidalgo
+rice,Arroz,29.45,kg,Mercado Publico
+rice,Arroz,20.0,kg,Mercado Publico 5 de Mayo
+rice,Arroz,22.78,kg,Mercado Soriana
+rice,Arroz,22.0,kg,Mercado el Meson Estrella
+rice,Arroz,43.22,kg,Mi Tienda del Ahorro
+rice,Arroz,26.5,kg,Minisuper
+rice,Arroz,41.1,kg,Operadora Merco
+rice,Arroz,41.67,kg,Oxxo
+rice,Arroz,23.66,kg,S Mart
+rice,Arroz,23.22,kg,Soriana Express
+rice,Arroz,26.11,kg,Soriana Super
+rice,Arroz,35.2,kg,Sumesa
+rice,Arroz,40.0,kg,Super Aki
+rice,Arroz,21.11,kg,Super Chedraui
+rice,Arroz,20.0,kg,Super Kompras
+rice,Arroz,28.11,kg,Superissste
+rice,Arroz,31.21,kg,U.n.a.m.
+rice,Arroz,23.15,kg,Wal-mart
+rice,Arroz,34.49,kg,Wal-mart Express
+rum,Ron,693.2,litro,Alsuper
+rum,Ron,581.24,litro,Alsuper Fresh Market
+rum,Ron,497.96,litro,Bodega Aurrera
+rum,Ron,498.98,litro,Chedraui
+rum,Ron,652.0,litro,Chedraui Selecto
+rum,Ron,559.71,litro,City Market
+rum,Ron,466.33,litro,El Pitico
+rum,Ron,559.71,litro,Fresko la Comer
+rum,Ron,571.94,litro,H.e.b.
+rum,Ron,529.59,litro,Hipermercado Soriana
+rum,Ron,454.08,litro,La Comer
+rum,Ron,529.59,litro,Mega Soriana
+rum,Ron,494.9,litro,Mercado Soriana
+rum,Ron,483.67,litro,Mi Tienda del Ahorro
+rum,Ron,392.86,litro,Minisuper
+rum,Ron,312.24,litro,Oxxo
+rum,Ron,361.72,litro,S Mart
+rum,Ron,494.9,litro,Soriana Express
+rum,Ron,726.67,litro,Soriana Super
+rum,Ron,559.71,litro,Sumesa
+rum,Ron,525.33,litro,Super Aki
+rum,Ron,525.33,litro,Super Aki Xtra
+rum,Ron,498.98,litro,Super Chedraui
+rum,Ron,356.12,litro,Superissste
+rum,Ron,498.98,litro,Wal-mart
+rum,Ron,498.98,litro,Wal-mart Express
+salsa,Salsa Picante y Similares,150.0,kg,7 Eleven
+salsa,Salsa Picante y Similares,68.92,litro,7 Eleven
+salsa,Salsa Picante y Similares,60.81,litro,Abarrotera Monterrey
+salsa,Salsa Picante y Similares,320.42,kg,Abarrotera Sanchez
+salsa,Salsa Picante y Similares,60.81,litro,Abarrotera Sanchez
+salsa,Salsa Picante y Similares,52.7,litro,Abarrotes Super Cabrera Class
+salsa,Salsa Picante y Similares,135.91,kg,Alsuper
+salsa,Salsa Picante y Similares,442.73,litro,Alsuper
+salsa,Salsa Picante y Similares,135.91,kg,Alsuper Fresh Market
+salsa,Salsa Picante y Similares,442.73,litro,Alsuper Fresh Market
+salsa,Salsa Picante y Similares,192.55,kg,Aprecio
+salsa,Salsa Picante y Similares,1048.33,litro,Aprecio
+salsa,Salsa Picante y Similares,131.82,kg,Bodega Aurrera
+salsa,Salsa Picante y Similares,46.86,litro,Bodega Aurrera
+salsa,Salsa Picante y Similares,80.0,kg,Bodega Aurrera Express
+salsa,Salsa Picante y Similares,45.71,litro,Bodega Aurrera Express
+salsa,Salsa Picante y Similares,104.73,kg,Central de Abasto
+salsa,Salsa Picante y Similares,51.35,litro,Central de Abasto
+salsa,Salsa Picante y Similares,131.82,kg,Chedraui
+salsa,Salsa Picante y Similares,60.81,litro,Chedraui
+salsa,Salsa Picante y Similares,152.27,kg,Chedraui Selecto
+salsa,Salsa Picante y Similares,779.17,litro,Chedraui Selecto
+salsa,Salsa Picante y Similares,145.45,kg,City Market
+salsa,Salsa Picante y Similares,916.67,litro,City Market
+salsa,Salsa Picante y Similares,86.67,kg,El Pitico
+salsa,Salsa Picante y Similares,323.94,kg,Farmacia Guadalajara
+salsa,Salsa Picante y Similares,708.33,litro,Farmacia Guadalajara
+salsa,Salsa Picante y Similares,156.82,kg,Fresko la Comer
+salsa,Salsa Picante y Similares,138.78,litro,Fresko la Comer
+salsa,Salsa Picante y Similares,138.64,kg,H.e.b.
+salsa,Salsa Picante y Similares,765.0,litro,H.e.b.
+salsa,Salsa Picante y Similares,152.27,kg,Hipermercado Soriana
+salsa,Salsa Picante y Similares,840.0,litro,Hipermercado Soriana
+salsa,Salsa Picante y Similares,156.82,kg,La Comer
+salsa,Salsa Picante y Similares,67.57,litro,La Comer
+salsa,Salsa Picante y Similares,133.33,kg,Ley
+salsa,Salsa Picante y Similares,509.53,litro,Ley
+salsa,Salsa Picante y Similares,304.23,kg,Ley Express
+salsa,Salsa Picante y Similares,46.49,litro,Ley Express
+salsa,Salsa Picante y Similares,144.17,kg,Mega Soriana
+salsa,Salsa Picante y Similares,831.67,litro,Mega Soriana
+salsa,Salsa Picante y Similares,100.0,kg,Mercado Adolfo Lopez Mateos
+salsa,Salsa Picante y Similares,399.32,litro,Mercado Adolfo Lopez Mateos
+salsa,Salsa Picante y Similares,120.0,kg,Mercado Central de Acapulco
+salsa,Salsa Picante y Similares,48.65,litro,Mercado Central de Acapulco
+salsa,Salsa Picante y Similares,110.0,kg,Mercado Emilio Sanchez Piedras
+salsa,Salsa Picante y Similares,488.06,litro,Mercado Emilio Sanchez Piedras
+salsa,Salsa Picante y Similares,116.67,kg,Mercado Miguel Hidalgo
+salsa,Salsa Picante y Similares,59.46,litro,Mercado Miguel Hidalgo
+salsa,Salsa Picante y Similares,113.33,kg,Mercado Publico
+salsa,Salsa Picante y Similares,64.86,litro,Mercado Publico
+salsa,Salsa Picante y Similares,120.0,kg,Mercado Publico 5 de Mayo
+salsa,Salsa Picante y Similares,48.65,litro,Mercado Publico 5 de Mayo
+salsa,Salsa Picante y Similares,146.29,kg,Mercado Soriana
+salsa,Salsa Picante y Similares,965.0,litro,Mercado Soriana
+salsa,Salsa Picante y Similares,92.67,kg,Mi Tienda del Ahorro
+salsa,Salsa Picante y Similares,948.33,litro,Mi Tienda del Ahorro
+salsa,Salsa Picante y Similares,132.67,kg,Minisuper
+salsa,Salsa Picante y Similares,64.59,litro,Minisuper
+salsa,Salsa Picante y Similares,43.24,litro,Neto (Super Precio)
+salsa,Salsa Picante y Similares,316.9,kg,Oxxo
+salsa,Salsa Picante y Similares,64.86,litro,Oxxo
+salsa,Salsa Picante y Similares,150.86,kg,S Mart
+salsa,Salsa Picante y Similares,56.73,litro,S Mart
+salsa,Salsa Picante y Similares,106.67,kg,Soriana Express
+salsa,Salsa Picante y Similares,48.86,litro,Soriana Express
+salsa,Salsa Picante y Similares,169.09,kg,Soriana Super
+salsa,Salsa Picante y Similares,53.78,litro,Soriana Super
+salsa,Salsa Picante y Similares,156.82,kg,Sumesa
+salsa,Salsa Picante y Similares,67.57,litro,Sumesa
+salsa,Salsa Picante y Similares,117.7,kg,Super Aki
+salsa,Salsa Picante y Similares,187.5,litro,Super Aki
+salsa,Salsa Picante y Similares,112.67,kg,Super Aki Xtra
+salsa,Salsa Picante y Similares,74.32,litro,Super Aki Xtra
+salsa,Salsa Picante y Similares,136.36,kg,Super Chedraui
+salsa,Salsa Picante y Similares,51.35,litro,Super Chedraui
+salsa,Salsa Picante y Similares,195.88,kg,Super Kompras
+salsa,Salsa Picante y Similares,49.46,litro,Super Kompras
+salsa,Salsa Picante y Similares,149.55,kg,Superissste
+salsa,Salsa Picante y Similares,44.59,litro,Superissste
+salsa,Salsa Picante y Similares,118.8,kg,Supermercado Gonzalez
+salsa,Salsa Picante y Similares,56.49,litro,Supermercado Gonzalez
+salsa,Salsa Picante y Similares,111.86,kg,U.n.a.m.
+salsa,Salsa Picante y Similares,393.11,litro,U.n.a.m.
+salsa,Salsa Picante y Similares,136.36,kg,Wal-mart
+salsa,Salsa Picante y Similares,783.33,litro,Wal-mart
+salsa,Salsa Picante y Similares,136.36,kg,Wal-mart Express
+salsa,Salsa Picante y Similares,950.0,litro,Wal-mart Express
+salt,Sal Molida de Mesa,23.0,kg,Abarrotera Monterrey
+salt,Sal Molida de Mesa,26.25,kg,Abarrotera Sanchez
+salt,Sal Molida de Mesa,22.0,kg,Abarrotes Super Cabrera Class
+salt,Sal Molida de Mesa,29.9,kg,Alsuper
+salt,Sal Molida de Mesa,29.9,kg,Alsuper Fresh Market
+salt,Sal Molida de Mesa,24.0,kg,Aprecio
+salt,Sal Molida de Mesa,24.0,kg,Bodega Aurrera
+salt,Sal Molida de Mesa,23.5,kg,Central de Abasto
+salt,Sal Molida de Mesa,29.0,kg,Chedraui
+salt,Sal Molida de Mesa,30.0,kg,Chedraui Selecto
+salt,Sal Molida de Mesa,29.0,kg,City Market
+salt,Sal Molida de Mesa,29.0,kg,Fresko la Comer
+salt,Sal Molida de Mesa,31.51,kg,H.e.b.
+salt,Sal Molida de Mesa,28.9,kg,Hipermercado Soriana
+salt,Sal Molida de Mesa,29.0,kg,La Comer
+salt,Sal Molida de Mesa,30.5,kg,Ley
+salt,Sal Molida de Mesa,28.9,kg,Mega Soriana
+salt,Sal Molida de Mesa,22.0,kg,Mercado Adolfo Lopez Mateos
+salt,Sal Molida de Mesa,22.0,kg,Mercado Emilio Sanchez Piedras
+salt,Sal Molida de Mesa,24.0,kg,Mercado Miguel Hidalgo
+salt,Sal Molida de Mesa,22.0,kg,Mercado Publico
+salt,Sal Molida de Mesa,17.0,kg,Mercado Publico 5 de Mayo
+salt,Sal Molida de Mesa,28.0,kg,Mercado Soriana
+salt,Sal Molida de Mesa,31.5,kg,Mi Tienda del Ahorro
+salt,Sal Molida de Mesa,29.7,kg,Minisuper
+salt,Sal Molida de Mesa,24.99,kg,S Mart
+salt,Sal Molida de Mesa,26.2,kg,Soriana Express
+salt,Sal Molida de Mesa,28.9,kg,Soriana Super
+salt,Sal Molida de Mesa,35.83,kg,Sumesa
+salt,Sal Molida de Mesa,24.5,kg,Super Aki
+salt,Sal Molida de Mesa,25.5,kg,Super Aki Xtra
+salt,Sal Molida de Mesa,29.25,kg,Super Chedraui
+salt,Sal Molida de Mesa,19.0,kg,Super Kompras
+salt,Sal Molida de Mesa,24.45,kg,Superissste
+salt,Sal Molida de Mesa,20.92,kg,U.n.a.m.
+salt,Sal Molida de Mesa,25.0,kg,Wal-mart
+salt,Sal Molida de Mesa,25.0,kg,Wal-mart Express
+scallion,Cebolla,17.4,manojo,Alsuper
+scallion,Cebolla,16.9,manojo,Alsuper Fresh Market
+scallion,Cebolla,9.9,manojo,Aprecio
+scallion,Cebolla,16.9,manojo,Bodega Aurrera
+scallion,Cebolla,22.0,manojo,Central de Abasto
+scallion,Cebolla,14.5,manojo,Chedraui
+scallion,Cebolla,14.5,manojo,Chedraui Selecto
+scallion,Cebolla,11.4,manojo,Fresko la Comer
+scallion,Cebolla,17.95,manojo,H.e.b.
+scallion,Cebolla,13.9,manojo,Hipermercado Soriana
+scallion,Cebolla,10.9,manojo,La Comer
+scallion,Cebolla,14.75,manojo,Ley
+scallion,Cebolla,14.75,manojo,Ley Express
+scallion,Cebolla,14.9,manojo,Mega Soriana
+scallion,Cebolla,20.0,manojo,Mercado Adolfo Lopez Mateos
+scallion,Cebolla,12.0,manojo,Mercado Emilio Sanchez Piedras
+scallion,Cebolla,12.0,manojo,Mercado Malibran
+scallion,Cebolla,20.0,manojo,Mercado Publico
+scallion,Cebolla,14.9,manojo,Mercado Soriana
+scallion,Cebolla,10.99,manojo,Minisuper
+scallion,Cebolla,14.99,manojo,Operadora Merco
+scallion,Cebolla,12.49,manojo,S Mart
+scallion,Cebolla,13.9,manojo,Soriana Express
+scallion,Cebolla,14.9,manojo,Soriana Super
+scallion,Cebolla,10.9,manojo,Sumesa
+scallion,Cebolla,13.5,manojo,Super Aki
+scallion,Cebolla,13.5,manojo,Super Aki Xtra
+scallion,Cebolla,15.0,manojo,Super Chedraui
+scallion,Cebolla,13.4,manojo,Supermercado Gonzalez
+scallion,Cebolla,10.0,manojo,U.n.a.m.
+scallion,Cebolla,14.9,manojo,Wal-mart
+scallion,Cebolla,16.9,manojo,Wal-mart Express
+sea salt,Sal de Mar,17.0,kg,Bodega Aurrera
+sea salt,Sal de Mar,17.0,kg,Chedraui
+sea salt,Sal de Mar,15.5,kg,Chedraui Selecto
+sea salt,Sal de Mar,17.35,kg,Fresko la Comer
+sea salt,Sal de Mar,17.9,kg,H.e.b.
+sea salt,Sal de Mar,18.5,kg,Hipermercado Soriana
+sea salt,Sal de Mar,17.7,kg,La Comer
+sea salt,Sal de Mar,18.9,kg,Ley
+sea salt,Sal de Mar,18.1,kg,Mega Soriana
+sea salt,Sal de Mar,17.7,kg,Mercado Soriana
+sea salt,Sal de Mar,19.5,kg,Mi Tienda del Ahorro
+sea salt,Sal de Mar,16.0,kg,Neto (Super Precio)
+sea salt,Sal de Mar,18.5,kg,Soriana Super
+sea salt,Sal de Mar,21.5,kg,Super Aki
+sea salt,Sal de Mar,21.95,kg,Super Aki Xtra
+sea salt,Sal de Mar,15.0,kg,Super Chedraui
+sea salt,Sal de Mar,17.0,kg,Wal-mart
+sea salt,Sal de Mar,18.0,kg,Wal-mart Express
+sesame seeds,Ajonjolí,57.0,kg,Central de Abasto
+sesame seeds,Ajonjolí,210.0,kg,Chedraui
+sesame seeds,Ajonjolí,200.0,kg,Chedraui Selecto
+sesame seeds,Ajonjolí,228.5,kg,Fresko la Comer
+sesame seeds,Ajonjolí,215.0,kg,Hipermercado Soriana
+sesame seeds,Ajonjolí,216.0,kg,La Comer
+sesame seeds,Ajonjolí,205.0,kg,Mega Soriana
+sesame seeds,Ajonjolí,75.0,kg,Mercado Adolfo Lopez Mateos
+sesame seeds,Ajonjolí,100.0,kg,Mercado Central de Acapulco
+sesame seeds,Ajonjolí,84.0,kg,Mercado Emilio Sanchez Piedras
+sesame seeds,Ajonjolí,75.0,kg,Mercado Malibran
+sesame seeds,Ajonjolí,90.0,kg,Mercado Miguel Hidalgo
+sesame seeds,Ajonjolí,80.0,kg,Mercado Publico
+sesame seeds,Ajonjolí,48.0,kg,Mercado el Meson Estrella
+sesame seeds,Ajonjolí,219.0,kg,Minisuper
+sesame seeds,Ajonjolí,212.71,kg,S Mart
+sesame seeds,Ajonjolí,215.0,kg,Soriana Super
+sesame seeds,Ajonjolí,200.0,kg,Super Chedraui
+sesame seeds,Ajonjolí,166.9,kg,U.n.a.m.
+sesame seeds,Ajonjolí,210.0,kg,Wal-mart
+sesame seeds,Ajonjolí,210.0,kg,Wal-mart Express
+shallot,Cebolla,37.4,kg,Alsuper
+shallot,Cebolla,17.4,manojo,Alsuper
+shallot,Cebolla,28.9,kg,Alsuper Fresh Market
+shallot,Cebolla,16.9,manojo,Alsuper Fresh Market
+shallot,Cebolla,21.4,kg,Aprecio
+shallot,Cebolla,9.9,manojo,Aprecio
+shallot,Cebolla,37.0,kg,Bodega Aurrera
+shallot,Cebolla,16.9,manojo,Bodega Aurrera
+shallot,Cebolla,40.0,kg,Bodega Aurrera Express
+shallot,Cebolla,23.5,kg,Central de Abasto
+shallot,Cebolla,22.0,manojo,Central de Abasto
+shallot,Cebolla,28.0,kg,Chedraui
+shallot,Cebolla,14.5,manojo,Chedraui
+shallot,Cebolla,26.5,kg,Chedraui Selecto
+shallot,Cebolla,14.5,manojo,Chedraui Selecto
+shallot,Cebolla,34.9,kg,City Market
+shallot,Cebolla,30.0,kg,El Pitico
+shallot,Cebolla,34.9,kg,Fresko la Comer
+shallot,Cebolla,11.4,manojo,Fresko la Comer
+shallot,Cebolla,34.95,kg,H.e.b.
+shallot,Cebolla,17.95,manojo,H.e.b.
+shallot,Cebolla,24.85,kg,Hipermercado Soriana
+shallot,Cebolla,13.9,manojo,Hipermercado Soriana
+shallot,Cebolla,34.9,kg,La Comer
+shallot,Cebolla,10.9,manojo,La Comer
+shallot,Cebolla,25.9,kg,Ley
+shallot,Cebolla,14.75,manojo,Ley
+shallot,Cebolla,28.9,kg,Ley Express
+shallot,Cebolla,14.75,manojo,Ley Express
+shallot,Cebolla,24.8,kg,Mega Soriana
+shallot,Cebolla,14.9,manojo,Mega Soriana
+shallot,Cebolla,20.0,kg,Mercado Adolfo Lopez Mateos
+shallot,Cebolla,20.0,manojo,Mercado Adolfo Lopez Mateos
+shallot,Cebolla,16.5,kg,Mercado Emilio Sanchez Piedras
+shallot,Cebolla,12.0,manojo,Mercado Emilio Sanchez Piedras
+shallot,Cebolla,22.5,kg,Mercado Malibran
+shallot,Cebolla,12.0,manojo,Mercado Malibran
+shallot,Cebolla,22.0,kg,Mercado Miguel Hidalgo
+shallot,Cebolla,28.0,kg,Mercado Publico
+shallot,Cebolla,20.0,manojo,Mercado Publico
+shallot,Cebolla,25.0,kg,Mercado Publico 5 de Mayo
+shallot,Cebolla,22.9,kg,Mercado Soriana
+shallot,Cebolla,14.9,manojo,Mercado Soriana
+shallot,Cebolla,25.0,kg,Mercado el Meson Estrella
+shallot,Cebolla,26.9,kg,Mi Tienda del Ahorro
+shallot,Cebolla,29.4,kg,Minisuper
+shallot,Cebolla,10.99,manojo,Minisuper
+shallot,Cebolla,19.99,kg,Operadora Merco
+shallot,Cebolla,14.99,manojo,Operadora Merco
+shallot,Cebolla,34.95,kg,Oxxo
+shallot,Cebolla,26.99,kg,S Mart
+shallot,Cebolla,12.49,manojo,S Mart
+shallot,Cebolla,22.9,kg,Soriana Express
+shallot,Cebolla,13.9,manojo,Soriana Express
+shallot,Cebolla,22.9,kg,Soriana Super
+shallot,Cebolla,14.9,manojo,Soriana Super
+shallot,Cebolla,34.9,kg,Sumesa
+shallot,Cebolla,10.9,manojo,Sumesa
+shallot,Cebolla,26.95,kg,Super Aki
+shallot,Cebolla,13.5,manojo,Super Aki
+shallot,Cebolla,26.95,kg,Super Aki Xtra
+shallot,Cebolla,13.5,manojo,Super Aki Xtra
+shallot,Cebolla,28.0,kg,Super Chedraui
+shallot,Cebolla,15.0,manojo,Super Chedraui
+shallot,Cebolla,21.3,kg,Super Kompras
+shallot,Cebolla,19.95,kg,Superissste
+shallot,Cebolla,32.9,kg,Supermercado Gonzalez
+shallot,Cebolla,13.4,manojo,Supermercado Gonzalez
+shallot,Cebolla,19.38,kg,U.n.a.m.
+shallot,Cebolla,10.0,manojo,U.n.a.m.
+shallot,Cebolla,33.0,kg,Wal-mart
+shallot,Cebolla,14.9,manojo,Wal-mart
+shallot,Cebolla,42.0,kg,Wal-mart Express
+shallot,Cebolla,16.9,manojo,Wal-mart Express
+shrimp,Camarón,229.9,kg,Alsuper
+shrimp,Camarón,339.9,kg,Alsuper Fresh Market
+shrimp,Camarón,239.0,kg,Bodega Aurrera
+shrimp,Camarón,220.0,kg,Central de Abasto
+shrimp,Camarón,275.0,kg,Chedraui
+shrimp,Camarón,279.0,kg,Chedraui Selecto
+shrimp,Camarón,381.5,kg,City Market
+shrimp,Camarón,341.0,kg,Fresko la Comer
+shrimp,Camarón,324.0,kg,H.e.b.
+shrimp,Camarón,299.0,kg,Hipermercado Soriana
+shrimp,Camarón,351.0,kg,La Comer
+shrimp,Camarón,230.0,kg,La Costa Marisquera
+shrimp,Camarón,194.9,kg,Ley
+shrimp,Camarón,295.9,kg,Mega Soriana
+shrimp,Camarón,210.0,kg,Mercado Emilio Sanchez Piedras
+shrimp,Camarón,220.0,kg,Mercado Publico
+shrimp,Camarón,249.0,kg,Mercado Soriana
+shrimp,Camarón,170.0,kg,Mercado del Mar Felipe Angeles Higueril
+shrimp,Camarón,164.0,kg,Mercado del Mar San Felipe
+shrimp,Camarón,180.0,kg,Mercado del Mar Zapopan
+shrimp,Camarón,250.0,kg,Pescaderia Alex
+shrimp,Camarón,195.0,kg,Pescaderia Bahia de Kino
+shrimp,Camarón,215.0,kg,Pescaderia Boca del Rio
+shrimp,Camarón,215.0,kg,Pescaderia Cepesmar
+shrimp,Camarón,159.0,kg,Pescaderia Guasaveña
+shrimp,Camarón,180.0,kg,Pescaderia Hermanos Luna
+shrimp,Camarón,205.0,kg,Pescaderia Hermanos Villegas
+shrimp,Camarón,180.0,kg,Pescaderia Lindo Sinaloa
+shrimp,Camarón,197.5,kg,Pescaderia Liz del Mar
+shrimp,Camarón,260.0,kg,Pescaderia Puerto Aventura
+shrimp,Camarón,240.0,kg,Pescaderia Sevilla Carro Verde
+shrimp,Camarón,220.0,kg,Pescaderia Yuridia
+shrimp,Camarón,180.0,kg,Pescaderia el Mangle
+shrimp,Camarón,220.0,kg,Pescaderia el Tejano de Queretaro
+shrimp,Camarón,195.0,kg,Pescaderia la Jaiba
+shrimp,Camarón,202.5,kg,Pescaderia las Truchas
+shrimp,Camarón,212.0,kg,Pescaderias
+shrimp,Camarón,219.0,kg,Pescaderias Tradicionales
+shrimp,Camarón,360.0,kg,Pescados y Mariscos Miguel Hidalgo
+shrimp,Camarón,269.99,kg,S Mart
+shrimp,Camarón,194.0,kg,Soriana Express
+shrimp,Camarón,297.45,kg,Soriana Super
+shrimp,Camarón,353.5,kg,Sumesa
+shrimp,Camarón,199.0,kg,Super Chedraui
+shrimp,Camarón,275.0,kg,Wal-mart
+shrimp,Camarón,298.0,kg,Wal-mart Express
+soy sauce,Salsa de Soya,210.71,litro,7 Eleven
+soy sauce,Salsa de Soya,156.43,litro,Alsuper
+soy sauce,Salsa de Soya,156.43,litro,Alsuper Fresh Market
+soy sauce,Salsa de Soya,97.14,litro,Bodega Aurrera
+soy sauce,Salsa de Soya,85.71,litro,Bodega Aurrera Express
+soy sauce,Salsa de Soya,178.57,litro,Chedraui
+soy sauce,Salsa de Soya,178.57,litro,Chedraui Selecto
+soy sauce,Salsa de Soya,178.57,litro,Farmacia Guadalajara
+soy sauce,Salsa de Soya,114.29,litro,Fresko la Comer
+soy sauce,Salsa de Soya,177.86,litro,H.e.b.
+soy sauce,Salsa de Soya,192.86,litro,Hipermercado Soriana
+soy sauce,Salsa de Soya,151.79,litro,La Comer
+soy sauce,Salsa de Soya,210.71,litro,Minisuper
+soy sauce,Salsa de Soya,171.36,litro,S Mart
+soy sauce,Salsa de Soya,114.29,litro,Sumesa
+soy sauce,Salsa de Soya,185.71,litro,Super Aki
+soy sauce,Salsa de Soya,203.57,litro,Super Aki Xtra
+soy sauce,Salsa de Soya,178.57,litro,Super Chedraui
+soy sauce,Salsa de Soya,164.29,litro,Superissste
+soy sauce,Salsa de Soya,179.43,litro,U.n.a.m.
+soy sauce,Salsa de Soya,97.14,litro,Wal-mart
+soy sauce,Salsa de Soya,102.86,litro,Wal-mart Express
+spaghetti,Pasta para Sopa,55.0,kg,7 Eleven
+spaghetti,Pasta para Sopa,42.5,kg,Abarrotera Monterrey
+spaghetti,Pasta para Sopa,45.0,kg,Abarrotera Sanchez
+spaghetti,Pasta para Sopa,50.0,kg,Abarrotes Super Cabrera Class
+spaghetti,Pasta para Sopa,54.5,kg,Alsuper
+spaghetti,Pasta para Sopa,54.5,kg,Alsuper Fresh Market
+spaghetti,Pasta para Sopa,49.5,kg,Aprecio
+spaghetti,Pasta para Sopa,52.5,kg,Bodega Aurrera
+spaghetti,Pasta para Sopa,39.38,kg,Central de Abasto
+spaghetti,Pasta para Sopa,52.5,kg,Chedraui
+spaghetti,Pasta para Sopa,55.0,kg,Chedraui Selecto
+spaghetti,Pasta para Sopa,54.0,kg,City Market
+spaghetti,Pasta para Sopa,45.0,kg,El Pitico
+spaghetti,Pasta para Sopa,57.5,kg,Farmacia Guadalajara
+spaghetti,Pasta para Sopa,60.0,kg,Fresko la Comer
+spaghetti,Pasta para Sopa,56.82,kg,H.e.b.
+spaghetti,Pasta para Sopa,56.82,kg,Hipermercado Soriana
+spaghetti,Pasta para Sopa,62.5,kg,La Comer
+spaghetti,Pasta para Sopa,57.5,kg,Ley
+spaghetti,Pasta para Sopa,55.91,kg,Mega Soriana
+spaghetti,Pasta para Sopa,50.0,kg,Mercado Adolfo Lopez Mateos
+spaghetti,Pasta para Sopa,50.0,kg,Mercado Central de Acapulco
+spaghetti,Pasta para Sopa,50.0,kg,Mercado Emilio Sanchez Piedras
+spaghetti,Pasta para Sopa,45.0,kg,Mercado Publico
+spaghetti,Pasta para Sopa,51.82,kg,Mercado Soriana
+spaghetti,Pasta para Sopa,42.5,kg,Mi Tienda del Ahorro
+spaghetti,Pasta para Sopa,55.0,kg,Minisuper
+spaghetti,Pasta para Sopa,50.0,kg,Neto (Super Precio)
+spaghetti,Pasta para Sopa,42.5,kg,Operadora Merco
+spaghetti,Pasta para Sopa,52.5,kg,Oxxo
+spaghetti,Pasta para Sopa,43.45,kg,S Mart
+spaghetti,Pasta para Sopa,43.86,kg,Soriana Express
+spaghetti,Pasta para Sopa,56.36,kg,Soriana Super
+spaghetti,Pasta para Sopa,60.91,kg,Sumesa
+spaghetti,Pasta para Sopa,66.0,kg,Super Aki
+spaghetti,Pasta para Sopa,59.75,kg,Super Aki Xtra
+spaghetti,Pasta para Sopa,43.69,kg,Super Chedraui
+spaghetti,Pasta para Sopa,45.0,kg,Super Kompras
+spaghetti,Pasta para Sopa,50.0,kg,Superissste
+spaghetti,Pasta para Sopa,39.8,kg,Supermercado Gonzalez
+spaghetti,Pasta para Sopa,52.42,kg,U.n.a.m.
+spaghetti,Pasta para Sopa,55.0,kg,Wal-mart
+spaghetti,Pasta para Sopa,55.0,kg,Wal-mart Express
+spinach,Espinacas,17.4,manojo,Alsuper
+spinach,Espinacas,17.9,manojo,Alsuper Fresh Market
+spinach,Espinacas,23.9,manojo,Aprecio
+spinach,Espinacas,13.9,manojo,Bodega Aurrera
+spinach,Espinacas,14.0,manojo,Central de Abasto
+spinach,Espinacas,11.9,manojo,Chedraui
+spinach,Espinacas,9.9,manojo,Chedraui Selecto
+spinach,Espinacas,11.9,manojo,City Market
+spinach,Espinacas,10.9,manojo,Fresko la Comer
+spinach,Espinacas,14.95,manojo,H.e.b.
+spinach,Espinacas,13.9,manojo,Hipermercado Soriana
+spinach,Espinacas,10.9,manojo,La Comer
+spinach,Espinacas,14.9,manojo,Ley
+spinach,Espinacas,9.9,manojo,Ley Express
+spinach,Espinacas,13.9,manojo,Mega Soriana
+spinach,Espinacas,15.0,manojo,Mercado Adolfo Lopez Mateos
+spinach,Espinacas,11.0,manojo,Mercado Emilio Sanchez Piedras
+spinach,Espinacas,7.0,manojo,Mercado Malibran
+spinach,Espinacas,15.0,manojo,Mercado Publico
+spinach,Espinacas,7.0,manojo,Mercado Publico 5 de Mayo
+spinach,Espinacas,13.9,manojo,Mercado Soriana
+spinach,Espinacas,15.0,manojo,Mercado el Meson Estrella
+spinach,Espinacas,13.9,manojo,Mi Tienda del Ahorro
+spinach,Espinacas,11.94,manojo,Minisuper
+spinach,Espinacas,12.99,manojo,Operadora Merco
+spinach,Espinacas,11.99,manojo,S Mart
+spinach,Espinacas,12.9,manojo,Soriana Express
+spinach,Espinacas,13.9,manojo,Soriana Super
+spinach,Espinacas,10.9,manojo,Sumesa
+spinach,Espinacas,13.95,manojo,Super Aki Xtra
+spinach,Espinacas,11.2,manojo,Super Chedraui
+spinach,Espinacas,6.9,manojo,Supermercado Gonzalez
+spinach,Espinacas,10.45,manojo,U.n.a.m.
+spinach,Espinacas,13.9,manojo,Wal-mart
+spinach,Espinacas,14.9,manojo,Wal-mart Express
+strawberries,Fresa,87.89,kg,Alsuper
+strawberries,Fresa,87.89,kg,Alsuper Fresh Market
+strawberries,Fresa,87.89,kg,Aprecio
+strawberries,Fresa,147.58,kg,Bodega Aurrera
+strawberries,Fresa,115.64,kg,Central de Abasto
+strawberries,Fresa,151.98,kg,Chedraui
+strawberries,Fresa,151.98,kg,Chedraui Selecto
+strawberries,Fresa,164.09,kg,City Market
+strawberries,Fresa,142.95,kg,Fresko la Comer
+strawberries,Fresa,165.09,kg,H.e.b.
+strawberries,Fresa,158.37,kg,Hipermercado Soriana
+strawberries,Fresa,175.99,kg,La Comer
+strawberries,Fresa,153.96,kg,Ley
+strawberries,Fresa,178.19,kg,Mega Soriana
+strawberries,Fresa,110.13,kg,Mercado Adolfo Lopez Mateos
+strawberries,Fresa,95.0,kg,Mercado Emilio Sanchez Piedras
+strawberries,Fresa,143.17,kg,Mercado Malibran
+strawberries,Fresa,99.12,kg,Mercado Miguel Hidalgo
+strawberries,Fresa,110.13,kg,Mercado Publico
+strawberries,Fresa,181.5,kg,Mercado Soriana
+strawberries,Fresa,60.0,kg,Mercado el Meson Estrella
+strawberries,Fresa,148.46,kg,Mi Tienda del Ahorro
+strawberries,Fresa,154.16,kg,Minisuper
+strawberries,Fresa,143.15,kg,Operadora Merco
+strawberries,Fresa,183.7,kg,Soriana Express
+strawberries,Fresa,158.37,kg,Soriana Super
+strawberries,Fresa,175.99,kg,Sumesa
+strawberries,Fresa,165.09,kg,Super Aki Xtra
+strawberries,Fresa,129.96,kg,Super Chedraui
+strawberries,Fresa,203.52,kg,U.n.a.m.
+strawberries,Fresa,171.81,kg,Wal-mart
+strawberries,Fresa,171.81,kg,Wal-mart Express
+sugar,Azúcar,22.0,kg,Abarrotera Monterrey
+sugar,Azúcar,23.25,kg,Abarrotera Sanchez
+sugar,Azúcar,21.0,kg,Abarrotes Super Cabrera Class
+sugar,Azúcar,31.0,kg,Alsuper
+sugar,Azúcar,31.0,kg,Alsuper Fresh Market
+sugar,Azúcar,30.5,kg,Aprecio
+sugar,Azúcar,25.56,kg,Bodega Aurrera
+sugar,Azúcar,22.22,kg,Bodega Aurrera Express
+sugar,Azúcar,23.0,kg,Central de Abasto
+sugar,Azúcar,27.78,kg,Chedraui
+sugar,Azúcar,27.78,kg,Chedraui Selecto
+sugar,Azúcar,35.53,kg,City Market
+sugar,Azúcar,24.0,kg,El Pitico
+sugar,Azúcar,53.5,kg,Farmacia Guadalajara
+sugar,Azúcar,35.53,kg,Fresko la Comer
+sugar,Azúcar,25.0,kg,H.e.b.
+sugar,Azúcar,28.78,kg,Hipermercado Soriana
+sugar,Azúcar,35.56,kg,La Comer
+sugar,Azúcar,27.67,kg,Ley
+sugar,Azúcar,26.06,kg,Ley Express
+sugar,Azúcar,28.78,kg,Mega Soriana
+sugar,Azúcar,22.0,kg,Mercado Adolfo Lopez Mateos
+sugar,Azúcar,22.0,kg,Mercado Central de Acapulco
+sugar,Azúcar,21.0,kg,Mercado Emilio Sanchez Piedras
+sugar,Azúcar,20.0,kg,Mercado Malibran
+sugar,Azúcar,30.0,kg,Mercado Miguel Hidalgo
+sugar,Azúcar,25.0,kg,Mercado Publico
+sugar,Azúcar,21.0,kg,Mercado Publico 5 de Mayo
+sugar,Azúcar,29.45,kg,Mercado Soriana
+sugar,Azúcar,20.0,kg,Mercado el Meson Estrella
+sugar,Azúcar,26.08,kg,Mi Tienda del Ahorro
+sugar,Azúcar,25.0,kg,Minisuper
+sugar,Azúcar,24.44,kg,Neto (Super Precio)
+sugar,Azúcar,25.0,kg,Operadora Merco
+sugar,Azúcar,25.5,kg,Oxxo
+sugar,Azúcar,27.77,kg,S Mart
+sugar,Azúcar,24.33,kg,Soriana Express
+sugar,Azúcar,30.65,kg,Soriana Super
+sugar,Azúcar,35.5,kg,Sumesa
+sugar,Azúcar,22.86,kg,Super Aki
+sugar,Azúcar,22.22,kg,Super Aki Xtra
+sugar,Azúcar,28.89,kg,Super Chedraui
+sugar,Azúcar,23.75,kg,Super Kompras
+sugar,Azúcar,20.9,kg,Superissste
+sugar,Azúcar,22.88,kg,U.n.a.m.
+sugar,Azúcar,28.33,kg,Wal-mart
+sugar,Azúcar,25.56,kg,Wal-mart Express
+thyme,Tomillo,1088.89,kg,Chedraui
+thyme,Tomillo,1088.89,kg,Chedraui Selecto
+thyme,Tomillo,1100.0,kg,Hipermercado Soriana
+thyme,Tomillo,1111.11,kg,Mega Soriana
+tomato,Jitomate,16.9,kg,Alsuper
+tomato,Jitomate,14.9,kg,Alsuper Fresh Market
+tomato,Jitomate,24.9,kg,Aprecio
+tomato,Jitomate,20.0,kg,Bodega Aurrera
+tomato,Jitomate,15.0,kg,Bodega Aurrera Express
+tomato,Jitomate,14.0,kg,Central de Abasto
+tomato,Jitomate,23.45,kg,Chedraui
+tomato,Jitomate,22.5,kg,Chedraui Selecto
+tomato,Jitomate,59.9,kg,City Market
+tomato,Jitomate,32.0,kg,El Pitico
+tomato,Jitomate,25.9,kg,Fresko la Comer
+tomato,Jitomate,21.95,kg,H.e.b.
+tomato,Jitomate,19.9,kg,Hipermercado Soriana
+tomato,Jitomate,25.9,kg,La Comer
+tomato,Jitomate,24.9,kg,Ley
+tomato,Jitomate,32.4,kg,Ley Express
+tomato,Jitomate,19.9,kg,Mega Soriana
+tomato,Jitomate,15.0,kg,Mercado Adolfo Lopez Mateos
+tomato,Jitomate,14.0,kg,Mercado Emilio Sanchez Piedras
+tomato,Jitomate,35.5,kg,Mercado Malibran
+tomato,Jitomate,31.0,kg,Mercado Miguel Hidalgo
+tomato,Jitomate,24.0,kg,Mercado Publico
+tomato,Jitomate,20.0,kg,Mercado Publico 5 de Mayo
+tomato,Jitomate,19.9,kg,Mercado Soriana
+tomato,Jitomate,16.0,kg,Mercado el Meson Estrella
+tomato,Jitomate,19.9,kg,Mi Tienda del Ahorro
+tomato,Jitomate,29.9,kg,Minisuper
+tomato,Jitomate,13.49,kg,Operadora Merco
+tomato,Jitomate,44.0,kg,Oxxo
+tomato,Jitomate,17.49,kg,S Mart
+tomato,Jitomate,19.9,kg,Soriana Express
+tomato,Jitomate,19.9,kg,Soriana Super
+tomato,Jitomate,25.9,kg,Sumesa
+tomato,Jitomate,37.98,kg,Super Aki
+tomato,Jitomate,37.98,kg,Super Aki Xtra
+tomato,Jitomate,29.45,kg,Super Chedraui
+tomato,Jitomate,26.4,kg,Super Kompras
+tomato,Jitomate,20.0,kg,Superissste
+tomato,Jitomate,26.9,kg,Supermercado Gonzalez
+tomato,Jitomate,24.36,kg,U.n.a.m.
+tomato,Jitomate,21.0,kg,Wal-mart
+tomato,Jitomate,16.0,kg,Wal-mart Express
+vanilla,Vainilla,151.6,litro,Alsuper Fresh Market
+vanilla,Vainilla,139.6,litro,Aprecio
+vanilla,Vainilla,106.0,litro,Bodega Aurrera
+vanilla,Vainilla,104.0,litro,Chedraui
+vanilla,Vainilla,86.8,litro,City Market
+vanilla,Vainilla,86.8,litro,Fresko la Comer
+vanilla,Vainilla,126.0,litro,H.e.b.
+vanilla,Vainilla,111.6,litro,Hipermercado Soriana
+vanilla,Vainilla,86.8,litro,La Comer
+vanilla,Vainilla,115.6,litro,Ley
+vanilla,Vainilla,111.6,litro,Mega Soriana
+vanilla,Vainilla,106.0,litro,Mercado Soriana
+vanilla,Vainilla,131.96,litro,S Mart
+vanilla,Vainilla,114.0,litro,Soriana Super
+vanilla,Vainilla,154.0,litro,Super Aki Xtra
+vanilla,Vainilla,108.0,litro,Wal-mart
+vegetable oil,Aceite,51.5,litro,7 Eleven
+vegetable oil,Aceite,43.75,litro,Abarrotera Sanchez
+vegetable oil,Aceite,46.94,litro,Alsuper
+vegetable oil,Aceite,52.82,litro,Alsuper Fresh Market
+vegetable oil,Aceite,38.5,litro,Aprecio
+vegetable oil,Aceite,42.14,litro,Bodega Aurrera
+vegetable oil,Aceite,44.4,litro,Bodega Aurrera Express
+vegetable oil,Aceite,45.51,litro,Central de Abasto
+vegetable oil,Aceite,45.88,litro,Chedraui
+vegetable oil,Aceite,41.23,litro,Chedraui Selecto
+vegetable oil,Aceite,62.46,litro,City Market
+vegetable oil,Aceite,63.0,litro,El Pitico
+vegetable oil,Aceite,47.5,litro,Farmacia Guadalajara
+vegetable oil,Aceite,56.47,litro,Fresko la Comer
+vegetable oil,Aceite,43.96,litro,H.e.b.
+vegetable oil,Aceite,48.82,litro,Hipermercado Soriana
+vegetable oil,Aceite,55.76,litro,La Comer
+vegetable oil,Aceite,43.53,litro,Ley
+vegetable oil,Aceite,41.76,litro,Ley Express
+vegetable oil,Aceite,47.9,litro,Mega Soriana
+vegetable oil,Aceite,51.43,litro,Mercado Adolfo Lopez Mateos
+vegetable oil,Aceite,50.0,litro,Mercado Central de Acapulco
+vegetable oil,Aceite,45.0,litro,Mercado Emilio Sanchez Piedras
+vegetable oil,Aceite,52.57,litro,Mercado Miguel Hidalgo
+vegetable oil,Aceite,50.74,litro,Mercado Publico
+vegetable oil,Aceite,43.41,litro,Mercado Soriana
+vegetable oil,Aceite,52.0,litro,Mercado el Meson Estrella
+vegetable oil,Aceite,35.31,litro,Mi Tienda del Ahorro
+vegetable oil,Aceite,49.5,litro,Minisuper
+vegetable oil,Aceite,44.0,litro,Neto (Super Precio)
+vegetable oil,Aceite,42.5,litro,Operadora Merco
+vegetable oil,Aceite,47.46,litro,Oxxo
+vegetable oil,Aceite,50.58,litro,S Mart
+vegetable oil,Aceite,41.12,litro,Soriana Express
+vegetable oil,Aceite,49.29,litro,Soriana Super
+vegetable oil,Aceite,56.47,litro,Sumesa
+vegetable oil,Aceite,59.41,litro,Super Aki
+vegetable oil,Aceite,54.92,litro,Super Aki Xtra
+vegetable oil,Aceite,41.0,litro,Super Chedraui
+vegetable oil,Aceite,46.8,litro,Super Kompras
+vegetable oil,Aceite,45.48,litro,Superissste
+vegetable oil,Aceite,58.71,litro,Supermercado Gonzalez
+vegetable oil,Aceite,44.77,litro,U.n.a.m.
+vegetable oil,Aceite,45.45,litro,Wal-mart
+vegetable oil,Aceite,49.41,litro,Wal-mart Express
+vinegar,Vinagre,15.24,litro,Abarrotera Monterrey
+vinegar,Vinagre,14.4,litro,Abarrotera Sanchez
+vinegar,Vinagre,24.0,litro,Abarrotes Super Cabrera Class
+vinegar,Vinagre,16.9,litro,Alsuper
+vinegar,Vinagre,16.9,litro,Alsuper Fresh Market
+vinegar,Vinagre,17.62,litro,Aprecio
+vinegar,Vinagre,15.0,litro,Bodega Aurrera
+vinegar,Vinagre,17.0,litro,Chedraui
+vinegar,Vinagre,16.0,litro,Chedraui Selecto
+vinegar,Vinagre,14.48,litro,City Market
+vinegar,Vinagre,14.69,litro,El Pitico
+vinegar,Vinagre,30.0,litro,Farmacia Guadalajara
+vinegar,Vinagre,18.5,litro,Fresko la Comer
+vinegar,Vinagre,15.9,litro,H.e.b.
+vinegar,Vinagre,18.1,litro,Hipermercado Soriana
+vinegar,Vinagre,17.5,litro,La Comer
+vinegar,Vinagre,17.5,litro,Ley
+vinegar,Vinagre,16.67,litro,Ley Express
+vinegar,Vinagre,18.1,litro,Mega Soriana
+vinegar,Vinagre,15.9,litro,Mercado Soriana
+vinegar,Vinagre,14.19,litro,Mi Tienda del Ahorro
+vinegar,Vinagre,17.99,litro,S Mart
+vinegar,Vinagre,17.05,litro,Soriana Express
+vinegar,Vinagre,16.9,litro,Soriana Super
+vinegar,Vinagre,18.0,litro,Sumesa
+vinegar,Vinagre,17.07,litro,Super Aki
+vinegar,Vinagre,13.24,litro,Super Aki Xtra
+vinegar,Vinagre,17.25,litro,Super Chedraui
+vinegar,Vinagre,14.03,litro,Super Kompras
+vinegar,Vinagre,16.5,litro,Superissste
+vinegar,Vinagre,19.98,litro,Supermercado Gonzalez
+vinegar,Vinagre,14.24,litro,U.n.a.m.
+vinegar,Vinagre,14.29,litro,Wal-mart
+vinegar,Vinagre,15.14,litro,Wal-mart Express
+walnuts,Nuez,745.33,kg,Aprecio
+walnuts,Nuez,933.33,kg,Bodega Aurrera
+walnuts,Nuez,310.0,kg,Central de Abasto
+walnuts,Nuez,706.67,kg,Chedraui
+walnuts,Nuez,706.67,kg,Chedraui Selecto
+walnuts,Nuez,718.67,kg,City Market
+walnuts,Nuez,760.0,kg,Fresko la Comer
+walnuts,Nuez,519.0,kg,H.e.b.
+walnuts,Nuez,820.0,kg,Hipermercado Soriana
+walnuts,Nuez,718.67,kg,La Comer
+walnuts,Nuez,577.9,kg,Ley
+walnuts,Nuez,772.0,kg,Mega Soriana
+walnuts,Nuez,340.0,kg,Mercado Adolfo Lopez Mateos
+walnuts,Nuez,280.0,kg,Mercado Central de Acapulco
+walnuts,Nuez,330.0,kg,Mercado Malibran
+walnuts,Nuez,380.0,kg,Mercado Miguel Hidalgo
+walnuts,Nuez,350.0,kg,Mercado Publico
+walnuts,Nuez,350.0,kg,Mercado Publico 5 de Mayo
+walnuts,Nuez,335.0,kg,Mercado el Meson Estrella
+walnuts,Nuez,852.0,kg,Minisuper
+walnuts,Nuez,629.99,kg,S Mart
+walnuts,Nuez,780.0,kg,Soriana Super
+walnuts,Nuez,706.67,kg,Sumesa
+walnuts,Nuez,512.0,kg,Super Aki
+walnuts,Nuez,633.33,kg,Super Chedraui
+walnuts,Nuez,585.33,kg,Superissste
+walnuts,Nuez,933.33,kg,Wal-mart
+water,Agua Sin Gas,16.67,litro,7 Eleven
+water,Agua Sin Gas,10.83,litro,Abarrotera Monterrey
+water,Agua Sin Gas,10.0,litro,Abarrotera Sanchez
+water,Agua Sin Gas,14.0,litro,Abarrotes Super Cabrera Class
+water,Agua Sin Gas,11.93,litro,Alsuper
+water,Agua Sin Gas,11.93,litro,Alsuper Fresh Market
+water,Agua Sin Gas,12.72,litro,Aprecio
+water,Agua Sin Gas,22.0,litro,Benavides
+water,Agua Sin Gas,11.33,litro,Bodega Aurrera
+water,Agua Sin Gas,10.0,litro,Bodega Aurrera Express
+water,Agua Sin Gas,7.93,litro,Central de Abasto
+water,Agua Sin Gas,12.0,litro,Chedraui
+water,Agua Sin Gas,13.0,litro,Chedraui Selecto
+water,Agua Sin Gas,12.05,litro,City Market
+water,Agua Sin Gas,14.0,litro,El Pitico
+water,Agua Sin Gas,15.5,litro,Farmacia Guadalajara
+water,Agua Sin Gas,11.33,litro,Farmacia San Pablo
+water,Agua Sin Gas,15.67,litro,Farmacia Yza
+water,Agua Sin Gas,13.73,litro,Fresko la Comer
+water,Agua Sin Gas,11.67,litro,H.e.b.
+water,Agua Sin Gas,12.07,litro,Hipermercado Soriana
+water,Agua Sin Gas,11.67,litro,La Comer
+water,Agua Sin Gas,12.67,litro,Ley
+water,Agua Sin Gas,11.6,litro,Mega Soriana
+water,Agua Sin Gas,11.0,litro,Mercado Emilio Sanchez Piedras
+water,Agua Sin Gas,10.0,litro,Mercado Miguel Hidalgo
+water,Agua Sin Gas,12.0,litro,Mercado Publico
+water,Agua Sin Gas,11.33,litro,Mercado Publico 5 de Mayo
+water,Agua Sin Gas,13.27,litro,Mercado Soriana
+water,Agua Sin Gas,11.67,litro,Mi Tienda del Ahorro
+water,Agua Sin Gas,14.83,litro,Minisuper
+water,Agua Sin Gas,5.2,litro,Neto (Super Precio)
+water,Agua Sin Gas,18.5,litro,Oxxo
+water,Agua Sin Gas,12.99,litro,S Mart
+water,Agua Sin Gas,13.33,litro,Soriana Express
+water,Agua Sin Gas,12.67,litro,Soriana Super
+water,Agua Sin Gas,14.2,litro,Sumesa
+water,Agua Sin Gas,10.0,litro,Super Aki
+water,Agua Sin Gas,14.0,litro,Super Aki Xtra
+water,Agua Sin Gas,10.67,litro,Super Chedraui
+water,Agua Sin Gas,10.0,litro,Super Kompras
+water,Agua Sin Gas,12.0,litro,Superissste
+water,Agua Sin Gas,14.0,litro,Supermercado Gonzalez
+water,Agua Sin Gas,9.32,litro,U.n.a.m.
+water,Agua Sin Gas,10.5,litro,Wal-mart
+water,Agua Sin Gas,10.5,litro,Wal-mart Express
+whole kernel corn,Granos de Elote,129.8,kg,Alsuper
+whole kernel corn,Granos de Elote,129.8,kg,Alsuper Fresh Market
+whole kernel corn,Granos de Elote,147.8,kg,Aprecio
+whole kernel corn,Granos de Elote,111.0,kg,Bodega Aurrera
+whole kernel corn,Granos de Elote,116.0,kg,Chedraui
+whole kernel corn,Granos de Elote,116.0,kg,Chedraui Selecto
+whole kernel corn,Granos de Elote,116.0,kg,City Market
+whole kernel corn,Granos de Elote,117.0,kg,Fresko la Comer
+whole kernel corn,Granos de Elote,115.0,kg,H.e.b.
+whole kernel corn,Granos de Elote,114.9,kg,Hipermercado Soriana
+whole kernel corn,Granos de Elote,118.0,kg,La Comer
+whole kernel corn,Granos de Elote,113.0,kg,Ley
+whole kernel corn,Granos de Elote,117.8,kg,Mega Soriana
+whole kernel corn,Granos de Elote,121.0,kg,Mi Tienda del Ahorro
+whole kernel corn,Granos de Elote,125.98,kg,Minisuper
+whole kernel corn,Granos de Elote,111.98,kg,S Mart
+whole kernel corn,Granos de Elote,127.0,kg,Soriana Super
+whole kernel corn,Granos de Elote,119.0,kg,Sumesa
+whole kernel corn,Granos de Elote,116.0,kg,Super Chedraui
+whole kernel corn,Granos de Elote,112.0,kg,Superissste
+whole kernel corn,Granos de Elote,99.26,kg,U.n.a.m.
+whole kernel corn,Granos de Elote,88.0,kg,Wal-mart
+whole kernel corn,Granos de Elote,86.0,kg,Wal-mart Express
+worcestershire sauce,Salsa Inglesa,344.83,litro,7 Eleven
+worcestershire sauce,Salsa Inglesa,342.07,litro,Abarrotera Monterrey
+worcestershire sauce,Salsa Inglesa,276.72,litro,Abarrotera Sanchez
+worcestershire sauce,Salsa Inglesa,262.07,litro,Abarrotes Super Cabrera Class
+worcestershire sauce,Salsa Inglesa,288.97,litro,Alsuper
+worcestershire sauce,Salsa Inglesa,288.97,litro,Alsuper Fresh Market
+worcestershire sauce,Salsa Inglesa,327.59,litro,Aprecio
+worcestershire sauce,Salsa Inglesa,255.17,litro,Bodega Aurrera
+worcestershire sauce,Salsa Inglesa,255.17,litro,Bodega Aurrera Express
+worcestershire sauce,Salsa Inglesa,282.76,litro,Central de Abasto
+worcestershire sauce,Salsa Inglesa,272.41,litro,Chedraui
+worcestershire sauce,Salsa Inglesa,275.86,litro,Chedraui Selecto
+worcestershire sauce,Salsa Inglesa,268.97,litro,City Market
+worcestershire sauce,Salsa Inglesa,318.97,litro,El Pitico
+worcestershire sauce,Salsa Inglesa,310.34,litro,Farmacia Guadalajara
+worcestershire sauce,Salsa Inglesa,335.0,litro,Fresko la Comer
+worcestershire sauce,Salsa Inglesa,279.31,litro,H.e.b.
+worcestershire sauce,Salsa Inglesa,315.0,litro,Hipermercado Soriana
+worcestershire sauce,Salsa Inglesa,335.0,litro,La Comer
+worcestershire sauce,Salsa Inglesa,275.0,litro,Ley
+worcestershire sauce,Salsa Inglesa,327.59,litro,Mega Soriana
+worcestershire sauce,Salsa Inglesa,275.86,litro,Mercado Adolfo Lopez Mateos
+worcestershire sauce,Salsa Inglesa,286.21,litro,Mercado Emilio Sanchez Piedras
+worcestershire sauce,Salsa Inglesa,289.66,litro,Mercado Publico
+worcestershire sauce,Salsa Inglesa,262.07,litro,Mercado Publico 5 de Mayo
+worcestershire sauce,Salsa Inglesa,327.59,litro,Mercado Soriana
+worcestershire sauce,Salsa Inglesa,339.0,litro,Mi Tienda del Ahorro
+worcestershire sauce,Salsa Inglesa,317.24,litro,Minisuper
+worcestershire sauce,Salsa Inglesa,317.24,litro,Neto (Super Precio)
+worcestershire sauce,Salsa Inglesa,295.86,litro,Oxxo
+worcestershire sauce,Salsa Inglesa,309.9,litro,S Mart
+worcestershire sauce,Salsa Inglesa,279.31,litro,Soriana Express
+worcestershire sauce,Salsa Inglesa,327.59,litro,Soriana Super
+worcestershire sauce,Salsa Inglesa,331.03,litro,Sumesa
+worcestershire sauce,Salsa Inglesa,322.59,litro,Super Aki
+worcestershire sauce,Salsa Inglesa,340.0,litro,Super Aki Xtra
+worcestershire sauce,Salsa Inglesa,310.34,litro,Super Chedraui
+worcestershire sauce,Salsa Inglesa,296.55,litro,Super Kompras
+worcestershire sauce,Salsa Inglesa,275.86,litro,Superissste
+worcestershire sauce,Salsa Inglesa,311.48,litro,Supermercado Gonzalez
+worcestershire sauce,Salsa Inglesa,320.48,litro,U.n.a.m.
+worcestershire sauce,Salsa Inglesa,268.97,litro,Wal-mart
+worcestershire sauce,Salsa Inglesa,268.97,litro,Wal-mart Express
+zucchini,Calabaza,24.9,kg,Alsuper
+zucchini,Calabaza,24.9,kg,Alsuper Fresh Market
+zucchini,Calabaza,18.9,kg,Aprecio
+zucchini,Calabaza,34.9,kg,Bodega Aurrera
+zucchini,Calabaza,25.0,kg,Central de Abasto
+zucchini,Calabaza,32.5,kg,Chedraui
+zucchini,Calabaza,33.9,kg,Chedraui Selecto
+zucchini,Calabaza,39.9,kg,City Market
+zucchini,Calabaza,23.0,kg,El Pitico
+zucchini,Calabaza,36.9,kg,Fresko la Comer
+zucchini,Calabaza,34.95,kg,H.e.b.
+zucchini,Calabaza,32.95,kg,Hipermercado Soriana
+zucchini,Calabaza,34.9,kg,La Comer
+zucchini,Calabaza,29.75,kg,Ley
+zucchini,Calabaza,29.82,kg,Ley Express
+zucchini,Calabaza,34.5,kg,Mega Soriana
+zucchini,Calabaza,20.0,kg,Mercado Adolfo Lopez Mateos
+zucchini,Calabaza,27.0,kg,Mercado Emilio Sanchez Piedras
+zucchini,Calabaza,18.0,kg,Mercado Malibran
+zucchini,Calabaza,34.0,kg,Mercado Miguel Hidalgo
+zucchini,Calabaza,28.0,kg,Mercado Publico
+zucchini,Calabaza,30.0,kg,Mercado Publico 5 de Mayo
+zucchini,Calabaza,34.9,kg,Mercado Soriana
+zucchini,Calabaza,12.0,kg,Mercado el Meson Estrella
+zucchini,Calabaza,25.9,kg,Mi Tienda del Ahorro
+zucchini,Calabaza,29.99,kg,Minisuper
+zucchini,Calabaza,21.49,kg,Operadora Merco
+zucchini,Calabaza,26.49,kg,S Mart
+zucchini,Calabaza,36.5,kg,Soriana Express
+zucchini,Calabaza,32.9,kg,Soriana Super
+zucchini,Calabaza,34.9,kg,Sumesa
+zucchini,Calabaza,28.0,kg,Super Aki
+zucchini,Calabaza,28.0,kg,Super Aki Xtra
+zucchini,Calabaza,30.4,kg,Super Chedraui
+zucchini,Calabaza,34.0,kg,Superissste
+zucchini,Calabaza,19.9,kg,Supermercado Gonzalez
+zucchini,Calabaza,19.55,kg,U.n.a.m.
+zucchini,Calabaza,36.9,kg,Wal-mart
+zucchini,Calabaza,36.9,kg,Wal-mart Express

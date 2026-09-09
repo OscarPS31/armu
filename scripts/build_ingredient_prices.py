@@ -1,208 +1,29 @@
-import pandas as pd
+import os
+import re
 import unicodedata
+
+import pandas as pd
 
 
 # ============================================================
 # CONFIG
 # ============================================================
 
-PROFECO_PATH = "data/profeco_clean.csv"
-
+PROFECO_PATH = "data/profeco_food.csv"
+MAPPING_PATH = "data/ingredient_mapping_all.csv"
 OUTPUT_PATH = "data/ingredient_prices.csv"
 
-REPORT_PATH = "data/ingredient_prices_report.txt"
-
-
-# ============================================================
-# TOP 30 INGREDIENTS
-# ============================================================
-
-TOP_INGREDIENTS = [
-    "salt",
-    "sugar",
-    "butter",
-    "egg",
-    "garlic",
-    "onion",
-    "flour",
-    "water",
-    "olive oil",
-    "milk",
-    "vanilla",
-    "pepper",
-    "lemon juice",
-    "baking powder",
-    "baking soda",
-    "parmesan cheese",
-    "carrot",
-    "cinnamon",
-    "black pepper",
-    "sour cream",
-    "tomato",
-    "margarine",
-    "green onion",
-    "cream cheese",
-    "garlic powder",
-    "celery",
-    "honey",
-    "soy sauce",
-    "mayonnaise",
-    "cheddar cheese",
+OUTPUT_COLUMNS = [
+    "ingredient",
+    "profeco_category",
+    "price",
+    "unit",
+    "store",
 ]
 
 
 # ============================================================
-# INGREDIENT -> PROFECO MAP
-# ============================================================
-
-INGREDIENT_TO_PROFECO = {
-    "salt": [
-        "Sal Molida de Mesa",
-        "Sal de Mar",
-    ],
-
-    "sugar": [
-        "Azucar",
-    ],
-
-    "butter": [
-        "Mantequilla",
-    ],
-
-    "egg": [
-        "Huevo",
-    ],
-
-    "garlic": [
-        "Ajo",
-    ],
-
-    "onion": [
-        "Cebolla",
-    ],
-
-    "flour": [
-        "Harina de Trigo",
-    ],
-
-    "water": [
-        "Agua Sin Gas",
-    ],
-
-    "olive oil": [
-        "Aceite de Oliva",
-        "Aceite",
-    ],
-
-    "milk": [
-        "Leche Pasteurizada",
-        "Leche Ultrapasteurizada",
-    ],
-
-    "vanilla": [
-        "Vainilla",
-    ],
-
-    "pepper": [
-        "Pimienta",
-    ],
-
-    "lemon juice": [
-        "Limon",
-    ],
-
-    "baking powder": [
-        "Polvo P/hornear",
-    ],
-
-    # Proxy: baking soda is not directly available
-    "baking soda": [
-        "Polvo P/hornear",
-    ],
-
-    # Proxy: closest hard Mexican cheese
-    "parmesan cheese": [
-        "Queso Cotija",
-    ],
-
-    "carrot": [
-        "Zanahoria",
-    ],
-
-    "cinnamon": [
-        "Canela",
-    ],
-
-    "black pepper": [
-        "Pimienta",
-    ],
-
-    "sour cream": [
-        "Crema",
-    ],
-
-    "tomato": [
-        "Jitomate",
-        "Tomate",
-    ],
-
-    "margarine": [
-        "Margarina",
-    ],
-
-    "green onion": [
-        "Cebolla",
-    ],
-
-    "cream cheese": [
-        "Queso Crema",
-        "Queso Doble Crema",
-    ],
-
-    "garlic powder": [
-        "Ajo",
-    ],
-
-    "celery": [
-        "Apio",
-    ],
-
-    "honey": [
-        "Miel de Abeja",
-    ],
-
-    "soy sauce": [
-        "Salsa de Soya",
-    ],
-
-    "mayonnaise": [
-        "Mayonesa",
-    ],
-
-    # Proxy: closest available cheese
-    "cheddar cheese": [
-        "Queso Chihuahua",
-    ],
-}
-
-
-# ============================================================
-# MATCH TYPES
-# ============================================================
-
-MATCH_TYPE = {
-    "water": "equivalent",
-    "baking soda": "proxy",
-    "parmesan cheese": "proxy",
-    "green onion": "proxy",
-    "garlic powder": "proxy",
-    "cheddar cheese": "proxy",
-    "lemon juice": "proxy",
-}
-
-
-# ============================================================
-# HELPERS
+# TEXT NORMALIZATION
 # ============================================================
 
 def normalize_text(value):
@@ -222,340 +43,734 @@ def normalize_text(value):
         if not unicodedata.combining(char)
     )
 
-    return " ".join(
-        value.split()
+    value = re.sub(
+        r"\s+",
+        " ",
+        value,
     )
 
+    return value.strip()
 
-def infer_unit(presentation):
+
+# ============================================================
+# SPECIFIC PRESENTATION FILTERS
+#
+# These prevent mappings such as "ground pork" from using
+# prices for every possible pork presentation.
+# ============================================================
+
+PRESENTATION_RULES = {
+
+    "cornstarch": {
+        "include": [
+            "fecula",
+        ],
+    },
+
+    "cider vinegar": {
+        "include": [
+            "manzana",
+        ],
+    },
+
+    "black beans": {
+        "include": [
+            "negro",
+        ],
+    },
+
+    "orange juice": {
+        "include": [
+            "naranja",
+        ],
+    },
+
+    "ground pork": {
+        "include": [
+            "molida",
+            "pulpa molida",
+        ],
+    },
+
+    "pork tenderloin": {
+        "include": [
+            "lomo",
+            "cana de lomo",
+        ],
+    },
+
+    "pork chops": {
+        "include": [
+            "chuleta",
+        ],
+    },
+
+    "italian sausage": {
+        "include": [
+            "longaniza",
+        ],
+    },
+
+    "jalapeno": {
+        "include": [
+            "jalapeno",
+            "cuaresmeno",
+        ],
+    },
+
+    "spaghetti": {
+        "include": [
+            "spaghetti",
+            "espaguetti",
+        ],
+    },
+
+    "macaroni": {
+        "include": [
+            "codo",
+        ],
+    },
+
+    "plain yogurt": {
+        "include": [
+            "natural",
+        ],
+    },
+
+    "green onion": {
+        "include": [
+            "cambray",
+        ],
+    },
+
+    "scallion": {
+        "include": [
+            "cambray",
+        ],
+    },
+
+    # Cornmeal is not the same as cornstarch.
+    # We explicitly remove "fécula" presentations here.
+    "cornmeal": {
+        "exclude": [
+            "fecula",
+        ],
+    },
+}
+
+
+# ============================================================
+# PRESENTATION FILTER
+# ============================================================
+
+def apply_presentation_filter(
+    df,
+    canonical_ingredient,
+):
+    rule = PRESENTATION_RULES.get(
+        canonical_ingredient
+    )
+
+    if rule is None:
+        return df
+
+    result = df.copy()
+
+    presentation = (
+        result["presentacion_normalizada"]
+        .fillna("")
+    )
+
+    include_terms = rule.get(
+        "include",
+        [],
+    )
+
+    exclude_terms = rule.get(
+        "exclude",
+        [],
+    )
+
+    if include_terms:
+
+        include_mask = pd.Series(
+            False,
+            index=result.index,
+        )
+
+        for term in include_terms:
+            include_mask |= (
+                presentation.str.contains(
+                    normalize_text(term),
+                    regex=False,
+                    na=False,
+                )
+            )
+
+        result = result[
+            include_mask
+        ].copy()
+
+        presentation = (
+            result["presentacion_normalizada"]
+            .fillna("")
+        )
+
+    if exclude_terms:
+
+        exclude_mask = pd.Series(
+            False,
+            index=result.index,
+        )
+
+        for term in exclude_terms:
+            exclude_mask |= (
+                presentation.str.contains(
+                    normalize_text(term),
+                    regex=False,
+                    na=False,
+                )
+            )
+
+        result = result[
+            ~exclude_mask
+        ].copy()
+
+    return result
+
+
+# ============================================================
+# UNIT / QUANTITY PARSER
+#
+# Returns:
+#   normalized_price
+#   normalized_unit
+#
+# Examples:
+#
+#   500 Gr. at $50
+#       -> $100 / kg
+#
+#   750 Ml. at $60
+#       -> $80 / litro
+#
+#   Paquete C/12 at $48
+#       -> $4 / pieza
+#
+#   Pieza at $10
+#       -> $10 / pieza
+#
+# ============================================================
+
+def normalize_price_unit(
+    presentation,
+    price,
+):
+    if pd.isna(price):
+        return None, None
+
+    try:
+        price = float(price)
+    except (TypeError, ValueError):
+        return None, None
+
+    if price <= 0:
+        return None, None
+
     text = normalize_text(
         presentation
     )
 
-    if "kg" in text:
-        return "kg"
+    if not text:
+        return None, None
 
-    if (
-        "litro" in text
-        or " lt" in f" {text}"
-        or text.startswith("lt")
+    # --------------------------------------------------------
+    # KG
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*kg\b",
+        text,
+    )
+
+    if match:
+        quantity = float(
+            match.group(1).replace(",", ".")
+        )
+
+        if quantity > 0:
+            return (
+                price / quantity,
+                "kg",
+            )
+
+    # --------------------------------------------------------
+    # GRAMS -> KG
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*(?:gr|g)\.?\b",
+        text,
+    )
+
+    if match:
+        grams = float(
+            match.group(1).replace(",", ".")
+        )
+
+        if grams > 0:
+            return (
+                price * 1000 / grams,
+                "kg",
+            )
+
+    # --------------------------------------------------------
+    # LITERS
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*(?:lt|lts|litro|litros|l)\.?\b",
+        text,
+    )
+
+    if match:
+        liters = float(
+            match.group(1).replace(",", ".")
+        )
+
+        if liters > 0:
+            return (
+                price / liters,
+                "litro",
+            )
+
+    # --------------------------------------------------------
+    # ML -> LITER
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*ml\b",
+        text,
+    )
+
+    if match:
+        ml = float(
+            match.group(1).replace(",", ".")
+        )
+
+        if ml > 0:
+            return (
+                price * 1000 / ml,
+                "litro",
+            )
+
+    # --------------------------------------------------------
+    # MULTI-PACK COUNT
+    #
+    # Examples:
+    # C/12
+    # C / 18
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"\bc\s*/\s*(\d+)\b",
+        text,
+    )
+
+    if match:
+        pieces = int(
+            match.group(1)
+        )
+
+        if pieces > 0:
+            return (
+                price / pieces,
+                "pieza",
+            )
+
+    # --------------------------------------------------------
+    # PIECES / PIEZA
+    # --------------------------------------------------------
+
+    match = re.search(
+        r"(\d+)\s*piezas?\b",
+        text,
+    )
+
+    if match:
+        pieces = int(
+            match.group(1)
+        )
+
+        if pieces > 0:
+            return (
+                price / pieces,
+                "pieza",
+            )
+
+    if re.search(
+        r"\bpieza\b",
+        text,
     ):
-        return "litro"
+        return (
+            price,
+            "pieza",
+        )
 
-    if "ml" in text:
-        return "ml"
+    # --------------------------------------------------------
+    # MANOJO
+    # --------------------------------------------------------
 
-    if (
-        "pieza" in text
-        or "pza" in text
+    if re.search(
+        r"\bmanojo\b",
+        text,
     ):
-        return "pieza"
+        return (
+            price,
+            "manojo",
+        )
 
-    if "docena" in text:
-        return "docena"
+    # --------------------------------------------------------
+    # NO SAFE NORMALIZATION
+    # --------------------------------------------------------
 
-    if "manojo" in text:
-        return "manojo"
-
-    if (
-        "gr" in text
-        or "gramo" in text
-    ):
-        return "g"
-
-    return "presentacion"
+    return None, None
 
 
 # ============================================================
-# LOAD PROFECO
+# LOAD DATA
 # ============================================================
 
-print("Loading clean PROFECO dataset...")
+print(
+    "Loading filtered PROFECO data..."
+)
 
-df = pd.read_csv(
+profeco = pd.read_csv(
     PROFECO_PATH
 )
 
 print(
-    f"Rows loaded: {len(df):,}"
+    f"PROFECO rows: "
+    f"{len(profeco):,}"
 )
 
 
-df["producto_normalizado"] = (
-    df["producto"]
-    .apply(normalize_text)
+print(
+    "\nLoading ingredient mapping..."
+)
+
+mapping = pd.read_csv(
+    MAPPING_PATH
+)
+
+mapping = mapping[
+    mapping["has_profeco_price"] == True
+].copy()
+
+mapping = (
+    mapping[
+        [
+            "canonical_ingredient",
+            "profeco_category",
+        ]
+    ]
+    .dropna()
+    .drop_duplicates()
+)
+
+print(
+    f"Unique canonical mappings: "
+    f"{len(mapping):,}"
 )
 
 
 # ============================================================
-# BUILD OUTPUT
+# PREPARE PROFECO
 # ============================================================
 
-rows = []
+profeco["producto_normalizado_match"] = (
+    profeco["producto"]
+    .map(normalize_text)
+)
 
-unmatched = []
+profeco["presentacion_normalizada"] = (
+    profeco["presentacion"]
+    .map(normalize_text)
+)
 
-match_report = []
+profeco["precio"] = pd.to_numeric(
+    profeco["precio"],
+    errors="coerce",
+)
+
+profeco = profeco[
+    profeco["precio"].notna()
+].copy()
+
+profeco = profeco[
+    profeco["precio"] > 0
+].copy()
 
 
-for ingredient in TOP_INGREDIENTS:
+# ============================================================
+# STORE NAME
+# ============================================================
 
-    candidate_products = (
-        INGREDIENT_TO_PROFECO.get(
-            ingredient,
-            [],
-        )
+if "cadena_comercial" in profeco.columns:
+
+    profeco["store_final"] = (
+        profeco["cadena_comercial"]
+        .fillna("")
+        .astype(str)
+        .str.strip()
     )
 
-    selected_matches = None
-    selected_category = None
+else:
+    profeco["store_final"] = ""
 
 
-    for product in candidate_products:
+if "nombre_comercial" in profeco.columns:
 
-        product_normalized = (
-            normalize_text(product)
-        )
-
-        matches = df[
-            df["producto_normalizado"]
-            == product_normalized
-        ].copy()
-
-        if not matches.empty:
-
-            selected_matches = matches
-            selected_category = (
-                matches.iloc[0]["producto"]
-            )
-
-            break
-
-
-    if selected_matches is None:
-
-        unmatched.append(
-            ingredient
-        )
-
-        continue
-
-
-    median_price = (
-        selected_matches["precio"]
-        .median()
+    fallback_store = (
+        profeco["nombre_comercial"]
+        .fillna("")
+        .astype(str)
+        .str.strip()
     )
 
-
-    selected_matches[
-        "distance_to_median"
-    ] = (
-        selected_matches["precio"]
-        - median_price
-    ).abs()
-
-
-    representative = (
-        selected_matches
-        .sort_values(
-            "distance_to_median"
-        )
-        .iloc[0]
+    empty_store = (
+        profeco["store_final"] == ""
     )
 
+    profeco.loc[
+        empty_store,
+        "store_final",
+    ] = fallback_store[
+        empty_store
+    ]
 
-    unit = infer_unit(
-        representative[
-            "presentacion"
+
+profeco.loc[
+    profeco["store_final"] == "",
+    "store_final",
+] = "Unknown"
+
+
+# ============================================================
+# BUILD PRICE TABLE
+# ============================================================
+
+all_rows = []
+
+no_profeco_rows = []
+no_presentation_rows = []
+no_normalizable_rows = []
+
+
+print(
+    "\nBuilding normalized ingredient prices..."
+)
+
+
+for _, mapping_row in mapping.iterrows():
+
+    canonical = str(
+        mapping_row[
+            "canonical_ingredient"
         ]
     )
 
+    profeco_product = str(
+        mapping_row[
+            "profeco_category"
+        ]
+    )
 
-    store = representative[
-        "cadena_comercial"
-    ]
+    target_product = normalize_text(
+        profeco_product
+    )
 
+    subset = profeco[
+        profeco[
+            "producto_normalizado_match"
+        ]
+        == target_product
+    ].copy()
 
-    rows.append(
-        {
-            "ingredient":
-                ingredient,
+    # --------------------------------------------------------
+    # Product not found
+    # --------------------------------------------------------
 
-            "profeco_category":
-                selected_category,
+    if subset.empty:
+        no_profeco_rows.append(
+            (
+                canonical,
+                profeco_product,
+            )
+        )
+        continue
 
-            "price":
-                round(
-                    float(median_price),
-                    2,
+    # --------------------------------------------------------
+    # Apply ingredient-specific presentation filters
+    # --------------------------------------------------------
+
+    filtered_subset = (
+        apply_presentation_filter(
+            subset,
+            canonical,
+        )
+    )
+
+    if filtered_subset.empty:
+        no_presentation_rows.append(
+            (
+                canonical,
+                profeco_product,
+            )
+        )
+        continue
+
+    normalized_records = []
+
+    # --------------------------------------------------------
+    # Normalize every price observation
+    # --------------------------------------------------------
+
+    for _, row in filtered_subset.iterrows():
+
+        normalized_price, unit = (
+            normalize_price_unit(
+                row.get(
+                    "presentacion"
                 ),
+                row.get(
+                    "precio"
+                ),
+            )
+        )
 
-            "unit":
-                unit,
+        if (
+            normalized_price is None
+            or unit is None
+        ):
+            continue
 
-            "store":
-                store,
-        }
-    )
+        normalized_records.append(
+            {
+                "ingredient": canonical,
+                "profeco_category": profeco_product,
+                "price": normalized_price,
+                "unit": unit,
+                "store": row[
+                    "store_final"
+                ],
+            }
+        )
 
+    if not normalized_records:
+        no_normalizable_rows.append(
+            (
+                canonical,
+                profeco_product,
+            )
+        )
+        continue
 
-    match_report.append(
-        {
-            "ingredient": ingredient,
-            "profeco_category": selected_category,
-            "match_type": MATCH_TYPE.get(
-                ingredient,
-                "exact",
-            ),
-        }
+    all_rows.extend(
+        normalized_records
     )
 
 
 # ============================================================
-# FINAL DATAFRAME
+# DATAFRAME
 # ============================================================
 
-ingredient_prices = pd.DataFrame(
-    rows,
-    columns=[
+if not all_rows:
+
+    raise RuntimeError(
+        "No normalized ingredient prices were generated."
+    )
+
+
+result = pd.DataFrame(
+    all_rows
+)
+
+
+# ============================================================
+# REMOVE IMPOSSIBLE / EXTREME VALUES
+#
+# Conservative sanity check only.
+# We do not aggressively remove legitimate expensive foods.
+# ============================================================
+
+result = result[
+    result["price"].notna()
+].copy()
+
+result = result[
+    result["price"] > 0
+].copy()
+
+
+# ============================================================
+# AGGREGATE
+#
+# We use median because PROFECO contains multiple observations
+# by date/location and median is more robust than mean.
+# ============================================================
+
+result = (
+    result
+    .groupby(
+        [
+            "ingredient",
+            "profeco_category",
+            "unit",
+            "store",
+        ],
+        as_index=False,
+    )
+    ["price"]
+    .median()
+)
+
+
+# ============================================================
+# ROUND PRICES
+# ============================================================
+
+result["price"] = (
+    result["price"]
+    .round(2)
+)
+
+
+# ============================================================
+# ORDER
+# ============================================================
+
+result = result[
+    OUTPUT_COLUMNS
+].sort_values(
+    [
         "ingredient",
-        "profeco_category",
-        "price",
-        "unit",
         "store",
-    ],
+        "unit",
+    ]
+).reset_index(
+    drop=True
 )
 
 
 # ============================================================
-# COVERAGE
+# SAVE
 # ============================================================
 
-total = len(
-    TOP_INGREDIENTS
-)
-
-covered = len(
-    ingredient_prices
-)
-
-coverage = (
-    covered
-    / total
-    * 100
-)
-
-
-# ============================================================
-# SAVE CSV
-# ============================================================
-
-ingredient_prices.to_csv(
+result.to_csv(
     OUTPUT_PATH,
     index=False,
 )
-
-
-# ============================================================
-# MATCH QUALITY SUMMARY
-# ============================================================
-
-match_report_df = pd.DataFrame(
-    match_report
-)
-
-exact_count = (
-    match_report_df[
-        "match_type"
-    ]
-    .eq("exact")
-    .sum()
-)
-
-equivalent_count = (
-    match_report_df[
-        "match_type"
-    ]
-    .eq("equivalent")
-    .sum()
-)
-
-proxy_count = (
-    match_report_df[
-        "match_type"
-    ]
-    .eq("proxy")
-    .sum()
-)
-
-
-# ============================================================
-# SAVE REPORT
-# ============================================================
-
-with open(
-    REPORT_PATH,
-    "w",
-    encoding="utf-8",
-) as f:
-
-    f.write(
-        "NutriPlan - Ingredient Prices Coverage Report\n"
-    )
-
-    f.write(
-        "=============================================\n\n"
-    )
-
-    f.write(
-        "Source:\n"
-    )
-
-    f.write(
-        "PROFECO QQP 2026 - 07-2026_Q2.csv\n\n"
-    )
-
-    f.write(
-        f"Top ingredients evaluated: {total}\n"
-    )
-
-    f.write(
-        f"Ingredients with price: {covered}\n"
-    )
-
-    f.write(
-        f"Coverage: {coverage:.1f}%\n\n"
-    )
-
-    f.write(
-        "Match quality:\n"
-    )
-
-    f.write(
-        f"- Exact: {exact_count}\n"
-    )
-
-    f.write(
-        f"- Equivalent: {equivalent_count}\n"
-    )
-
-    f.write(
-        f"- Proxy: {proxy_count}\n\n"
-    )
-
-    f.write(
-        "Proxy/equivalent mappings:\n"
-    )
-
-    for item in match_report:
-
-        if item["match_type"] != "exact":
-
-            f.write(
-                f"- {item['ingredient']} "
-                f"-> {item['profeco_category']} "
-                f"({item['match_type']})\n"
-            )
 
 
 # ============================================================
@@ -563,88 +778,116 @@ with open(
 # ============================================================
 
 print(
-    "\n" + "=" * 65
+    "\n" + "=" * 70
 )
 
 print(
-    "NUTRIPLAN — INGREDIENT PRICES"
+    "INGREDIENT PRICE DATASET COMPLETE"
 )
 
 print(
-    "=" * 65
+    "=" * 70
 )
 
 print(
-    f"Top ingredients evaluated: "
-    f"{total}"
+    f"Rows generated: "
+    f"{len(result):,}"
 )
 
 print(
-    f"Ingredients with PROFECO price: "
-    f"{covered}"
+    f"Ingredients with prices: "
+    f"{result['ingredient'].nunique():,}"
 )
 
 print(
-    f"Coverage: "
-    f"{coverage:.1f}%"
+    f"PROFECO products used: "
+    f"{result['profeco_category'].nunique():,}"
 )
 
 print(
-    f"Missing ingredients: "
-    f"{len(unmatched)}"
-)
-
-
-print(
-    "\n=== MATCH QUALITY ==="
+    f"Stores: "
+    f"{result['store'].nunique():,}"
 )
 
 print(
-    f"Exact: {exact_count}"
+    "\nUnits:"
 )
 
 print(
-    f"Equivalent: {equivalent_count}"
+    result[
+        "unit"
+    ]
+    .value_counts()
+    .to_string()
 )
 
 print(
-    f"Proxy: {proxy_count}"
-)
-
-
-print(
-    "\n=== UNMATCHED INGREDIENTS ==="
-)
-
-if unmatched:
-
-    for ingredient in unmatched:
-        print(
-            "-",
-            ingredient,
-        )
-
-else:
-
-    print(
-        "None"
-    )
-
-
-print(
-    "\n=== FINAL DATASET ==="
+    "\n=== SAMPLE ==="
 )
 
 print(
-    ingredient_prices
-    .to_string(
+    result.head(30).to_string(
         index=False
     )
 )
 
 
+# ============================================================
+# MAPPINGS WITHOUT USABLE PRICES
+# ============================================================
+
+if no_profeco_rows:
+
+    print(
+        "\n=== PRODUCT NOT FOUND IN PROFECO ==="
+    )
+
+    for canonical, product in no_profeco_rows:
+        print(
+            f"{canonical} -> {product}"
+        )
+
+
+if no_presentation_rows:
+
+    print(
+        "\n=== NO MATCHING PRESENTATION ==="
+    )
+
+    for canonical, product in no_presentation_rows:
+        print(
+            f"{canonical} -> {product}"
+        )
+
+
+if no_normalizable_rows:
+
+    print(
+        "\n=== PRICE PRESENTATION COULD NOT BE NORMALIZED ==="
+    )
+
+    for canonical, product in no_normalizable_rows:
+        print(
+            f"{canonical} -> {product}"
+        )
+
+
+# ============================================================
+# FILE SIZE
+# ============================================================
+
+size_bytes = os.path.getsize(
+    OUTPUT_PATH
+)
+
+size_mb = (
+    size_bytes
+    / 1024
+    / 1024
+)
+
 print(
-    "\n=== OUTPUT ==="
+    "\nSaved:"
 )
 
 print(
@@ -652,5 +895,14 @@ print(
 )
 
 print(
-    REPORT_PATH
+    f"File size: "
+    f"{size_mb:.2f} MB"
+)
+
+print(
+    "\nRequired columns:"
+)
+
+print(
+    list(result.columns)
 )
