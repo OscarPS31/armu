@@ -4,3 +4,4 @@ raw_data/
 .DS_store
 __pycache__/
 *.pyc
+data/*.parquet
