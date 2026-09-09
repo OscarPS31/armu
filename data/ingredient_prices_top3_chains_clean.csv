@@ -8,6 +8,7 @@ Walmart,apple,Manzana,0.04,gramo
 Soriana,artichoke,Alcachofa,0.1209,gramo
 Chedraui,artichoke,Alcachofa,0.179,gramo
 Walmart,artichoke,Alcachofa,0.099,gramo
+Walmart,artichoke,Alcachofa,82.0,pieza
 Soriana,avocado,Aguacate,0.0596,gramo
 Chedraui,avocado,Aguacate,0.0569,gramo
 Walmart,avocado,Aguacate,0.063,gramo
@@ -44,6 +45,9 @@ Walmart,cabbage,Col,0.0299,gramo
 Soriana,carrot,Zanahoria,0.0165,gramo
 Chedraui,carrot,Zanahoria,0.0158,gramo
 Walmart,carrot,Zanahoria,0.018,gramo
+Soriana,cauliflower,Coliflor,62.0,pieza
+Chedraui,cauliflower,Coliflor,49.62,pieza
+Walmart,cauliflower,Coliflor,65.0,pieza
 Soriana,celery,Apio,0.0363,gramo
 Chedraui,celery,Apio,0.0328,gramo
 Walmart,celery,Apio,0.0364,gramo
@@ -53,11 +57,17 @@ Walmart,chicken,Carne Pollo,0.104,gramo
 Soriana,chickpeas,Garbanzo,0.0891,gramo
 Chedraui,chickpeas,Garbanzo,0.0793,gramo
 Walmart,chickpeas,Garbanzo,0.078,gramo
+Soriana,chili sauce,Salsa Picante y Similares,0.1552,gramo
+Chedraui,chili sauce,Salsa Picante y Similares,0.1402,gramo
+Walmart,chili sauce,Salsa Picante y Similares,0.1364,gramo
 Soriana,chili sauce,Salsa Picante y Similares,575.15,litro
 Chedraui,chili sauce,Salsa Picante y Similares,297.11,litro
 Walmart,chili sauce,Salsa Picante y Similares,866.66,litro
 Soriana,cider vinegar,Vinagre,30.05,litro
 Chedraui,cider vinegar,Vinagre,26.42,litro
+Soriana,cilantro,Cilantro,10.23,manojo
+Chedraui,cilantro,Cilantro,9.57,manojo
+Walmart,cilantro,Cilantro,10.0,manojo
 Soriana,cinnamon,Canela,0.827,gramo
 Chedraui,cinnamon,Canela,0.9667,gramo
 Walmart,cinnamon,Canela,0.8589,gramo
@@ -78,14 +88,23 @@ Chedraui,crabmeat,Jaiba,0.239,gramo
 Soriana,cream,Crema,0.1176,gramo
 Chedraui,cream,Crema,0.1103,gramo
 Walmart,cream,Crema,0.1103,gramo
+Soriana,cream,Crema,114.47,litro
+Chedraui,cream,Crema,112.28,litro
+Walmart,cream,Crema,98.94,litro
 Soriana,cucumber,Pepino,0.0226,gramo
 Chedraui,cucumber,Pepino,0.0243,gramo
 Walmart,cucumber,Pepino,0.024,gramo
 Soriana,cumin,Comino,0.73,gramo
 Walmart,egg,Huevo,0.043,gramo
+Soriana,egg,Huevo,2.38,pieza
+Chedraui,egg,Huevo,2.31,pieza
+Walmart,egg,Huevo,2.38,pieza
 Soriana,flour,Harina de Trigo,0.0198,gramo
 Chedraui,flour,Harina de Trigo,0.0195,gramo
 Walmart,flour,Harina de Trigo,0.0185,gramo
+Soriana,french bread,Pan Blanco Bolillo,2.03,pieza
+Chedraui,french bread,Pan Blanco Bolillo,2.02,pieza
+Walmart,french bread,Pan Blanco Bolillo,2.05,pieza
 Soriana,garlic,Ajo,0.4692,gramo
 Chedraui,garlic,Ajo,0.4111,gramo
 Walmart,garlic,Ajo,0.6039,gramo
@@ -95,6 +114,9 @@ Walmart,green beans,Ejote,0.0678,gramo
 Soriana,green chilies,Chile Fresco,0.0596,gramo
 Chedraui,green chilies,Chile Fresco,0.0541,gramo
 Walmart,green chilies,Chile Fresco,0.1125,gramo
+Soriana,green onion,Cebolla,14.57,manojo
+Chedraui,green onion,Cebolla,14.67,manojo
+Walmart,green onion,Cebolla,15.9,manojo
 Soriana,ground pork,Carne Cerdo,0.1167,gramo
 Chedraui,ground pork,Carne Cerdo,0.1014,gramo
 Walmart,ground pork,Carne Cerdo,0.109,gramo
@@ -104,6 +126,9 @@ Walmart,ham,Jamón,0.2224,gramo
 Soriana,honey,Miel de Abeja,0.2113,gramo
 Chedraui,honey,Miel de Abeja,0.1964,gramo
 Walmart,honey,Miel de Abeja,0.1995,gramo
+Soriana,hot sauce,Salsa Picante y Similares,0.1552,gramo
+Chedraui,hot sauce,Salsa Picante y Similares,0.1402,gramo
+Walmart,hot sauce,Salsa Picante y Similares,0.1364,gramo
 Soriana,hot sauce,Salsa Picante y Similares,575.15,litro
 Chedraui,hot sauce,Salsa Picante y Similares,297.11,litro
 Walmart,hot sauce,Salsa Picante y Similares,866.66,litro
@@ -119,6 +144,9 @@ Walmart,ketchup,Salsa Catsup,0.0584,gramo
 Soriana,lemon,Limón,0.0303,gramo
 Chedraui,lemon,Limón,0.0217,gramo
 Walmart,lemon,Limón,0.04,gramo
+Soriana,lettuce,Lechuga,24.42,pieza
+Chedraui,lettuce,Lechuga,24.0,pieza
+Walmart,lettuce,Lechuga,24.9,pieza
 Soriana,lime,Limón,0.0303,gramo
 Chedraui,lime,Limón,0.0217,gramo
 Walmart,lime,Limón,0.04,gramo
@@ -190,6 +218,9 @@ Walmart,rum,Ron,498.98,litro
 Soriana,salsa,Salsa Picante y Similares,0.1552,gramo
 Chedraui,salsa,Salsa Picante y Similares,0.1402,gramo
 Walmart,salsa,Salsa Picante y Similares,0.1364,gramo
+Soriana,salsa,Salsa Picante y Similares,575.15,litro
+Chedraui,salsa,Salsa Picante y Similares,297.11,litro
+Walmart,salsa,Salsa Picante y Similares,866.66,litro
 Soriana,salt,Sal Molida de Mesa,0.0289,gramo
 Chedraui,salt,Sal Molida de Mesa,0.0294,gramo
 Walmart,salt,Sal Molida de Mesa,0.025,gramo
@@ -208,6 +239,9 @@ Walmart,soy sauce,Salsa de Soya,100.0,litro
 Soriana,spaghetti,Pasta para Sopa,0.0564,gramo
 Chedraui,spaghetti,Pasta para Sopa,0.0504,gramo
 Walmart,spaghetti,Pasta para Sopa,0.055,gramo
+Soriana,spinach,Espinacas,13.9,manojo
+Chedraui,spinach,Espinacas,11.0,manojo
+Walmart,spinach,Espinacas,14.4,manojo
 Soriana,strawberries,Fresa,0.165,gramo
 Chedraui,strawberries,Fresa,0.1446,gramo
 Walmart,strawberries,Fresa,0.1718,gramo
@@ -219,6 +253,9 @@ Chedraui,thyme,Tomillo,1.0889,gramo
 Soriana,tomato,Jitomate,0.0199,gramo
 Chedraui,tomato,Jitomate,0.0251,gramo
 Walmart,tomato,Jitomate,0.0185,gramo
+Soriana,vanilla,Vainilla,112.4,litro
+Chedraui,vanilla,Vainilla,104.0,litro
+Walmart,vanilla,Vainilla,108.0,litro
 Soriana,vegetable oil,Aceite,48.67,litro
 Chedraui,vegetable oil,Aceite,42.7,litro
 Walmart,vegetable oil,Aceite,47.43,litro

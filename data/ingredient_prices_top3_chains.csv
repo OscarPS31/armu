@@ -14,11 +14,14 @@ Soriana,broccoli,Brócoli,broccoli,0.056,gramo,3
 Soriana,butter,Mantequilla,butter,0.2888,gramo,3
 Soriana,cabbage,Col,cabbage,0.0279,gramo,3
 Soriana,carrot,Zanahoria,carrot,0.0165,gramo,3
+Soriana,cauliflower,Coliflor,cauliflower,62.0,pieza,3
 Soriana,celery,Apio,celery,0.0363,gramo,3
 Soriana,chicken,Carne Pollo,chicken,0.0863,gramo,3
 Soriana,chickpeas,Garbanzo,chickpeas,0.0891,gramo,3
+Soriana,chili sauce,Salsa Picante y Similares,chili sauce,0.1552,gramo,3
 Soriana,chili sauce,Salsa Picante y Similares,chili sauce,575.15,litro,3
 Soriana,cider vinegar,Vinagre,cider vinegar,30.05,litro,2
+Soriana,cilantro,Cilantro,"cilantro, coriander",10.2333,manojo,3
 Soriana,cinnamon,Canela,cinnamon,0.827,gramo,3
 Soriana,corn,Granos de Elote,corn,0.1199,gramo,3
 Soriana,corn tortillas,Tortilla de Maíz,corn tortillas,0.0141,gramo,3
@@ -26,20 +29,26 @@ Soriana,cornmeal,Harina de Maíz,cornmeal,0.0221,gramo,3
 Soriana,cornstarch,Harina de Maíz,cornstarch,0.1474,gramo,3
 Soriana,crabmeat,Jaiba,crabmeat,0.199,gramo,3
 Soriana,cream,Crema,cream,0.1176,gramo,3
+Soriana,cream,Crema,cream,114.4733,litro,3
 Soriana,cucumber,Pepino,cucumber,0.0226,gramo,3
 Soriana,cumin,Comino,cumin,0.73,gramo,2
+Soriana,egg,Huevo,egg,2.38,pieza,3
 Soriana,flour,Harina de Trigo,flour,0.0198,gramo,3
+Soriana,french bread,Pan Blanco Bolillo,french bread,2.0333,pieza,3
 Soriana,garlic,Ajo,garlic,0.4692,gramo,3
 Soriana,green beans,Ejote,green beans,0.0637,gramo,3
 Soriana,green chilies,Chile Fresco,green chilies,0.0596,gramo,3
+Soriana,green onion,Cebolla,"green onion, scallion",14.5667,manojo,3
 Soriana,ground pork,Carne Cerdo,ground pork,0.1167,gramo,3
 Soriana,ham,Jamón,ham,0.2255,gramo,3
 Soriana,honey,Miel de Abeja,honey,0.2113,gramo,3
+Soriana,hot sauce,Salsa Picante y Similares,hot sauce,0.1552,gramo,3
 Soriana,hot sauce,Salsa Picante y Similares,hot sauce,575.15,litro,3
 Soriana,italian sausage,Carne Cerdo,italian sausage,0.108,gramo,3
 Soriana,jalapeno,Chile Fresco,jalapeno,0.0258,gramo,3
 Soriana,ketchup,Salsa Catsup,ketchup,0.0609,gramo,3
 Soriana,lemon,Limón,lemon,0.0303,gramo,3
+Soriana,lettuce,Lechuga,lettuce,24.4167,pieza,3
 Soriana,lime,Limón,lime,0.0303,gramo,3
 Soriana,macaroni,Pasta para Sopa,macaroni,0.0225,gramo,3
 Soriana,margarine,Margarina,margarine,0.2093,gramo,3
@@ -64,16 +73,19 @@ Soriana,potato,Papa,potato,0.0469,gramo,3
 Soriana,rice,Arroz,rice,0.0255,gramo,3
 Soriana,rum,Ron,rum,595.2833,litro,3
 Soriana,salsa,Salsa Picante y Similares,salsa,0.1552,gramo,3
+Soriana,salsa,Salsa Picante y Similares,salsa,575.15,litro,3
 Soriana,salt,Sal Molida de Mesa,salt,0.0289,gramo,3
 Soriana,sea salt,Sal de Mar,sea salt,0.0184,gramo,3
 Soriana,sesame seeds,Ajonjolí,sesame seeds,0.2117,gramo,3
 Soriana,shrimp,Camarón,shrimp,0.2974,gramo,3
 Soriana,soy sauce,Salsa de Soya,soy sauce,192.86,litro,1
 Soriana,spaghetti,Pasta para Sopa,spaghetti,0.0564,gramo,3
+Soriana,spinach,Espinacas,spinach,13.9,manojo,3
 Soriana,strawberries,Fresa,strawberries,0.165,gramo,3
 Soriana,sugar,Azúcar,sugar,0.0294,gramo,3
 Soriana,thyme,Tomillo,thyme,1.1056,gramo,2
 Soriana,tomato,Jitomate,tomato,0.0199,gramo,3
+Soriana,vanilla,Vainilla,vanilla,112.4,litro,3
 Soriana,vegetable oil,Aceite,vegetable oil,48.67,litro,3
 Soriana,vinegar,Vinagre,vinegar,17.7,litro,3
 Soriana,walnuts,Nuez,walnuts,0.7907,gramo,3
@@ -96,11 +108,14 @@ Chedraui,broccoli,Brócoli,broccoli,0.0432,gramo,3
 Chedraui,butter,Mantequilla,butter,0.2737,gramo,3
 Chedraui,cabbage,Col,cabbage,0.0256,gramo,3
 Chedraui,carrot,Zanahoria,carrot,0.0158,gramo,3
+Chedraui,cauliflower,Coliflor,cauliflower,49.6167,pieza,3
 Chedraui,celery,Apio,celery,0.0328,gramo,3
 Chedraui,chicken,Carne Pollo,chicken,0.094,gramo,3
 Chedraui,chickpeas,Garbanzo,chickpeas,0.0793,gramo,3
+Chedraui,chili sauce,Salsa Picante y Similares,chili sauce,0.1402,gramo,3
 Chedraui,chili sauce,Salsa Picante y Similares,chili sauce,297.11,litro,3
 Chedraui,cider vinegar,Vinagre,cider vinegar,26.4167,litro,3
+Chedraui,cilantro,Cilantro,"cilantro, coriander",9.5667,manojo,3
 Chedraui,cinnamon,Canela,cinnamon,0.9667,gramo,3
 Chedraui,corn,Granos de Elote,corn,0.116,gramo,3
 Chedraui,corn tortillas,Tortilla de Maíz,corn tortillas,0.013,gramo,3
@@ -108,19 +123,25 @@ Chedraui,cornmeal,Harina de Maíz,cornmeal,0.0216,gramo,3
 Chedraui,cornstarch,Harina de Maíz,cornstarch,0.1439,gramo,3
 Chedraui,crabmeat,Jaiba,crabmeat,0.239,gramo,2
 Chedraui,cream,Crema,cream,0.1103,gramo,3
+Chedraui,cream,Crema,cream,112.2833,litro,3
 Chedraui,cucumber,Pepino,cucumber,0.0243,gramo,3
+Chedraui,egg,Huevo,egg,2.3133,pieza,3
 Chedraui,flour,Harina de Trigo,flour,0.0195,gramo,3
+Chedraui,french bread,Pan Blanco Bolillo,french bread,2.0167,pieza,3
 Chedraui,garlic,Ajo,garlic,0.4111,gramo,3
 Chedraui,green beans,Ejote,green beans,0.0474,gramo,3
 Chedraui,green chilies,Chile Fresco,green chilies,0.0541,gramo,3
+Chedraui,green onion,Cebolla,"green onion, scallion",14.6667,manojo,3
 Chedraui,ground pork,Carne Cerdo,ground pork,0.1014,gramo,3
 Chedraui,ham,Jamón,ham,0.1987,gramo,3
 Chedraui,honey,Miel de Abeja,honey,0.1964,gramo,3
+Chedraui,hot sauce,Salsa Picante y Similares,hot sauce,0.1402,gramo,3
 Chedraui,hot sauce,Salsa Picante y Similares,hot sauce,297.11,litro,3
 Chedraui,italian sausage,Carne Cerdo,italian sausage,0.1042,gramo,3
 Chedraui,jalapeno,Chile Fresco,jalapeno,0.019,gramo,3
 Chedraui,ketchup,Salsa Catsup,ketchup,0.0626,gramo,3
 Chedraui,lemon,Limón,lemon,0.0217,gramo,3
+Chedraui,lettuce,Lechuga,lettuce,24.0,pieza,3
 Chedraui,lime,Limón,lime,0.0217,gramo,3
 Chedraui,macaroni,Pasta para Sopa,macaroni,0.03,gramo,3
 Chedraui,margarine,Margarina,margarine,0.2042,gramo,3
@@ -145,16 +166,19 @@ Chedraui,raisins,Pasa (Uva Pasa),raisins,0.1252,gramo,2
 Chedraui,rice,Arroz,rice,0.0241,gramo,3
 Chedraui,rum,Ron,rum,549.9867,litro,3
 Chedraui,salsa,Salsa Picante y Similares,salsa,0.1402,gramo,3
+Chedraui,salsa,Salsa Picante y Similares,salsa,297.11,litro,3
 Chedraui,salt,Sal Molida de Mesa,salt,0.0294,gramo,3
 Chedraui,sea salt,Sal de Mar,sea salt,0.0158,gramo,3
 Chedraui,sesame seeds,Ajonjolí,sesame seeds,0.2033,gramo,3
 Chedraui,shrimp,Camarón,shrimp,0.251,gramo,3
 Chedraui,soy sauce,Salsa de Soya,soy sauce,178.57,litro,3
 Chedraui,spaghetti,Pasta para Sopa,spaghetti,0.0504,gramo,3
+Chedraui,spinach,Espinacas,spinach,11.0,manojo,3
 Chedraui,strawberries,Fresa,strawberries,0.1446,gramo,3
 Chedraui,sugar,Azúcar,sugar,0.0282,gramo,3
 Chedraui,thyme,Tomillo,thyme,1.0889,gramo,2
 Chedraui,tomato,Jitomate,tomato,0.0251,gramo,3
+Chedraui,vanilla,Vainilla,vanilla,104.0,litro,1
 Chedraui,vegetable oil,Aceite,vegetable oil,42.7033,litro,3
 Chedraui,vinegar,Vinagre,vinegar,16.75,litro,3
 Chedraui,walnuts,Nuez,walnuts,0.6822,gramo,3
@@ -165,6 +189,7 @@ Chedraui,zucchini,Calabaza,zucchini,0.0323,gramo,3
 Walmart,almonds,Almendras,almonds,0.51,gramo,2
 Walmart,apple,Manzana,apple,0.04,gramo,2
 Walmart,artichoke,Alcachofa,artichoke,0.099,gramo,1
+Walmart,artichoke,Alcachofa,artichoke,82.0,pieza,2
 Walmart,avocado,Aguacate,avocado,0.063,gramo,2
 Walmart,bacon,Tocino Ahumado,bacon,0.4804,gramo,2
 Walmart,baking powder,Polvo P/hornear,baking powder,0.185,gramo,2
@@ -177,30 +202,39 @@ Walmart,broccoli,Brócoli,broccoli,0.0562,gramo,2
 Walmart,butter,Mantequilla,butter,0.2889,gramo,2
 Walmart,cabbage,Col,cabbage,0.0299,gramo,2
 Walmart,carrot,Zanahoria,carrot,0.018,gramo,2
+Walmart,cauliflower,Coliflor,cauliflower,65.0,pieza,2
 Walmart,celery,Apio,celery,0.0364,gramo,2
 Walmart,chicken,Carne Pollo,chicken,0.104,gramo,2
 Walmart,chickpeas,Garbanzo,chickpeas,0.078,gramo,1
+Walmart,chili sauce,Salsa Picante y Similares,chili sauce,0.1364,gramo,2
 Walmart,chili sauce,Salsa Picante y Similares,chili sauce,866.665,litro,2
+Walmart,cilantro,Cilantro,"cilantro, coriander",10.0,manojo,2
 Walmart,cinnamon,Canela,cinnamon,0.8589,gramo,2
 Walmart,corn,Granos de Elote,corn,0.087,gramo,2
 Walmart,corn tortillas,Tortilla de Maíz,corn tortillas,0.014,gramo,2
 Walmart,cornmeal,Harina de Maíz,cornmeal,0.0245,gramo,2
 Walmart,cornstarch,Harina de Maíz,cornstarch,0.1435,gramo,2
 Walmart,cream,Crema,cream,0.1103,gramo,2
+Walmart,cream,Crema,cream,98.945,litro,2
 Walmart,cucumber,Pepino,cucumber,0.024,gramo,2
 Walmart,egg,Huevo,egg,0.043,gramo,1
+Walmart,egg,Huevo,egg,2.375,pieza,2
 Walmart,flour,Harina de Trigo,flour,0.0185,gramo,2
+Walmart,french bread,Pan Blanco Bolillo,french bread,2.05,pieza,2
 Walmart,garlic,Ajo,garlic,0.6039,gramo,2
 Walmart,green beans,Ejote,green beans,0.0678,gramo,2
 Walmart,green chilies,Chile Fresco,green chilies,0.1125,gramo,2
+Walmart,green onion,Cebolla,"green onion, scallion",15.9,manojo,2
 Walmart,ground pork,Carne Cerdo,ground pork,0.109,gramo,2
 Walmart,ham,Jamón,ham,0.2224,gramo,2
 Walmart,honey,Miel de Abeja,honey,0.1995,gramo,2
+Walmart,hot sauce,Salsa Picante y Similares,hot sauce,0.1364,gramo,2
 Walmart,hot sauce,Salsa Picante y Similares,hot sauce,866.665,litro,2
 Walmart,italian sausage,Carne Cerdo,italian sausage,0.114,gramo,2
 Walmart,jalapeno,Chile Fresco,jalapeno,0.025,gramo,2
 Walmart,ketchup,Salsa Catsup,ketchup,0.0584,gramo,2
 Walmart,lemon,Limón,lemon,0.04,gramo,2
+Walmart,lettuce,Lechuga,lettuce,24.9,pieza,2
 Walmart,lime,Limón,lime,0.04,gramo,2
 Walmart,margarine,Margarina,margarine,0.2088,gramo,2
 Walmart,mayonnaise,Mayonesa,mayonnaise,0.1312,gramo,2
@@ -224,15 +258,18 @@ Walmart,potato,Papa,potato,0.0598,gramo,2
 Walmart,rice,Arroz,rice,0.0288,gramo,2
 Walmart,rum,Ron,rum,498.98,litro,2
 Walmart,salsa,Salsa Picante y Similares,salsa,0.1364,gramo,2
+Walmart,salsa,Salsa Picante y Similares,salsa,866.665,litro,2
 Walmart,salt,Sal Molida de Mesa,salt,0.025,gramo,2
 Walmart,sea salt,Sal de Mar,sea salt,0.0175,gramo,2
 Walmart,sesame seeds,Ajonjolí,sesame seeds,0.21,gramo,2
 Walmart,shrimp,Camarón,shrimp,0.2865,gramo,2
 Walmart,soy sauce,Salsa de Soya,soy sauce,100.0,litro,2
 Walmart,spaghetti,Pasta para Sopa,spaghetti,0.055,gramo,2
+Walmart,spinach,Espinacas,spinach,14.4,manojo,2
 Walmart,strawberries,Fresa,strawberries,0.1718,gramo,2
 Walmart,sugar,Azúcar,sugar,0.0269,gramo,2
 Walmart,tomato,Jitomate,tomato,0.0185,gramo,2
+Walmart,vanilla,Vainilla,vanilla,108.0,litro,1
 Walmart,vegetable oil,Aceite,vegetable oil,47.43,litro,2
 Walmart,vinegar,Vinagre,vinegar,14.715,litro,2
 Walmart,walnuts,Nuez,walnuts,0.9333,gramo,1

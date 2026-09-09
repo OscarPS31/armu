@@ -9,6 +9,19 @@ import pandas as pd
 INPUT_PATH = "data/ingredient_prices_top3_chains.csv"
 OUTPUT_PATH = "data/ingredient_prices_top3_chains_clean.csv"
 
+CHAIN_ORDER = [
+    "Soriana",
+    "Chedraui",
+    "Walmart",
+]
+
+EXPECTED_UNITS = {
+    "gramo",
+    "litro",
+    "pieza",
+    "manojo",
+}
+
 
 # ============================================================
 # LOAD
@@ -22,7 +35,7 @@ print(f"Input rows: {len(df):,}")
 
 
 # ============================================================
-# SELECT PRESENTATION COLUMNS
+# PRESENTATION COLUMNS
 # ============================================================
 
 clean = df[
@@ -37,51 +50,73 @@ clean = df[
 
 
 # ============================================================
-# FRIENDLIER DISPLAY
+# CLEAN TEXT
 # ============================================================
 
-clean["cadena"] = clean["cadena"].str.strip()
-clean["ingrediente"] = clean["ingrediente"].str.strip()
-clean["producto_profeco"] = clean["producto_profeco"].str.strip()
-clean["unidad"] = clean["unidad"].str.strip()
+for column in [
+    "cadena",
+    "ingrediente",
+    "producto_profeco",
+    "unidad",
+]:
+    clean[column] = (
+        clean[column]
+        .astype(str)
+        .str.strip()
+    )
 
 
 # ============================================================
 # ROUNDING
 #
-# Gram prices need 4 decimals.
-# Liter prices are easier to read with 2 decimals.
+# gram:
+#   retain 4 decimals because values are small
+#
+# liter / piece / bunch:
+#   2 decimals are sufficient for presentation
 # ============================================================
 
-gram_mask = clean["unidad"] == "gramo"
-liter_mask = clean["unidad"] == "litro"
+gram_mask = (
+    clean["unidad"] == "gramo"
+)
 
 clean.loc[
     gram_mask,
-    "precio_promedio_mxn"
-] = clean.loc[
-    gram_mask,
-    "precio_promedio_mxn"
-].round(4)
+    "precio_promedio_mxn",
+] = (
+    clean.loc[
+        gram_mask,
+        "precio_promedio_mxn",
+    ]
+    .round(4)
+)
+
+
+other_mask = (
+    clean["unidad"].isin(
+        [
+            "litro",
+            "pieza",
+            "manojo",
+        ]
+    )
+)
 
 clean.loc[
-    liter_mask,
-    "precio_promedio_mxn"
-] = clean.loc[
-    liter_mask,
-    "precio_promedio_mxn"
-].round(2)
+    other_mask,
+    "precio_promedio_mxn",
+] = (
+    clean.loc[
+        other_mask,
+        "precio_promedio_mxn",
+    ]
+    .round(2)
+)
 
 
 # ============================================================
 # SORT
 # ============================================================
-
-CHAIN_ORDER = [
-    "Soriana",
-    "Chedraui",
-    "Walmart",
-]
 
 clean["cadena"] = pd.Categorical(
     clean["cadena"],
@@ -94,6 +129,7 @@ clean = (
     .sort_values(
         [
             "ingrediente",
+            "unidad",
             "cadena",
             "producto_profeco",
         ]
@@ -101,7 +137,10 @@ clean = (
     .reset_index(drop=True)
 )
 
-clean["cadena"] = clean["cadena"].astype(str)
+clean["cadena"] = (
+    clean["cadena"]
+    .astype(str)
+)
 
 
 # ============================================================
@@ -112,32 +151,48 @@ print("\n=== VALIDATION ===")
 
 print(
     "Null values:",
-    int(clean.isna().sum().sum())
+    int(clean.isna().sum().sum()),
 )
 
 print(
     "Duplicate rows:",
-    int(clean.duplicated().sum())
+    int(clean.duplicated().sum()),
 )
 
 print(
     "Prices <= 0:",
     int(
         (
-            clean["precio_promedio_mxn"] <= 0
+            clean["precio_promedio_mxn"]
+            <= 0
         ).sum()
-    )
+    ),
+)
+
+unexpected_units = sorted(
+    set(clean["unidad"])
+    - EXPECTED_UNITS
 )
 
 print(
     "Unexpected units:",
-    sorted(
-        set(clean["unidad"])
-        - {
-            "gramo",
-            "litro",
-        }
-    )
+    unexpected_units,
+)
+
+
+# ============================================================
+# ONION VALIDATION
+# ============================================================
+
+invalid_onion_bunch = clean[
+    (clean["ingrediente"] == "onion")
+    &
+    (clean["unidad"] == "manojo")
+]
+
+print(
+    "Invalid onion/manojo rows:",
+    len(invalid_onion_bunch),
 )
 
 
@@ -157,12 +212,17 @@ clean.to_csv(
 # ============================================================
 
 print("\n" + "=" * 80)
-print("PRESENTATION CSV")
+print("PRESENTATION CSV - FINAL")
 print("=" * 80)
 
-print(f"\nRows generated: {len(clean):,}")
+print(
+    f"\nRows generated: "
+    f"{len(clean):,}"
+)
+
 
 print("\nRows by chain:")
+
 print(
     clean["cadena"]
     .value_counts()
@@ -170,18 +230,94 @@ print(
     .to_string()
 )
 
+
 print("\nUnique ingredients:")
+
 print(
     clean["ingrediente"]
     .nunique()
 )
 
+
 print("\nUnits:")
+
 print(
     clean["unidad"]
     .value_counts()
     .to_string()
 )
+
+
+# ============================================================
+# COVERAGE
+# ============================================================
+
+coverage = (
+    clean.groupby(
+        "ingrediente"
+    )["cadena"]
+    .nunique()
+)
+
+print("\nIngredient coverage:")
+
+print(
+    "Available in 3 chains:",
+    int((coverage == 3).sum()),
+)
+
+print(
+    "Available in 2 chains:",
+    int((coverage == 2).sum()),
+)
+
+print(
+    "Available in 1 chain:",
+    int((coverage == 1).sum()),
+)
+
+
+# ============================================================
+# ONION / GREEN ONION CHECK
+# ============================================================
+
+print("\n=== ONION VS GREEN ONION ===")
+
+print(
+    clean[
+        clean["ingrediente"].isin(
+            [
+                "onion",
+                "green onion",
+            ]
+        )
+    ]
+    .to_string(index=False)
+)
+
+
+# ============================================================
+# PIEZA / MANOJO
+# ============================================================
+
+print("\n=== PIEZA / MANOJO ===")
+
+print(
+    clean[
+        clean["unidad"].isin(
+            [
+                "pieza",
+                "manojo",
+            ]
+        )
+    ]
+    .to_string(index=False)
+)
+
+
+# ============================================================
+# SAMPLE
+# ============================================================
 
 print("\n=== SAMPLE ===")
 
@@ -205,5 +341,6 @@ print("\nSaved:")
 print(OUTPUT_PATH)
 
 print(
-    f"File size: {size_mb:.3f} MB"
+    f"File size: "
+    f"{size_mb:.3f} MB"
 )

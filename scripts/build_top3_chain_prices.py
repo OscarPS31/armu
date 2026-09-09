@@ -15,17 +15,14 @@ OUTPUT_PATH = "data/ingredient_prices_top3_chains.csv"
 # ============================================================
 
 CHAIN_MAP = {
-    # Soriana
     "Hipermercado Soriana": "Soriana",
     "Mega Soriana": "Soriana",
     "Soriana Super": "Soriana",
 
-    # Chedraui
     "Chedraui": "Chedraui",
     "Super Chedraui": "Chedraui",
     "Chedraui Selecto": "Chedraui",
 
-    # Walmart
     "Wal-mart": "Walmart",
     "Wal-mart Express": "Walmart",
 }
@@ -39,9 +36,6 @@ CHAIN_ORDER = [
 
 # ============================================================
 # STRICT EXCLUSIONS
-#
-# Weak / approximate mappings that we do not want in the
-# clean comparison.
 # ============================================================
 
 EXCLUDED_INGREDIENTS = {
@@ -54,8 +48,6 @@ EXCLUDED_INGREDIENTS = {
 
 # ============================================================
 # TRUE ALIASES
-#
-# Only merge names that genuinely represent the same ingredient.
 # ============================================================
 
 ALIAS_GROUPS = {
@@ -73,27 +65,14 @@ DISPLAY_ALIASES = {
 
 
 # ============================================================
-# LIQUID INGREDIENTS
-#
-# These ingredients use LITRO as their official comparison unit.
-#
-# Everything else uses GRAMO.
+# VALID SOURCE UNITS
 # ============================================================
 
-LIQUID_INGREDIENTS = {
-    "water",
-    "milk",
-    "olive oil",
-    "vegetable oil",
-    "orange juice",
-    "vinegar",
-    "cider vinegar",
-    "soy sauce",
-    "worcestershire sauce",
-    "hot sauce",
-    "chili sauce",
-    "rum",
-    "brandy",
+VALID_UNITS = {
+    "kg",
+    "litro",
+    "pieza",
+    "manojo",
 }
 
 
@@ -118,10 +97,7 @@ top3 = df[
     df["store"].isin(CHAIN_MAP.keys())
 ].copy()
 
-top3["cadena"] = (
-    top3["store"]
-    .map(CHAIN_MAP)
-)
+top3["cadena"] = top3["store"].map(CHAIN_MAP)
 
 print("\nRows belonging to selected chains:")
 print(f"{len(top3):,}")
@@ -134,9 +110,7 @@ print(f"{len(top3):,}")
 before_strict = len(top3)
 
 top3 = top3[
-    ~top3["ingredient"].isin(
-        EXCLUDED_INGREDIENTS
-    )
+    ~top3["ingredient"].isin(EXCLUDED_INGREDIENTS)
 ].copy()
 
 print("\nRows removed by strict mapping rules:")
@@ -144,28 +118,17 @@ print(f"{before_strict - len(top3):,}")
 
 
 # ============================================================
-# KEEP ONLY SAFE SOURCE UNITS
-#
-# kg    -> can be converted safely to grams
-# litro -> stays as liters
-#
-# pieza/manojo are removed because no trustworthy weight
-# conversion is available.
+# KEEP VALID UNITS
 # ============================================================
 
-before_safe_units = len(top3)
+before_units = len(top3)
 
 top3 = top3[
-    top3["unit"].isin(
-        [
-            "kg",
-            "litro",
-        ]
-    )
+    top3["unit"].isin(VALID_UNITS)
 ].copy()
 
-print("\nRows removed because source unit is not safely comparable:")
-print(f"{before_safe_units - len(top3):,}")
+print("\nRows removed because unit is unsupported:")
+print(f"{before_units - len(top3):,}")
 
 
 # ============================================================
@@ -186,62 +149,49 @@ top3["ingredientes_relacionados"] = (
 
 
 # ============================================================
-# DEFINE OFFICIAL UNIT PER INGREDIENT
+# TARGETED SEMANTIC CLEANUP
 #
-# Liquid ingredient -> litro
-# Other ingredient  -> gramo
+# Cebolla sold by bunch corresponds to green onion / scallion,
+# not regular onion.
+#
+# Keep:
+#   onion       -> kg -> gram
+#   green onion -> bunch
+#
+# Remove only:
+#   onion -> bunch
 # ============================================================
 
-top3["unidad_objetivo"] = top3[
-    "ingrediente"
-].apply(
-    lambda ingredient:
-        "litro"
-        if ingredient in LIQUID_INGREDIENTS
-        else "gramo"
-)
+before_onion_cleanup = len(top3)
 
-
-# ============================================================
-# SELECT ONLY SOURCE ROWS THAT MATCH OFFICIAL UNIT
-#
-# liquid:
-#     source must already be litro
-#
-# solid:
-#     source must be kg, later converted to gram price
-# ============================================================
-
-liquid_mask = (
-    (top3["unidad_objetivo"] == "litro")
+bad_onion_bunch = (
+    (top3["ingrediente"] == "onion")
     &
-    (top3["unit"] == "litro")
+    (top3["unit"] == "manojo")
 )
-
-solid_mask = (
-    (top3["unidad_objetivo"] == "gramo")
-    &
-    (top3["unit"] == "kg")
-)
-
-before_preferred_units = len(top3)
 
 top3 = top3[
-    liquid_mask | solid_mask
+    ~bad_onion_bunch
 ].copy()
 
-print("\nRows removed because they do not match the ingredient's official unit:")
-print(f"{before_preferred_units - len(top3):,}")
+print("\nRows removed by onion/bunch semantic cleanup:")
+print(f"{before_onion_cleanup - len(top3):,}")
 
 
 # ============================================================
-# PRICE HOMOLOGATION
+# UNIT HOMOLOGATION
 #
-# kg -> MXN per gram
-# litro -> MXN per liter
+# kg     -> gram
+# litro  -> liter
+# pieza  -> piece
+# manojo -> bunch
 # ============================================================
 
-top3["precio_homologado_mxn"] = top3["price"]
+top3["precio_homologado_mxn"] = (
+    top3["price"].astype(float)
+)
+
+top3["unidad"] = top3["unit"]
 
 
 kg_mask = (
@@ -259,33 +209,14 @@ top3.loc[
     / 1000
 )
 
-
-liter_mask = (
-    top3["unit"] == "litro"
-)
-
 top3.loc[
-    liter_mask,
-    "precio_homologado_mxn",
-] = top3.loc[
-    liter_mask,
-    "price",
-]
-
-
-top3["unidad"] = (
-    top3["unidad_objetivo"]
-)
+    kg_mask,
+    "unidad",
+] = "gramo"
 
 
 # ============================================================
 # REMOVE TRUE-ALIAS DUPLICATION
-#
-# Example:
-#
-# cilantro + coriander
-#
-# should not count the same commercial price twice.
 # ============================================================
 
 price_observations = (
@@ -309,14 +240,7 @@ print(f"{len(price_observations):,}")
 
 
 # ============================================================
-# MEAN BY CHAIN
-#
-# One row per:
-#
-# chain
-# + ingredient
-# + PROFECO product
-# + official unit
+# CHAIN MEAN
 # ============================================================
 
 result = (
@@ -336,7 +260,6 @@ result = (
             "precio_homologado_mxn",
             "mean",
         ),
-
         formatos_con_precio=(
             "store",
             "nunique",
@@ -347,9 +270,6 @@ result = (
 
 # ============================================================
 # ROUND
-#
-# Per-gram prices need 4 decimals.
-# Liter values can also safely keep 4 decimals.
 # ============================================================
 
 result["precio_promedio_mxn"] = (
@@ -359,7 +279,7 @@ result["precio_promedio_mxn"] = (
 
 
 # ============================================================
-# RENAME PROFECO COLUMN
+# RENAME
 # ============================================================
 
 result = result.rename(
@@ -403,6 +323,7 @@ result = (
             "cadena",
             "ingrediente",
             "producto_profeco",
+            "unidad",
         ]
     )
     .reset_index(drop=True)
@@ -430,7 +351,7 @@ result.to_csv(
 # ============================================================
 
 print("\n" + "=" * 80)
-print("TOP 3 CHAINS - FINAL STRICT HOMOLOGATED DATASET")
+print("TOP 3 CHAINS - FINAL HOMOLOGATED DATASET")
 print("=" * 80)
 
 print(f"\nRows generated: {len(result):,}")
@@ -449,19 +370,6 @@ print(
 )
 
 
-print("\nPROFECO products by chain:")
-
-print(
-    result.groupby(
-        "cadena",
-        observed=True,
-    )["producto_profeco"]
-    .nunique()
-    .reindex(CHAIN_ORDER)
-    .to_string()
-)
-
-
 print("\nUnits:")
 
 print(
@@ -472,142 +380,82 @@ print(
 
 
 # ============================================================
-# CHECK THAT EACH INGREDIENT HAS ONLY ONE UNIT
+# INGREDIENT COVERAGE
 # ============================================================
 
-unit_count = (
+coverage = (
     result.groupby(
-        "ingrediente"
-    )["unidad"]
-    .nunique()
-)
-
-multiple_units = unit_count[
-    unit_count > 1
-]
-
-print("\nIngredients with more than one unit:")
-
-if multiple_units.empty:
-    print("0 ✅")
-else:
-    print(multiple_units.to_string())
-
-
-# ============================================================
-# COMMON COMPARABLE INGREDIENTS
-# ============================================================
-
-common = (
-    result.groupby(
-        [
-            "ingrediente",
-            "producto_profeco",
-            "unidad",
-        ],
+        "ingrediente",
         observed=True,
     )["cadena"]
     .nunique()
-    .reset_index(
-        name="chains_available"
-    )
 )
 
-common = common[
-    common["chains_available"] == 3
-]
+print("\nIngredient coverage:")
 
 print(
-    "\nComparable ingredient/product/unit combinations "
-    "available in all 3 chains:"
+    f"Available in 3 chains: "
+    f"{int((coverage == 3).sum()):,}"
 )
-
-print(f"{len(common):,}")
-
-
-# ============================================================
-# LIQUID CHECK
-# ============================================================
-
-print("\n=== LIQUID CHECK ===")
-
-liquid_check = result[
-    result["unidad"] == "litro"
-]
 
 print(
-    liquid_check[
-        [
-            "cadena",
-            "ingrediente",
-            "producto_profeco",
-            "precio_promedio_mxn",
-            "unidad",
-        ]
-    ]
-    .head(40)
-    .to_string(index=False)
+    f"Available in 2 chains: "
+    f"{int((coverage == 2).sum()):,}"
 )
-
-
-# ============================================================
-# SOLID CHECK
-# ============================================================
-
-print("\n=== SOLID CHECK ===")
-
-solid_check = result[
-    result["unidad"] == "gramo"
-]
 
 print(
-    solid_check[
-        [
-            "cadena",
-            "ingrediente",
-            "producto_profeco",
-            "precio_promedio_mxn",
-            "unidad",
-        ]
-    ]
-    .head(30)
-    .to_string(index=False)
+    f"Available in 1 chain: "
+    f"{int((coverage == 1).sum()):,}"
 )
 
 
 # ============================================================
-# IMPORTANT INGREDIENT CHECK
+# ONION CHECK
 # ============================================================
 
-important_ingredients = [
-    "onion",
-    "zucchini",
-    "ground pork",
-    "pork tenderloin",
-    "pork chops",
-    "italian sausage",
-    "water",
-    "milk",
-    "olive oil",
-    "vegetable oil",
-    "hot sauce",
-    "chili sauce",
-    "cream",
-    "honey",
-]
+print("\n=== ONION CHECK ===")
 
-important = result[
+onion_check = result[
     result["ingrediente"].isin(
-        important_ingredients
+        [
+            "onion",
+            "green onion",
+        ]
     )
 ]
 
-print("\n=== FINAL IMPORTANT CHECK ===")
+print(
+    onion_check[
+        [
+            "cadena",
+            "ingrediente",
+            "producto_profeco",
+            "precio_promedio_mxn",
+            "unidad",
+        ]
+    ]
+    .to_string(index=False)
+)
+
+
+# ============================================================
+# PIEZA / MANOJO CHECK
+# ============================================================
+
+print("\n=== PIEZA / MANOJO SAMPLE ===")
+
+native_units = result[
+    result["unidad"].isin(
+        [
+            "pieza",
+            "manojo",
+        ]
+    )
+]
 
 print(
-    important.to_string(
-        index=False
-    )
+    native_units.head(40)
+    .to_string(index=False)
 )
 
 
@@ -631,20 +479,23 @@ print(
     "Prices <= 0:",
     int(
         (
-            result["precio_promedio_mxn"]
-            <= 0
+            result["precio_promedio_mxn"] <= 0
         ).sum()
     ),
 )
+
+expected_units = {
+    "gramo",
+    "litro",
+    "pieza",
+    "manojo",
+}
 
 print(
     "Unexpected units:",
     sorted(
         set(result["unidad"])
-        - {
-            "gramo",
-            "litro",
-        }
+        - expected_units
     ),
 )
 
@@ -654,6 +505,17 @@ print(
         set(result["ingrediente"])
         & EXCLUDED_INGREDIENTS
     ),
+)
+
+bad_final_onion = result[
+    (result["ingrediente"] == "onion")
+    &
+    (result["unidad"] == "manojo")
+]
+
+print(
+    "Invalid onion/manojo rows:",
+    len(bad_final_onion),
 )
 
 
@@ -671,6 +533,5 @@ print("\nSaved:")
 print(OUTPUT_PATH)
 
 print(
-    f"File size: "
-    f"{size_mb:.3f} MB"
+    f"File size: {size_mb:.3f} MB"
 )
