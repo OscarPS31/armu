@@ -35,7 +35,7 @@ print(f"Input rows: {len(df):,}")
 
 
 # ============================================================
-# PRESENTATION COLUMNS
+# BASE COLUMNS
 # ============================================================
 
 clean = df[
@@ -67,14 +67,44 @@ for column in [
 
 
 # ============================================================
-# ROUNDING
+# OPTION A
+#
+# Keep the current normalized price:
+#
+# gram   -> MXN / gram
+# liter  -> MXN / liter
+# piece  -> MXN / piece
+# bunch  -> MXN / bunch
+# ============================================================
+
+clean["precio_opcion_a_mxn"] = (
+    clean["precio_promedio_mxn"]
+)
+
+clean["unidad_opcion_a"] = (
+    clean["unidad"]
+)
+
+
+# ============================================================
+# OPTION B
 #
 # gram:
-#   retain 4 decimals because values are small
+#     convert price per gram back to a
+#     1000-gram commercial reference
 #
 # liter / piece / bunch:
-#   2 decimals are sufficient for presentation
+#     price remains unchanged
 # ============================================================
+
+clean["precio_opcion_b_mxn"] = (
+    clean["precio_promedio_mxn"]
+)
+
+clean["unidad_opcion_b"] = (
+    clean["unidad"]
+)
+
 
 gram_mask = (
     clean["unidad"] == "gramo"
@@ -82,36 +112,51 @@ gram_mask = (
 
 clean.loc[
     gram_mask,
-    "precio_promedio_mxn",
+    "precio_opcion_b_mxn",
 ] = (
     clean.loc[
         gram_mask,
         "precio_promedio_mxn",
     ]
-    .round(4)
-)
-
-
-other_mask = (
-    clean["unidad"].isin(
-        [
-            "litro",
-            "pieza",
-            "manojo",
-        ]
-    )
+    * 1000
 )
 
 clean.loc[
-    other_mask,
-    "precio_promedio_mxn",
-] = (
-    clean.loc[
-        other_mask,
-        "precio_promedio_mxn",
-    ]
+    gram_mask,
+    "unidad_opcion_b",
+] = "1000 gramos"
+
+
+# ============================================================
+# ROUNDING
+# ============================================================
+
+clean["precio_opcion_a_mxn"] = (
+    clean["precio_opcion_a_mxn"]
+    .round(4)
+)
+
+clean["precio_opcion_b_mxn"] = (
+    clean["precio_opcion_b_mxn"]
     .round(2)
 )
+
+
+# ============================================================
+# FINAL COLUMNS
+# ============================================================
+
+clean = clean[
+    [
+        "cadena",
+        "ingrediente",
+        "producto_profeco",
+        "precio_opcion_a_mxn",
+        "unidad_opcion_a",
+        "precio_opcion_b_mxn",
+        "unidad_opcion_b",
+    ]
+]
 
 
 # ============================================================
@@ -129,9 +174,8 @@ clean = (
     .sort_values(
         [
             "ingrediente",
-            "unidad",
+            "unidad_opcion_a",
             "cadena",
-            "producto_profeco",
         ]
     )
     .reset_index(drop=True)
@@ -160,39 +204,31 @@ print(
 )
 
 print(
-    "Prices <= 0:",
+    "Prices A <= 0:",
     int(
         (
-            clean["precio_promedio_mxn"]
-            <= 0
+            clean["precio_opcion_a_mxn"] <= 0
+        ).sum()
+    ),
+)
+
+print(
+    "Prices B <= 0:",
+    int(
+        (
+            clean["precio_opcion_b_mxn"] <= 0
         ).sum()
     ),
 )
 
 unexpected_units = sorted(
-    set(clean["unidad"])
+    set(clean["unidad_opcion_a"])
     - EXPECTED_UNITS
 )
 
 print(
-    "Unexpected units:",
+    "Unexpected option A units:",
     unexpected_units,
-)
-
-
-# ============================================================
-# ONION VALIDATION
-# ============================================================
-
-invalid_onion_bunch = clean[
-    (clean["ingrediente"] == "onion")
-    &
-    (clean["unidad"] == "manojo")
-]
-
-print(
-    "Invalid onion/manojo rows:",
-    len(invalid_onion_bunch),
 )
 
 
@@ -212,117 +248,44 @@ clean.to_csv(
 # ============================================================
 
 print("\n" + "=" * 80)
-print("PRESENTATION CSV - FINAL")
+print("PRESENTATION CSV - OPTION A VS OPTION B")
 print("=" * 80)
 
-print(
-    f"\nRows generated: "
-    f"{len(clean):,}"
-)
+print(f"\nRows generated: {len(clean):,}")
 
-
-print("\nRows by chain:")
-
-print(
-    clean["cadena"]
-    .value_counts()
-    .reindex(CHAIN_ORDER)
-    .to_string()
-)
-
-
-print("\nUnique ingredients:")
-
-print(
-    clean["ingrediente"]
-    .nunique()
-)
-
-
-print("\nUnits:")
-
-print(
-    clean["unidad"]
-    .value_counts()
-    .to_string()
-)
-
-
-# ============================================================
-# COVERAGE
-# ============================================================
-
-coverage = (
-    clean.groupby(
-        "ingrediente"
-    )["cadena"]
-    .nunique()
-)
-
-print("\nIngredient coverage:")
-
-print(
-    "Available in 3 chains:",
-    int((coverage == 3).sum()),
-)
-
-print(
-    "Available in 2 chains:",
-    int((coverage == 2).sum()),
-)
-
-print(
-    "Available in 1 chain:",
-    int((coverage == 1).sum()),
-)
-
-
-# ============================================================
-# ONION / GREEN ONION CHECK
-# ============================================================
-
-print("\n=== ONION VS GREEN ONION ===")
-
-print(
-    clean[
-        clean["ingrediente"].isin(
-            [
-                "onion",
-                "green onion",
-            ]
-        )
-    ]
-    .to_string(index=False)
-)
-
-
-# ============================================================
-# PIEZA / MANOJO
-# ============================================================
-
-print("\n=== PIEZA / MANOJO ===")
-
-print(
-    clean[
-        clean["unidad"].isin(
-            [
-                "pieza",
-                "manojo",
-            ]
-        )
-    ]
-    .to_string(index=False)
-)
-
-
-# ============================================================
-# SAMPLE
-# ============================================================
 
 print("\n=== SAMPLE ===")
 
 print(
     clean.head(30)
+    .to_string(index=False)
+)
+
+
+print("\n=== GRAM EXAMPLE ===")
+
+print(
+    clean[
+        clean["unidad_opcion_a"] == "gramo"
+    ]
+    .head(15)
+    .to_string(index=False)
+)
+
+
+print("\n=== OTHER UNITS ===")
+
+print(
+    clean[
+        clean["unidad_opcion_a"].isin(
+            [
+                "litro",
+                "pieza",
+                "manojo",
+            ]
+        )
+    ]
+    .head(20)
     .to_string(index=False)
 )
 
@@ -341,6 +304,5 @@ print("\nSaved:")
 print(OUTPUT_PATH)
 
 print(
-    f"File size: "
-    f"{size_mb:.3f} MB"
+    f"File size: {size_mb:.3f} MB"
 )
