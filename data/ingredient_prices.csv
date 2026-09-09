@@ -275,6 +275,40 @@ beef,Carne Res,180.0,kg,Supermercado Gonzalez
 beef,Carne Res,210.79,kg,U.n.a.m.
 beef,Carne Res,225.0,kg,Wal-mart
 beef,Carne Res,232.0,kg,Wal-mart Express
+beet,Betabel,22.9,kg,Alsuper
+beet,Betabel,22.9,kg,Alsuper Fresh Market
+beet,Betabel,38.9,kg,Bodega Aurrera
+beet,Betabel,30.0,kg,Central de Abasto
+beet,Betabel,19.9,kg,Chedraui
+beet,Betabel,19.9,kg,Chedraui Selecto
+beet,Betabel,32.9,kg,City Market
+beet,Betabel,32.9,kg,Fresko la Comer
+beet,Betabel,44.95,kg,H.e.b.
+beet,Betabel,33.9,kg,Hipermercado Soriana
+beet,Betabel,32.9,kg,La Comer
+beet,Betabel,49.9,kg,Ley
+beet,Betabel,33.45,kg,Mega Soriana
+beet,Betabel,35.0,kg,Mercado Adolfo Lopez Mateos
+beet,Betabel,26.5,kg,Mercado Emilio Sanchez Piedras
+beet,Betabel,18.0,kg,Mercado Malibran
+beet,Betabel,24.0,kg,Mercado Miguel Hidalgo
+beet,Betabel,33.95,kg,Mercado Publico
+beet,Betabel,33.4,kg,Mercado Soriana
+beet,Betabel,37.5,kg,Mercado el Meson Estrella
+beet,Betabel,42.9,kg,Mi Tienda del Ahorro
+beet,Betabel,45.99,kg,Minisuper
+beet,Betabel,39.99,kg,Operadora Merco
+beet,Betabel,23.99,kg,S Mart
+beet,Betabel,33.9,kg,Soriana Express
+beet,Betabel,33.4,kg,Soriana Super
+beet,Betabel,32.9,kg,Sumesa
+beet,Betabel,26.5,kg,Super Aki
+beet,Betabel,26.5,kg,Super Aki Xtra
+beet,Betabel,19.9,kg,Super Chedraui
+beet,Betabel,39.9,kg,Supermercado Gonzalez
+beet,Betabel,17.82,kg,U.n.a.m.
+beet,Betabel,39.9,kg,Wal-mart
+beet,Betabel,39.9,kg,Wal-mart Express
 black beans,Frijol,28.33,kg,Abarrotera Sanchez
 black beans,Frijol,30.5,kg,Abarrotes Super Cabrera Class
 black beans,Frijol,54.9,kg,Alsuper
@@ -905,6 +939,40 @@ cinnamon,Canela,866.67,kg,Superissste
 cinnamon,Canela,625.24,kg,U.n.a.m.
 cinnamon,Canela,940.0,kg,Wal-mart
 cinnamon,Canela,777.78,kg,Wal-mart Express
+clam,Almeja,69.9,kg,Alsuper
+clam,Almeja,36.0,kg,Central de Abasto
+clam,Almeja,89.0,kg,Chedraui
+clam,Almeja,89.0,kg,Chedraui Selecto
+clam,Almeja,30.0,kg,Fresko la Comer
+clam,Almeja,69.9,kg,Hipermercado Soriana
+clam,Almeja,30.0,kg,La Comer
+clam,Almeja,39.9,kg,Mega Soriana
+clam,Almeja,70.0,kg,Mercado Emilio Sanchez Piedras
+clam,Almeja,60.0,kg,Mercado Publico
+clam,Almeja,39.9,kg,Mercado Soriana
+clam,Almeja,65.0,kg,Mercado del Mar Felipe Angeles Higueril
+clam,Almeja,45.0,kg,Mercado del Mar San Felipe
+clam,Almeja,57.5,kg,Mercado del Mar Zapopan
+clam,Almeja,58.0,kg,Pescaderia Bahia de Kino
+clam,Almeja,60.0,kg,Pescaderia Cepesmar
+clam,Almeja,50.0,kg,Pescaderia Juarez
+clam,Almeja,80.0,kg,Pescaderia Lindo Sinaloa
+clam,Almeja,40.0,kg,Pescaderia Liz del Mar
+clam,Almeja,60.0,kg,Pescaderia Puerto Aventura
+clam,Almeja,65.0,kg,Pescaderia Sevilla Carro Verde
+clam,Almeja,80.0,kg,Pescaderia Yuridia
+clam,Almeja,60.0,kg,Pescaderia el Mangle
+clam,Almeja,30.0,kg,Pescaderia el Tejano de Queretaro
+clam,Almeja,70.0,kg,Pescaderia la Jaiba
+clam,Almeja,35.0,kg,Pescaderia las Truchas
+clam,Almeja,46.0,kg,Pescaderias
+clam,Almeja,55.0,kg,Pescaderias Tradicionales
+clam,Almeja,85.0,kg,Pescados y Mariscos Miguel Hidalgo
+clam,Almeja,36.99,kg,S Mart
+clam,Almeja,30.0,kg,Sumesa
+clam,Almeja,89.0,kg,Super Chedraui
+clam,Almeja,65.0,kg,Wal-mart
+clam,Almeja,64.0,kg,Wal-mart Express
 cloves,Clavo,270.0,kg,Central de Abasto
 cloves,Clavo,320.0,kg,Mercado Adolfo Lopez Mateos
 cloves,Clavo,300.0,kg,Mercado Malibran
@@ -1511,6 +1579,15 @@ ground pork,Carne Cerdo,139.8,kg,Superissste
 ground pork,Carne Cerdo,138.2,kg,U.n.a.m.
 ground pork,Carne Cerdo,109.0,kg,Wal-mart
 ground pork,Carne Cerdo,109.0,kg,Wal-mart Express
+ground turkey,Carne Pavo,139.0,kg,Chedraui
+ground turkey,Carne Pavo,149.0,kg,Chedraui Selecto
+ground turkey,Carne Pavo,145.0,kg,City Market
+ground turkey,Carne Pavo,134.9,kg,Hipermercado Soriana
+ground turkey,Carne Pavo,145.0,kg,La Comer
+ground turkey,Carne Pavo,134.9,kg,Mega Soriana
+ground turkey,Carne Pavo,134.9,kg,Mercado Soriana
+ground turkey,Carne Pavo,134.9,kg,Soriana Super
+ground turkey,Carne Pavo,134.5,kg,Super Chedraui
 ham,Jamón,239.83,kg,7 Eleven
 ham,Jamón,231.03,kg,Abarrotera Monterrey
 ham,Jamón,221.94,kg,Abarrotera Sanchez
@@ -1780,6 +1857,52 @@ ketchup,Salsa Catsup,56.22,kg,Supermercado Gonzalez
 ketchup,Salsa Catsup,62.34,kg,U.n.a.m.
 ketchup,Salsa Catsup,58.82,kg,Wal-mart
 ketchup,Salsa Catsup,57.96,kg,Wal-mart Express
+kidney beans,Frijol,28.33,kg,Abarrotera Sanchez
+kidney beans,Frijol,31.0,kg,Abarrotes Super Cabrera Class
+kidney beans,Frijol,48.51,kg,Alsuper
+kidney beans,Frijol,42.11,kg,Alsuper Fresh Market
+kidney beans,Frijol,40.56,kg,Aprecio
+kidney beans,Frijol,39.5,kg,Bodega Aurrera
+kidney beans,Frijol,29.77,kg,Bodega Aurrera Express
+kidney beans,Frijol,28.0,kg,Central de Abasto
+kidney beans,Frijol,43.33,kg,Chedraui
+kidney beans,Frijol,43.33,kg,Chedraui Selecto
+kidney beans,Frijol,47.67,kg,City Market
+kidney beans,Frijol,29.44,kg,El Pitico
+kidney beans,Frijol,50.56,kg,Farmacia Guadalajara
+kidney beans,Frijol,50.33,kg,Fresko la Comer
+kidney beans,Frijol,38.52,kg,H.e.b.
+kidney beans,Frijol,47.22,kg,Hipermercado Soriana
+kidney beans,Frijol,53.89,kg,La Comer
+kidney beans,Frijol,65.44,kg,Ley
+kidney beans,Frijol,54.33,kg,Ley Express
+kidney beans,Frijol,45.44,kg,Mega Soriana
+kidney beans,Frijol,32.0,kg,Mercado Adolfo Lopez Mateos
+kidney beans,Frijol,35.0,kg,Mercado Central de Acapulco
+kidney beans,Frijol,38.0,kg,Mercado Emilio Sanchez Piedras
+kidney beans,Frijol,35.0,kg,Mercado Malibran
+kidney beans,Frijol,45.0,kg,Mercado Miguel Hidalgo
+kidney beans,Frijol,38.0,kg,Mercado Publico
+kidney beans,Frijol,30.0,kg,Mercado Publico 5 de Mayo
+kidney beans,Frijol,29.04,kg,Mercado Soriana
+kidney beans,Frijol,24.0,kg,Mercado el Meson Estrella
+kidney beans,Frijol,52.78,kg,Mi Tienda del Ahorro
+kidney beans,Frijol,41.78,kg,Minisuper
+kidney beans,Frijol,39.68,kg,Operadora Merco
+kidney beans,Frijol,60.56,kg,Oxxo
+kidney beans,Frijol,41.1,kg,S Mart
+kidney beans,Frijol,24.12,kg,Soriana Express
+kidney beans,Frijol,44.11,kg,Soriana Super
+kidney beans,Frijol,53.89,kg,Sumesa
+kidney beans,Frijol,71.67,kg,Super Aki
+kidney beans,Frijol,54.44,kg,Super Aki Xtra
+kidney beans,Frijol,33.33,kg,Super Chedraui
+kidney beans,Frijol,27.5,kg,Super Kompras
+kidney beans,Frijol,48.78,kg,Superissste
+kidney beans,Frijol,48.67,kg,Supermercado Gonzalez
+kidney beans,Frijol,40.24,kg,U.n.a.m.
+kidney beans,Frijol,43.67,kg,Wal-mart
+kidney beans,Frijol,48.89,kg,Wal-mart Express
 lemon,Limón,32.4,kg,Alsuper
 lemon,Limón,32.4,kg,Alsuper Fresh Market
 lemon,Limón,25.9,kg,Aprecio
@@ -2125,6 +2248,40 @@ oats,Avena,42.25,kg,Supermercado Gonzalez
 oats,Avena,82.62,kg,U.n.a.m.
 oats,Avena,149.47,kg,Wal-mart
 oats,Avena,155.79,kg,Wal-mart Express
+octopus,Pulpo,299.9,kg,Alsuper
+octopus,Pulpo,319.9,kg,Alsuper Fresh Market
+octopus,Pulpo,250.0,kg,Central de Abasto
+octopus,Pulpo,324.0,kg,Chedraui
+octopus,Pulpo,324.0,kg,Chedraui Selecto
+octopus,Pulpo,335.0,kg,Fresko la Comer
+octopus,Pulpo,379.0,kg,H.e.b.
+octopus,Pulpo,399.0,kg,Hipermercado Soriana
+octopus,Pulpo,335.0,kg,La Comer
+octopus,Pulpo,280.0,kg,La Costa Marisquera
+octopus,Pulpo,359.9,kg,Ley
+octopus,Pulpo,399.0,kg,Mega Soriana
+octopus,Pulpo,260.0,kg,Mercado Publico
+octopus,Pulpo,399.0,kg,Mercado Soriana
+octopus,Pulpo,260.0,kg,Mercado del Mar Felipe Angeles Higueril
+octopus,Pulpo,220.0,kg,Mercado del Mar San Felipe
+octopus,Pulpo,245.0,kg,Mercado del Mar Zapopan
+octopus,Pulpo,295.0,kg,Pescaderia Alex
+octopus,Pulpo,275.0,kg,Pescaderia Boca del Rio
+octopus,Pulpo,370.0,kg,Pescaderia Cepesmar
+octopus,Pulpo,290.0,kg,Pescaderia Guasaveña
+octopus,Pulpo,235.0,kg,Pescaderia Hermanos Luna
+octopus,Pulpo,230.0,kg,Pescaderia Hermanos Villegas
+octopus,Pulpo,240.0,kg,Pescaderia Liz del Mar
+octopus,Pulpo,250.0,kg,Pescaderia el Tejano de Queretaro
+octopus,Pulpo,330.0,kg,Pescaderia las Truchas
+octopus,Pulpo,294.0,kg,Pescaderias
+octopus,Pulpo,289.5,kg,Pescaderias Tradicionales
+octopus,Pulpo,287.49,kg,S Mart
+octopus,Pulpo,399.0,kg,Soriana Super
+octopus,Pulpo,366.5,kg,Sumesa
+octopus,Pulpo,324.0,kg,Super Chedraui
+octopus,Pulpo,326.0,kg,Wal-mart
+octopus,Pulpo,329.0,kg,Wal-mart Express
 olive oil,Aceite de Oliva,359.87,litro,Alsuper
 olive oil,Aceite de Oliva,275.8,litro,Alsuper Fresh Market
 olive oil,Aceite de Oliva,280.33,litro,Chedraui
@@ -2354,6 +2511,33 @@ peas,Chícharos,82.9,kg,Supermercado Gonzalez
 peas,Chícharos,48.49,kg,U.n.a.m.
 peas,Chícharos,79.9,kg,Wal-mart
 peas,Chícharos,79.9,kg,Wal-mart Express
+pecan,Nuez,745.33,kg,Aprecio
+pecan,Nuez,933.33,kg,Bodega Aurrera
+pecan,Nuez,310.0,kg,Central de Abasto
+pecan,Nuez,706.67,kg,Chedraui
+pecan,Nuez,706.67,kg,Chedraui Selecto
+pecan,Nuez,718.67,kg,City Market
+pecan,Nuez,760.0,kg,Fresko la Comer
+pecan,Nuez,519.0,kg,H.e.b.
+pecan,Nuez,820.0,kg,Hipermercado Soriana
+pecan,Nuez,718.67,kg,La Comer
+pecan,Nuez,577.9,kg,Ley
+pecan,Nuez,772.0,kg,Mega Soriana
+pecan,Nuez,340.0,kg,Mercado Adolfo Lopez Mateos
+pecan,Nuez,280.0,kg,Mercado Central de Acapulco
+pecan,Nuez,330.0,kg,Mercado Malibran
+pecan,Nuez,380.0,kg,Mercado Miguel Hidalgo
+pecan,Nuez,350.0,kg,Mercado Publico
+pecan,Nuez,350.0,kg,Mercado Publico 5 de Mayo
+pecan,Nuez,335.0,kg,Mercado el Meson Estrella
+pecan,Nuez,852.0,kg,Minisuper
+pecan,Nuez,629.99,kg,S Mart
+pecan,Nuez,780.0,kg,Soriana Super
+pecan,Nuez,706.67,kg,Sumesa
+pecan,Nuez,512.0,kg,Super Aki
+pecan,Nuez,633.33,kg,Super Chedraui
+pecan,Nuez,585.33,kg,Superissste
+pecan,Nuez,933.33,kg,Wal-mart
 pepper,Pimienta,1161.29,kg,Bodega Aurrera
 pepper,Pimienta,200.0,kg,Central de Abasto
 pepper,Pimienta,1177.42,kg,Chedraui
@@ -2417,6 +2601,52 @@ pineapple,Piña,20.4,kg,Supermercado Gonzalez
 pineapple,Piña,24.58,kg,U.n.a.m.
 pineapple,Piña,25.0,kg,Wal-mart
 pineapple,Piña,25.0,kg,Wal-mart Express
+pinto beans,Frijol,28.33,kg,Abarrotera Sanchez
+pinto beans,Frijol,31.0,kg,Abarrotes Super Cabrera Class
+pinto beans,Frijol,48.51,kg,Alsuper
+pinto beans,Frijol,42.11,kg,Alsuper Fresh Market
+pinto beans,Frijol,40.56,kg,Aprecio
+pinto beans,Frijol,39.5,kg,Bodega Aurrera
+pinto beans,Frijol,29.77,kg,Bodega Aurrera Express
+pinto beans,Frijol,28.0,kg,Central de Abasto
+pinto beans,Frijol,43.33,kg,Chedraui
+pinto beans,Frijol,43.33,kg,Chedraui Selecto
+pinto beans,Frijol,47.67,kg,City Market
+pinto beans,Frijol,29.44,kg,El Pitico
+pinto beans,Frijol,50.56,kg,Farmacia Guadalajara
+pinto beans,Frijol,50.33,kg,Fresko la Comer
+pinto beans,Frijol,38.52,kg,H.e.b.
+pinto beans,Frijol,47.22,kg,Hipermercado Soriana
+pinto beans,Frijol,53.89,kg,La Comer
+pinto beans,Frijol,65.44,kg,Ley
+pinto beans,Frijol,54.33,kg,Ley Express
+pinto beans,Frijol,45.44,kg,Mega Soriana
+pinto beans,Frijol,32.0,kg,Mercado Adolfo Lopez Mateos
+pinto beans,Frijol,35.0,kg,Mercado Central de Acapulco
+pinto beans,Frijol,38.0,kg,Mercado Emilio Sanchez Piedras
+pinto beans,Frijol,35.0,kg,Mercado Malibran
+pinto beans,Frijol,45.0,kg,Mercado Miguel Hidalgo
+pinto beans,Frijol,38.0,kg,Mercado Publico
+pinto beans,Frijol,30.0,kg,Mercado Publico 5 de Mayo
+pinto beans,Frijol,29.04,kg,Mercado Soriana
+pinto beans,Frijol,24.0,kg,Mercado el Meson Estrella
+pinto beans,Frijol,52.78,kg,Mi Tienda del Ahorro
+pinto beans,Frijol,41.78,kg,Minisuper
+pinto beans,Frijol,39.68,kg,Operadora Merco
+pinto beans,Frijol,60.56,kg,Oxxo
+pinto beans,Frijol,41.1,kg,S Mart
+pinto beans,Frijol,24.12,kg,Soriana Express
+pinto beans,Frijol,44.11,kg,Soriana Super
+pinto beans,Frijol,53.89,kg,Sumesa
+pinto beans,Frijol,71.67,kg,Super Aki
+pinto beans,Frijol,54.44,kg,Super Aki Xtra
+pinto beans,Frijol,33.33,kg,Super Chedraui
+pinto beans,Frijol,27.5,kg,Super Kompras
+pinto beans,Frijol,48.78,kg,Superissste
+pinto beans,Frijol,48.67,kg,Supermercado Gonzalez
+pinto beans,Frijol,40.24,kg,U.n.a.m.
+pinto beans,Frijol,43.67,kg,Wal-mart
+pinto beans,Frijol,48.89,kg,Wal-mart Express
 plain yogurt,Yoghurt,92.0,kg,7 Eleven
 plain yogurt,Yoghurt,107.95,kg,Alsuper
 plain yogurt,Yoghurt,115.83,kg,Alsuper Fresh Market
@@ -2603,6 +2833,37 @@ pumpkin,Calabaza,19.9,kg,Supermercado Gonzalez
 pumpkin,Calabaza,19.55,kg,U.n.a.m.
 pumpkin,Calabaza,36.9,kg,Wal-mart
 pumpkin,Calabaza,36.9,kg,Wal-mart Express
+radish,Rábano,14.9,manojo,Alsuper
+radish,Rábano,14.9,manojo,Alsuper Fresh Market
+radish,Rábano,24.9,manojo,Bodega Aurrera
+radish,Rábano,35.0,manojo,Central de Abasto
+radish,Rábano,17.9,manojo,Chedraui
+radish,Rábano,17.9,manojo,Chedraui Selecto
+radish,Rábano,18.9,manojo,City Market
+radish,Rábano,18.9,manojo,Fresko la Comer
+radish,Rábano,23.95,manojo,H.e.b.
+radish,Rábano,16.9,manojo,Hipermercado Soriana
+radish,Rábano,18.9,manojo,La Comer
+radish,Rábano,19.9,manojo,Ley
+radish,Rábano,19.9,manojo,Ley Express
+radish,Rábano,12.9,manojo,Mega Soriana
+radish,Rábano,15.0,manojo,Mercado Adolfo Lopez Mateos
+radish,Rábano,12.5,manojo,Mercado Emilio Sanchez Piedras
+radish,Rábano,22.5,manojo,Mercado Malibran
+radish,Rábano,8.0,manojo,Mercado Miguel Hidalgo
+radish,Rábano,20.0,manojo,Mercado Publico
+radish,Rábano,8.0,manojo,Mercado Publico 5 de Mayo
+radish,Rábano,14.9,manojo,Mercado Soriana
+radish,Rábano,20.0,manojo,Mercado el Meson Estrella
+radish,Rábano,21.9,manojo,Mi Tienda del Ahorro
+radish,Rábano,18.4,manojo,Minisuper
+radish,Rábano,13.99,manojo,Operadora Merco
+radish,Rábano,14.99,manojo,S Mart
+radish,Rábano,14.9,manojo,Soriana Super
+radish,Rábano,18.9,manojo,Sumesa
+radish,Rábano,19.95,manojo,Super Aki Xtra
+radish,Rábano,24.9,manojo,Wal-mart
+radish,Rábano,24.9,manojo,Wal-mart Express
 raisins,Pasa (Uva Pasa),80.0,kg,Central de Abasto
 raisins,Pasa (Uva Pasa),125.0,kg,Chedraui
 raisins,Pasa (Uva Pasa),125.5,kg,Chedraui Selecto
@@ -2690,6 +2951,47 @@ rum,Ron,498.98,litro,Super Chedraui
 rum,Ron,356.12,litro,Superissste
 rum,Ron,498.98,litro,Wal-mart
 rum,Ron,498.98,litro,Wal-mart Express
+salmon,Salmón,399.9,kg,Alsuper
+salmon,Salmón,454.9,kg,Alsuper Fresh Market
+salmon,Salmón,439.0,kg,Bodega Aurrera
+salmon,Salmón,355.0,kg,Central de Abasto
+salmon,Salmón,439.0,kg,Chedraui
+salmon,Salmón,479.0,kg,Chedraui Selecto
+salmon,Salmón,678.0,kg,City Market
+salmon,Salmón,454.0,kg,Fresko la Comer
+salmon,Salmón,529.0,kg,H.e.b.
+salmon,Salmón,449.0,kg,Hipermercado Soriana
+salmon,Salmón,509.0,kg,La Comer
+salmon,Salmón,300.0,kg,La Costa Marisquera
+salmon,Salmón,368.9,kg,Ley
+salmon,Salmón,449.0,kg,Mega Soriana
+salmon,Salmón,390.0,kg,Mercado Publico
+salmon,Salmón,333.25,kg,Mercado Soriana
+salmon,Salmón,340.0,kg,Mercado del Mar Felipe Angeles Higueril
+salmon,Salmón,310.0,kg,Mercado del Mar San Felipe
+salmon,Salmón,380.0,kg,Mercado del Mar Zapopan
+salmon,Salmón,465.0,kg,Pescaderia Alex
+salmon,Salmón,365.0,kg,Pescaderia Boca del Rio
+salmon,Salmón,280.0,kg,Pescaderia Cepesmar
+salmon,Salmón,380.0,kg,Pescaderia Guasaveña
+salmon,Salmón,330.0,kg,Pescaderia Hermanos Luna
+salmon,Salmón,500.0,kg,Pescaderia Juarez
+salmon,Salmón,310.0,kg,Pescaderia Lindo Sinaloa
+salmon,Salmón,370.0,kg,Pescaderia Liz del Mar
+salmon,Salmón,400.0,kg,Pescaderia Puerto Aventura
+salmon,Salmón,380.0,kg,Pescaderia Sevilla Carro Verde
+salmon,Salmón,400.0,kg,Pescaderia Yuridia
+salmon,Salmón,300.0,kg,Pescaderia el Mangle
+salmon,Salmón,330.0,kg,Pescaderia las Truchas
+salmon,Salmón,390.0,kg,Pescaderias
+salmon,Salmón,350.0,kg,Pescaderias Tradicionales
+salmon,Salmón,440.0,kg,Pescados y Mariscos Miguel Hidalgo
+salmon,Salmón,379.99,kg,S Mart
+salmon,Salmón,448.9,kg,Soriana Super
+salmon,Salmón,538.5,kg,Sumesa
+salmon,Salmón,439.0,kg,Super Chedraui
+salmon,Salmón,449.0,kg,Wal-mart
+salmon,Salmón,509.0,kg,Wal-mart Express
 salsa,Salsa Picante y Similares,150.0,kg,7 Eleven
 salsa,Salsa Picante y Similares,68.92,litro,7 Eleven
 salsa,Salsa Picante y Similares,60.81,litro,Abarrotera Monterrey
@@ -2815,6 +3117,50 @@ salt,Sal Molida de Mesa,24.45,kg,Superissste
 salt,Sal Molida de Mesa,20.92,kg,U.n.a.m.
 salt,Sal Molida de Mesa,25.0,kg,Wal-mart
 salt,Sal Molida de Mesa,25.0,kg,Wal-mart Express
+sardine,Sardina,118.82,kg,7 Eleven
+sardine,Sardina,111.76,kg,Abarrotera Monterrey
+sardine,Sardina,98.82,kg,Abarrotera Sanchez
+sardine,Sardina,111.76,kg,Abarrotes Super Cabrera Class
+sardine,Sardina,108.0,kg,Alsuper
+sardine,Sardina,115.06,kg,Alsuper Fresh Market
+sardine,Sardina,89.18,kg,Aprecio
+sardine,Sardina,40.0,kg,Bodega Aurrera
+sardine,Sardina,110.59,kg,Bodega Aurrera Express
+sardine,Sardina,98.82,kg,Central de Abasto
+sardine,Sardina,108.24,kg,Chedraui
+sardine,Sardina,110.59,kg,Chedraui Selecto
+sardine,Sardina,108.24,kg,City Market
+sardine,Sardina,116.47,kg,El Pitico
+sardine,Sardina,104.71,kg,Farmacia Guadalajara
+sardine,Sardina,110.59,kg,Fresko la Comer
+sardine,Sardina,108.0,kg,H.e.b.
+sardine,Sardina,105.88,kg,Hipermercado Soriana
+sardine,Sardina,110.59,kg,La Comer
+sardine,Sardina,110.35,kg,Ley
+sardine,Sardina,111.06,kg,Ley Express
+sardine,Sardina,107.06,kg,Mega Soriana
+sardine,Sardina,94.12,kg,Mercado Adolfo Lopez Mateos
+sardine,Sardina,109.41,kg,Mercado Emilio Sanchez Piedras
+sardine,Sardina,112.94,kg,Mercado Publico
+sardine,Sardina,98.82,kg,Mercado Publico 5 de Mayo
+sardine,Sardina,107.06,kg,Mercado Soriana
+sardine,Sardina,108.0,kg,Mi Tienda del Ahorro
+sardine,Sardina,94.12,kg,Minisuper
+sardine,Sardina,82.33,kg,Operadora Merco
+sardine,Sardina,105.88,kg,Oxxo
+sardine,Sardina,112.92,kg,S Mart
+sardine,Sardina,96.47,kg,Soriana Express
+sardine,Sardina,106.47,kg,Soriana Super
+sardine,Sardina,110.59,kg,Sumesa
+sardine,Sardina,104.65,kg,Super Aki
+sardine,Sardina,98.71,kg,Super Aki Xtra
+sardine,Sardina,96.47,kg,Super Chedraui
+sardine,Sardina,104.35,kg,Super Kompras
+sardine,Sardina,89.18,kg,Superissste
+sardine,Sardina,85.65,kg,Supermercado Gonzalez
+sardine,Sardina,89.16,kg,U.n.a.m.
+sardine,Sardina,108.24,kg,Wal-mart
+sardine,Sardina,112.94,kg,Wal-mart Express
 scallion,Cebolla,17.4,manojo,Alsuper
 scallion,Cebolla,16.9,manojo,Alsuper Fresh Market
 scallion,Cebolla,9.9,manojo,Aprecio
@@ -3106,6 +3452,39 @@ spinach,Espinacas,6.9,manojo,Supermercado Gonzalez
 spinach,Espinacas,10.45,manojo,U.n.a.m.
 spinach,Espinacas,13.9,manojo,Wal-mart
 spinach,Espinacas,14.9,manojo,Wal-mart Express
+squid,Calamar,199.9,kg,Alsuper
+squid,Calamar,194.0,kg,Bodega Aurrera
+squid,Calamar,170.0,kg,Central de Abasto
+squid,Calamar,159.0,kg,Chedraui
+squid,Calamar,159.0,kg,Chedraui Selecto
+squid,Calamar,264.0,kg,City Market
+squid,Calamar,264.0,kg,Fresko la Comer
+squid,Calamar,219.0,kg,H.e.b.
+squid,Calamar,199.0,kg,Hipermercado Soriana
+squid,Calamar,129.5,kg,La Comer
+squid,Calamar,99.9,kg,Ley
+squid,Calamar,199.0,kg,Mega Soriana
+squid,Calamar,220.0,kg,Mercado Publico
+squid,Calamar,199.0,kg,Mercado Soriana
+squid,Calamar,240.0,kg,Mercado del Mar Felipe Angeles Higueril
+squid,Calamar,205.0,kg,Mercado del Mar San Felipe
+squid,Calamar,220.0,kg,Mercado del Mar Zapopan
+squid,Calamar,145.0,kg,Pescaderia Alex
+squid,Calamar,142.5,kg,Pescaderia Boca del Rio
+squid,Calamar,220.0,kg,Pescaderia Cepesmar
+squid,Calamar,270.0,kg,Pescaderia Guasaveña
+squid,Calamar,240.0,kg,Pescaderia Hermanos Luna
+squid,Calamar,210.0,kg,Pescaderia Lindo Sinaloa
+squid,Calamar,215.0,kg,Pescaderia Liz del Mar
+squid,Calamar,220.0,kg,Pescaderia Puerto Aventura
+squid,Calamar,230.0,kg,Pescaderia Yuridia
+squid,Calamar,180.0,kg,Pescaderia el Mangle
+squid,Calamar,222.0,kg,Pescaderias
+squid,Calamar,172.5,kg,Pescaderias Tradicionales
+squid,Calamar,184.99,kg,S Mart
+squid,Calamar,199.0,kg,Soriana Super
+squid,Calamar,196.0,kg,Wal-mart
+squid,Calamar,194.0,kg,Wal-mart Express
 strawberries,Fresa,87.89,kg,Alsuper
 strawberries,Fresa,87.89,kg,Alsuper Fresh Market
 strawberries,Fresa,87.89,kg,Aprecio
@@ -3231,6 +3610,80 @@ tomato,Jitomate,26.9,kg,Supermercado Gonzalez
 tomato,Jitomate,24.36,kg,U.n.a.m.
 tomato,Jitomate,21.0,kg,Wal-mart
 tomato,Jitomate,16.0,kg,Wal-mart Express
+trout,Trucha,524.0,kg,City Market
+trout,Trucha,99.9,kg,Hipermercado Soriana
+trout,Trucha,180.0,kg,Mercado Publico
+trout,Trucha,125.0,kg,Pescaderias Tradicionales
+tuna,Atún,258.97,kg,7 Eleven
+tuna,Atún,145.83,kg,Abarrotera Monterrey
+tuna,Atún,125.0,kg,Abarrotera Sanchez
+tuna,Atún,145.38,kg,Alsuper
+tuna,Atún,176.15,kg,Alsuper Fresh Market
+tuna,Atún,135.36,kg,Aprecio
+tuna,Atún,142.86,kg,Bodega Aurrera
+tuna,Atún,171.43,kg,Bodega Aurrera Express
+tuna,Atún,157.14,kg,Central de Abasto
+tuna,Atún,145.38,kg,Chedraui
+tuna,Atún,145.38,kg,Chedraui Selecto
+tuna,Atún,147.69,kg,City Market
+tuna,Atún,158.33,kg,El Pitico
+tuna,Atún,180.77,kg,Farmacia Guadalajara
+tuna,Atún,157.69,kg,Fresko la Comer
+tuna,Atún,153.08,kg,H.e.b.
+tuna,Atún,145.38,kg,Hipermercado Soriana
+tuna,Atún,157.69,kg,La Comer
+tuna,Atún,280.0,kg,La Costa Marisquera
+tuna,Atún,145.38,kg,Ley
+tuna,Atún,138.46,kg,Ley Express
+tuna,Atún,145.38,kg,Mega Soriana
+tuna,Atún,164.29,kg,Mercado Adolfo Lopez Mateos
+tuna,Atún,155.49,kg,Mercado Central de Acapulco
+tuna,Atún,171.43,kg,Mercado Emilio Sanchez Piedras
+tuna,Atún,171.43,kg,Mercado Publico
+tuna,Atún,142.14,kg,Mercado Soriana
+tuna,Atún,197.5,kg,Mercado del Mar Felipe Angeles Higueril
+tuna,Atún,187.5,kg,Mercado del Mar San Felipe
+tuna,Atún,198.0,kg,Mercado del Mar Zapopan
+tuna,Atún,145.38,kg,Mi Tienda del Ahorro
+tuna,Atún,142.26,kg,Minisuper
+tuna,Atún,141.58,kg,Operadora Merco
+tuna,Atún,142.86,kg,Oxxo
+tuna,Atún,265.0,kg,Pescaderia Alex
+tuna,Atún,200.0,kg,Pescaderia Bahia de Kino
+tuna,Atún,205.0,kg,Pescaderia Boca del Rio
+tuna,Atún,197.5,kg,Pescaderia Cepesmar
+tuna,Atún,195.0,kg,Pescaderia Guasaveña
+tuna,Atún,195.0,kg,Pescaderia Hermanos Luna
+tuna,Atún,190.0,kg,Pescaderia Lindo Sinaloa
+tuna,Atún,240.0,kg,Pescaderia Sevilla Carro Verde
+tuna,Atún,270.0,kg,Pescaderia Yuridia
+tuna,Atún,195.0,kg,Pescaderia el Mangle
+tuna,Atún,220.0,kg,Pescaderia el Tejano de Queretaro
+tuna,Atún,280.0,kg,Pescaderia las Truchas
+tuna,Atún,265.0,kg,Pescaderias
+tuna,Atún,222.5,kg,Pescaderias Tradicionales
+tuna,Atún,146.08,kg,S Mart
+tuna,Atún,127.86,kg,Soriana Express
+tuna,Atún,144.55,kg,Soriana Super
+tuna,Atún,157.69,kg,Sumesa
+tuna,Atún,153.57,kg,Super Aki
+tuna,Atún,150.0,kg,Super Aki Xtra
+tuna,Atún,150.0,kg,Super Chedraui
+tuna,Atún,144.44,kg,Super Kompras
+tuna,Atún,177.83,kg,Superissste
+tuna,Atún,169.58,kg,Supermercado Gonzalez
+tuna,Atún,153.29,kg,U.n.a.m.
+tuna,Atún,178.57,kg,Wal-mart
+tuna,Atún,192.31,kg,Wal-mart Express
+turkey,Carne Pavo,139.0,kg,Chedraui
+turkey,Carne Pavo,149.0,kg,Chedraui Selecto
+turkey,Carne Pavo,145.0,kg,City Market
+turkey,Carne Pavo,134.9,kg,Hipermercado Soriana
+turkey,Carne Pavo,145.0,kg,La Comer
+turkey,Carne Pavo,134.9,kg,Mega Soriana
+turkey,Carne Pavo,134.9,kg,Mercado Soriana
+turkey,Carne Pavo,134.9,kg,Soriana Super
+turkey,Carne Pavo,134.5,kg,Super Chedraui
 vanilla,Vainilla,151.6,litro,Alsuper Fresh Market
 vanilla,Vainilla,139.6,litro,Aprecio
 vanilla,Vainilla,106.0,litro,Bodega Aurrera
@@ -3399,6 +3852,52 @@ water,Agua Sin Gas,14.0,litro,Supermercado Gonzalez
 water,Agua Sin Gas,9.32,litro,U.n.a.m.
 water,Agua Sin Gas,10.5,litro,Wal-mart
 water,Agua Sin Gas,10.5,litro,Wal-mart Express
+white beans,Frijol,28.33,kg,Abarrotera Sanchez
+white beans,Frijol,31.0,kg,Abarrotes Super Cabrera Class
+white beans,Frijol,48.51,kg,Alsuper
+white beans,Frijol,42.11,kg,Alsuper Fresh Market
+white beans,Frijol,40.56,kg,Aprecio
+white beans,Frijol,39.5,kg,Bodega Aurrera
+white beans,Frijol,29.77,kg,Bodega Aurrera Express
+white beans,Frijol,28.0,kg,Central de Abasto
+white beans,Frijol,43.33,kg,Chedraui
+white beans,Frijol,43.33,kg,Chedraui Selecto
+white beans,Frijol,47.67,kg,City Market
+white beans,Frijol,29.44,kg,El Pitico
+white beans,Frijol,50.56,kg,Farmacia Guadalajara
+white beans,Frijol,50.33,kg,Fresko la Comer
+white beans,Frijol,38.52,kg,H.e.b.
+white beans,Frijol,47.22,kg,Hipermercado Soriana
+white beans,Frijol,53.89,kg,La Comer
+white beans,Frijol,65.44,kg,Ley
+white beans,Frijol,54.33,kg,Ley Express
+white beans,Frijol,45.44,kg,Mega Soriana
+white beans,Frijol,32.0,kg,Mercado Adolfo Lopez Mateos
+white beans,Frijol,35.0,kg,Mercado Central de Acapulco
+white beans,Frijol,38.0,kg,Mercado Emilio Sanchez Piedras
+white beans,Frijol,35.0,kg,Mercado Malibran
+white beans,Frijol,45.0,kg,Mercado Miguel Hidalgo
+white beans,Frijol,38.0,kg,Mercado Publico
+white beans,Frijol,30.0,kg,Mercado Publico 5 de Mayo
+white beans,Frijol,29.04,kg,Mercado Soriana
+white beans,Frijol,24.0,kg,Mercado el Meson Estrella
+white beans,Frijol,52.78,kg,Mi Tienda del Ahorro
+white beans,Frijol,41.78,kg,Minisuper
+white beans,Frijol,39.68,kg,Operadora Merco
+white beans,Frijol,60.56,kg,Oxxo
+white beans,Frijol,41.1,kg,S Mart
+white beans,Frijol,24.12,kg,Soriana Express
+white beans,Frijol,44.11,kg,Soriana Super
+white beans,Frijol,53.89,kg,Sumesa
+white beans,Frijol,71.67,kg,Super Aki
+white beans,Frijol,54.44,kg,Super Aki Xtra
+white beans,Frijol,33.33,kg,Super Chedraui
+white beans,Frijol,27.5,kg,Super Kompras
+white beans,Frijol,48.78,kg,Superissste
+white beans,Frijol,48.67,kg,Supermercado Gonzalez
+white beans,Frijol,40.24,kg,U.n.a.m.
+white beans,Frijol,43.67,kg,Wal-mart
+white beans,Frijol,48.89,kg,Wal-mart Express
 whole kernel corn,Granos de Elote,129.8,kg,Alsuper
 whole kernel corn,Granos de Elote,129.8,kg,Alsuper Fresh Market
 whole kernel corn,Granos de Elote,147.8,kg,Aprecio

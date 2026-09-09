@@ -24,6 +24,9 @@ Walmart,banana,Plátano,0.0305,gramo,30.5,1000 gramos
 Soriana,beef,Carne Res,0.2055,gramo,205.5,1000 gramos
 Chedraui,beef,Carne Res,0.1637,gramo,163.7,1000 gramos
 Walmart,beef,Carne Res,0.2285,gramo,228.5,1000 gramos
+Soriana,beet,Betabel,0.0336,gramo,33.6,1000 gramos
+Chedraui,beet,Betabel,0.0199,gramo,19.9,1000 gramos
+Walmart,beet,Betabel,0.0399,gramo,39.9,1000 gramos
 Soriana,black beans,Frijol,0.0433,gramo,43.3,1000 gramos
 Chedraui,black beans,Frijol,0.0355,gramo,35.5,1000 gramos
 Walmart,black beans,Frijol,0.0473,gramo,47.3,1000 gramos
@@ -71,6 +74,9 @@ Walmart,cilantro,Cilantro,10.0,manojo,10.0,manojo
 Soriana,cinnamon,Canela,0.827,gramo,827.0,1000 gramos
 Chedraui,cinnamon,Canela,0.9667,gramo,966.7,1000 gramos
 Walmart,cinnamon,Canela,0.8589,gramo,858.9,1000 gramos
+Soriana,clam,Almeja,0.0549,gramo,54.9,1000 gramos
+Chedraui,clam,Almeja,0.089,gramo,89.0,1000 gramos
+Walmart,clam,Almeja,0.0645,gramo,64.5,1000 gramos
 Soriana,corn,Granos de Elote,0.1199,gramo,119.9,1000 gramos
 Chedraui,corn,Granos de Elote,0.116,gramo,116.0,1000 gramos
 Walmart,corn,Granos de Elote,0.087,gramo,87.0,1000 gramos
@@ -120,6 +126,8 @@ Walmart,green onion,Cebolla,15.9,manojo,15.9,manojo
 Soriana,ground pork,Carne Cerdo,0.1167,gramo,116.7,1000 gramos
 Chedraui,ground pork,Carne Cerdo,0.1014,gramo,101.4,1000 gramos
 Walmart,ground pork,Carne Cerdo,0.109,gramo,109.0,1000 gramos
+Soriana,ground turkey,Carne Pavo,0.1349,gramo,134.9,1000 gramos
+Chedraui,ground turkey,Carne Pavo,0.1408,gramo,140.8,1000 gramos
 Soriana,ham,Jamón,0.2255,gramo,225.5,1000 gramos
 Chedraui,ham,Jamón,0.1987,gramo,198.7,1000 gramos
 Walmart,ham,Jamón,0.2224,gramo,222.4,1000 gramos
@@ -141,6 +149,9 @@ Walmart,jalapeno,Chile Fresco,0.025,gramo,25.0,1000 gramos
 Soriana,ketchup,Salsa Catsup,0.0609,gramo,60.9,1000 gramos
 Chedraui,ketchup,Salsa Catsup,0.0626,gramo,62.6,1000 gramos
 Walmart,ketchup,Salsa Catsup,0.0584,gramo,58.4,1000 gramos
+Soriana,kidney beans,Frijol,0.0456,gramo,45.6,1000 gramos
+Chedraui,kidney beans,Frijol,0.04,gramo,40.0,1000 gramos
+Walmart,kidney beans,Frijol,0.0463,gramo,46.3,1000 gramos
 Soriana,lemon,Limón,0.0303,gramo,30.3,1000 gramos
 Chedraui,lemon,Limón,0.0217,gramo,21.7,1000 gramos
 Walmart,lemon,Limón,0.04,gramo,40.0,1000 gramos
@@ -170,6 +181,9 @@ Walmart,mustard,Mostaza,0.0927,gramo,92.7,1000 gramos
 Soriana,oats,Avena,0.1192,gramo,119.2,1000 gramos
 Chedraui,oats,Avena,0.1161,gramo,116.1,1000 gramos
 Walmart,oats,Avena,0.1526,gramo,152.6,1000 gramos
+Soriana,octopus,Pulpo,0.399,gramo,399.0,1000 gramos
+Chedraui,octopus,Pulpo,0.324,gramo,324.0,1000 gramos
+Walmart,octopus,Pulpo,0.3275,gramo,327.5,1000 gramos
 Soriana,olive oil,Aceite de Oliva,312.4433,litro,312.44,litro
 Chedraui,olive oil,Aceite de Oliva,271.22,litro,271.22,litro
 Walmart,olive oil,Aceite de Oliva,262.11,litro,262.11,litro
@@ -190,12 +204,18 @@ Walmart,pasta,Pasta para Sopa,0.055,gramo,55.0,1000 gramos
 Soriana,peas,Chícharos,0.0864,gramo,86.4,1000 gramos
 Chedraui,peas,Chícharos,0.089,gramo,89.0,1000 gramos
 Walmart,peas,Chícharos,0.0799,gramo,79.9,1000 gramos
+Soriana,pecan,Nuez,0.7907,gramo,790.7,1000 gramos
+Chedraui,pecan,Nuez,0.6822,gramo,682.2,1000 gramos
+Walmart,pecan,Nuez,0.9333,gramo,933.3,1000 gramos
 Soriana,pepper,Pimienta,1.3833,gramo,1383.3,1000 gramos
 Chedraui,pepper,Pimienta,1.2419,gramo,1241.9,1000 gramos
 Walmart,pepper,Pimienta,1.2823,gramo,1282.3,1000 gramos
 Soriana,pineapple,Piña,0.0216,gramo,21.6,1000 gramos
 Chedraui,pineapple,Piña,0.0246,gramo,24.6,1000 gramos
 Walmart,pineapple,Piña,0.025,gramo,25.0,1000 gramos
+Soriana,pinto beans,Frijol,0.0456,gramo,45.6,1000 gramos
+Chedraui,pinto beans,Frijol,0.04,gramo,40.0,1000 gramos
+Walmart,pinto beans,Frijol,0.0463,gramo,46.3,1000 gramos
 Soriana,plain yogurt,Yoghurt,0.0999,gramo,99.9,1000 gramos
 Chedraui,plain yogurt,Yoghurt,0.0958,gramo,95.8,1000 gramos
 Walmart,plain yogurt,Yoghurt,0.0965,gramo,96.5,1000 gramos
@@ -208,6 +228,9 @@ Walmart,pork tenderloin,Carne Cerdo,0.107,gramo,107.0,1000 gramos
 Soriana,potato,Papa,0.0469,gramo,46.9,1000 gramos
 Chedraui,potato,Papa,0.0503,gramo,50.3,1000 gramos
 Walmart,potato,Papa,0.0598,gramo,59.8,1000 gramos
+Soriana,radish,Rábano,14.9,manojo,14.9,manojo
+Chedraui,radish,Rábano,17.9,manojo,17.9,manojo
+Walmart,radish,Rábano,24.9,manojo,24.9,manojo
 Chedraui,raisins,Pasa (Uva Pasa),0.1252,gramo,125.2,1000 gramos
 Soriana,rice,Arroz,0.0255,gramo,25.5,1000 gramos
 Chedraui,rice,Arroz,0.0241,gramo,24.1,1000 gramos
@@ -215,6 +238,9 @@ Walmart,rice,Arroz,0.0288,gramo,28.8,1000 gramos
 Soriana,rum,Ron,595.2833,litro,595.28,litro
 Chedraui,rum,Ron,549.9867,litro,549.99,litro
 Walmart,rum,Ron,498.98,litro,498.98,litro
+Soriana,salmon,Salmón,0.449,gramo,449.0,1000 gramos
+Chedraui,salmon,Salmón,0.4523,gramo,452.3,1000 gramos
+Walmart,salmon,Salmón,0.479,gramo,479.0,1000 gramos
 Soriana,salsa,Salsa Picante y Similares,0.1552,gramo,155.2,1000 gramos
 Chedraui,salsa,Salsa Picante y Similares,0.1402,gramo,140.2,1000 gramos
 Walmart,salsa,Salsa Picante y Similares,0.1364,gramo,136.4,1000 gramos
@@ -224,6 +250,9 @@ Walmart,salsa,Salsa Picante y Similares,866.665,litro,866.66,litro
 Soriana,salt,Sal Molida de Mesa,0.0289,gramo,28.9,1000 gramos
 Chedraui,salt,Sal Molida de Mesa,0.0294,gramo,29.4,1000 gramos
 Walmart,salt,Sal Molida de Mesa,0.025,gramo,25.0,1000 gramos
+Soriana,sardine,Sardina,0.1065,gramo,106.5,1000 gramos
+Chedraui,sardine,Sardina,0.1051,gramo,105.1,1000 gramos
+Walmart,sardine,Sardina,0.1106,gramo,110.6,1000 gramos
 Soriana,sea salt,Sal de Mar,0.0184,gramo,18.4,1000 gramos
 Chedraui,sea salt,Sal de Mar,0.0158,gramo,15.8,1000 gramos
 Walmart,sea salt,Sal de Mar,0.0175,gramo,17.5,1000 gramos
@@ -242,6 +271,9 @@ Walmart,spaghetti,Pasta para Sopa,0.055,gramo,55.0,1000 gramos
 Soriana,spinach,Espinacas,13.9,manojo,13.9,manojo
 Chedraui,spinach,Espinacas,11.0,manojo,11.0,manojo
 Walmart,spinach,Espinacas,14.4,manojo,14.4,manojo
+Soriana,squid,Calamar,0.199,gramo,199.0,1000 gramos
+Chedraui,squid,Calamar,0.159,gramo,159.0,1000 gramos
+Walmart,squid,Calamar,0.195,gramo,195.0,1000 gramos
 Soriana,strawberries,Fresa,0.165,gramo,165.0,1000 gramos
 Chedraui,strawberries,Fresa,0.1446,gramo,144.6,1000 gramos
 Walmart,strawberries,Fresa,0.1718,gramo,171.8,1000 gramos
@@ -253,6 +285,12 @@ Chedraui,thyme,Tomillo,1.0889,gramo,1088.9,1000 gramos
 Soriana,tomato,Jitomate,0.0199,gramo,19.9,1000 gramos
 Chedraui,tomato,Jitomate,0.0251,gramo,25.1,1000 gramos
 Walmart,tomato,Jitomate,0.0185,gramo,18.5,1000 gramos
+Soriana,trout,Trucha,0.0999,gramo,99.9,1000 gramos
+Soriana,tuna,Atún,0.1451,gramo,145.1,1000 gramos
+Chedraui,tuna,Atún,0.1469,gramo,146.9,1000 gramos
+Walmart,tuna,Atún,0.1854,gramo,185.4,1000 gramos
+Soriana,turkey,Carne Pavo,0.1349,gramo,134.9,1000 gramos
+Chedraui,turkey,Carne Pavo,0.1408,gramo,140.8,1000 gramos
 Soriana,vanilla,Vainilla,112.4,litro,112.4,litro
 Chedraui,vanilla,Vainilla,104.0,litro,104.0,litro
 Walmart,vanilla,Vainilla,108.0,litro,108.0,litro
@@ -268,6 +306,9 @@ Walmart,walnuts,Nuez,0.9333,gramo,933.3,1000 gramos
 Soriana,water,Agua Sin Gas,12.1133,litro,12.11,litro
 Chedraui,water,Agua Sin Gas,11.89,litro,11.89,litro
 Walmart,water,Agua Sin Gas,10.5,litro,10.5,litro
+Soriana,white beans,Frijol,0.0456,gramo,45.6,1000 gramos
+Chedraui,white beans,Frijol,0.04,gramo,40.0,1000 gramos
+Walmart,white beans,Frijol,0.0463,gramo,46.3,1000 gramos
 Soriana,whole kernel corn,Granos de Elote,0.1199,gramo,119.9,1000 gramos
 Chedraui,whole kernel corn,Granos de Elote,0.116,gramo,116.0,1000 gramos
 Walmart,whole kernel corn,Granos de Elote,0.087,gramo,87.0,1000 gramos
