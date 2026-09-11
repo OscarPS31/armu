@@ -1,2 +1,19 @@
 .python_version
 raw_data/
+.python-version
+*.csv
+__pycache__/
+
+# macOS
+.DS_Store
+
+# PROFECO raw / intermediate data
+data/QQP_2026/
+data/recipes_clean.csv
+data/profeco_clean.csv
+data/profeco_food.csv
+data/ingredient_frequencies.csv
+data/ingredient_mapping_all.csv
+data/top_100_unmatched_ingredients.csv
+data/ingredient_prices_trial.csv
+data/recipe_prices_kg_liter.csv
