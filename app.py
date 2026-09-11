@@ -1,233 +1,292 @@
-from pathlib import Path
-
-import requests
 import streamlit as st
 
-API_URL = "http://localhost:8000/recomendacion"
-LOGO = Path(__file__).parent / "assets" / "armu_logo.png"
+from armu.pipeline import NutriPlanMatcher
 
-DIAS_ES = {
-    "monday": "Lunes", "tuesday": "Martes", "wednesday": "Miércoles",
-    "thursday": "Jueves", "friday": "Viernes",
-    "saturday": "Sábado", "sunday": "Domingo",
-}
 
-st.set_page_config(page_title="Armu", page_icon="🍳", layout="wide")
+# ============================================================
+# PAGE CONFIG
+# ============================================================
 
-st.markdown("""
-<style>
-/* ---------- form card ---------- */
-[data-testid="stForm"] {
-    background-color: #EFE8DA;
-    border: 1px solid #DDD3BE;
-    border-radius: 12px;
-    padding: 1.5rem;
-}
+st.set_page_config(
+    page_title="NutriPlan",
+    page_icon="🥗",
+    layout="centered",
+)
 
-[data-testid="stForm"] input,
-[data-testid="stForm"] textarea {
-    background-color: #FBF8F1 !important;
-    border: 1px solid #DDD3BE !important;
-    border-radius: 8px !important;
-}
 
-/* ---------- bordered panels (results + cart) ---------- */
-[data-testid="stVerticalBlock"][data-test-wrap] {
-    background-color: #EFE8DA;
-    border: 1px solid #DDD3BE;
-    border-radius: 12px;
-    padding: 1.5rem;
-}
+# ============================================================
+# LOAD MATCHER
+# ============================================================
 
-/* ---------- day expanders ---------- */
-[data-testid="stExpander"] {
-    border: none !important;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 0 !important;
-}
+@st.cache_resource
+def load_matcher():
+    return NutriPlanMatcher()
 
-[data-testid="stExpander"] summary {
-    background-color: #3F6B4E !important;
-    padding: 0.5rem 1rem !important;
-}
 
-[data-testid="stExpander"] summary:hover {
-    background-color: #33573F !important;
-}
+matcher = load_matcher()
 
-[data-testid="stExpander"] summary p,
-[data-testid="stExpander"] summary span,
-[data-testid="stExpander"] summary svg {
-    color: #FBF8F1 !important;
-    fill: #FBF8F1 !important;
-}
 
-[data-testid="stExpanderDetails"] {
-    background-color: #FBF8F1;
-    padding: 1rem;
-}
+# ============================================================
+# HEADER
+# ============================================================
 
-/* tighten the gap between stacked elements */
-[data-testid="stVerticalBlock"] {
-    gap: 0.35rem;
-}
+st.title("🥗 NutriPlan")
 
-/* ---------- tabs ---------- */
-[data-testid="stTab"][aria-selected="true"] p {
-    color: #3F6B4E !important;
-}
+st.write(
+    "Escribe ingredientes en español o inglés. "
+    "NutriPlan los normaliza, los conecta con productos "
+    "de PROFECO y estima el costo del carrito."
+)
 
-[data-testid="stTab"] .react-aria-SelectionIndicator {
-    background-color: #3F6B4E !important;
-}
+st.divider()
 
-/* ---------- shopping list table ---------- */
-[data-testid="stTable"] thead th {
-    color: #3F6B4E !important;
-    font-weight: 600;
-    background-color: #EFE8DA !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
-if "data" not in st.session_state:
-    st.session_state.data = None
+# ============================================================
+# INGREDIENT INPUT
+# ============================================================
 
-#  logo
-logo_l, logo_c, logo_r = st.columns([2, 1, 2])
-logo_c.image(str(LOGO), use_container_width=True)
+st.subheader(
+    "Ingresa tus ingredientes en español o inglés"
+)
 
-col_form, col_menu = st.columns([1, 2], gap="large")
+ingredients_text = st.text_area(
+    "Escribe un ingrediente por línea",
+    value=(
+        "pollo\n"
+        "cebolla\n"
+        "ajo\n"
+        "jitomate\n"
+        "aceite de oliva"
+    ),
+    height=180,
+    placeholder=(
+        "Ejemplo:\n"
+        "pollo\n"
+        "cebolla\n"
+        "ajo\n"
+        "jitomate"
+    ),
+)
 
-# form
-with col_form:
-    with st.form("busqueda"):
-        gustos = st.text_area(
-            "¿Qué se te antoja?",
-            placeholder="Tengo zanahoria, chícharos y espinaca. Vegano, nada de carne.",
-            height=120,
-        )
-        presupuesto = st.number_input(
-            "Presupuesto semanal (MXN)",
-            min_value=0.0, value=500.0, step=50.0,
-        )
-        personas = st.number_input(
-            "Personas", min_value=1, max_value=10, value=2,
-        )
-        enviar = st.form_submit_button(
-            "Generar menú", type="primary", use_container_width=True,
+
+# ============================================================
+# CREATE CART
+# ============================================================
+
+if st.button(
+    "🛒 Crear carrito",
+    type="primary",
+    width="stretch",
+):
+
+    ingredients = [
+        ingredient.strip()
+        for ingredient in ingredients_text.splitlines()
+        if ingredient.strip()
+    ]
+
+    # --------------------------------------------------------
+    # EMPTY INPUT
+    # --------------------------------------------------------
+
+    if not ingredients:
+
+        st.warning(
+            "Escribe al menos un ingrediente."
         )
 
-    if enviar:
-        with st.spinner("Armando tu menú..."):
-            try:
-                r = requests.post(
-                    API_URL,
-                    json={
-                        "gustos": gustos,
-                        "presupuesto": presupuesto,
-                        "personas": personas,
-                    },
-                    timeout=30,
-                )
-                r.raise_for_status()
-                st.session_state.data = r.json()
-            except requests.RequestException as e:
-                st.session_state.data = None
-                st.error(f"No se pudo conectar con la API: {e}")
+    else:
 
-data = st.session_state.data
+        # ----------------------------------------------------
+        # RUN MATCHING
+        # ----------------------------------------------------
 
-# menu
-with col_menu:
-    with st.container(border=True):
-        if data is None:
-            st.markdown(
-                "Describe lo que se te antoja y tu presupuesto. "
-                "Armamos siete comidas y la lista del súper."
+        with st.spinner(
+            "Buscando productos y precios en PROFECO..."
+        ):
+
+            result = matcher.build_shopping_cart(
+                ingredients
             )
-        else:
-            if data.get("mensaje"):
-                st.warning(data["mensaje"])
 
-            menu = data.get("menu_semanal", {})
+        st.success(
+            "✅ Carrito generado correctamente"
+        )
 
-            for dia_en, recetas in menu.items():
-                dia = DIAS_ES.get(dia_en, dia_en)
+        # ====================================================
+        # SUMMARY
+        # ====================================================
 
-                if not recetas:
-                    with st.expander(f"**{dia}** — sin receta", expanded=False):
-                        st.caption("No hubo receta para este día.")
-                    continue
+        st.subheader(
+            "Resumen"
+        )
 
-                titulo = recetas[0].get("name", "Sin nombre")
+        col1, col2, col3 = st.columns(3)
 
-                with st.expander(f"**{dia}** · {titulo}", expanded=False):
-                    for receta in recetas:
-                        meta = []
-                        if receta.get("servings"):
-                            meta.append(f"{receta['servings']} porciones")
-                        if receta.get("serving_size"):
-                            meta.append(str(receta["serving_size"]))
-                        if receta.get("is_vegan"):
-                            meta.append("🌱 Vegano")
-                        elif receta.get("is_vegetarian"):
-                            meta.append("🥬 Vegetariano")
-                        if receta.get("is_gluten_free"):
-                            meta.append("🌾 Sin gluten")
-                        if meta:
-                            st.caption(" · ".join(meta))
+        col1.metric(
+            "Total estimado",
+            f"${result['total']:.2f} MXN",
+        )
 
-                        tab_ing, tab_pasos = st.tabs(["Ingredientes", "Preparación"])
+        col2.metric(
+            "Encontrados",
+            result["matched_products"],
+        )
 
-                        with tab_ing:
-                            for ing in receta.get("ingredients", []):
-                                st.markdown(f"- {str(ing).strip()}")
+        col3.metric(
+            "Sin match",
+            result["unmatched_products"],
+        )
 
-                        with tab_pasos:
-                            for n, paso in enumerate(receta.get("steps", []), 1):
-                                st.markdown(f"{n}. {paso}")
+        # ====================================================
+        # SHOPPING CART
+        # ====================================================
 
-#  cart
-if data is not None:
-    carrito = data.get("carrito_final", {})
+        st.subheader(
+            "🛒 Carrito estimado"
+        )
 
-    st.divider()
+        if result["cart"]:
 
-    with st.container(border=True):
-        st.subheader("Lista de compras")
+            cart_table = []
 
-        col_items, col_resumen = st.columns([2, 1], gap="large")
+            for item in result["cart"]:
 
-        with col_items:
-            if carrito.get("items"):
-                st.dataframe(
-                    carrito["items"],
-                    column_config={
-                        "ingrediente": "Ingrediente",
-                        "cantidad": "Cantidad",
-                        "costo": st.column_config.NumberColumn("Costo", format="$%.2f"),
-                    },
-                    hide_index=True,
-                    use_container_width=True,
+                cart_table.append(
+                    {
+                        "Ingrediente original":
+                            item["ingredient"],
+
+                        "Ingrediente normalizado":
+                            item["normalized"],
+
+                        "Producto PROFECO":
+                            item["matched_term"],
+
+                        "Precio mediano (MXN)":
+                            round(
+                                item["median_price"],
+                                2,
+                            ),
+
+                        "Precio mínimo (MXN)":
+                            round(
+                                item["min_price"],
+                                2,
+                            ),
+
+                        "Precio máximo (MXN)":
+                            round(
+                                item["max_price"],
+                                2,
+                            ),
+
+                        "Coincidencias PROFECO":
+                            item["matches"],
+                    }
                 )
-            else:
-                st.caption("Sin productos en la lista.")
 
-        with col_resumen:
-            st.metric("Total", f"${carrito.get('costo_total', 0):,.2f}")
-            if carrito.get("dentro_de_presupuesto", True):
-                st.caption("✓ Dentro del presupuesto")
-            else:
-                st.error("Excede el presupuesto")
+            st.dataframe(
+                cart_table,
+                width="stretch",
+                hide_index=True,
+            )
 
-        sin_precio = carrito.get("ingredientes_sin_precio", [])
-        no_incluidos = carrito.get("items_retirados", [])
+        # ====================================================
+        # MATCH DETAILS
+        # ====================================================
 
-        if sin_precio or no_incluidos:
-            with st.expander("Notas sobre precios"):
-                if sin_precio:
-                    st.write("**Sin precio disponible:** " + ", ".join(sin_precio))
-                if no_incluidos:
-                    st.write("**No incluidos:** " + ", ".join(no_incluidos))
+        st.subheader(
+            "🔎 Matching"
+        )
+
+        for item in result["cart"]:
+
+            st.write(
+                f"**{item['ingredient']}**"
+                f" → `{item['normalized']}`"
+                f" → **{item['matched_term']}**"
+                f" → ${item['median_price']:.2f} MXN"
+            )
+
+        # ====================================================
+        # UNMATCHED INGREDIENTS
+        # ====================================================
+
+        if result["unmatched"]:
+
+            st.subheader(
+                "⚠️ Ingredientes sin match"
+            )
+
+            st.write(
+                "Estos ingredientes todavía no tienen "
+                "una regla de matching disponible:"
+            )
+
+            for item in result["unmatched"]:
+
+                st.write(
+                    f"- {item['ingredient']}"
+                )
+
+        # ====================================================
+        # COVERAGE
+        # ====================================================
+
+        total_input = (
+            result["matched_products"]
+            + result["unmatched_products"]
+        )
+
+        if total_input > 0:
+
+            coverage = (
+                result["matched_products"]
+                / total_input
+                * 100
+            )
+
+        else:
+
+            coverage = 0
+
+        st.subheader(
+            "📊 Cobertura"
+        )
+
+        st.progress(
+            min(
+                coverage / 100,
+                1.0,
+            )
+        )
+
+        st.write(
+            f"{coverage:.1f}% de los ingredientes "
+            "fueron encontrados."
+        )
+
+        # ====================================================
+        # MVP EXPLANATION
+        # ====================================================
+
+        st.info(
+            "MVP: el costo representa el precio mediano "
+            "de una presentación o producto de PROFECO "
+            "por ingrediente único. "
+            "Todavía no calcula cantidades exactas "
+            "consumidas por receta."
+        )
+
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.divider()
+
+st.caption(
+    "NutriPlan MVP — Matching bilingüe de ingredientes "
+    "y estimación de precios con datos de PROFECO."
+)

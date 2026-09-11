@@ -1,0 +1,23 @@
+NutriPlan - Ingredient Prices Coverage Report
+=============================================
+
+Source:
+PROFECO QQP 2026 - 07-2026_Q2.csv
+
+Top ingredients evaluated: 30
+Ingredients with price: 30
+Coverage: 100.0%
+
+Match quality:
+- Exact: 23
+- Equivalent: 1
+- Proxy: 6
+
+Proxy/equivalent mappings:
+- water -> Agua Sin Gas (equivalent)
+- lemon juice -> Limón (proxy)
+- baking soda -> Polvo P/hornear (proxy)
+- parmesan cheese -> Queso Cotija (proxy)
+- green onion -> Cebolla (proxy)
+- garlic powder -> Ajo (proxy)
+- cheddar cheese -> Queso Chihuahua (proxy)
