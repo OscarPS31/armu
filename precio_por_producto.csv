@@ -1,0 +1,205 @@
+,producto,unit,min_price,max_price,average_price
+0,Aceite,lt,34.5,72.5,44.69
+1,Aguacate,gr,0.03,0.11,0.07
+2,Ajo,gr,0.07,0.78,0.39
+3,Ajonjoli,gr,0.04,0.24,0.16
+4,Alcachofa,gr,0.1,0.18,0.15
+5,Alimento Preparado para Ninos,gr,0.1,0.19,0.14
+6,Alimentos Preparados,gr,0.17,0.44,0.27
+7,Almeja,gr,0.03,0.1,0.06
+8,Alubia,gr,0.05,0.1,0.07
+9,Amaranto,gr,0.04,0.18,0.11
+10,Apio,gr,0.02,0.04,0.03
+11,Arroz,gr,0.01,0.06,0.03
+12,Atun,gr,0.06,0.42,0.16
+13,Avena,gr,0.02,0.21,0.12
+14,Azucar,gr,0.02,0.14,0.03
+15,Bagre,gr,0.05,0.13,0.09
+16,Bandera,gr,0.07,0.12,0.09
+17,Barras de Avena,gr,0.25,0.31,0.27
+18,Barras de Cereal,gr,0.22,0.59,0.34
+19,Barrita de Surimi o Barrita de Surimi Cangre,gr,0.08,0.29,0.14
+20,Basa,gr,0.06,0.18,0.1
+21,Besugo,gr,0.12,0.18,0.16
+22,Betabel,gr,0.02,0.05,0.03
+23,Blanco del Nilo,gr,0.12,0.31,0.26
+24,Brocoli,gr,0.02,0.07,0.05
+25,Cafe Soluble,gr,0.21,1.39,0.9
+26,Cafe Tostado y Molido,gr,0.2,0.74,0.34
+27,Calabaza,gr,0.01,0.05,0.03
+28,Calamar,gr,0.1,0.35,0.2
+29,Callo de Almeja,gr,0.14,0.4,0.24
+30,Callo de Hacha,gr,0.29,1.35,0.67
+31,Camaron,gr,0.12,0.7,0.28
+32,Carne Cerdo,gr,0.03,0.21,0.11
+33,Carne Pavo,gr,0.11,0.15,0.13
+34,Carne Pollo,gr,0.03,0.23,0.08
+35,Carne Res,gr,0.03,0.73,0.2
+36,Carne Ternera,gr,0.26,0.35,0.3
+37,Carpa,gr,0.06,0.08,0.08
+38,Cazon,gr,0.06,0.26,0.15
+39,Cebolla,gr,0.01,0.05,0.03
+40,Cereales,gr,0.08,0.45,0.17
+41,Champinones,gr,0.08,0.14,0.11
+42,Charal,gr,0.07,0.35,0.21
+43,Chayote,gr,0.01,0.06,0.03
+44,Chile Fresco,gr,0.01,0.22,0.07
+45,Chile Seco,gr,0.03,0.62,0.35
+46,Chiles,gr,0.04,0.2,0.09
+47,Chorizo,gr,0.22,0.31,0.27
+48,Chucumite,gr,0.18,0.26,0.25
+49,Chia,gr,0.08,0.77,0.22
+50,Chicharo,gr,0.02,0.08,0.05
+51,Chicharos,gr,0.04,0.2,0.08
+52,Chicharos en Lata,gr,0.04,0.08,0.06
+53,Cintilla,gr,0.12,0.12,0.12
+54,Ciruela,gr,0.04,0.12,0.08
+55,Clavo,gr,0.22,0.45,0.31
+56,Coctel de Frutas en Almibar,gr,0.06,0.11,0.09
+57,Col,gr,0.01,0.06,0.03
+58,Combinado Primavera,gr,0.08,0.12,0.1
+59,Comino,gr,0.72,0.74,0.73
+60,Concentrado de Pollo,gr,0.04,3.7,0.8
+61,Crema,gr,0.04,0.15,0.11
+62,Crema Batida,lt,44.9,70.5,56.16
+63,Curvina,gr,0.06,0.12,0.09
+64,Curcuma,gr,0.76,0.97,0.86
+65,Durazno,gr,0.06,0.14,0.09
+66,Duraznos en Almibar,gr,0.06,0.1,0.08
+67,Ejote,gr,0.02,0.09,0.06
+68,Elote,gr,0.04,0.09,0.06
+69,Empanizadores,gr,0.13,0.21,0.17
+70,Floretes de Brocoli,gr,0.08,0.14,0.11
+71,Fresa,gr,0.04,0.2,0.15
+72,Frijol,gr,0.02,0.08,0.04
+73,Frijoles,gr,0.02,0.06,0.04
+74,Formula Lactea,gr,0.45,0.64,0.52
+75,Galletas Dulces,gr,0.08,0.37,0.15
+76,Galletas Populares,gr,0.06,0.18,0.12
+77,Galletas Saladas,gr,0.08,0.25,0.15
+78,Garbanzo,gr,0.02,0.1,0.07
+79,Granada,gr,0.07,0.25,0.13
+80,Granola,gr,0.19,0.31,0.25
+81,Granos de Elote,gr,0.09,0.15,0.11
+82,Grasa Comestible,gr,0.04,0.1,0.08
+83,Guanabana,gr,0.05,0.12,0.08
+84,Guarnicion de Verduras,gr,0.06,0.1,0.07
+85,Guayaba,gr,0.02,0.07,0.05
+86,Gurrubata,gr,0.06,0.08,0.07
+87,Haba,gr,0.05,0.2,0.14
+88,Harina Hot Cakes,gr,0.04,0.14,0.07
+89,Harina de Arroz,gr,0.05,0.09,0.07
+90,Harina de Maiz,gr,0.01,0.16,0.06
+91,Harina de Trigo,gr,0.01,0.03,0.02
+92,Helado,gr,0.09,0.18,0.13
+93,Hojas de Laurel,gr,5.5,6.2,5.6
+94,Huachinango,gr,0.13,0.7,0.28
+95,Huevo,piece,1.61,4.67,2.45
+96,Jaiba,gr,0.05,0.36,0.17
+97,Jaibon,gr,0.14,0.15,0.15
+98,Jamon,gr,0.05,0.5,0.23
+99,Jitomate,gr,0.01,0.08,0.02
+100,Jurel,gr,0.05,0.11,0.07
+101,Kiwi,gr,0.05,0.15,0.09
+102,Langosta,gr,1.05,1.78,1.63
+103,Langostino,gr,0.24,0.52,0.33
+104,Leche Condensada,gr,0.07,0.18,0.1
+105,Leche Evaporada,gr,0.05,0.09,0.07
+106,Leche Pasteurizada,lt,21.4,40,32.43
+107,Leche Ultrapasteurizada,lt,14.9,46,32.8
+108,Leche en Polvo,gr,0.16,0.3,0.22
+109,Lenguado,gr,0.1,0.24,0.17
+110,Lenteja,gr,0.02,0.08,0.05
+111,Limon,gr,0.01,0.07,0.03
+112,Linaza,gr,0.1,0.14,0.11
+113,Lisa,gr,0.04,0.13,0.07
+114,Lobina,gr,0.11,0.2,0.16
+115,Mamey,gr,0.02,0.08,0.05
+116,Mandarina,gr,0.03,0.1,0.06
+117,Mango,gr,0.02,0.07,0.04
+118,Manteca de Cerdo,gr,0.04,0.12,0.08
+119,Mantequilla,gr,0.21,0.44,0.29
+120,Manzana,gr,0.02,0.09,0.05
+121,Margarina,gr,0.1,0.32,0.2
+122,Mayonesa,gr,0.08,0.29,0.13
+123,Maiz Palomero,gr,0.02,0.06,0.04
+124,Maiz Pozolero,gr,0.02,0.06,0.05
+125,Melon,gr,0.02,0.06,0.03
+126,Merluza,gr,0.19,0.19,0.19
+127,Mermelada,gr,0.06,0.16,0.11
+128,Mero,gr,0.18,0.51,0.3
+129,Mezcla California,gr,0.07,0.12,0.09
+130,Mezcla Campesina,gr,0.08,0.11,0.1
+131,Mojarra,gr,0.03,0.34,0.1
+132,Mole Rojo en Pasta,gr,0.06,0.28,0.21
+133,Mortadela,gr,0.1,0.16,0.13
+134,Mostaza,gr,0.07,0.18,0.1
+135,Naranja,gr,0.01,0.05,0.04
+136,Nopal,gr,0.02,0.06,0.04
+137,Nuez,gr,0.21,0.93,0.58
+138,Oregano,gr,0.87,1.3,1.02
+139,Pan Dulce,gr,0.09,0.4,0.13
+140,Pan de Caja,gr,0.02,0.2,0.11
+141,Papa,gr,0.01,0.07,0.05
+142,Papaya,gr,0.02,0.06,0.04
+143,Pargo,gr,0.12,0.76,0.35
+144,Pasta para Sopa,gr,0.01,0.08,0.04
+145,Pastel Pimiento,gr,0.11,0.2,0.17
+146,Pastelillos y Pan Dulce Empaquetado,gr,0.12,0.6,0.25
+147,Pechuga de Pavo,gr,0.23,0.47,0.3
+148,Pepino,gr,0.01,0.06,0.02
+149,Pera,gr,0.04,0.09,0.05
+150,Peron,gr,0.04,0.07,0.06
+151,Peto,gr,0.09,0.16,0.13
+152,Pimienta,gr,0.15,1.47,1.04
+153,Pimiento,gr,0.04,0.12,0.09
+154,Pina,gr,0.02,0.04,0.02
+155,Pina en Almibar,gr,0.07,0.11,0.09
+156,Platano,gr,0.01,0.05,0.03
+157,Polvo P/hornear,gr,0.1,0.22,0.16
+158,Producto Lacteo,lt,16.5,29.5,23.05
+159,Pulpo,gr,0.22,0.43,0.33
+160,Pure de Tomate,gr,0.03,0.04,0.04
+161,Pampano,gr,0.15,0.21,0.19
+162,Queso Americano,gr,0.13,0.33,0.23
+163,Queso Canasto,gr,0.11,0.16,0.13
+164,Queso Chihuahua,gr,0.23,0.38,0.31
+165,Queso Cotija,gr,0.1,0.26,0.16
+166,Queso Doble Crema,gr,0.09,0.18,0.13
+167,Queso Fresco,gr,0.17,0.24,0.2
+168,Queso Manchego,gr,0.1,0.42,0.28
+169,Queso Oaxaca,gr,0.08,0.37,0.25
+170,Queso Panela,gr,0.08,0.34,0.22
+171,Queso Sierra,gr,0.2,0.21,0.2
+172,Queso de Puerco,gr,0.11,0.33,0.27
+173,Robalito,gr,0.25,0.3,0.26
+174,Robalo,gr,0.14,0.76,0.38
+175,Rubia,gr,0.08,0.25,0.19
+176,Sal Molida de Mesa,gr,0.02,0.04,0.03
+177,Sal de Mar,gr,0.02,0.03,0.02
+178,Salchicha,gr,0.04,0.29,0.12
+179,Salmon,gr,0.27,0.69,0.44
+180,Salsa Catsup,gr,0.04,0.1,0.06
+181,Salsa Picante y Similares,gr,0.05,0.42,0.15
+182,Sandia,gr,0.01,0.02,0.01
+183,Sardina,gr,0.03,0.13,0.09
+184,Semilla de Girasol,gr,0.16,0.2,0.17
+185,Sierra,gr,0.06,0.2,0.12
+186,Soya,gr,0.02,0.08,0.04
+187,Sustituto de Azucar,gr,0.1,1.04,0.67
+188,Tilapia,gr,0.07,0.35,0.13
+189,Tocino Ahumado,gr,0.11,0.78,0.45
+190,Tomate,gr,0.01,0.06,0.03
+191,Toronja,gr,0.02,0.05,0.03
+192,Tortilla de Harina de Trigo,gr,0.06,0.12,0.07
+193,Tortilla de Maiz,gr,0.01,0.04,0.02
+194,Tostadas de Maiz,gr,0.11,0.22,0.17
+195,Trucha,gr,0.1,0.52,0.21
+196,Tuna,gr,0.02,0.06,0.04
+197,Te,gr,13.33,25,19.27
+198,Uva,gr,0.03,0.18,0.09
+199,Verdolaga,gr,0.02,0.1,0.05
+200,Villajaiba,gr,0.12,0.2,0.16
+201,Vinagre,lt,9,29.9,16.66
+202,Yoghurt,gr,0.03,0.4,0.08
+203,Zanahoria,gr,0.01,0.03,0.02
