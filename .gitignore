@@ -1,6 +1,6 @@
 raw_data/
 .python-version
-notebooks/*.csv
+*.csv
 __pycache__/
 
 # macOS
@@ -15,3 +15,4 @@ data/ingredient_frequencies.csv
 data/ingredient_mapping_all.csv
 data/top_100_unmatched_ingredients.csv
 data/ingredient_prices_trial.csv
+data/recipe_prices_kg_liter.csv
