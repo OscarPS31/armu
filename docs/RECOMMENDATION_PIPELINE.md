@@ -152,3 +152,47 @@ Antes de crear una solución nueva:
 3. Revisar los archivos relacionados.
 4. Correr los tests.
 5. Modificar lo existente antes de duplicarlo.
+
+
+## Comparador de precios por receta
+
+También existe el endpoint:
+
+GET /comparar-precios/{id_receta}
+
+Este endpoint compara exactamente la misma receta entre:
+
+- Walmart
+- Soriana
+- Chedraui
+
+Devuelve:
+
+- precio total por cadena
+- cadena más barata
+- cadena más cara
+- ahorro posible
+
+Ejemplo conceptual:
+
+Chicken Pasta
+
+Walmart: 132.40 MXN
+Soriana: 145.80 MXN
+Chedraui: 127.90 MXN
+
+Más barata: Chedraui
+Ahorro: 17.90 MXN
+
+Implementación:
+
+api/services/price_comparison.py
+
+Tests:
+
+tests/test_price_comparison.py
+
+Importante:
+
+No recalcular estos precios en frontend.
+El frontend debe consumir el endpoint de comparación.
