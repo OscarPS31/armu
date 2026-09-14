@@ -1,14 +1,11 @@
 """
-Build the self-contained demo dataset for the NutriPlan / Armu Streamlit app.
+Build the demo dataset for Armu / NutriPlan (simplified scope).
 
-It joins the 889 fully-priced recipes (recipe_prices_complete_3chains.csv)
-with their metadata and diet/time flags (recipes_clean.csv) and produces two
-small, committed files that the app reads at runtime:
+Joins recipe metadata + diet/time flags (recipes_clean.csv) with the per-recipe
+estimated cost (recipes_with_estimated_cost.csv) and keeps only recipes whose
+cost estimate is reliable. Produces one committed file the app reads at runtime:
 
-    data/demo_recipes.parquet          one row per recipe (metadata + flags +
-                                       search_text + total cost per chain)
-    data/demo_ingredient_costs.parquet one row per (recipe, ingredient, chain)
-                                       used to build the shopping list
+    data/recipes_priced.parquet
 
 Run once locally (needs raw_data/, which is gitignored):
 
@@ -25,38 +22,17 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 def find_raw_data():
-    """
-    Locate raw_data/. It sits next to the project, but when running from a
-    git worktree it lives in the main checkout instead, so we walk up a few
-    parents until we find it.
-    """
     for base in [PROJECT_ROOT, *PROJECT_ROOT.parents]:
         candidate = base / "raw_data"
-        if (candidate / "recipe_prices_complete_3chains.csv").exists():
+        if (candidate / "recipes_with_estimated_cost.csv").exists():
             return candidate
-    raise FileNotFoundError(
-        "Could not find raw_data/recipe_prices_complete_3chains.csv "
-        "in any parent directory."
-    )
+    raise FileNotFoundError("Could not find raw_data/recipes_with_estimated_cost.csv")
 
 
 RAW_DATA = find_raw_data()
-
-PRICES_PATH = RAW_DATA / "recipe_prices_complete_3chains.csv"
+COST_PATH = RAW_DATA / "recipes_with_estimated_cost.csv"
 RECIPES_PATH = RAW_DATA / "recipes_clean.csv"
-
-OUT_RECIPES = PROJECT_ROOT / "data" / "demo_recipes.parquet"
-OUT_COSTS = PROJECT_ROOT / "data" / "demo_ingredient_costs.parquet"
-
-CHAINS = ["Walmart", "Soriana", "Chedraui"]
-
-# Ingredients we do NOT charge for in the cart:
-#   - water: it is tap water, not a bought product.
-#   - salt / pepper: basic seasonings used in tiny real amounts, and the
-#     upstream pipeline mis-homologates "pepper" to black-pepper spice with
-#     absurd quantities (hundreds of grams), which wildly inflates the cart.
-# See "Trabajo futuro" in the README.
-EXCLUDED_INGREDIENTS = {"water", "salt", "pepper", "black pepper"}
+OUT_PATH = PROJECT_ROOT / "data" / "recipes_priced.parquet"
 
 FLAG_COLUMNS = [
     "is_vegan",
@@ -71,9 +47,13 @@ FLAG_COLUMNS = [
     "quick_60min",
 ]
 
+# Keep only recipes whose cost estimate we trust. High-confidence keeps the
+# file small and the shown costs believable, with all restrictions still usable.
+MIN_CONFIDENCE = {"high"}
+MIN_COVERAGE = 0.6
+
 
 def parse_list(value):
-    """Turn a stringified python list into an actual list."""
     if pd.isna(value):
         return []
     try:
@@ -84,7 +64,6 @@ def parse_list(value):
 
 
 def build_search_text(row):
-    """Free-text blob the TF-IDF ranker searches over."""
     name = str(row.get("name") or "")
     ingredients = " ".join(str(i) for i in row["ingredients"])
     tags = " ".join(str(t) for t in row["tags"])
@@ -92,93 +71,53 @@ def build_search_text(row):
 
 
 def main():
-    print("Loading priced recipes...")
-    priced = pd.read_csv(PRICES_PATH)
-    priced_ids = set(priced["id_receta"].unique())
-    print(f"  {len(priced_ids)} recipes with a complete price")
-
-    # --------------------------------------------------------
-    # 1) ingredient-level cost table (for the shopping list)
-    # --------------------------------------------------------
-    costs = priced[
-        [
-            "id_receta",
-            "ingrediente_homologado",
-            "cantidad",
-            "unidad",
-            "cadena",
-            "producto_profeco",
-            "costo_ingrediente_mxn",
-        ]
-    ].copy()
-    costs = costs.rename(
-        columns={
-            "id_receta": "id",
-            "ingrediente_homologado": "ingredient",
-            "cantidad": "quantity",
-            "unidad": "unit",
-            "cadena": "chain",
-            "producto_profeco": "profeco_product",
-            "costo_ingrediente_mxn": "cost_mxn",
-        }
-    )
-
-    # Drop free / basic seasoning ingredients from costing.
-    before = len(costs)
-    costs = costs[~costs["ingredient"].isin(EXCLUDED_INGREDIENTS)]
-    print(f"  excluded {before - len(costs)} rows (water/salt/pepper)")
-
-    costs.to_parquet(OUT_COSTS, index=False)
-    print(f"  wrote {OUT_COSTS.name} ({len(costs)} rows)")
-
-    # --------------------------------------------------------
-    # 2) total cost per recipe per chain -> wide columns
-    #    Recomputed from the (filtered) ingredient costs so the recipe total
-    #    always matches the shopping list.
-    # --------------------------------------------------------
-    totals = (
-        costs.groupby(["id", "chain"], as_index=False)["cost_mxn"]
-        .sum()
-        .pivot(index="id", columns="chain", values="cost_mxn")
-        .rename(columns={c: f"cost_{c.lower()}" for c in CHAINS})
-    )
-    totals = totals.reset_index()
-
-    # --------------------------------------------------------
-    # 3) recipe metadata + diet/time flags
-    # --------------------------------------------------------
-    print("Loading recipe metadata (this file is large)...")
-    meta = pd.read_csv(
-        RECIPES_PATH,
+    print("Loading cost estimates...")
+    cost = pd.read_csv(
+        COST_PATH,
         usecols=[
             "id",
-            "name",
-            "ingredients",
-            "steps",
-            "servings",
-            "tags",
-            *FLAG_COLUMNS,
+            "estimated_cost",
+            "minimum_estimate",
+            "maximum_estimate",
+            "confidence",
+            "price_coverage",
         ],
     )
-    meta = meta[meta["id"].isin(priced_ids)].copy()
+
+    reliable = cost[
+        cost["confidence"].isin(MIN_CONFIDENCE)
+        & (cost["price_coverage"] >= MIN_COVERAGE)
+        & (cost["estimated_cost"] > 0)
+    ].copy()
+    print(f"  {len(reliable)} recipes with a reliable estimate")
+    reliable_ids = set(reliable["id"])
+
+    print("Loading recipe metadata (large file)...")
+    meta = pd.read_csv(
+        RECIPES_PATH,
+        usecols=["id", "name", "ingredients", "steps", "servings", "tags", *FLAG_COLUMNS],
+    )
+    meta = meta[meta["id"].isin(reliable_ids)].copy()
     meta = meta.drop_duplicates(subset="id", keep="first")
 
     meta["ingredients"] = meta["ingredients"].apply(parse_list)
     meta["steps"] = meta["steps"].apply(parse_list)
     meta["tags"] = meta["tags"].apply(parse_list)
     meta["search_text"] = meta.apply(build_search_text, axis=1)
-
     for col in FLAG_COLUMNS:
         meta[col] = meta[col].astype(bool)
 
-    # --------------------------------------------------------
-    # 4) join and save
-    # --------------------------------------------------------
-    recipes = meta.merge(totals, on="id", how="inner")
+    recipes = meta.merge(
+        reliable[["id", "estimated_cost", "minimum_estimate", "maximum_estimate", "confidence"]],
+        on="id",
+        how="inner",
+    )
+    recipes["estimated_cost"] = recipes["estimated_cost"].round(2)
+    recipes["minimum_estimate"] = recipes["minimum_estimate"].round(2)
+    recipes["maximum_estimate"] = recipes["maximum_estimate"].round(2)
 
-    # store list columns as JSON-friendly python objects (parquet handles lists)
-    recipes.to_parquet(OUT_RECIPES, index=False)
-    print(f"  wrote {OUT_RECIPES.name} ({len(recipes)} recipes)")
+    recipes.to_parquet(OUT_PATH, index=False)
+    print(f"  wrote {OUT_PATH.name} ({len(recipes)} recipes)")
     print("Done.")
 
 

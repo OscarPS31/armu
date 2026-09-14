@@ -1,7 +1,6 @@
-import pandas as pd
 import streamlit as st
 
-from armu.planner import CHAINS, generate_weekly_plan, load_data
+from armu.planner import generate_weekly_plan, load_data
 
 
 # ============================================================
@@ -24,18 +23,27 @@ def get_data():
     return load_data()
 
 
-recipes, costs = get_data()
+recipes = get_data()
 
 
 # Restriction key -> label shown to the user.
 RESTRICTION_LABELS = {
-    "vegetarian": "Vegetariano",
-    "vegan": "Vegano",
-    "gluten_free": "Sin gluten",
-    "dairy_free": "Sin lácteos",
-    "lactose_free": "Sin lactosa",
-    "nut_free": "Sin nueces",
-    "egg_free": "Sin huevo",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "gluten_free": "Gluten free",
+    "dairy_free": "Dairy free",
+    "lactose_free": "Lactose free",
+    "nut_free": "Nut free",
+    "egg_free": "Egg free",
+}
+
+# Only offer restrictions that have enough recipes in the dataset.
+MIN_RECIPES_PER_RESTRICTION = 10
+
+USABLE_RESTRICTIONS = {
+    key: label
+    for key, label in RESTRICTION_LABELS.items()
+    if int(recipes[f"is_{key}"].sum()) >= MIN_RECIPES_PER_RESTRICTION
 }
 
 
@@ -46,13 +54,12 @@ RESTRICTION_LABELS = {
 st.title("🥗 Armu · NutriPlan")
 
 st.write(
-    "Genera un **menú semanal** según tus preferencias y arma el "
-    "**carrito de súper** con precios reales de PROFECO, cuidando tu presupuesto."
+    "Tell us what you feel like eating, set your restrictions and your weekly "
+    "budget, and we'll build a Monday–Sunday menu that fits you best."
 )
 
 st.caption(
-    f"Demo sobre {len(recipes)} recetas con costo completo en "
-    "Walmart, Soriana y Chedraui."
+    f"{len(recipes):,} recipes with an estimated cost (PROFECO prices, MXN)."
 )
 
 st.divider()
@@ -62,44 +69,25 @@ st.divider()
 # USER INPUTS
 # ============================================================
 
-st.subheader("1 · Tus preferencias")
+st.subheader("What do you want to eat?")
 
 user_text = st.text_input(
-    "¿Qué quieres comer esta semana?",
-    value="algo con pollo y verduras",
-    placeholder="ej. algo ligero con pollo, o pasta y queso",
+    "Describe it in your own words",
+    value="something with chicken and vegetables",
+    placeholder="e.g. a light pasta with cheese, or a spicy beef soup",
 )
 
 restriction_labels = st.multiselect(
-    "Restricciones alimentarias",
-    options=list(RESTRICTION_LABELS.values()),
+    "Dietary restrictions",
+    options=list(USABLE_RESTRICTIONS.values()),
     default=[],
 )
 
-# Map the chosen labels back to the internal keys the recommender expects.
-label_to_key = {v: k for k, v in RESTRICTION_LABELS.items()}
+label_to_key = {v: k for k, v in USABLE_RESTRICTIONS.items()}
 restrictions = [label_to_key[label] for label in restriction_labels]
 
-col_a, col_b = st.columns(2)
-
-with col_a:
-    max_time = st.radio(
-        "Tiempo máximo para cocinar",
-        options=[15, 30, 60],
-        index=1,
-        format_func=lambda m: f"{m} min",
-        horizontal=True,
-    )
-
-with col_b:
-    chain = st.selectbox(
-        "Supermercado",
-        options=CHAINS,
-        index=0,
-    )
-
 budget = st.number_input(
-    "Presupuesto semanal (MXN)",
+    "Weekly budget (MXN)",
     min_value=0,
     value=800,
     step=50,
@@ -107,20 +95,17 @@ budget = st.number_input(
 
 
 # ============================================================
-# GENERATE PLAN
+# GENERATE WEEKLY MENU
 # ============================================================
 
-if st.button("🍽️ Generar mi plan semanal", type="primary", width="stretch"):
+if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
 
-    with st.spinner("Armando tu menú y carrito..."):
+    with st.spinner("Building your menu..."):
         plan = generate_weekly_plan(
-            restrictions=restrictions,
-            max_time=max_time,
             user_text=user_text,
+            restrictions=restrictions,
             budget=budget,
-            chain=chain,
             recipes=recipes,
-            costs=costs,
         )
 
     # --------------------------------------------------------
@@ -129,105 +114,78 @@ if st.button("🍽️ Generar mi plan semanal", type="primary", width="stretch")
 
     if plan["status"] == "NO_RECIPES":
         st.warning(
-            "Ninguna receta cumple con esas restricciones y tiempo. "
-            "Intenta quitar alguna restricción o subir el tiempo disponible."
+            "No recipes match those restrictions. Try removing one."
         )
         st.stop()
 
     st.divider()
 
+    if plan["no_text_match"]:
+        st.warning(
+            f"🔎 Nothing matches «{user_text}» within your restrictions. "
+            "Showing other options that do fit — try different words."
+        )
+
+    if plan["incomplete"]:
+        st.warning(
+            f"⚠️ Only {plan['available_recipes']} recipe(s) match these "
+            f"restrictions, so your menu has {plan['days_filled']} day(s) "
+            "instead of 7. Remove a restriction for a full week."
+        )
+
     # ========================================================
     # BUDGET SUMMARY
     # ========================================================
 
-    st.subheader("2 · Resumen")
+    st.subheader("Summary")
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Carrito estimado", f"${plan['total']:.2f}")
-    col2.metric("Presupuesto", f"${plan['budget']:.2f}")
+    col1.metric("Weekly cost", f"${plan['total']:.2f}")
+    col2.metric("Budget", f"${plan['budget']:.2f}")
     col3.metric(
-        "Restante",
+        "Remaining",
         f"${plan['remaining']:.2f}",
-        delta=None if plan["within_budget"] else "Excedido",
+        delta=None if plan["within_budget"] else "Over budget",
         delta_color="normal" if plan["within_budget"] else "inverse",
     )
 
     if plan["within_budget"]:
         st.success(
-            f"✅ El menú cabe en tu presupuesto en {chain}. "
-            f"Te sobran ${plan['remaining']:.2f} MXN."
+            f"✅ Your weekly menu fits the budget. "
+            f"You have ${plan['remaining']:.2f} MXN left."
         )
     else:
         st.error(
-            f"⚠️ El menú se pasa por ${abs(plan['remaining']):.2f} MXN en {chain}. "
-            "Prueba otro supermercado o sube el presupuesto."
+            f"⚠️ Your menu is ${abs(plan['remaining']):.2f} MXN over budget. "
+            "Raise the budget or adjust your search."
         )
 
     # ========================================================
     # WEEKLY MENU
     # ========================================================
 
-    st.subheader("3 · Tu menú semanal")
+    st.subheader("Your weekly menu")
 
     for item in plan["menu"]:
         with st.expander(
             f"**{item['day']}** · {item['name']}  —  ${item['cost']:.2f} MXN"
         ):
-            st.markdown("**Ingredientes**")
+            st.caption(
+                f"Estimated cost range: ${item['cost_min']:.0f}–"
+                f"{item['cost_max']:.0f} MXN"
+            )
+
+            st.markdown("**Ingredients**")
             st.write("\n".join(f"- {ing}" for ing in item["ingredients"]))
 
             if item["steps"]:
-                st.markdown("**Preparación**")
+                st.markdown("**Steps**")
                 st.write(
                     "\n".join(
                         f"{n}. {step}"
                         for n, step in enumerate(item["steps"], start=1)
                     )
                 )
-
-    # ========================================================
-    # SHOPPING LIST
-    # ========================================================
-
-    st.subheader(f"4 · Carrito de súper ({chain})")
-
-    if plan["shopping_list"]:
-        shopping_table = [
-            {
-                "Ingrediente": row["ingredient"],
-                "Producto PROFECO": row["profeco_product"],
-                "Cantidad (g)": round(row["quantity_g"], 0),
-                "Costo (MXN)": round(row["cost_mxn"], 2),
-            }
-            for row in plan["shopping_list"]
-        ]
-        st.dataframe(
-            shopping_table,
-            width="stretch",
-            hide_index=True,
-        )
-
-    # ========================================================
-    # CHAIN COMPARISON
-    # ========================================================
-
-    st.subheader("5 · Comparación entre supermercados")
-
-    comparison = pd.DataFrame(
-        {
-            "Supermercado": list(plan["chain_totals"].keys()),
-            "Costo total (MXN)": list(plan["chain_totals"].values()),
-        }
-    ).sort_values("Costo total (MXN)")
-
-    cheapest = comparison.iloc[0]
-
-    st.dataframe(comparison, width="stretch", hide_index=True)
-
-    st.info(
-        f"🏆 El más barato para este menú es **{cheapest['Supermercado']}** "
-        f"con ${cheapest['Costo total (MXN)']:.2f} MXN."
-    )
 
 
 # ============================================================
@@ -237,6 +195,6 @@ if st.button("🍽️ Generar mi plan semanal", type="primary", width="stretch")
 st.divider()
 
 st.caption(
-    "Armu · NutriPlan — Proyecto final Le Wagon. "
-    "Datos: recetas de Food.com + precios de PROFECO (Walmart, Soriana, Chedraui)."
+    "Armu · NutriPlan — Le Wagon final project. "
+    "Recipes: Food.com · Cost estimates: PROFECO prices."
 )
