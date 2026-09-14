@@ -19,6 +19,9 @@
 - Clasificación heurística de comidas principales
 - Exclusión de substitutes/replacements/condimentos
 - Priorización de recetas tipo plato principal
+- Diversidad por categoría de comida
+- Máximo 2 recetas de la misma categoría en menú por defecto
+- Limpieza de entidades HTML en nombres
 - Diversidad por solapamiento de ingredientes
 - Ranking neutral por precio mediano cuando no hay gustos
 - 13 tests pasando

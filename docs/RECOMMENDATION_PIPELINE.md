@@ -300,3 +300,38 @@ Esta lógica es heurística y pertenece al MVP.
 
 No reemplaza una futura clasificación semántica o nutricional
 de recetas.
+
+
+## Diversidad por categorías
+
+El menú por defecto clasifica las recetas en categorías:
+
+- poultry
+- fish
+- seafood
+- beef
+- pork
+- legumes
+- pasta
+- rice
+- vegetarian
+- other
+
+Para un menú sin gustos explícitos se intenta limitar cada
+categoría a un máximo de 2 recetas.
+
+Si esta regla impide completar los 7 días, existe un fallback
+que relaja únicamente el límite por categoría.
+
+Cuando el usuario escribe gustos explícitos, por ejemplo
+`chicken`, el sistema conserva la relevancia de esa búsqueda
+y no fuerza artificialmente la diversidad por categoría.
+
+Los nombres de las recetas también pasan por `html.unescape`,
+por lo que entidades como:
+
+Chicken &amp; Veggie Pasta
+
+se muestran correctamente como:
+
+Chicken & Veggie Pasta

@@ -125,6 +125,9 @@ Incluye:
 - clasificación heurística de plato principal
 - exclusión de recetas tipo substitute/replacement
 - exclusión de condimentos y preparaciones auxiliares evidentes
+- categorías de proteínas/comidas
+- máximo 2 recetas de una categoría en el menú por defecto
+- limpieza automática de entidades HTML
 - mantenimiento del ranking TF-IDF cuando hay gustos
 
 Siguiente mejora futura:

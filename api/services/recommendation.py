@@ -1,4 +1,5 @@
 from functools import lru_cache
+from html import unescape
 from pathlib import Path
 
 import pandas as pd
@@ -107,6 +108,67 @@ MAIN_MEAL_TERMS = {
 }
 
 MAX_INGREDIENT_OVERLAP = 0.75
+MAX_CATEGORY_PER_DEFAULT_MENU = 2
+
+CATEGORY_TERMS = {
+    "poultry": {
+        "chicken",
+        "turkey",
+    },
+    "fish": {
+        "tuna",
+        "salmon",
+        "fish",
+        "cod",
+        "tilapia",
+    },
+    "seafood": {
+        "shrimp",
+        "prawn",
+        "crab",
+        "lobster",
+        "seafood",
+    },
+    "beef": {
+        "beef",
+        "steak",
+        "meatball",
+    },
+    "pork": {
+        "pork",
+        "bacon",
+        "ham",
+        "sausage",
+    },
+    "legumes": {
+        "beans",
+        "bean",
+        "lentil",
+        "lentils",
+        "chickpea",
+        "chickpeas",
+    },
+    "pasta": {
+        "pasta",
+        "spaghetti",
+        "noodle",
+        "noodles",
+        "lasagna",
+        "macaroni",
+    },
+    "rice": {
+        "rice",
+        "risotto",
+    },
+    "vegetarian": {
+        "vegetable",
+        "vegetables",
+        "veggie",
+        "tofu",
+        "mushroom",
+        "mushrooms",
+    },
+}
 
 
 @lru_cache(maxsize=1)
@@ -171,6 +233,12 @@ def load_recipe_prices() -> pd.DataFrame:
     ).copy()
 
     df["id_receta"] = df["id_receta"].astype(int)
+
+    df["nombre_receta"] = (
+        df["nombre_receta"]
+        .astype(str)
+        .map(unescape)
+    )
 
     return df
 
@@ -423,6 +491,49 @@ def rank_recipes(
     )
 
 
+def recipe_category(
+    name: str,
+    ingredients: list[str],
+) -> str:
+    text = (
+        str(name or "").lower()
+        + " "
+        + " ".join(
+            str(value).lower()
+            for value in ingredients
+            if str(value).strip()
+        )
+    )
+
+    words = set(
+        text.replace(
+            "-",
+            " ",
+        ).replace(
+            "/",
+            " ",
+        ).split()
+    )
+
+    priority = [
+        "poultry",
+        "fish",
+        "seafood",
+        "beef",
+        "pork",
+        "legumes",
+        "pasta",
+        "rice",
+        "vegetarian",
+    ]
+
+    for category in priority:
+        if words & CATEGORY_TERMS[category]:
+            return category
+
+    return "other"
+
+
 def ingredient_overlap(
     first: list[str],
     second: list[str],
@@ -456,22 +567,37 @@ def ingredient_overlap(
 def choose_weekly_recipes(
     ranked: pd.DataFrame,
     budget: float | None,
+    diversify: bool = True,
 ) -> pd.DataFrame:
     if budget is not None and budget <= 0:
         return ranked.iloc[0:0].copy()
 
     selected = []
+    selected_ids = set()
     selected_ingredients = []
+    category_counts = {}
     running_total = 0.0
 
-    for row in ranked.itertuples(index=False):
+    def try_add(
+        row,
+        enforce_category_limit: bool,
+    ) -> bool:
+        nonlocal running_total
+
+        recipe_id = int(
+            row.id_receta
+        )
+
+        if recipe_id in selected_ids:
+            return False
+
         recipe_cost = float(
             row.precio_total_receta_mxn
         )
 
         if budget is not None:
             if running_total + recipe_cost > budget:
-                continue
+                return False
 
         ingredients = list(
             getattr(
@@ -490,11 +616,26 @@ def choose_weekly_recipes(
         )
 
         if too_similar:
-            continue
+            return False
+
+        category = recipe_category(
+            row.nombre_receta,
+            ingredients,
+        )
+
+        if (
+            diversify
+            and enforce_category_limit
+            and category_counts.get(
+                category,
+                0,
+            ) >= MAX_CATEGORY_PER_DEFAULT_MENU
+        ):
+            return False
 
         selected.append(
             {
-                "id_receta": int(row.id_receta),
+                "id_receta": recipe_id,
                 "nombre_receta": row.nombre_receta,
                 "precio_total_receta_mxn": recipe_cost,
                 "similarity_score": float(
@@ -503,14 +644,51 @@ def choose_weekly_recipes(
             }
         )
 
+        selected_ids.add(
+            recipe_id
+        )
+
         selected_ingredients.append(
             ingredients
         )
 
+        category_counts[category] = (
+            category_counts.get(
+                category,
+                0,
+            )
+            + 1
+        )
+
         running_total += recipe_cost
+
+        return True
+
+    for row in ranked.itertuples(
+        index=False
+    ):
+        try_add(
+            row,
+            enforce_category_limit=True,
+        )
 
         if len(selected) == 7:
             break
+
+    # Fallback:
+    # si la diversidad estricta impide completar 7 días,
+    # se relaja únicamente el límite por categoría.
+    if len(selected) < 7:
+        for row in ranked.itertuples(
+            index=False
+        ):
+            try_add(
+                row,
+                enforce_category_limit=False,
+            )
+
+            if len(selected) == 7:
+                break
 
     return pd.DataFrame(selected)
 
@@ -695,6 +873,11 @@ def recommend(
     selected = choose_weekly_recipes(
         ranked,
         request.presupuesto,
+        diversify=not bool(
+            str(
+                request.gustos or ""
+            ).strip()
+        ),
     )
 
     menu = build_menu(
