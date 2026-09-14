@@ -492,3 +492,21 @@ Esto evita resultados como:
 sin ignorar la preferencia original del usuario.
 
 También se excluyen preparaciones tipo Baby Food del menú semanal.
+
+
+## Demo end-to-end
+
+El proyecto incluye:
+
+scripts/demo_mvp.py
+
+Permite demostrar sin frontend:
+
+- GET /opciones
+- POST /recomendacion
+- carrito
+- GET /comparar-precios/{id_receta}
+
+La guía está en:
+
+docs/DEMO_GUIDE.md

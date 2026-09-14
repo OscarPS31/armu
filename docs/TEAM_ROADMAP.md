@@ -248,3 +248,21 @@ Cuando el usuario escribe gustos:
 - se evita repetir títulos casi iguales
 - existe fallback para completar 7 días
 - Baby Food no se considera plato semanal
+
+
+### Demo MVP
+
+Estado: LISTA
+
+Archivos:
+
+- scripts/demo_mvp.py
+- docs/DEMO_GUIDE.md
+- tests/test_demo_mvp.py
+
+La demo ejecuta el flujo:
+
+1. opciones
+2. recomendación
+3. carrito
+4. comparación de supermercados

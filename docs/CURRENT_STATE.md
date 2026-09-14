@@ -124,3 +124,7 @@ Antes de modificar algo:
 - Diversidad suave también cuando el usuario escribe gustos
 - Penalización de recetas con títulos demasiado parecidos
 - Baby Food excluido del menú semanal
+
+- Script de demo end-to-end listo para presentación
+- Guía de demo en docs/DEMO_GUIDE.md
+- Demo cubre opciones, recomendación, carrito y comparación

@@ -252,3 +252,20 @@ Cuando el usuario envía texto en `gustos`, el backend:
 
 El frontend no necesita implementar esta lógica.
 Solo debe enviar las preferencias del usuario.
+
+
+## Demo del contrato
+
+Para ejecutar el flujo backend completo sin frontend:
+
+    python scripts/demo_mvp.py
+
+La demo consume el mismo contrato documentado en este archivo.
+
+También puede imprimirse como JSON:
+
+    python scripts/demo_mvp.py --json
+
+Guía completa:
+
+docs/DEMO_GUIDE.md
