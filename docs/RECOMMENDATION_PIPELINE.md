@@ -352,3 +352,69 @@ Tuna Rice Casserole + chicken broth
 que antes podía clasificarse incorrectamente como `poultry`.
 
 Ahora se clasifica como `fish`.
+
+
+## Restricciones alimentarias
+
+POST /recomendacion acepta ahora el campo:
+
+restricciones
+
+Valores soportados:
+
+- vegetariano
+- vegano
+- sin_gluten
+
+También acepta aliases:
+
+- vegetarian
+- vegan
+- sin gluten
+- gluten_free
+- gluten-free
+
+### Vegetariano
+
+Excluye recetas con señales evidentes de:
+
+- pollo
+- carne
+- cerdo
+- pescado
+- mariscos
+
+### Vegano
+
+Además excluye señales evidentes de:
+
+- huevo
+- leche
+- queso
+- crema
+- mantequilla
+- yogurt
+- miel
+- mayonesa
+
+### Sin gluten
+
+Excluye señales evidentes como:
+
+- wheat
+- flour
+- bread
+- pasta
+- noodles
+- barley
+- rye
+
+### Limitación importante
+
+Estos filtros son heurísticos.
+
+Dependen de los nombres de recetas e ingredientes
+disponibles en el dataset.
+
+No representan certificación médica ni garantía para
+alergias, enfermedad celíaca o contaminación cruzada.
