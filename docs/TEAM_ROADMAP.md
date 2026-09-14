@@ -111,13 +111,24 @@ Pendiente:
 
 ---
 
-## FASE 7 — DIVERSIDAD Y CALIDAD DEL MENÚ ⏳
+## FASE 7 — DIVERSIDAD Y CALIDAD DEL MENÚ ✅
 
-Pendiente:
+Estado: IMPLEMENTADA EN MVP
 
-- evitar recetas repetitivas
-- mejorar variedad semanal
-- balancear relevancia y diversidad
+Incluye:
+
+- filtro básico de nombres no alimentarios
+- exclusión de términos como bleach/cleaner
+- selección neutral alrededor del precio mediano
+- prevención de recetas demasiado similares
+- control de solapamiento de ingredientes
+- mantenimiento del ranking TF-IDF cuando hay gustos
+
+Siguiente mejora futura:
+
+- clasificación semántica más avanzada de recetas
+- categorías desayuno/comida/cena
+- diversidad nutricional
 
 ---
 

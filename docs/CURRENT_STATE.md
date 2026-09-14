@@ -15,6 +15,9 @@
 - Cadena más barata
 - Cálculo de ahorro
 - Escalado por número de personas
+- Filtro básico de calidad de recetas
+- Diversidad por solapamiento de ingredientes
+- Ranking neutral por precio mediano cuando no hay gustos
 - 13 tests pasando
 - Auditoría automática de costos
 - Reporte en reports/cost_audit.txt
@@ -23,7 +26,6 @@
 
 ## 🚧 ESTAMOS TRABAJANDO EN
 
-- Verificar que los costos bajos sean correctos
 - Mejorar claridad del flujo para frontend
 
 ## ⏳ FALTA

@@ -40,6 +40,15 @@ VALID_CHAINS = {
 
 BASE_PERSONAS = 2
 
+BLOCKED_RECIPE_TERMS = {
+    "bleach",
+    "cleaner",
+    "cleaning",
+    "laundry",
+}
+
+MAX_INGREDIENT_OVERLAP = 0.75
+
 
 @lru_cache(maxsize=1)
 def load_recipe_prices() -> pd.DataFrame:
@@ -185,22 +194,72 @@ def build_recipe_catalog(
     return catalog
 
 
+def filter_recipe_quality(
+    catalog: pd.DataFrame,
+) -> pd.DataFrame:
+    filtered = catalog.copy()
+
+    blocked_pattern = "|".join(
+        sorted(BLOCKED_RECIPE_TERMS)
+    )
+
+    if blocked_pattern:
+        blocked = (
+            filtered["nombre_receta"]
+            .fillna("")
+            .astype(str)
+            .str.lower()
+            .str.contains(
+                blocked_pattern,
+                regex=True,
+            )
+        )
+
+        filtered = filtered[
+            ~blocked
+        ].copy()
+
+    return filtered
+
+
 def rank_recipes(
     catalog: pd.DataFrame,
     user_text: str,
 ) -> pd.DataFrame:
-    ranked = catalog.copy()
+    ranked = filter_recipe_quality(
+        catalog
+    )
+
     text = str(user_text or "").strip()
+
+    if ranked.empty:
+        return ranked
 
     if not text:
         ranked["similarity_score"] = 0.0
 
+        median_price = float(
+            ranked[
+                "precio_total_receta_mxn"
+            ].median()
+        )
+
+        ranked["default_quality_score"] = (
+            ranked[
+                "precio_total_receta_mxn"
+            ]
+            .sub(median_price)
+            .abs()
+        )
+
         return ranked.sort_values(
             [
+                "default_quality_score",
                 "precio_total_receta_mxn",
                 "nombre_receta",
             ],
             ascending=[
+                True,
                 True,
                 True,
             ],
@@ -236,6 +295,36 @@ def rank_recipes(
     )
 
 
+def ingredient_overlap(
+    first: list[str],
+    second: list[str],
+) -> float:
+    first_set = {
+        str(value).strip().lower()
+        for value in first
+        if str(value).strip()
+    }
+
+    second_set = {
+        str(value).strip().lower()
+        for value in second
+        if str(value).strip()
+    }
+
+    if not first_set or not second_set:
+        return 0.0
+
+    intersection = len(
+        first_set & second_set
+    )
+
+    union = len(
+        first_set | second_set
+    )
+
+    return intersection / union
+
+
 def choose_weekly_recipes(
     ranked: pd.DataFrame,
     budget: float | None,
@@ -244,6 +333,7 @@ def choose_weekly_recipes(
         return ranked.iloc[0:0].copy()
 
     selected = []
+    selected_ingredients = []
     running_total = 0.0
 
     for row in ranked.itertuples(index=False):
@@ -255,6 +345,25 @@ def choose_weekly_recipes(
             if running_total + recipe_cost > budget:
                 continue
 
+        ingredients = list(
+            getattr(
+                row,
+                "ingredientes",
+                [],
+            )
+        )
+
+        too_similar = any(
+            ingredient_overlap(
+                ingredients,
+                previous,
+            ) > MAX_INGREDIENT_OVERLAP
+            for previous in selected_ingredients
+        )
+
+        if too_similar:
+            continue
+
         selected.append(
             {
                 "id_receta": int(row.id_receta),
@@ -264,6 +373,10 @@ def choose_weekly_recipes(
                     row.similarity_score
                 ),
             }
+        )
+
+        selected_ingredients.append(
+            ingredients
         )
 
         running_total += recipe_cost

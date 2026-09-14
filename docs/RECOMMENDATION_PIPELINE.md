@@ -239,3 +239,23 @@ Por eso, esta versión usa 2 personas como base explícita del MVP.
 
 No interpretar este escalado como una reconstrucción de las
 porciones originales del dataset.
+
+
+## Calidad y diversidad del menú
+
+Cuando el usuario no escribe gustos, el sistema ya no
+selecciona simplemente las recetas más baratas.
+
+Ahora:
+
+- elimina recetas con términos evidentemente no alimentarios
+- usa la mediana de precios como referencia neutral
+- evita recetas con demasiado solapamiento de ingredientes
+- mantiene un máximo de 7 recetas por semana
+
+Cuando sí existen gustos, el ranking TF-IDF continúa siendo
+la señal principal de relevancia.
+
+El filtro actual es deliberadamente conservador y forma parte
+del MVP. No sustituye una clasificación semántica completa
+de tipos de comida.
