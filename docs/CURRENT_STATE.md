@@ -128,3 +128,7 @@ Antes de modificar algo:
 - Script de demo end-to-end listo para presentación
 - Guía de demo en docs/DEMO_GUIDE.md
 - Demo cubre opciones, recomendación, carrito y comparación
+
+- Nombres HTML normalizados también en comparación de precios
+- Auditoría final de backend completada
+- Backend MVP listo para PR/merge

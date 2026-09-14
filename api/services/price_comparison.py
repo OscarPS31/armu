@@ -1,4 +1,5 @@
 from functools import lru_cache
+from html import unescape
 from pathlib import Path
 
 import pandas as pd
@@ -60,8 +61,10 @@ def compare_recipe_prices(recipe_id: int) -> dict:
             f"Recipe id {recipe_id} not found"
         )
 
-    recipe_name = str(
-        recipe_df["nombre_receta"].iloc[0]
+    recipe_name = unescape(
+        str(
+            recipe_df["nombre_receta"].iloc[0]
+        )
     )
 
     prices = (

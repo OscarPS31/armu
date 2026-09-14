@@ -80,3 +80,17 @@ def test_missing_recipe_returns_404():
     )
 
     assert response.status_code == 404
+
+
+def test_price_comparison_decodes_html_entities():
+    result = compare_recipe_prices(
+        362769
+    )
+
+    assert "&amp;" not in result[
+        "nombre_receta"
+    ]
+
+    assert "&" in result[
+        "nombre_receta"
+    ]

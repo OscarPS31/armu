@@ -266,3 +266,24 @@ La demo ejecuta el flujo:
 2. recomendación
 3. carrito
 4. comparación de supermercados
+
+
+## CIERRE BACKEND MVP ✅
+
+Estado: LISTO PARA PR / MERGE
+
+Validado:
+
+- recomendación semanal
+- presupuesto
+- número de personas
+- Walmart / Soriana / Chedraui
+- comparación de precios
+- restricciones alimentarias MVP
+- diversidad de menú
+- contrato frontend/backend
+- demo end-to-end
+- suite completa de tests
+
+No rehacer el pipeline de precios ni datasets
+sin una razón técnica nueva.

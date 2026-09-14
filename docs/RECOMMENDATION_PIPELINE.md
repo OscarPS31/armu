@@ -510,3 +510,16 @@ Permite demostrar sin frontend:
 La guía está en:
 
 docs/DEMO_GUIDE.md
+
+
+## Cierre del backend MVP
+
+El backend MVP se considera listo para integración.
+
+La salida de nombres de recetas se normaliza con
+`html.unescape` tanto en:
+
+- recomendaciones
+- comparación de precios
+
+La suite completa debe pasar antes de mergear la rama.
