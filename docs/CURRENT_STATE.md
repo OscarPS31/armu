@@ -35,6 +35,7 @@
 - Restricción vegetariana
 - Restricción vegana
 - Restricción sin gluten (heurística MVP)
+- Endpoint GET /opciones para frontend
 
 ## 🚧 ESTAMOS TRABAJANDO EN
 

@@ -148,7 +148,26 @@ Siguiente mejora futura:
 
 ---
 
-## FASE 8 — FRONTEND ⏳
+## FASE 8 — FRONTEND 🚧
+
+Estado: PREPARADO PARA INTEGRACIÓN
+
+Backend disponible:
+
+- POST /recomendacion
+- GET /comparar-precios/{id_receta}
+- GET /opciones
+
+GET /opciones devuelve:
+
+- cadenas válidas
+- restricciones válidas
+- personas_min
+- personas_max
+
+El frontend debe consumir estas opciones
+en vez de duplicarlas manualmente.
+
 
 Pendiente:
 

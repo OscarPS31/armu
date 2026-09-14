@@ -1,8 +1,12 @@
 from fastapi import APIRouter, HTTPException
 
 from api.schemas import (
+    RecommendationOptions,
     RecommendationRequest,
     RecommendationResponse,
+)
+from api.services.options import (
+    get_recommendation_options,
 )
 from api.services.price_comparison import (
     compare_recipe_prices,
@@ -33,3 +37,12 @@ def comparar_precios(id_receta: int) -> dict:
             status_code=404,
             detail=str(exc),
         ) from exc
+
+
+
+@router.get(
+    "/opciones",
+    response_model=RecommendationOptions,
+)
+def opciones() -> RecommendationOptions:
+    return get_recommendation_options()

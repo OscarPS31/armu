@@ -418,3 +418,32 @@ disponibles en el dataset.
 
 No representan certificación médica ni garantía para
 alergias, enfermedad celíaca o contaminación cruzada.
+
+
+## Endpoint de opciones para frontend
+
+GET /opciones
+
+Devuelve las opciones soportadas oficialmente por el backend.
+
+Ejemplo:
+
+{
+  "cadenas": [
+    "Walmart",
+    "Soriana",
+    "Chedraui"
+  ],
+  "restricciones": [
+    "vegetariano",
+    "vegano",
+    "sin_gluten"
+  ],
+  "personas_min": 1,
+  "personas_max": 20
+}
+
+El frontend debe consumir este endpoint.
+
+No debe mantener otra lista independiente de cadenas,
+restricciones o límites de personas.

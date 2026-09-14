@@ -47,3 +47,11 @@ class RecommendationResponse(BaseModel):
     menu_semanal: dict[str, list[Recipe]]
     carrito_final: Cart
     mensaje: str | None = None
+
+
+
+class RecommendationOptions(BaseModel):
+    cadenas: list[str]
+    restricciones: list[str]
+    personas_min: int
+    personas_max: int
