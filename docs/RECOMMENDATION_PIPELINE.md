@@ -447,3 +447,21 @@ El frontend debe consumir este endpoint.
 
 No debe mantener otra lista independiente de cadenas,
 restricciones o límites de personas.
+
+
+## Contrato frontend/backend
+
+La guía de integración está en:
+
+docs/FRONTEND_INTEGRATION.md
+
+El smoke test end-to-end está en:
+
+tests/test_frontend_contract.py
+
+Flujo validado:
+
+1. GET /opciones
+2. POST /recomendacion
+3. obtener id de receta
+4. GET /comparar-precios/{id_receta}

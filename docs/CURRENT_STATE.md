@@ -117,3 +117,6 @@ Antes de modificar algo:
 4. Correr los tests
 5. Modificar lo existente
 6. No duplicar lógica
+
+- Contrato frontend/backend documentado
+- Smoke test end-to-end de endpoints principales

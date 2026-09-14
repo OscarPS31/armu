@@ -226,3 +226,14 @@ Primero:
 3. modificarla si hace falta
 
 Nunca crear una implementación paralela sin una razón técnica clara.
+
+
+### Contrato frontend/backend
+
+Backend preparado para integración MVP:
+
+- GET /opciones
+- POST /recomendacion
+- GET /comparar-precios/{id_receta}
+- documentación en docs/FRONTEND_INTEGRATION.md
+- smoke test en tests/test_frontend_contract.py
