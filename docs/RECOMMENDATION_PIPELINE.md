@@ -465,3 +465,30 @@ Flujo validado:
 2. POST /recomendacion
 3. obtener id de receta
 4. GET /comparar-precios/{id_receta}
+
+
+## Diversidad cuando existen gustos
+
+Si el usuario escribe gustos, por ejemplo:
+
+rice vegetables
+
+el sistema sigue usando TF-IDF para ordenar las recetas.
+
+Después aplica una capa de diversidad suave:
+
+- máximo 3 recetas de la misma categoría
+- evita títulos demasiado similares
+- mantiene control de solapamiento de ingredientes
+- usa fallback progresivo si no puede completar 7 días
+
+Esto evita resultados como:
+
+- Rice
+- White Rice
+- Fluffy White Rice
+- otra variación de White Rice
+
+sin ignorar la preferencia original del usuario.
+
+También se excluyen preparaciones tipo Baby Food del menú semanal.

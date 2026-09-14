@@ -238,3 +238,17 @@ Contrato backend listo para integración frontend MVP.
 Antes de cambiar nombres de campos o endpoints,
 coordinar el cambio con frontend para evitar romper
 la integración.
+
+
+## Calidad de resultados con gustos
+
+Cuando el usuario envía texto en `gustos`, el backend:
+
+1. prioriza similitud con TF-IDF;
+2. evita repetir recetas casi iguales;
+3. limita repetición excesiva de categorías;
+4. intenta completar 7 días;
+5. conserva las restricciones alimentarias y el presupuesto.
+
+El frontend no necesita implementar esta lógica.
+Solo debe enviar las preferencias del usuario.

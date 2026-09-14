@@ -46,6 +46,7 @@ BLOCKED_RECIPE_TERMS = {
     "cleaner",
     "cleaning",
     "laundry",
+    "baby food",
 }
 
 NON_MAIN_TITLE_PATTERNS = (
@@ -109,6 +110,8 @@ MAIN_MEAL_TERMS = {
 
 MAX_INGREDIENT_OVERLAP = 0.75
 MAX_CATEGORY_PER_DEFAULT_MENU = 2
+MAX_CATEGORY_PER_PREFERENCE_MENU = 3
+MAX_PREFERENCE_NAME_OVERLAP = 0.60
 
 CATEGORY_TERMS = {
     "poultry": {
@@ -736,6 +739,79 @@ def recipe_category(
     return "other"
 
 
+def normalized_title_words(
+    value: str,
+) -> set[str]:
+    text = str(value or "").lower()
+
+    for char in [
+        "-",
+        "/",
+        "&",
+        ",",
+        ".",
+        "(",
+        ")",
+        "#",
+        ":",
+        ";",
+    ]:
+        text = text.replace(
+            char,
+            " ",
+        )
+
+    stopwords = {
+        "the",
+        "a",
+        "an",
+        "and",
+        "or",
+        "with",
+        "of",
+        "in",
+        "for",
+        "to",
+        "easy",
+        "best",
+        "quick",
+        "simple",
+    }
+
+    return {
+        word
+        for word in text.split()
+        if word
+        and word not in stopwords
+    }
+
+
+def title_overlap(
+    first: str,
+    second: str,
+) -> float:
+    first_words = normalized_title_words(
+        first
+    )
+
+    second_words = normalized_title_words(
+        second
+    )
+
+    if not first_words or not second_words:
+        return 0.0
+
+    intersection = len(
+        first_words & second_words
+    )
+
+    union = len(
+        first_words | second_words
+    )
+
+    return intersection / union
+
+
 def ingredient_overlap(
     first: list[str],
     second: list[str],
@@ -770,6 +846,7 @@ def choose_weekly_recipes(
     ranked: pd.DataFrame,
     budget: float | None,
     diversify: bool = True,
+    preference_mode: bool = False,
 ) -> pd.DataFrame:
     if budget is not None and budget <= 0:
         return ranked.iloc[0:0].copy()
@@ -777,12 +854,14 @@ def choose_weekly_recipes(
     selected = []
     selected_ids = set()
     selected_ingredients = []
+    selected_names = []
     category_counts = {}
     running_total = 0.0
 
     def try_add(
         row,
         enforce_category_limit: bool,
+        enforce_preference_similarity: bool,
     ) -> bool:
         nonlocal running_total
 
@@ -797,9 +876,11 @@ def choose_weekly_recipes(
             row.precio_total_receta_mxn
         )
 
-        if budget is not None:
-            if running_total + recipe_cost > budget:
-                return False
+        if (
+            budget is not None
+            and running_total + recipe_cost > budget
+        ):
+            return False
 
         ingredients = list(
             getattr(
@@ -809,20 +890,48 @@ def choose_weekly_recipes(
             )
         )
 
-        too_similar = any(
+        recipe_name = str(
+            row.nombre_receta
+        )
+
+        too_similar_ingredients = any(
             ingredient_overlap(
                 ingredients,
                 previous,
             ) > MAX_INGREDIENT_OVERLAP
-            for previous in selected_ingredients
+            for previous
+            in selected_ingredients
         )
 
-        if too_similar:
+        if too_similar_ingredients:
             return False
 
+        if (
+            preference_mode
+            and enforce_preference_similarity
+        ):
+            too_similar_name = any(
+                title_overlap(
+                    recipe_name,
+                    previous_name,
+                )
+                > MAX_PREFERENCE_NAME_OVERLAP
+                for previous_name
+                in selected_names
+            )
+
+            if too_similar_name:
+                return False
+
         category = recipe_category(
-            row.nombre_receta,
+            recipe_name,
             ingredients,
+        )
+
+        category_limit = (
+            MAX_CATEGORY_PER_PREFERENCE_MENU
+            if preference_mode
+            else MAX_CATEGORY_PER_DEFAULT_MENU
         )
 
         if (
@@ -831,14 +940,14 @@ def choose_weekly_recipes(
             and category_counts.get(
                 category,
                 0,
-            ) >= MAX_CATEGORY_PER_DEFAULT_MENU
+            ) >= category_limit
         ):
             return False
 
         selected.append(
             {
                 "id_receta": recipe_id,
-                "nombre_receta": row.nombre_receta,
+                "nombre_receta": recipe_name,
                 "precio_total_receta_mxn": recipe_cost,
                 "similarity_score": float(
                     row.similarity_score
@@ -854,6 +963,10 @@ def choose_weekly_recipes(
             ingredients
         )
 
+        selected_names.append(
+            recipe_name
+        )
+
         category_counts[category] = (
             category_counts.get(
                 category,
@@ -866,20 +979,38 @@ def choose_weekly_recipes(
 
         return True
 
+    # Primera pasada:
+    # respeta ranking + diversidad.
     for row in ranked.itertuples(
         index=False
     ):
         try_add(
             row,
             enforce_category_limit=True,
+            enforce_preference_similarity=True,
         )
 
         if len(selected) == 7:
             break
 
-    # Fallback:
-    # si la diversidad estricta impide completar 7 días,
-    # se relaja únicamente el límite por categoría.
+    # Segunda pasada:
+    # relajamos similitud de título,
+    # pero conservamos límite de categoría.
+    if len(selected) < 7:
+        for row in ranked.itertuples(
+            index=False
+        ):
+            try_add(
+                row,
+                enforce_category_limit=True,
+                enforce_preference_similarity=False,
+            )
+
+            if len(selected) == 7:
+                break
+
+    # Tercera pasada:
+    # fallback para completar el menú.
     if len(selected) < 7:
         for row in ranked.itertuples(
             index=False
@@ -887,12 +1018,15 @@ def choose_weekly_recipes(
             try_add(
                 row,
                 enforce_category_limit=False,
+                enforce_preference_similarity=False,
             )
 
             if len(selected) == 7:
                 break
 
-    return pd.DataFrame(selected)
+    return pd.DataFrame(
+        selected
+    )
 
 
 def make_recipe_model(
@@ -1077,14 +1211,17 @@ def recommend(
         request.gustos,
     )
 
+    has_preferences = bool(
+        str(
+            request.gustos or ""
+        ).strip()
+    )
+
     selected = choose_weekly_recipes(
         ranked,
         request.presupuesto,
-        diversify=not bool(
-            str(
-                request.gustos or ""
-            ).strip()
-        ),
+        diversify=True,
+        preference_mode=has_preferences,
     )
 
     menu = build_menu(

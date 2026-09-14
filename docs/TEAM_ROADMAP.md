@@ -237,3 +237,14 @@ Backend preparado para integración MVP:
 - GET /comparar-precios/{id_receta}
 - documentación en docs/FRONTEND_INTEGRATION.md
 - smoke test en tests/test_frontend_contract.py
+
+
+### Calidad con preferencias
+
+Cuando el usuario escribe gustos:
+
+- TF-IDF sigue siendo la señal principal
+- se limita repetición de categorías
+- se evita repetir títulos casi iguales
+- existe fallback para completar 7 días
+- Baby Food no se considera plato semanal

@@ -120,3 +120,7 @@ Antes de modificar algo:
 
 - Contrato frontend/backend documentado
 - Smoke test end-to-end de endpoints principales
+
+- Diversidad suave también cuando el usuario escribe gustos
+- Penalización de recetas con títulos demasiado parecidos
+- Baby Food excluido del menú semanal
