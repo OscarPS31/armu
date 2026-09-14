@@ -100,14 +100,23 @@ reports/cost_audit.txt
 
 ---
 
-## FASE 6 — RESTRICCIONES ALIMENTARIAS ⏳
+## FASE 6 — RESTRICCIONES ALIMENTARIAS ✅
 
-Pendiente:
+Estado: IMPLEMENTADA EN MVP
+
+Incluye:
 
 - vegetariano
 - vegano
-- gluten free
-- otras restricciones si el dataset lo permite
+- sin gluten
+- aliases español/inglés
+- combinación de restricciones
+
+Importante:
+
+Son filtros heurísticos basados en nombres de ingredientes.
+No representan certificación para alergias, celiaquía
+o contaminación cruzada.
 
 ---
 

@@ -38,6 +38,9 @@ class RecommendationRequest(BaseModel):
         le=20,
     )
     cadena: str = "Walmart"
+    restricciones: list[str] = Field(
+        default_factory=list
+    )
 
 
 class RecommendationResponse(BaseModel):

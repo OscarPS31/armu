@@ -171,6 +171,71 @@ CATEGORY_TERMS = {
 }
 
 
+VALID_RESTRICTIONS = {
+    "vegetariano": "vegetariano",
+    "vegetarian": "vegetariano",
+    "vegano": "vegano",
+    "vegan": "vegano",
+    "sin_gluten": "sin_gluten",
+    "sin gluten": "sin_gluten",
+    "gluten_free": "sin_gluten",
+    "gluten-free": "sin_gluten",
+}
+
+MEAT_TERMS = {
+    "beef",
+    "steak",
+    "chicken",
+    "turkey",
+    "pork",
+    "ham",
+    "bacon",
+    "sausage",
+    "fish",
+    "tuna",
+    "salmon",
+    "cod",
+    "tilapia",
+    "shrimp",
+    "prawn",
+    "crab",
+    "lobster",
+    "seafood",
+    "anchovy",
+    "anchovies",
+}
+
+ANIMAL_PRODUCT_TERMS = MEAT_TERMS | {
+    "egg",
+    "eggs",
+    "milk",
+    "cheese",
+    "cream",
+    "butter",
+    "yogurt",
+    "yoghurt",
+    "honey",
+    "mayonnaise",
+    "mayo",
+}
+
+GLUTEN_TERMS = {
+    "wheat",
+    "flour",
+    "bread",
+    "breadcrumbs",
+    "pasta",
+    "spaghetti",
+    "noodle",
+    "noodles",
+    "macaroni",
+    "lasagna",
+    "couscous",
+    "barley",
+    "rye",
+}
+
+
 @lru_cache(maxsize=1)
 def load_recipe_prices() -> pd.DataFrame:
     if not PRICE_DATA_PATH.exists():
@@ -414,6 +479,112 @@ def filter_recipe_quality(
     )
 
     return filtered
+
+
+def normalize_restrictions(
+    restrictions: list[str],
+) -> list[str]:
+    normalized = []
+
+    for value in restrictions:
+        key = str(value or "").strip().lower()
+
+        if not key:
+            continue
+
+        if key not in VALID_RESTRICTIONS:
+            raise ValueError(
+                "Restricción no válida: "
+                f"{value}. "
+                "Usa vegetariano, vegano o sin_gluten."
+            )
+
+        canonical = VALID_RESTRICTIONS[key]
+
+        if canonical not in normalized:
+            normalized.append(canonical)
+
+    return normalized
+
+
+def tokenize_food_text(text: str) -> set[str]:
+    cleaned = str(text or "").lower()
+
+    for char in [
+        "-",
+        "/",
+        ",",
+        "(",
+        ")",
+        ".",
+        ":",
+        ";",
+        "#",
+        "&",
+    ]:
+        cleaned = cleaned.replace(char, " ")
+
+    return set(cleaned.split())
+
+
+def recipe_food_words(
+    name: str,
+    ingredients: list[str],
+) -> set[str]:
+    words = tokenize_food_text(name)
+
+    for ingredient in ingredients:
+        words |= tokenize_food_text(
+            str(ingredient)
+        )
+
+    return words
+
+
+def filter_by_restrictions(
+    catalog: pd.DataFrame,
+    restrictions: list[str],
+) -> pd.DataFrame:
+    normalized = normalize_restrictions(
+        restrictions
+    )
+
+    if not normalized:
+        return catalog.copy()
+
+    keep_rows = []
+
+    for _, row in catalog.iterrows():
+        words = recipe_food_words(
+            row["nombre_receta"],
+            row["ingredientes"],
+        )
+
+        allowed = True
+
+        if (
+            "vegetariano" in normalized
+            and words & MEAT_TERMS
+        ):
+            allowed = False
+
+        if (
+            "vegano" in normalized
+            and words & ANIMAL_PRODUCT_TERMS
+        ):
+            allowed = False
+
+        if (
+            "sin_gluten" in normalized
+            and words & GLUTEN_TERMS
+        ):
+            allowed = False
+
+        keep_rows.append(allowed)
+
+    return catalog.loc[
+        keep_rows
+    ].copy()
 
 
 def rank_recipes(
@@ -894,6 +1065,11 @@ def recommend(
         df,
         chain,
         request.personas,
+    )
+
+    catalog = filter_by_restrictions(
+        catalog,
+        request.restricciones,
     )
 
     ranked = rank_recipes(

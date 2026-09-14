@@ -31,6 +31,11 @@
 - Endpoint POST /recomendacion
 - Endpoint GET /comparar-precios/{id_receta}
 
+
+- Restricción vegetariana
+- Restricción vegana
+- Restricción sin gluten (heurística MVP)
+
 ## 🚧 ESTAMOS TRABAJANDO EN
 
 - Mejorar claridad del flujo para frontend
