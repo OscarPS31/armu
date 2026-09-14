@@ -259,3 +259,44 @@ la señal principal de relevancia.
 El filtro actual es deliberadamente conservador y forma parte
 del MVP. No sustituye una clasificación semántica completa
 de tipos de comida.
+
+
+## Priorización de platos principales
+
+Para el menú semanal por defecto se calcula un
+`main_meal_score`.
+
+Este score favorece recetas cuyo nombre o ingredientes
+incluyen señales de plato principal, por ejemplo:
+
+- chicken
+- beef
+- fish
+- pasta
+- rice
+- beans
+- soup
+- stew
+- casserole
+- tacos
+- curry
+- vegetables
+
+Además se excluyen preparaciones auxiliares evidentes como:
+
+- replacements
+- substitutes
+- seasonings
+- marinades
+- frostings
+- icings
+- sauces como preparación independiente
+- dressings
+- syrups
+- dips
+- spreads
+
+Esta lógica es heurística y pertenece al MVP.
+
+No reemplaza una futura clasificación semántica o nutricional
+de recetas.

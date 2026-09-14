@@ -47,6 +47,65 @@ BLOCKED_RECIPE_TERMS = {
     "laundry",
 }
 
+NON_MAIN_TITLE_PATTERNS = (
+    "replacement",
+    "substitute",
+    "seasoning",
+    "marinade",
+    "frosting",
+    "icing",
+)
+
+NON_MAIN_ENDINGS = (
+    " sauce",
+    " dressing",
+    " syrup",
+    " rub",
+    " dip",
+    " spread",
+    " frosting",
+    " icing",
+    " substitute",
+    " replacement",
+    " cream",
+    " whip",
+)
+
+MAIN_MEAL_TERMS = {
+    "chicken",
+    "beef",
+    "pork",
+    "turkey",
+    "fish",
+    "salmon",
+    "tuna",
+    "shrimp",
+    "seafood",
+    "pasta",
+    "spaghetti",
+    "noodle",
+    "rice",
+    "beans",
+    "chili",
+    "curry",
+    "stew",
+    "soup",
+    "casserole",
+    "taco",
+    "tacos",
+    "enchilada",
+    "burrito",
+    "sandwich",
+    "burger",
+    "potato",
+    "vegetable",
+    "veggie",
+    "lentil",
+    "chickpea",
+    "meatball",
+    "lasagna",
+}
+
 MAX_INGREDIENT_OVERLAP = 0.75
 
 
@@ -194,6 +253,57 @@ def build_recipe_catalog(
     return catalog
 
 
+def recipe_main_meal_score(
+    name: str,
+    ingredients: list[str],
+) -> int:
+    title = str(name or "").strip().lower()
+
+    ingredient_text = " ".join(
+        str(value).strip().lower()
+        for value in ingredients
+        if str(value).strip()
+    )
+
+    score = 0
+
+    for term in MAIN_MEAL_TERMS:
+        if term in title:
+            score += 3
+        elif term in ingredient_text:
+            score += 1
+
+    ingredient_count = len(
+        {
+            str(value).strip().lower()
+            for value in ingredients
+            if str(value).strip()
+        }
+    )
+
+    if ingredient_count >= 5:
+        score += 2
+    elif ingredient_count >= 3:
+        score += 1
+
+    return score
+
+
+def is_non_main_recipe(name: str) -> bool:
+    title = str(name or "").strip().lower()
+
+    if any(
+        pattern in title
+        for pattern in NON_MAIN_TITLE_PATTERNS
+    ):
+        return True
+
+    return any(
+        title.endswith(ending)
+        for ending in NON_MAIN_ENDINGS
+    )
+
+
 def filter_recipe_quality(
     catalog: pd.DataFrame,
 ) -> pd.DataFrame:
@@ -218,6 +328,22 @@ def filter_recipe_quality(
         filtered = filtered[
             ~blocked
         ].copy()
+
+    non_main = filtered[
+        "nombre_receta"
+    ].apply(is_non_main_recipe)
+
+    filtered = filtered[
+        ~non_main
+    ].copy()
+
+    filtered["main_meal_score"] = filtered.apply(
+        lambda row: recipe_main_meal_score(
+            row["nombre_receta"],
+            row["ingredientes"],
+        ),
+        axis=1,
+    )
 
     return filtered
 
@@ -254,11 +380,13 @@ def rank_recipes(
 
         return ranked.sort_values(
             [
+                "main_meal_score",
                 "default_quality_score",
                 "precio_total_receta_mxn",
                 "nombre_receta",
             ],
             ascending=[
+                False,
                 True,
                 True,
                 True,

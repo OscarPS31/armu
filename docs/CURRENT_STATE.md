@@ -16,6 +16,9 @@
 - Cálculo de ahorro
 - Escalado por número de personas
 - Filtro básico de calidad de recetas
+- Clasificación heurística de comidas principales
+- Exclusión de substitutes/replacements/condimentos
+- Priorización de recetas tipo plato principal
 - Diversidad por solapamiento de ingredientes
 - Ranking neutral por precio mediano cuando no hay gustos
 - 13 tests pasando

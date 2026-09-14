@@ -122,6 +122,9 @@ Incluye:
 - selección neutral alrededor del precio mediano
 - prevención de recetas demasiado similares
 - control de solapamiento de ingredientes
+- clasificación heurística de plato principal
+- exclusión de recetas tipo substitute/replacement
+- exclusión de condimentos y preparaciones auxiliares evidentes
 - mantenimiento del ranking TF-IDF cuando hay gustos
 
 Siguiente mejora futura:
