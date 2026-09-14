@@ -335,3 +335,20 @@ Chicken &amp; Veggie Pasta
 se muestran correctamente como:
 
 Chicken & Veggie Pasta
+
+
+### Prioridad al clasificar categorías
+
+Para determinar la categoría de una receta:
+
+1. primero se analiza el nombre de la receta;
+2. solamente si el nombre no identifica una categoría,
+   se analizan los ingredientes.
+
+Esto evita casos como:
+
+Tuna Rice Casserole + chicken broth
+
+que antes podía clasificarse incorrectamente como `poultry`.
+
+Ahora se clasifica como `fish`.

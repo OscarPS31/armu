@@ -495,24 +495,37 @@ def recipe_category(
     name: str,
     ingredients: list[str],
 ) -> str:
-    text = (
-        str(name or "").lower()
-        + " "
-        + " ".join(
-            str(value).lower()
-            for value in ingredients
-            if str(value).strip()
-        )
+    title = str(
+        name or ""
+    ).lower()
+
+    ingredient_text = " ".join(
+        str(value).lower()
+        for value in ingredients
+        if str(value).strip()
     )
 
-    words = set(
-        text.replace(
-            "-",
-            " ",
-        ).replace(
-            "/",
-            " ",
-        ).split()
+    def tokenize(text: str) -> set[str]:
+        cleaned = (
+            text
+            .replace("-", " ")
+            .replace("/", " ")
+            .replace("&", " ")
+            .replace(",", " ")
+            .replace("(", " ")
+            .replace(")", " ")
+        )
+
+        return set(
+            cleaned.split()
+        )
+
+    title_words = tokenize(
+        title
+    )
+
+    ingredient_words = tokenize(
+        ingredient_text
     )
 
     priority = [
@@ -527,8 +540,26 @@ def recipe_category(
         "vegetarian",
     ]
 
+    # 1. El título manda.
+    #
+    # Ejemplo:
+    # "Tuna Rice Casserole"
+    # debe ser fish aunque tenga chicken broth
+    # entre sus ingredientes.
     for category in priority:
-        if words & CATEGORY_TERMS[category]:
+        if (
+            title_words
+            & CATEGORY_TERMS[category]
+        ):
+            return category
+
+    # 2. Si el título no informa la categoría,
+    # usamos los ingredientes como fallback.
+    for category in priority:
+        if (
+            ingredient_words
+            & CATEGORY_TERMS[category]
+        ):
             return category
 
     return "other"

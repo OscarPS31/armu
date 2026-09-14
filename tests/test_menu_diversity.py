@@ -150,3 +150,30 @@ def test_default_menu_names_are_clean():
         "&amp;" not in recipe.name
         for recipe in recipes
     )
+
+
+def test_title_category_has_priority_over_ingredients():
+    category = recipe_category(
+        "Tuna Rice a Roni Casserole",
+        [
+            "tuna",
+            "rice",
+            "chicken broth",
+            "onion",
+        ],
+    )
+
+    assert category == "fish"
+
+
+def test_beef_title_beats_other_ingredient_categories():
+    category = recipe_category(
+        "Beef Rice Casserole",
+        [
+            "beef",
+            "rice",
+            "chicken broth",
+        ],
+    )
+
+    assert category == "beef"

@@ -20,6 +20,7 @@
 - Exclusión de substitutes/replacements/condimentos
 - Priorización de recetas tipo plato principal
 - Diversidad por categoría de comida
+- Clasificación de categoría priorizando el nombre de la receta
 - Máximo 2 recetas de la misma categoría en menú por defecto
 - Limpieza de entidades HTML en nombres
 - Diversidad por solapamiento de ingredientes
