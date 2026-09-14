@@ -32,7 +32,11 @@ class Cart(BaseModel):
 class RecommendationRequest(BaseModel):
     gustos: str = ""
     presupuesto: float | None = None
-    personas: int = 2
+    personas: int = Field(
+        default=2,
+        ge=1,
+        le=20,
+    )
     cadena: str = "Walmart"
 
 

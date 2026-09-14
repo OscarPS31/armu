@@ -38,6 +38,8 @@ VALID_CHAINS = {
     "chedraui": "Chedraui",
 }
 
+BASE_PERSONAS = 2
+
 
 @lru_cache(maxsize=1)
 def load_recipe_prices() -> pd.DataFrame:
@@ -116,9 +118,19 @@ def normalize_chain(value: str) -> str:
     return VALID_CHAINS[key]
 
 
+def get_person_scale(personas: int) -> float:
+    if personas < 1:
+        raise ValueError(
+            "El número de personas debe ser al menos 1."
+        )
+
+    return personas / BASE_PERSONAS
+
+
 def build_recipe_catalog(
     df: pd.DataFrame,
     chain: str,
+    personas: int = BASE_PERSONAS,
 ) -> pd.DataFrame:
     chain_df = df[
         df["cadena"].eq(chain)
@@ -150,6 +162,15 @@ def build_recipe_catalog(
                 "first",
             ),
         )
+    )
+
+    scale = get_person_scale(personas)
+
+    catalog["precio_total_receta_mxn"] = (
+        catalog["precio_total_receta_mxn"]
+        .astype(float)
+        .mul(scale)
+        .round(2)
     )
 
     catalog["search_text"] = (
@@ -257,6 +278,7 @@ def make_recipe_model(
     recipe_id: int,
     df: pd.DataFrame,
     chain: str,
+    personas: int,
 ) -> Recipe:
     rows = df[
         df["id_receta"].eq(recipe_id)
@@ -267,6 +289,7 @@ def make_recipe_model(
         return Recipe(
             id=recipe_id,
             name="Receta no disponible",
+            servings=personas,
         )
 
     ingredients = (
@@ -282,6 +305,7 @@ def make_recipe_model(
         name=str(
             rows["nombre_receta"].iloc[0]
         ),
+        servings=personas,
         ingredients=ingredients,
     )
 
@@ -290,6 +314,7 @@ def build_menu(
     selected: pd.DataFrame,
     df: pd.DataFrame,
     chain: str,
+    personas: int,
 ) -> dict[str, list[Recipe]]:
     menu = {
         day: []
@@ -308,6 +333,7 @@ def build_menu(
                 int(recipe_id),
                 df,
                 chain,
+                personas,
             )
         ]
 
@@ -319,6 +345,7 @@ def build_cart(
     df: pd.DataFrame,
     chain: str,
     budget: float | None,
+    personas: int,
 ) -> Cart:
     if selected.empty:
         return Cart()
@@ -332,6 +359,20 @@ def build_cart(
         & df["cadena"].eq(chain)
     ].copy()
 
+    scale = get_person_scale(personas)
+
+    rows["cantidad_escalada"] = (
+        rows["cantidad"]
+        .astype(float)
+        .mul(scale)
+    )
+
+    rows["costo_escalado"] = (
+        rows["costo_ingrediente_mxn"]
+        .astype(float)
+        .mul(scale)
+    )
+
     grouped = (
         rows
         .groupby(
@@ -343,11 +384,11 @@ def build_cart(
         )
         .agg(
             cantidad=(
-                "cantidad",
+                "cantidad_escalada",
                 "sum",
             ),
             costo=(
-                "costo_ingrediente_mxn",
+                "costo_escalado",
                 "sum",
             ),
         )
@@ -402,6 +443,7 @@ def recommend(
     catalog = build_recipe_catalog(
         df,
         chain,
+        request.personas,
     )
 
     ranked = rank_recipes(
@@ -418,6 +460,7 @@ def recommend(
         selected,
         df,
         chain,
+        request.personas,
     )
 
     cart = build_cart(
@@ -425,23 +468,27 @@ def recommend(
         df,
         chain,
         request.presupuesto,
+        request.personas,
     )
 
     if selected.empty:
         message = (
             f"No encontramos recetas completas en {chain} "
+            f"para {request.personas} personas "
             "que cumplan el presupuesto."
         )
 
     elif len(selected) < 7:
         message = (
-            f"Se encontraron {len(selected)} recetas en {chain}. "
+            f"Se encontraron {len(selected)} recetas en {chain} "
+            f"para {request.personas} personas. "
             f"Costo estimado: ${cart.costo_total:.2f} MXN."
         )
 
     else:
         message = (
-            f"Menú semanal generado con 7 recetas en {chain}. "
+            f"Menú semanal generado con 7 recetas en {chain} "
+            f"para {request.personas} personas. "
             f"Costo estimado: ${cart.costo_total:.2f} MXN."
         )
 

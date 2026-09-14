@@ -129,7 +129,6 @@ scripts/build_complete_recipe_prices.py
 ## Limitaciones actuales
 
 - El ranking usa TF-IDF sobre nombre e ingredientes.
-- El parámetro personas todavía no escala cantidades.
 - Las restricciones alimentarias todavía no están conectadas.
 - El costo corresponde a las cantidades usadas en las recetas.
 - El dataset final incluye 889 recetas completas.
@@ -196,3 +195,47 @@ Importante:
 
 No recalcular estos precios en frontend.
 El frontend debe consumir el endpoint de comparación.
+
+
+## Escalado por número de personas
+
+El parámetro `personas` ya modifica cantidades y costos.
+
+Regla actual del MVP:
+
+- 2 personas = escala base x1
+- 1 persona = x0.5
+- 4 personas = x2
+- 6 personas = x3
+
+La fórmula usada es:
+
+factor = personas / 2
+
+Este factor se aplica a:
+
+- costo estimado de cada receta
+- cantidades del carrito
+- costo de cada ingrediente
+- costo total del menú
+
+También afecta la selección de recetas respecto al presupuesto.
+
+Ejemplo:
+
+Si un menú cuesta 400 MXN para 2 personas,
+el mismo conjunto equivale aproximadamente a:
+
+- 1 persona: 200 MXN
+- 2 personas: 400 MXN
+- 4 personas: 800 MXN
+
+Importante:
+
+El dataset actual no contiene un número de servings original
+confiable para cada receta.
+
+Por eso, esta versión usa 2 personas como base explícita del MVP.
+
+No interpretar este escalado como una reconstrucción de las
+porciones originales del dataset.
