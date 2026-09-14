@@ -76,9 +76,9 @@ factor = personas / 2
 
 ---
 
-## FASE 5 — AUDITORÍA DE COSTOS 🚧
+## FASE 5 — AUDITORÍA DE COSTOS ✅
 
-Estado: SIGUIENTE
+Estado: IMPLEMENTADA
 
 Objetivo:
 
@@ -92,7 +92,11 @@ Revisar receta por receta:
 
 Motivo:
 
-Algunos costos actuales parecen demasiado bajos y deben validarse antes de seguir construyendo.
+Validar si los costos bajos provienen del dataset o de la lógica del recomendador.
+
+Reporte:
+
+reports/cost_audit.txt
 
 ---
 

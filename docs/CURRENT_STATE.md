@@ -16,12 +16,13 @@
 - Cálculo de ahorro
 - Escalado por número de personas
 - 13 tests pasando
+- Auditoría automática de costos
+- Reporte en reports/cost_audit.txt
 - Endpoint POST /recomendacion
 - Endpoint GET /comparar-precios/{id_receta}
 
 ## 🚧 ESTAMOS TRABAJANDO EN
 
-- Auditoría de costos del menú
 - Verificar que los costos bajos sean correctos
 - Mejorar claridad del flujo para frontend
 

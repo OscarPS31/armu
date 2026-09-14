@@ -1,0 +1,216 @@
+========================================
+AUDITORÍA DE COSTOS ARMU
+========================================
+
+1. DATASET
+----------------------------------------
+Filas: 8,394
+Recetas únicas: 889
+
+2. PRECIOS — Walmart
+----------------------------------------
+Recetas: 889
+Mínimo: $1.66 MXN
+Mediana: $57.18 MXN
+Promedio: $108.54 MXN
+Máximo: $2,055.08 MXN
+Recetas debajo de $10: 92
+
+10 recetas más baratas:
+- White Sauce (id=287330): $1.66 MXN
+- Soya Roti (id=174815): $2.22 MXN
+- Pudding in a Cup (id=113656): $2.35 MXN
+- Lemon Mint Elbow Bleach (id=128059): $2.40 MXN
+- East Hampton Clam Chowder (id=529459): $2.48 MXN
+- Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654): $2.48 MXN
+- Slow-Cooker Bread Stuffing (Thanksgiving) (id=529664): $2.48 MXN
+- Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693): $2.48 MXN
+- Old-Fashioned Sour Cream Pound Cake (id=529793): $2.48 MXN
+- Double Pie Pastry (id=529946): $2.48 MXN
+
+2. PRECIOS — Soriana
+----------------------------------------
+Recetas: 889
+Mínimo: $1.88 MXN
+Mediana: $55.27 MXN
+Promedio: $104.06 MXN
+Máximo: $1,744.22 MXN
+Recetas debajo de $10: 93
+
+10 recetas más baratas:
+- White Sauce (id=287330): $1.88 MXN
+- Lemon Mint Elbow Bleach (id=128059): $2.31 MXN
+- Soya Roti (id=174815): $2.38 MXN
+- Pudding in a Cup (id=113656): $2.44 MXN
+- Oatmeal Pie Shell (id=152482): $2.74 MXN
+- Banana Bread Biscotti (id=489138): $2.85 MXN
+- East Hampton Clam Chowder (id=529459): $2.87 MXN
+- Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654): $2.87 MXN
+- Slow-Cooker Bread Stuffing (Thanksgiving) (id=529664): $2.87 MXN
+- Homestyle Creamy Chicken and Spinach Noodle Soup (id=529711): $2.87 MXN
+
+2. PRECIOS — Chedraui
+----------------------------------------
+Recetas: 889
+Mínimo: $1.85 MXN
+Mediana: $54.34 MXN
+Promedio: $95.21 MXN
+Máximo: $1,506.62 MXN
+Recetas debajo de $10: 100
+
+10 recetas más baratas:
+- White Sauce (id=287330): $1.85 MXN
+- Lemon Mint Elbow Bleach (id=128059): $2.04 MXN
+- Pudding in a Cup (id=113656): $2.26 MXN
+- Soya Roti (id=174815): $2.34 MXN
+- Banana Bread Biscotti (id=489138): $2.34 MXN
+- Oatmeal Pie Shell (id=152482): $2.70 MXN
+- Perfect Chocolate Chip Pudding Cookies (id=530067): $2.81 MXN
+- Classic Cherry Pie (id=529982): $2.81 MXN
+- Double Pie Pastry (id=529946): $2.81 MXN
+- Homestyle Creamy Chicken and Spinach Noodle Soup (id=529711): $2.81 MXN
+
+3. CONSISTENCIA INGREDIENTES VS TOTAL
+----------------------------------------
+Combinaciones receta/cadena: 2,667
+Diferencias mayores a $0.10: 0
+
+4. MENÚ GENERADO POR ARMU
+----------------------------------------
+
+CADENA: Walmart
+
+1 persona(s): $8.04 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Soya Roti (id=174815)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Lemon Mint Elbow Bleach (id=128059)
+  - friday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+  - saturday: Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654)
+  - sunday: Classic Cherry Pie (id=529982)
+
+2 persona(s): $16.07 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Soya Roti (id=174815)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Lemon Mint Elbow Bleach (id=128059)
+  - friday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+  - saturday: Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654)
+  - sunday: Classic Cherry Pie (id=529982)
+
+4 persona(s): $32.14 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Soya Roti (id=174815)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Lemon Mint Elbow Bleach (id=128059)
+  - friday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+  - saturday: Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654)
+  - sunday: Classic Cherry Pie (id=529982)
+
+6 persona(s): $48.21 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Soya Roti (id=174815)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Lemon Mint Elbow Bleach (id=128059)
+  - friday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+  - saturday: Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654)
+  - sunday: Classic Cherry Pie (id=529982)
+
+CADENA: Soriana
+
+1 persona(s): $8.74 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Soya Roti (id=174815)
+  - thursday: Pudding in a Cup (id=113656)
+  - friday: Oatmeal Pie Shell (id=152482)
+  - saturday: Banana Bread Biscotti (id=489138)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+2 persona(s): $17.47 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Soya Roti (id=174815)
+  - thursday: Pudding in a Cup (id=113656)
+  - friday: Oatmeal Pie Shell (id=152482)
+  - saturday: Banana Bread Biscotti (id=489138)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+4 persona(s): $34.94 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Soya Roti (id=174815)
+  - thursday: Pudding in a Cup (id=113656)
+  - friday: Oatmeal Pie Shell (id=152482)
+  - saturday: Banana Bread Biscotti (id=489138)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+6 persona(s): $52.41 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Soya Roti (id=174815)
+  - thursday: Pudding in a Cup (id=113656)
+  - friday: Oatmeal Pie Shell (id=152482)
+  - saturday: Banana Bread Biscotti (id=489138)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+CADENA: Chedraui
+
+1 persona(s): $8.16 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Banana Bread Biscotti (id=489138)
+  - friday: Soya Roti (id=174815)
+  - saturday: Oatmeal Pie Shell (id=152482)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+2 persona(s): $16.34 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Banana Bread Biscotti (id=489138)
+  - friday: Soya Roti (id=174815)
+  - saturday: Oatmeal Pie Shell (id=152482)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+4 persona(s): $32.68 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Banana Bread Biscotti (id=489138)
+  - friday: Soya Roti (id=174815)
+  - saturday: Oatmeal Pie Shell (id=152482)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+6 persona(s): $49.02 MXN
+  - monday: White Sauce (id=287330)
+  - tuesday: Lemon Mint Elbow Bleach (id=128059)
+  - wednesday: Pudding in a Cup (id=113656)
+  - thursday: Banana Bread Biscotti (id=489138)
+  - friday: Soya Roti (id=174815)
+  - saturday: Oatmeal Pie Shell (id=152482)
+  - sunday: Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693)
+
+5. DETALLE DEL MENÚ BASE DE WALMART
+----------------------------------------
+- White Sauce (id=287330): $1.66 MXN
+- Soya Roti (id=174815): $2.22 MXN
+- Pudding in a Cup (id=113656): $2.35 MXN
+- Lemon Mint Elbow Bleach (id=128059): $2.40 MXN
+- Anastasia's Best Baked Beans (Slow-Cooker and Oven Recipe): (id=529654): $2.48 MXN
+- Allamatriciana-Extra-Umami (Pasta Like Oliie Golly) (id=529693): $2.48 MXN
+- Classic Cherry Pie (id=529982): $2.48 MXN
+
+Suma de precios de recetas: $16.07 MXN
+Carrito reportado por API: $16.07 MXN
+Diferencia: $0.00 MXN
+
+6. INTERPRETACIÓN
+----------------------------------------
+Este reporte no corrige precios automáticamente.
+Su objetivo es detectar si los valores bajos provienen del dataset o de la lógica del recomendador.
+
+Si la suma de ingredientes coincide con precio_total_receta_mxn, la API está respetando los costos almacenados.
+
+Si los costos siguen siendo demasiado bajos, la siguiente revisión debe hacerse en las conversiones de cantidades y precios que generaron el dataset final.
