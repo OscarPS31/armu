@@ -287,3 +287,28 @@ Validado:
 
 No rehacer el pipeline de precios ni datasets
 sin una razón técnica nueva.
+
+
+## STREAMLIT INTEGRATION ✅
+
+Estado: IMPLEMENTADO EN FEATURE BRANCH
+
+Incluye:
+
+- selector de supermercado
+- presupuesto
+- número de personas
+- gustos
+- restricciones
+- menú semanal
+- carrito estimado
+- comparación entre cadenas
+- conservación del carrito manual existente
+
+Branch:
+
+feature/streamlit-integration
+
+Documentación:
+
+docs/STREAMLIT_INTEGRATION.md

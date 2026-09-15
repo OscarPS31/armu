@@ -132,3 +132,8 @@ Antes de modificar algo:
 - Nombres HTML normalizados también en comparación de precios
 - Auditoría final de backend completada
 - Backend MVP listo para PR/merge
+
+- Streamlit conectado al backend real de recomendaciones
+- Nueva pantalla de plan semanal
+- Menú, carrito y comparación visibles desde Streamlit
+- Flujo antiguo de carrito manual conservado
