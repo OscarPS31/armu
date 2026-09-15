@@ -69,16 +69,16 @@ st.divider()
 # USER INPUTS
 # ============================================================
 
-st.subheader("What do you want to eat?")
+st.subheader("¿Qué quieres comer?")
 
 user_text = st.text_input(
-    "Describe it in your own words",
-    value="something with chicken and vegetables",
+    "Descríbelo con tus propias palabras",
+    value="algo con pollo y verduras",
     placeholder="e.g. a light pasta with cheese, or a spicy beef soup",
 )
 
 restriction_labels = st.multiselect(
-    "Dietary restrictions",
+    "Restricciones alimentarias",
     options=list(USABLE_RESTRICTIONS.values()),
     default=[],
 )
@@ -87,7 +87,7 @@ label_to_key = {v: k for k, v in USABLE_RESTRICTIONS.items()}
 restrictions = [label_to_key[label] for label in restriction_labels]
 
 budget = st.number_input(
-    "Weekly budget (MXN)",
+    "Presupuesto semanal (MXN)",
     min_value=0,
     value=800,
     step=50,
@@ -98,9 +98,9 @@ budget = st.number_input(
 # GENERATE WEEKLY MENU
 # ============================================================
 
-if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
+if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
 
-    with st.spinner("Building your menu..."):
+    with st.spinner("Creando tu menú..."):
         plan = generate_weekly_plan(
             user_text=user_text,
             restrictions=restrictions,
@@ -137,13 +137,13 @@ if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
     # BUDGET SUMMARY
     # ========================================================
 
-    st.subheader("Summary")
+    st.subheader("Resumen")
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Weekly cost", f"${plan['total']:.2f}")
-    col2.metric("Budget", f"${plan['budget']:.2f}")
+    col1.metric("Costo semanal", f"${plan['total']:.2f}")
+    col2.metric("Presupuesto", f"${plan['budget']:.2f}")
     col3.metric(
-        "Remaining",
+        "Disponible",
         f"${plan['remaining']:.2f}",
         delta=None if plan["within_budget"] else "Over budget",
         delta_color="normal" if plan["within_budget"] else "inverse",
@@ -151,7 +151,7 @@ if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
 
     if plan["within_budget"]:
         st.success(
-            f"✅ Your weekly menu fits the budget. "
+            f"✅ Tu menú semanal fits the budget. "
             f"You have ${plan['remaining']:.2f} MXN left."
         )
     else:
@@ -164,22 +164,22 @@ if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
     # WEEKLY MENU
     # ========================================================
 
-    st.subheader("Your weekly menu")
+    st.subheader("Tu menú semanal")
 
     for item in plan["menu"]:
         with st.expander(
             f"**{item['day']}** · {item['name']}  —  ${item['cost']:.2f} MXN"
         ):
             st.caption(
-                f"Estimated cost range: ${item['cost_min']:.0f}–"
+                f"Rango de costo estimado: ${item['cost_min']:.0f}–"
                 f"{item['cost_max']:.0f} MXN"
             )
 
-            st.markdown("**Ingredients**")
+            st.markdown("**Ingredientes**")
             st.write("\n".join(f"- {ing}" for ing in item["ingredients"]))
 
             if item["steps"]:
-                st.markdown("**Steps**")
+                st.markdown("**Preparación**")
                 st.write(
                     "\n".join(
                         f"{n}. {step}"
