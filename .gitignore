@@ -20,3 +20,6 @@ data/recipe_prices_kg_liter.csv
 
 # Claude Code worktree/launch config (local)
 .claude/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
