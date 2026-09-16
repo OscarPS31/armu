@@ -88,8 +88,8 @@ restrictions = [label_to_key[label] for label in restriction_labels]
 
 budget = st.number_input(
     "Weekly budget (MXN)",
-    min_value=1000,
-    value=1000,
+    min_value=850,
+    value=850,
     step=50,
 )
 
