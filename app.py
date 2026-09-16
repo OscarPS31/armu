@@ -14,6 +14,11 @@ st.set_page_config(
 )
 
 
+
+
+
+
+
 # ============================================================
 # DATA
 # ============================================================
@@ -28,13 +33,13 @@ recipes = get_data()
 
 # Restriction key -> label shown to the user.
 RESTRICTION_LABELS = {
-    "vegetarian": "Vegetarian",
-    "vegan": "Vegan",
-    "gluten_free": "Gluten free",
-    "dairy_free": "Dairy free",
-    "lactose_free": "Lactose free",
-    "nut_free": "Nut free",
-    "egg_free": "Egg free",
+    "vegetarian": "Vegetariano",
+    "vegan": "Vegano",
+    "gluten_free": "Sin gluten",
+    "dairy_free": "Sin lácteos",
+    "lactose_free": "Sin lactosa",
+    "nut_free": "Sin frutos secos",
+    "egg_free": "Sin huevo",
 }
 
 # Only offer restrictions that have enough recipes in the dataset.
@@ -54,12 +59,12 @@ USABLE_RESTRICTIONS = {
 st.title("🥗 Armu · NutriPlan")
 
 st.write(
-    "Tell us what you feel like eating, set your restrictions and your weekly "
-    "budget, and we'll build a Monday–Sunday menu that fits you best."
+    "Dinos qué se te antoja, selecciona tus restricciones y define tu "
+    "presupuesto semanal. Crearemos un menú de lunes a domingo para ti."
 )
 
 st.caption(
-    f"{len(recipes):,} recipes with an estimated cost (PROFECO prices, MXN)."
+    f"{len(recipes):,} recetas con costo estimado (precios PROFECO, MXN)."
 )
 
 st.divider()
@@ -74,13 +79,14 @@ st.subheader("¿Qué quieres comer?")
 user_text = st.text_input(
     "Descríbelo con tus propias palabras",
     value="algo con pollo y verduras",
-    placeholder="e.g. a light pasta with cheese, or a spicy beef soup",
+    placeholder="ej. una pasta ligera con queso o una sopa de res picante",
 )
 
 restriction_labels = st.multiselect(
     "Restricciones alimentarias",
     options=list(USABLE_RESTRICTIONS.values()),
     default=[],
+    placeholder="Elige opciones",
 )
 
 label_to_key = {v: k for k, v in USABLE_RESTRICTIONS.items()}
@@ -108,13 +114,18 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
             recipes=recipes,
         )
 
+    st.session_state["plan_actual"] = plan
+
+if "plan_actual" in st.session_state:
+    plan = st.session_state["plan_actual"]
+
     # --------------------------------------------------------
     # NO RECIPES
     # --------------------------------------------------------
 
     if plan["status"] == "NO_RECIPES":
         st.warning(
-            "No recipes match those restrictions. Try removing one."
+            "No hay recetas que coincidan con esas restricciones. Intenta quitar alguna."
         )
         st.stop()
 
@@ -122,8 +133,8 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
 
     if plan["no_text_match"]:
         st.warning(
-            f"🔎 Nothing matches «{user_text}» within your restrictions. "
-            "Showing other options that do fit — try different words."
+            f"🔎 No encontramos «{user_text}» dentro de tus restricciones. "
+            "Mostramos otras opciones compatibles. Intenta usar otras palabras."
         )
 
     if plan["incomplete"]:
@@ -145,19 +156,19 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
     col3.metric(
         "Disponible",
         f"${plan['remaining']:.2f}",
-        delta=None if plan["within_budget"] else "Over budget",
+        delta=None if plan["within_budget"] else "Sobre presupuesto",
         delta_color="normal" if plan["within_budget"] else "inverse",
     )
 
     if plan["within_budget"]:
         st.success(
-            f"✅ Tu menú semanal fits the budget. "
-            f"You have ${plan['remaining']:.2f} MXN left."
+            f"✅ Tu menú semanal está dentro del presupuesto. "
+            f"Te quedan ${plan['remaining']:.2f} MXN disponibles."
         )
     else:
         st.error(
-            f"⚠️ Your menu is ${abs(plan['remaining']):.2f} MXN over budget. "
-            "Raise the budget or adjust your search."
+            f"⚠️ Tu menú supera el presupuesto por ${abs(plan['remaining']):.2f} MXN. "
+            "Aumenta el presupuesto o ajusta tu búsqueda."
         )
 
     # ========================================================
@@ -166,9 +177,19 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
 
     st.subheader("Tu menú semanal")
 
+    DIAS = {
+        "Monday": "Lunes",
+        "Tuesday": "Martes",
+        "Wednesday": "Miércoles",
+        "Thursday": "Jueves",
+        "Friday": "Viernes",
+        "Saturday": "Sábado",
+        "Sunday": "Domingo",
+    }
+
     for item in plan["menu"]:
         with st.expander(
-            f"**{item['day']}** · {item['name']}  —  ${item['cost']:.2f} MXN"
+            f"**{DIAS.get(item['day'], item['day'])}** · {item['name']}  —  ${item['cost']:.2f} MXN"
         ):
             st.caption(
                 f"Rango de costo estimado: ${item['cost_min']:.0f}–"
@@ -176,15 +197,31 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
             )
 
             st.markdown("**Ingredientes**")
-            st.write("\n".join(f"- {ing}" for ing in item["ingredients"]))
+
+            ingredientes_completos = "\n".join(
+                f"- {ing}"
+                for ing in item["ingredients"]
+            )
+
+            st.write(
+                ingredientes_completos
+            )
 
             if item["steps"]:
                 st.markdown("**Preparación**")
+
+                texto_preparacion = "\n".join(
+                    f"{n}. {step}"
+                    for n, step in enumerate(item["steps"], start=1)
+                )
+
+                preparacion_completa = "\n".join(
+                    f"{n}. {step}"
+                    for n, step in enumerate(item["steps"], start=1)
+                )
+
                 st.write(
-                    "\n".join(
-                        f"{n}. {step}"
-                        for n, step in enumerate(item["steps"], start=1)
-                    )
+                    preparacion_completa
                 )
 
 
@@ -195,6 +232,6 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
 st.divider()
 
 st.caption(
-    "Armu · NutriPlan — Le Wagon final project. "
-    "Recipes: Food.com · Cost estimates: PROFECO prices."
+    "Armu · NutriPlan — Proyecto final de Le Wagon. "
+    "Recetas: Food.com · Costos estimados: precios PROFECO."
 )
