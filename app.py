@@ -1,6 +1,8 @@
 import streamlit as st
 
 from armu.planner import generate_weekly_plan, load_data
+from armu.semantic_recommender import load_model
+from armu.recipe_translation import get_translation
 
 
 # ============================================================
@@ -28,7 +30,13 @@ def get_data():
     return load_data()
 
 
+@st.cache_resource
+def get_semantic_model():
+    return load_model()
+
+
 recipes = get_data()
+semantic_model = get_semantic_model()
 
 
 # Restriction key -> label shown to the user.
@@ -112,11 +120,22 @@ if st.button("🍽️ Crear mi menú semanal", type="primary", width="stretch"):
             restrictions=restrictions,
             budget=budget,
             recipes=recipes,
+            semantic_model=semantic_model,
         )
 
     st.session_state["plan_actual"] = plan
+    st.session_state["plan_query"] = user_text
+    st.session_state["plan_restrictions"] = restrictions
+    st.session_state["plan_budget"] = budget
 
-if "plan_actual" in st.session_state:
+current_plan_is_valid = (
+    "plan_actual" in st.session_state
+    and st.session_state.get("plan_query") == user_text
+    and st.session_state.get("plan_restrictions") == restrictions
+    and st.session_state.get("plan_budget") == budget
+)
+
+if current_plan_is_valid:
     plan = st.session_state["plan_actual"]
 
     # --------------------------------------------------------
@@ -139,9 +158,9 @@ if "plan_actual" in st.session_state:
 
     if plan["incomplete"]:
         st.warning(
-            f"⚠️ Only {plan['available_recipes']} recipe(s) match these "
-            f"restrictions, so your menu has {plan['days_filled']} day(s) "
-            "instead of 7. Remove a restriction for a full week."
+            f"⚠️ Solo {plan['available_recipes']} receta(s) coinciden con estas "
+            f"restricciones, por lo que tu menú tiene {plan['days_filled']} día(s) "
+            "en lugar de 7. Quita una restricción para completar la semana."
         )
 
     # ========================================================
@@ -188,8 +207,14 @@ if "plan_actual" in st.session_state:
     }
 
     for item in plan["menu"]:
+        translation = get_translation(item["id"]) or {}
+
+        recipe_name = translation.get("name", item["name"])
+        recipe_ingredients = translation.get("ingredients", item["ingredients"])
+        recipe_steps = translation.get("steps", item["steps"])
+
         with st.expander(
-            f"**{DIAS.get(item['day'], item['day'])}** · {item['name']}  —  ${item['cost']:.2f} MXN"
+            f"**{DIAS.get(item['day'], item['day'])}** · {recipe_name}  —  ${item['cost']:.2f} MXN"
         ):
             st.caption(
                 f"Rango de costo estimado: ${item['cost_min']:.0f}–"
@@ -200,24 +225,19 @@ if "plan_actual" in st.session_state:
 
             ingredientes_completos = "\n".join(
                 f"- {ing}"
-                for ing in item["ingredients"]
+                for ing in recipe_ingredients
             )
 
             st.write(
                 ingredientes_completos
             )
 
-            if item["steps"]:
+            if recipe_steps:
                 st.markdown("**Preparación**")
-
-                texto_preparacion = "\n".join(
-                    f"{n}. {step}"
-                    for n, step in enumerate(item["steps"], start=1)
-                )
 
                 preparacion_completa = "\n".join(
                     f"{n}. {step}"
-                    for n, step in enumerate(item["steps"], start=1)
+                    for n, step in enumerate(recipe_steps, start=1)
                 )
 
                 st.write(

@@ -12,6 +12,7 @@ from pathlib import Path
 import pandas as pd
 
 from armu.recommender import filter_by_restriction
+from armu.semantic_recommender import semantic_search
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -63,6 +64,7 @@ def generate_weekly_plan(
     budget,
     recipes=None,
     days=7,
+    semantic_model=None,
 ):
     """
     Build a Monday–Sunday menu.
@@ -95,7 +97,15 @@ def generate_weekly_plan(
     # ---- rank by preference, take up to `days` DISTINCT recipes ----------
     # Never clone a recipe to pad the week: show as many real, different
     # recipes as the diet allows, up to the number of days requested.
-    ranked = _rank_by_preference(pool, user_text)
+    if user_text and user_text.strip():
+        ranked = semantic_search(
+            recipes=pool,
+            query=user_text,
+            model=semantic_model,
+            top_k=max(days, 20),
+        )
+    else:
+        ranked = _rank_by_preference(pool, user_text)
     # The source data has different recipes that share the same name; drop the
     # duplicate names so the week shows real variety, not the same title twice.
     ranked = ranked.drop_duplicates(subset="name", keep="first")
@@ -103,10 +113,16 @@ def generate_weekly_plan(
     chosen = ranked.head(days).to_dict("records")
     incomplete = len(chosen) < days
 
+    score_column = (
+        "semantic_score"
+        if "semantic_score" in ranked.columns
+        else "similarity_score"
+    )
+
     no_text_match = bool(
         user_text
         and user_text.strip()
-        and all(row.get("similarity_score", 0) <= 0 for row in chosen)
+        and all(row.get(score_column, 0) <= 0 for row in chosen)
     )
 
     menu = []
