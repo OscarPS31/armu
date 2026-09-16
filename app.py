@@ -88,7 +88,7 @@ restrictions = [label_to_key[label] for label in restriction_labels]
 
 budget = st.number_input(
     "Weekly budget (MXN)",
-    min_value=850,
+    min_value=0,
     value=850,
     step=50,
 )
@@ -99,6 +99,10 @@ budget = st.number_input(
 # ============================================================
 
 if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
+
+    if budget < 850:
+        st.error("The minimum budget is $850 MXN. Please increase your budget to generate a menu.")
+        st.stop()
 
     with st.spinner("Building your menu..."):
         plan = generate_weekly_plan(
