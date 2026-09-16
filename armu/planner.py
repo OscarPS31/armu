@@ -56,6 +56,35 @@ def _rank_by_preference(df, user_text):
     df["similarity_score"] = scores
     return df.sort_values("similarity_score", ascending=False)
 
+def select_menu_within_budget(
+    ranked_df,
+    budget,
+    days=7,
+    candidate_pool_size=20
+):
+    """
+    Select the first combination of recipes that fits the budget.
+    Candidates are already ranked by user preference.
+    """
+    from itertools import combinations
+    candidates = (
+        ranked_df
+        .drop_duplicates(subset="name", keep="first")
+        .dropna(subset=["estimated_cost"])
+        .head(candidate_pool_size)
+    )
+    if len(candidates) < days:
+        return None
+    candidate_records = candidates.to_dict("records")
+    for menu_tuple in combinations(candidate_records, days):
+        total_cost = sum(
+            recipe["estimated_cost"]
+            for recipe in menu_tuple
+        )
+        if total_cost <= budget:
+            return list(menu_tuple)
+    return None
+
 
 def generate_weekly_plan(
     user_text,
@@ -100,7 +129,11 @@ def generate_weekly_plan(
     # duplicate names so the week shows real variety, not the same title twice.
     ranked = ranked.drop_duplicates(subset="name", keep="first")
     available = len(ranked)
-    chosen = ranked.head(days).to_dict("records")
+    chosen = select_menu_within_budget(
+    ranked,
+    budget,
+    days,
+    candidate_pool_size=20)
     incomplete = len(chosen) < days
 
     no_text_match = bool(
