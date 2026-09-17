@@ -122,6 +122,20 @@ if st.button("🍽️ Build my weekly menu", type="primary", width="stretch"):
         )
         st.stop()
 
+    if plan["status"] == "NOT_ENOUGH":
+        st.warning(
+            f"Only {plan['available_recipes']} recipe(s) match these restrictions — "
+            "not enough for a 7-day menu. Please remove a restriction and try again."
+        )
+        st.stop()
+
+    if plan["status"] == "OVER_BUDGET":
+        st.error(
+            "No 7-day menu fits within your budget for these options. "
+            "Raise your budget or remove a restriction."
+        )
+        st.stop()
+
     st.divider()
 
     if plan["no_text_match"]:

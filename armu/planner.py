@@ -129,11 +129,34 @@ def generate_weekly_plan(
     # duplicate names so the week shows real variety, not the same title twice.
     ranked = ranked.drop_duplicates(subset="name", keep="first")
     available = len(ranked)
+
+
+    if available < days:
+        return {
+            "status": "NOT_ENOUGH",
+            "menu": [],
+            "available_recipes": available,
+            "budget": budget,
+            "days_requested": days,
+        }
+
     chosen = select_menu_within_budget(
-    ranked,
-    budget,
-    days,
-    candidate_pool_size=20)
+        ranked,
+        budget,
+        days,
+        candidate_pool_size=20,
+    )
+
+    # Hay recetas pero ninguna combinacion cabe en el presupuesto -> no arma menu.
+    if chosen is None:
+        return {
+            "status": "OVER_BUDGET",
+            "menu": [],
+            "available_recipes": available,
+            "budget": budget,
+            "days_requested": days,
+        }
+
     incomplete = len(chosen) < days
 
     no_text_match = bool(
