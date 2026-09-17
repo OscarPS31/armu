@@ -39,4 +39,46 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+## ▶️ Correr el demo
+
+```bash
+streamlit run app.py
+```
+
+El demo corre sobre `data/recipes_priced.parquet` (ya incluido en el repo). El
+usuario escribe qué quiere comer, elige restricciones alimentarias y un
+presupuesto por receta, y la app devuelve las **recetas que mejor le quedan
+dentro de su presupuesto**, con su costo estimado, ingredientes y pasos.
+
+Los datos se regeneran (requiere `raw_data/`, no versionado) con:
+
+```bash
+python scripts/build_demo_dataset.py
+```
+
+## 🧱 Cómo está armado
+
+- `app.py` — interfaz Streamlit (demo).
+- `armu/planner.py` — filtra por dieta y presupuesto, y rankea por preferencia (TF-IDF).
+- `armu/recommender.py` — filtros por restricción/tiempo (utilidades base).
+- `scripts/build_demo_dataset.py` — construye `data/recipes_priced.parquet`.
+
+El demo se apoya en **~51,000 recetas con costo estimado de alta confianza**
+(`recipes_with_estimated_cost.csv`, en MXN con precios de PROFECO), producto del
+pipeline de limpieza, matching y estimación de costos del equipo.
+
+## 🔭 Trabajo futuro (para quien quiera mejorar la app)
+
+El MVP se cierra a propósito con un alcance acotado. Pendientes conocidos:
+
+- **Carrito de súper por cadena**: sumar ingredientes de varias recetas y
+  comparar el costo entre supermercados (Walmart, Soriana, Chedraui).
+- **Menú semanal**: pasar de "recetas sueltas" a un plan de varios días con
+  optimización de presupuesto.
+- **Traducción al español** de ingredientes y pasos (hoy en inglés).
+- **Más recetas**: incluir estimaciones de confianza media para ampliar el
+  catálogo (hoy solo alta confianza).
+- **Flags de dieta**: re-derivarlos desde los ingredientes; algunos vienen
+  incompletos del dataset original.
+
 ## 📁 Estructura del proyecto
