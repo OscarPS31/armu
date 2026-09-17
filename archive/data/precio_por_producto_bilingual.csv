@@ -1,0 +1,205 @@
+producto,producto ing,unit,min_price,max_price,average_price
+Aceite,Oil,lt,34.5,72.5,44.69
+Aguacate,Avocado,gr,0.03,0.11,0.07
+Ajo,Garlic,gr,0.07,0.78,0.39
+Ajonjoli,Sesame,gr,0.04,0.24,0.16
+Alcachofa,Artichoke,gr,0.1,0.18,0.15
+Alimento Preparado para Ninos,Prepared Baby Food,gr,0.1,0.19,0.14
+Alimentos Preparados,Prepared Foods,gr,0.17,0.44,0.27
+Almeja,Clam,gr,0.03,0.1,0.06
+Alubia,White Bean,gr,0.05,0.1,0.07
+Amaranto,Amaranth,gr,0.04,0.18,0.11
+Apio,Celery,gr,0.02,0.04,0.03
+Arroz,Rice,gr,0.01,0.06,0.03
+Atun,Tuna,gr,0.06,0.42,0.16
+Avena,Oats,gr,0.02,0.21,0.12
+Azucar,Sugar,gr,0.02,0.14,0.03
+Bagre,Catfish,gr,0.05,0.13,0.09
+Bandera,Bandera Fish,gr,0.07,0.12,0.09
+Barras de Avena,Oat Bars,gr,0.25,0.31,0.27
+Barras de Cereal,Cereal Bars,gr,0.22,0.59,0.34
+Barrita de Surimi o Barrita de Surimi Cangre,Surimi or Imitation Crab Stick,gr,0.08,0.29,0.14
+Basa,Basa Fish,gr,0.06,0.18,0.1
+Besugo,Sea Bream,gr,0.12,0.18,0.16
+Betabel,Beet,gr,0.02,0.05,0.03
+Blanco del Nilo,Nile Perch,gr,0.12,0.31,0.26
+Brocoli,Broccoli,gr,0.02,0.07,0.05
+Cafe Soluble,Instant Coffee,gr,0.21,1.39,0.9
+Cafe Tostado y Molido,Roasted Ground Coffee,gr,0.2,0.74,0.34
+Calabaza,Squash,gr,0.01,0.05,0.03
+Calamar,Squid,gr,0.1,0.35,0.2
+Callo de Almeja,Clam Meat,gr,0.14,0.4,0.24
+Callo de Hacha,Scallop,gr,0.29,1.35,0.67
+Camaron,Shrimp,gr,0.12,0.7,0.28
+Carne Cerdo,Pork,gr,0.03,0.21,0.11
+Carne Pavo,Turkey,gr,0.11,0.15,0.13
+Carne Pollo,Chicken,gr,0.03,0.23,0.08
+Carne Res,Beef,gr,0.03,0.73,0.2
+Carne Ternera,Veal,gr,0.26,0.35,0.3
+Carpa,Carp,gr,0.06,0.08,0.08
+Cazon,Dogfish,gr,0.06,0.26,0.15
+Cebolla,Onion,gr,0.01,0.05,0.03
+Cereales,Cereals,gr,0.08,0.45,0.17
+Champinones,Mushrooms,gr,0.08,0.14,0.11
+Charal,Charal Fish,gr,0.07,0.35,0.21
+Chayote,Chayote,gr,0.01,0.06,0.03
+Chile Fresco,Fresh Chili Pepper,gr,0.01,0.22,0.07
+Chile Seco,Dried Chili Pepper,gr,0.03,0.62,0.35
+Chiles,Chili Peppers,gr,0.04,0.2,0.09
+Chorizo,Chorizo,gr,0.22,0.31,0.27
+Chucumite,Chucumite Fish,gr,0.18,0.26,0.25
+Chia,Chia Seeds,gr,0.08,0.77,0.22
+Chicharo,Pea,gr,0.02,0.08,0.05
+Chicharos,Peas,gr,0.04,0.2,0.08
+Chicharos en Lata,Canned Peas,gr,0.04,0.08,0.06
+Cintilla,Cutlassfish,gr,0.12,0.12,0.12
+Ciruela,Plum,gr,0.04,0.12,0.08
+Clavo,Clove,gr,0.22,0.45,0.31
+Coctel de Frutas en Almibar,Fruit Cocktail in Syrup,gr,0.06,0.11,0.09
+Col,Cabbage,gr,0.01,0.06,0.03
+Combinado Primavera,Spring Vegetable Mix,gr,0.08,0.12,0.1
+Comino,Cumin,gr,0.72,0.74,0.73
+Concentrado de Pollo,Chicken Bouillon,gr,0.04,3.7,0.8
+Crema,Cream,gr,0.04,0.15,0.11
+Crema Batida,Whipped Cream,lt,44.9,70.5,56.16
+Curvina,Croaker Fish,gr,0.06,0.12,0.09
+Curcuma,Turmeric,gr,0.76,0.97,0.86
+Durazno,Peach,gr,0.06,0.14,0.09
+Duraznos en Almibar,Peaches in Syrup,gr,0.06,0.1,0.08
+Ejote,Green Bean,gr,0.02,0.09,0.06
+Elote,Corn,gr,0.04,0.09,0.06
+Empanizadores,Bread Crumbs,gr,0.13,0.21,0.17
+Floretes de Brocoli,Broccoli Florets,gr,0.08,0.14,0.11
+Fresa,Strawberry,gr,0.04,0.2,0.15
+Frijol,Bean,gr,0.02,0.08,0.04
+Frijoles,Beans,gr,0.02,0.06,0.04
+Formula Lactea,Milk Formula,gr,0.45,0.64,0.52
+Galletas Dulces,Sweet Cookies,gr,0.08,0.37,0.15
+Galletas Populares,Cookies,gr,0.06,0.18,0.12
+Galletas Saladas,Crackers,gr,0.08,0.25,0.15
+Garbanzo,Chickpea,gr,0.02,0.1,0.07
+Granada,Pomegranate,gr,0.07,0.25,0.13
+Granola,Granola,gr,0.19,0.31,0.25
+Granos de Elote,Corn Kernels,gr,0.09,0.15,0.11
+Grasa Comestible,Cooking Fat,gr,0.04,0.1,0.08
+Guanabana,Soursop,gr,0.05,0.12,0.08
+Guarnicion de Verduras,Vegetable Side Dish,gr,0.06,0.1,0.07
+Guayaba,Guava,gr,0.02,0.07,0.05
+Gurrubata,Gurrubata Fish,gr,0.06,0.08,0.07
+Haba,Fava Bean,gr,0.05,0.2,0.14
+Harina Hot Cakes,Pancake Mix,gr,0.04,0.14,0.07
+Harina de Arroz,Rice Flour,gr,0.05,0.09,0.07
+Harina de Maiz,Corn Flour,gr,0.01,0.16,0.06
+Harina de Trigo,Wheat Flour,gr,0.01,0.03,0.02
+Helado,Ice Cream,gr,0.09,0.18,0.13
+Hojas de Laurel,Bay Leaves,gr,5.5,6.2,5.6
+Huachinango,Red Snapper,gr,0.13,0.7,0.28
+Huevo,Egg,piece,1.61,4.67,2.45
+Jaiba,Crab,gr,0.05,0.36,0.17
+Jaibon,Jaibon Crab,gr,0.14,0.15,0.15
+Jamon,Ham,gr,0.05,0.5,0.23
+Jitomate,Tomato,gr,0.01,0.08,0.02
+Jurel,Horse Mackerel,gr,0.05,0.11,0.07
+Kiwi,Kiwi,gr,0.05,0.15,0.09
+Langosta,Lobster,gr,1.05,1.78,1.63
+Langostino,Prawn,gr,0.24,0.52,0.33
+Leche Condensada,Condensed Milk,gr,0.07,0.18,0.1
+Leche Evaporada,Evaporated Milk,gr,0.05,0.09,0.07
+Leche Pasteurizada,Pasteurized Milk,lt,21.4,40.0,32.43
+Leche Ultrapasteurizada,UHT Milk,lt,14.9,46.0,32.8
+Leche en Polvo,Powdered Milk,gr,0.16,0.3,0.22
+Lenguado,Sole,gr,0.1,0.24,0.17
+Lenteja,Lentil,gr,0.02,0.08,0.05
+Limon,Lemon,gr,0.01,0.07,0.03
+Linaza,Flaxseed,gr,0.1,0.14,0.11
+Lisa,Mullet,gr,0.04,0.13,0.07
+Lobina,Sea Bass,gr,0.11,0.2,0.16
+Mamey,Mamey,gr,0.02,0.08,0.05
+Mandarina,Mandarin,gr,0.03,0.1,0.06
+Mango,Mango,gr,0.02,0.07,0.04
+Manteca de Cerdo,Lard,gr,0.04,0.12,0.08
+Mantequilla,Butter,gr,0.21,0.44,0.29
+Manzana,Apple,gr,0.02,0.09,0.05
+Margarina,Margarine,gr,0.1,0.32,0.2
+Mayonesa,Mayonnaise,gr,0.08,0.29,0.13
+Maiz Palomero,Popcorn Kernels,gr,0.02,0.06,0.04
+Maiz Pozolero,Pozole Corn,gr,0.02,0.06,0.05
+Melon,Melon,gr,0.02,0.06,0.03
+Merluza,Hake,gr,0.19,0.19,0.19
+Mermelada,Jam,gr,0.06,0.16,0.11
+Mero,Grouper,gr,0.18,0.51,0.3
+Mezcla California,California Vegetable Mix,gr,0.07,0.12,0.09
+Mezcla Campesina,Country Vegetable Mix,gr,0.08,0.11,0.1
+Mojarra,Tilapia,gr,0.03,0.34,0.1
+Mole Rojo en Pasta,Red Mole Paste,gr,0.06,0.28,0.21
+Mortadela,Bologna,gr,0.1,0.16,0.13
+Mostaza,Mustard,gr,0.07,0.18,0.1
+Naranja,Orange,gr,0.01,0.05,0.04
+Nopal,Nopal Cactus,gr,0.02,0.06,0.04
+Nuez,Walnut,gr,0.21,0.93,0.58
+Oregano,Oregano,gr,0.87,1.3,1.02
+Pan Dulce,Sweet Bread,gr,0.09,0.4,0.13
+Pan de Caja,Sandwich Bread,gr,0.02,0.2,0.11
+Papa,Potato,gr,0.01,0.07,0.05
+Papaya,Papaya,gr,0.02,0.06,0.04
+Pargo,Snapper,gr,0.12,0.76,0.35
+Pasta para Sopa,Soup Pasta,gr,0.01,0.08,0.04
+Pastel Pimiento,Pimento Loaf,gr,0.11,0.2,0.17
+Pastelillos y Pan Dulce Empaquetado,Packaged Pastries and Sweet Bread,gr,0.12,0.6,0.25
+Pechuga de Pavo,Turkey Breast,gr,0.23,0.47,0.3
+Pepino,Cucumber,gr,0.01,0.06,0.02
+Pera,Pear,gr,0.04,0.09,0.05
+Peron,Apple,gr,0.04,0.07,0.06
+Peto,Wahoo Fish,gr,0.09,0.16,0.13
+Pimienta,Pepper,gr,0.15,1.47,1.04
+Pimiento,Bell Pepper,gr,0.04,0.12,0.09
+Pina,Pineapple,gr,0.02,0.04,0.02
+Pina en Almibar,Pineapple in Syrup,gr,0.07,0.11,0.09
+Platano,Banana,gr,0.01,0.05,0.03
+Polvo P/hornear,Baking Powder,gr,0.1,0.22,0.16
+Producto Lacteo,Dairy Product,lt,16.5,29.5,23.05
+Pulpo,Octopus,gr,0.22,0.43,0.33
+Pure de Tomate,Tomato Puree,gr,0.03,0.04,0.04
+Pampano,Pompano,gr,0.15,0.21,0.19
+Queso Americano,American Cheese,gr,0.13,0.33,0.23
+Queso Canasto,Basket Cheese,gr,0.11,0.16,0.13
+Queso Chihuahua,Chihuahua Cheese,gr,0.23,0.38,0.31
+Queso Cotija,Cotija Cheese,gr,0.1,0.26,0.16
+Queso Doble Crema,Double Cream Cheese,gr,0.09,0.18,0.13
+Queso Fresco,Fresh Cheese,gr,0.17,0.24,0.2
+Queso Manchego,Manchego Cheese,gr,0.1,0.42,0.28
+Queso Oaxaca,Oaxaca Cheese,gr,0.08,0.37,0.25
+Queso Panela,Panela Cheese,gr,0.08,0.34,0.22
+Queso Sierra,Sierra Cheese,gr,0.2,0.21,0.2
+Queso de Puerco,Head Cheese,gr,0.11,0.33,0.27
+Robalito,Small Snook,gr,0.25,0.3,0.26
+Robalo,Snook,gr,0.14,0.76,0.38
+Rubia,Rubia Fish,gr,0.08,0.25,0.19
+Sal Molida de Mesa,Table Salt,gr,0.02,0.04,0.03
+Sal de Mar,Sea Salt,gr,0.02,0.03,0.02
+Salchicha,Sausage,gr,0.04,0.29,0.12
+Salmon,Salmon,gr,0.27,0.69,0.44
+Salsa Catsup,Ketchup,gr,0.04,0.1,0.06
+Salsa Picante y Similares,Hot Sauce,gr,0.05,0.42,0.15
+Sandia,Watermelon,gr,0.01,0.02,0.01
+Sardina,Sardine,gr,0.03,0.13,0.09
+Semilla de Girasol,Sunflower Seed,gr,0.16,0.2,0.17
+Sierra,Spanish Mackerel,gr,0.06,0.2,0.12
+Soya,Soy,gr,0.02,0.08,0.04
+Sustituto de Azucar,Sugar Substitute,gr,0.1,1.04,0.67
+Tilapia,Tilapia,gr,0.07,0.35,0.13
+Tocino Ahumado,Smoked Bacon,gr,0.11,0.78,0.45
+Tomate,Tomato,gr,0.01,0.06,0.03
+Toronja,Grapefruit,gr,0.02,0.05,0.03
+Tortilla de Harina de Trigo,Wheat Flour Tortilla,gr,0.06,0.12,0.07
+Tortilla de Maiz,Corn Tortilla,gr,0.01,0.04,0.02
+Tostadas de Maiz,Corn Tostadas,gr,0.11,0.22,0.17
+Trucha,Trout,gr,0.1,0.52,0.21
+Tuna,Prickly Pear,gr,0.02,0.06,0.04
+Te,Tea,gr,13.33,25.0,19.27
+Uva,Grape,gr,0.03,0.18,0.09
+Verdolaga,Purslane,gr,0.02,0.1,0.05
+Villajaiba,Villajaiba Crab,gr,0.12,0.2,0.16
+Vinagre,Vinegar,lt,9.0,29.9,16.66
+Yoghurt,Yogurt,gr,0.03,0.4,0.08
+Zanahoria,Carrot,gr,0.01,0.03,0.02
